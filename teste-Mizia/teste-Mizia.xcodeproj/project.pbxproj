@@ -76,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				193E7E08255B30A800FE408D /* GoogleService-Info.plist */,
+				1970A0B9255ABC5000D3981B /* Info.plist */,
 				1970A0AB255ABC4D00D3981B /* AppDelegate.swift */,
 				1970A0AD255ABC4D00D3981B /* SceneDelegate.swift */,
 				1970A0AF255ABC4D00D3981B /* ViewController.swift */,
@@ -83,7 +84,6 @@
 				1970A0B1255ABC4D00D3981B /* Main.storyboard */,
 				1970A0B4255ABC5000D3981B /* Assets.xcassets */,
 				1970A0B6255ABC5000D3981B /* LaunchScreen.storyboard */,
-				1970A0B9255ABC5000D3981B /* Info.plist */,
 			);
 			path = "teste-Mizia";
 			sourceTree = "<group>";

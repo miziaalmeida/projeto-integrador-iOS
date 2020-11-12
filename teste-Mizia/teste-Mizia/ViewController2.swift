@@ -6,10 +6,10 @@ import UIKit
 class ViewController2: UIViewController, LoginButtonDelegate {
     
     @IBOutlet var signGoogleButton: GIDSignInButton!
-    @IBOutlet var signFacebookButton: FBLoginButton!
-    
+    @IBOutlet weak var signFacebookButton: FBLoginButton!
     @IBOutlet weak var textFieldName: UITextField!
     @IBOutlet weak var entrarButton: UIButton!
+    @IBOutlet weak var esqueceuSenhaButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,7 @@ class ViewController2: UIViewController, LoginButtonDelegate {
         } else {
             openFacebookLogin()
         }
+        
         
         //Google
         GIDSignIn.sharedInstance()?.presentingViewController = self
@@ -47,6 +48,8 @@ class ViewController2: UIViewController, LoginButtonDelegate {
         
         request.start(completionHandler: {connection, result, error in
                         print("\(String(describing: result))")})
+        
+        
     }
     
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
@@ -64,11 +67,14 @@ class ViewController2: UIViewController, LoginButtonDelegate {
         
         //Add a bottomLine como borda textField
         textFieldName.layer.addSublayer(bottomLine)
+        
+        textFieldName.placeholder = "Email"
+        textFieldName.textColor = UIColor(white: 100.00, alpha: 1)
     }
     
     private func personalizeButtonEntrar(){
         entrarButton.backgroundColor = UIColor.init(red: 0/255, green: 180/255, blue: 0/255, alpha: 1)
-        entrarButton.tintColor = UIColor.black
+        entrarButton.tintColor = UIColor.white
         entrarButton.layer.cornerRadius = 10
         entrarButton.clipsToBounds = true
     }
