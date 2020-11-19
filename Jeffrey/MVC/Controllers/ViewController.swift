@@ -37,10 +37,10 @@ class ViewController: UIViewController, GIDSignInDelegate {
         //MARK: View
         viewOne?.backgroundColor = .black
         
-        logoImage?.image = UIImage(named: "Jeffrey")
         
         configureGoogleButton()
         configureFacebookButton()
+        
         currentUserName()
     }
     
@@ -62,11 +62,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
     }
     
     @IBAction func signInAction(_ sender: Any) {
-        signInButton.backgroundColor = .lightGray
-        signInButton.layer.cornerRadius = 8
-        signInButton.layer.borderWidth = 1.5
-        signInButton.layer.borderColor = UIColor.systemGreen.cgColor
-        signInButton.title(for: .normal)
+        signInButton.layer.cornerRadius = 10
+        signInButton.clipsToBounds = true
     }
     
     @IBAction func facebookAction(_ sender: Any) {
@@ -121,7 +118,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
     
     func configureFacebookButton() {
         facebookButton?.backgroundColor? = .systemBlue
-        facebookButton?.layer.cornerRadius = 4
+        facebookButton?.layer.cornerRadius = 10
+        facebookButton.clipsToBounds = true
     }
     
     
@@ -131,8 +129,9 @@ class ViewController: UIViewController, GIDSignInDelegate {
     }
     
     func configureGoogleButton() {
-        facebookButton?.backgroundColor? = .systemRed
-        facebookButton?.layer.cornerRadius = 4
+        googleButton?.backgroundColor? = .systemRed
+        googleButton?.layer.cornerRadius = 10
+        googleButton.clipsToBounds = true
     }
 }
 
