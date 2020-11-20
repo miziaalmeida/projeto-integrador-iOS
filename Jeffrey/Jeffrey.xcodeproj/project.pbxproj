@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		136B43684309009491536BC5 /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78002DB4EC84D5982DFD62D6 /* Pods_Jeffrey_JeffreyUITests.framework */; };
+		19096FB325674A7100FDB2B0 /* CreateUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19096FB225674A7100FDB2B0 /* CreateUser.storyboard */; };
+		19096FB825674BA900FDB2B0 /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19096FB725674BA900FDB2B0 /* CreateUserViewController.swift */; };
 		191139022563058C0039C5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139012563058C0039C5A3 /* AppDelegate.swift */; };
 		191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139032563058C0039C5A3 /* SceneDelegate.swift */; };
 		191139062563058C0039C5A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139052563058C0039C5A3 /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		0EC4C247BF37AA243201AB6D /* Pods-Jeffrey-JeffreyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		19096FB225674A7100FDB2B0 /* CreateUser.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateUser.storyboard; sourceTree = "<group>"; };
+		19096FB725674BA900FDB2B0 /* CreateUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
 		191138FE2563058B0039C5A3 /* Jeffrey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeffrey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		191139012563058C0039C5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		191139032563058C0039C5A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,7 +106,6 @@
 		191138F52563058B0039C5A3 = {
 			isa = PBXGroup;
 			children = (
-				19B97DF72566BDC600147F56 /* GoogleService-Info.plist */,
 				19B97DDC2566B1E900147F56 /* MVC */,
 				191139002563058C0039C5A3 /* Jeffrey */,
 				191139172563058F0039C5A3 /* JeffreyTests */,
@@ -130,6 +133,7 @@
 				191139032563058C0039C5A3 /* SceneDelegate.swift */,
 				1911390A2563058F0039C5A3 /* Assets.xcassets */,
 				1911390F2563058F0039C5A3 /* Info.plist */,
+				19B97DF72566BDC600147F56 /* GoogleService-Info.plist */,
 			);
 			path = Jeffrey;
 			sourceTree = "<group>";
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				191139052563058C0039C5A3 /* ViewController.swift */,
+				19096FB725674BA900FDB2B0 /* CreateUserViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 			children = (
 				1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */,
 				191139072563058C0039C5A3 /* Main.storyboard */,
+				19096FB225674A7100FDB2B0 /* CreateUser.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 				191138FC2563058B0039C5A3 /* Resources */,
 				DD21D29EDA095F907E9C4498 /* [CP] Embed Pods Frameworks */,
 				F082B66B036A45B346C288B5 /* [CP] Copy Pods Resources */,
+				19096FAE256742A800FDB2B0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -331,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1911390E2563058F0039C5A3 /* LaunchScreen.storyboard in Resources */,
+				19096FB325674A7100FDB2B0 /* CreateUser.storyboard in Resources */,
 				1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */,
 				19B97DF82566BDC600147F56 /* GoogleService-Info.plist in Resources */,
 				19B97DD52566B02A00147F56 /* logo.gif in Resources */,
@@ -355,6 +363,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		19096FAE256742A800FDB2B0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		535B71895FBD68954A65BDCB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -501,6 +526,7 @@
 				19B97DC82566ABC600147F56 /* LogoAnimationView.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
+				19096FB825674BA900FDB2B0 /* CreateUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

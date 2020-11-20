@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6LZ-b9-Gbg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create User View Controller-->
+        <scene sceneID="UrX-Ey-Wn2">
+            <objects>
+                <viewController id="6LZ-b9-Gbg" customClass="CreateUserViewController" customModule="Jeffrey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhh-Kw-bZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b7O-Uf-3f3">
+                                <rect key="frame" x="40" y="204" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tUU-Ew-b14"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQh-p9-8ge">
+                                <rect key="frame" x="40" y="274" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="znx-rS-loA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrM-Ah-sAb">
+                                <rect key="frame" x="132" y="363" width="150" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="IKd-zC-Cld"/>
+                                    <constraint firstAttribute="height" constant="50" id="jeq-UZ-KiB"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="createUser:" destination="6LZ-b9-Gbg" eventType="touchUpInside" id="X1K-co-bFI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xGU-QP-LL8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yrM-Ah-sAb" firstAttribute="centerX" secondItem="hhh-Kw-bZ2" secondAttribute="centerX" id="B2t-ej-9TP"/>
+                            <constraint firstItem="b7O-Uf-3f3" firstAttribute="top" secondItem="xGU-QP-LL8" secondAttribute="top" constant="160" id="H0U-W2-YKh"/>
+                            <constraint firstItem="b7O-Uf-3f3" firstAttribute="leading" secondItem="xGU-QP-LL8" secondAttribute="leading" constant="40" id="KEX-nD-vjt"/>
+                            <constraint firstItem="xGU-QP-LL8" firstAttribute="trailing" secondItem="CQh-p9-8ge" secondAttribute="trailing" constant="40" id="MOd-3d-qbQ"/>
+                            <constraint firstItem="yrM-Ah-sAb" firstAttribute="top" secondItem="CQh-p9-8ge" secondAttribute="bottom" constant="49" id="Vjb-Vu-o3D"/>
+                            <constraint firstItem="CQh-p9-8ge" firstAttribute="leading" secondItem="xGU-QP-LL8" secondAttribute="leading" constant="40" id="W3K-sD-z2w"/>
+                            <constraint firstItem="CQh-p9-8ge" firstAttribute="top" secondItem="b7O-Uf-3f3" secondAttribute="bottom" constant="30" id="awW-ij-5ag"/>
+                            <constraint firstItem="xGU-QP-LL8" firstAttribute="trailing" secondItem="b7O-Uf-3f3" secondAttribute="trailing" constant="40" id="fzm-oR-eCc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="b7O-Uf-3f3" id="nSq-Je-Dyq"/>
+                        <outlet property="senhaField" destination="CQh-p9-8ge" id="hEa-At-mlS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dja-GN-jfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="56.919642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

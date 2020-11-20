@@ -1,5 +1,6 @@
 //MARK: Librarys
 import Firebase
+import FirebaseDatabase
 import FirebaseAuth
 import FBSDKLoginKit
 import FBSDKCoreKit
@@ -23,6 +24,7 @@ class ViewController: UIViewController, GIDSignInDelegate {
     
     //MARK: Variables
     let logoAnimationView = LogoAnimationView()
+    private let database = Database.database().reference()
     
     //MARK: DidLoad
     override func viewDidLoad() {
@@ -62,8 +64,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
     }
     
     @IBAction func signInAction(_ sender: Any) {
-        signInButton.layer.cornerRadius = 10
-        signInButton.clipsToBounds = true
+        let vc = UIStoryboard(name: "CreateUser", bundle: nil).instantiateInitialViewController() as! CreateUserViewController
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func facebookAction(_ sender: Any) {
@@ -105,7 +107,7 @@ class ViewController: UIViewController, GIDSignInDelegate {
         }
         guard let authentication = user.authentication else {return}
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.idToken)
-       
+        
         //
         Auth.auth().signIn(with: credential, completion: { (authResult, error) in
             if (error != nil){
@@ -139,5 +141,5 @@ class ViewController: UIViewController, GIDSignInDelegate {
 extension ViewController: SwiftyGifDelegate{
     func gifDidStop(sender: UIImageView){
         logoAnimationView.isHidden = true
-        }
     }
+}
