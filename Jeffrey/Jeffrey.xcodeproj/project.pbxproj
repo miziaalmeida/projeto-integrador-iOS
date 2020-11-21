@@ -76,9 +76,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1904E2232568B5EF0017A18E /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				1904E2262568B60B0017A18E /* Controllers */,
+				1904E2252568B6040017A18E /* Views */,
+				1904E2242568B5F80017A18E /* Models */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		1904E2242568B5F80017A18E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1904E2252568B6040017A18E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1904E2262568B60B0017A18E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		191138F52563058B0039C5A3 = {
 			isa = PBXGroup;
 			children = (
+				1904E2232568B5EF0017A18E /* MVC */,
 				191139002563058C0039C5A3 /* Jeffrey */,
 				191139172563058F0039C5A3 /* JeffreyTests */,
 				191139222563058F0039C5A3 /* JeffreyUITests */,
