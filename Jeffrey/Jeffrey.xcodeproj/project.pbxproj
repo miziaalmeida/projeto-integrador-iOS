@@ -18,6 +18,9 @@
 		1911390E2563058F0039C5A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
 		191139192563058F0039C5A3 /* JeffreyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139182563058F0039C5A3 /* JeffreyTests.swift */; };
 		191139242563058F0039C5A3 /* JeffreyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139232563058F0039C5A3 /* JeffreyUITests.swift */; };
+		19139ECB256C5CD6002E6B3F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19139ECA256C5CD6002E6B3F /* RegisterViewController.swift */; };
+		19139ED0256C5CE3002E6B3F /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19139ECF256C5CE3002E6B3F /* Register.storyboard */; };
+		19139ED5256C722A002E6B3F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19139ED4256C722A002E6B3F /* User.swift */; };
 		19B97DC82566ABC600147F56 /* LogoAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B97DC72566ABC600147F56 /* LogoAnimationView.swift */; };
 		19B97DD02566AE2600147F56 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B97DCF2566AE2600147F56 /* UIView.swift */; };
 		19B97DD52566B02A00147F56 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19B97DD42566B02A00147F56 /* logo.gif */; };
@@ -61,6 +64,9 @@
 		1911391F2563058F0039C5A3 /* JeffreyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeffreyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		191139232563058F0039C5A3 /* JeffreyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeffreyUITests.swift; sourceTree = "<group>"; };
 		191139252563058F0039C5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19139ECA256C5CD6002E6B3F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		19139ECF256C5CE3002E6B3F /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		19139ED4256C722A002E6B3F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		19B97DC72566ABC600147F56 /* LogoAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAnimationView.swift; sourceTree = "<group>"; };
 		19B97DCF2566AE2600147F56 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		19B97DD42566B02A00147F56 /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				19B97DE02566B22200147F56 /* LaunchSreen */,
+				19139ED4256C722A002E6B3F /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 			children = (
 				191139052563058C0039C5A3 /* ViewController.swift */,
 				19096FB725674BA900FDB2B0 /* CreateUserViewController.swift */,
+				19139ECA256C5CD6002E6B3F /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +197,7 @@
 				1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */,
 				191139072563058C0039C5A3 /* Main.storyboard */,
 				19096FB225674A7100FDB2B0 /* CreateUser.storyboard */,
+				19139ECF256C5CE3002E6B3F /* Register.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -339,6 +348,7 @@
 			files = (
 				1911390E2563058F0039C5A3 /* LaunchScreen.storyboard in Resources */,
 				19096FB325674A7100FDB2B0 /* CreateUser.storyboard in Resources */,
+				19139ED0256C5CE3002E6B3F /* Register.storyboard in Resources */,
 				1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */,
 				19B97DF82566BDC600147F56 /* GoogleService-Info.plist in Resources */,
 				19B97DD52566B02A00147F56 /* logo.gif in Resources */,
@@ -523,7 +533,9 @@
 			files = (
 				19B97DD02566AE2600147F56 /* UIView.swift in Sources */,
 				191139062563058C0039C5A3 /* ViewController.swift in Sources */,
+				19139ECB256C5CD6002E6B3F /* RegisterViewController.swift in Sources */,
 				19B97DC82566ABC600147F56 /* LogoAnimationView.swift in Sources */,
+				19139ED5256C722A002E6B3F /* User.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
 				19096FB825674BA900FDB2B0 /* CreateUserViewController.swift in Sources */,

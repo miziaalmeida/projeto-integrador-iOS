@@ -39,10 +39,9 @@ class ViewController: UIViewController, GIDSignInDelegate {
         //MARK: View
         viewOne?.backgroundColor = .black
         
-        
+        configureSignIn()
         configureGoogleButton()
         configureFacebookButton()
-        
         currentUserName()
     }
     
@@ -52,6 +51,10 @@ class ViewController: UIViewController, GIDSignInDelegate {
         logoAnimationView.logoGifImageView.startAnimatingGif()
     }
     
+    @IBAction func didTapRegister(_ sender: Any) {
+        let vc = UIStoryboard(name: "CreateUser", bundle: nil).instantiateInitialViewController() as! CreateViewController
+        present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func nameUserAction(_ sender: Any) {
     }
@@ -64,8 +67,6 @@ class ViewController: UIViewController, GIDSignInDelegate {
     }
     
     @IBAction func signInAction(_ sender: Any) {
-        let vc = UIStoryboard(name: "CreateUser", bundle: nil).instantiateInitialViewController() as! CreateUserViewController
-        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func facebookAction(_ sender: Any) {
@@ -118,13 +119,6 @@ class ViewController: UIViewController, GIDSignInDelegate {
         })
     }
     
-    func configureFacebookButton() {
-        facebookButton?.backgroundColor? = .systemBlue
-        facebookButton?.layer.cornerRadius = 10
-        facebookButton.clipsToBounds = true
-    }
-    
-    
     @IBAction func googleAction(_ sender: Any) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance()?.signIn()
@@ -134,6 +128,18 @@ class ViewController: UIViewController, GIDSignInDelegate {
         googleButton?.backgroundColor? = .systemRed
         googleButton?.layer.cornerRadius = 10
         googleButton.clipsToBounds = true
+    }
+    
+    func configureFacebookButton() {
+        facebookButton?.backgroundColor? = .systemBlue
+        facebookButton?.layer.cornerRadius = 10
+        facebookButton.clipsToBounds = true
+    }
+    
+    func configureSignIn(){
+        signInButton?.backgroundColor? = .systemGreen
+        signInButton?.layer.cornerRadius = 10
+        signInButton.clipsToBounds = true
     }
 }
 
