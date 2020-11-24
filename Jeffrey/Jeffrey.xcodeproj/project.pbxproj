@@ -112,7 +112,6 @@
 		191138F52563058B0039C5A3 = {
 			isa = PBXGroup;
 			children = (
-				19B97DDC2566B1E900147F56 /* MVC */,
 				191139002563058C0039C5A3 /* Jeffrey */,
 				191139172563058F0039C5A3 /* JeffreyTests */,
 				191139222563058F0039C5A3 /* JeffreyUITests */,
@@ -135,6 +134,9 @@
 		191139002563058C0039C5A3 /* Jeffrey */ = {
 			isa = PBXGroup;
 			children = (
+				19B97DDF2566B1FD00147F56 /* View */,
+				19B97DDE2566B1F800147F56 /* Controller */,
+				19B97DDD2566B1F400147F56 /* Model */,
 				191139012563058C0039C5A3 /* AppDelegate.swift */,
 				191139032563058C0039C5A3 /* SceneDelegate.swift */,
 				1911390A2563058F0039C5A3 /* Assets.xcassets */,
@@ -162,36 +164,28 @@
 			path = JeffreyUITests;
 			sourceTree = "<group>";
 		};
-		19B97DDC2566B1E900147F56 /* MVC */ = {
-			isa = PBXGroup;
-			children = (
-				19B97DDF2566B1FD00147F56 /* Views */,
-				19B97DDE2566B1F800147F56 /* Controllers */,
-				19B97DDD2566B1F400147F56 /* Models */,
-			);
-			path = MVC;
-			sourceTree = "<group>";
-		};
-		19B97DDD2566B1F400147F56 /* Models */ = {
+		19B97DDD2566B1F400147F56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				19B97DE02566B22200147F56 /* LaunchSreen */,
 				19139ED4256C722A002E6B3F /* User.swift */,
 			);
-			path = Models;
+			name = Model;
+			path = ../MVC/Model;
 			sourceTree = "<group>";
 		};
-		19B97DDE2566B1F800147F56 /* Controllers */ = {
+		19B97DDE2566B1F800147F56 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				191139052563058C0039C5A3 /* ViewController.swift */,
 				19096FB725674BA900FDB2B0 /* CreateUserViewController.swift */,
 				19139ECA256C5CD6002E6B3F /* RegisterViewController.swift */,
 			);
-			path = Controllers;
+			name = Controller;
+			path = ../MVC/Controller;
 			sourceTree = "<group>";
 		};
-		19B97DDF2566B1FD00147F56 /* Views */ = {
+		19B97DDF2566B1FD00147F56 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */,
@@ -199,7 +193,8 @@
 				19096FB225674A7100FDB2B0 /* CreateUser.storyboard */,
 				19139ECF256C5CE3002E6B3F /* Register.storyboard */,
 			);
-			path = Views;
+			name = View;
+			path = ../MVC/View;
 			sourceTree = "<group>";
 		};
 		19B97DE02566B22200147F56 /* LaunchSreen */ = {
