@@ -6,6 +6,7 @@ target 'Jeffrey' do
   use_frameworks!
 
   # Pods for Jeffrey
+<<<<<<< HEAD
   # For Login
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
@@ -26,6 +27,11 @@ target 'Jeffrey' do
   pod 'FirebaseCore'
   pod 'Firebase/Database'
   pod 'Firebase/Crashlytics'
+=======
+pod 'Alamofire'
+pod 'SnapKit' , '~> 5.0.0'
+
+>>>>>>> develop
 
   target 'JeffreyTests' do
     inherit! :search_paths
