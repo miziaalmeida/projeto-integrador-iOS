@@ -21,15 +21,12 @@ target 'Jeffrey' do
   #For Google Login
   pod 'GoogleSignIn'
 
-  #For LaunchScreen
-  pod 'SwiftyGif'
-
   #For DataBase
   pod 'Firebase'
   pod 'FirebaseCore'
   pod 'Firebase/Database'
   pod 'Firebase/Crashlytics'
-   
+
   target 'JeffreyTests' do
     inherit! :search_paths
     # Pods for testing
