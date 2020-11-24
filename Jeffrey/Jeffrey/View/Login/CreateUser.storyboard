@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6LZ-b9-Gbg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create View Controller-->
+        <scene sceneID="UrX-Ey-Wn2">
+            <objects>
+                <viewController id="6LZ-b9-Gbg" customClass="CreateViewController" customModule="Jeffrey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhh-Kw-bZ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jeffrey" translatesAutoresizingMaskIntoConstraints="NO" id="u7e-y2-8pF">
+                                <rect key="frame" x="87" y="144" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="B1j-vP-dmS"/>
+                                    <constraint firstAttribute="height" constant="128" id="P65-Ad-2OT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQg-8m-9lG">
+                                <rect key="frame" x="45" y="580" width="324" height="60"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="clp-8T-i9X"/>
+                                    <constraint firstAttribute="height" constant="60" id="e9P-2P-uju"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Google">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="googleTap:" destination="6LZ-b9-Gbg" eventType="touchUpInside" id="UOX-c4-2Ra"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vc-Kt-awW">
+                                <rect key="frame" x="45" y="500" width="324" height="60"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Boo-Jd-uzW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookTap:" destination="6LZ-b9-Gbg" eventType="touchUpInside" id="edS-0I-3ed"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPI-4x-Hjr">
+                                <rect key="frame" x="38" y="362" width="338" height="54"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="Z4C-0k-JWx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="Cadastrar nova conta">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCreate:" destination="6LZ-b9-Gbg" eventType="touchUpInside" id="Yu3-Gw-o6f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xGU-QP-LL8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xGU-QP-LL8" firstAttribute="bottom" secondItem="WPI-4x-Hjr" secondAttribute="bottom" constant="446" id="1Vc-7Z-py5"/>
+                            <constraint firstItem="WPI-4x-Hjr" firstAttribute="top" secondItem="u7e-y2-8pF" secondAttribute="bottom" constant="90" id="2EX-o9-W8a"/>
+                            <constraint firstItem="u7e-y2-8pF" firstAttribute="top" secondItem="xGU-QP-LL8" secondAttribute="top" constant="100" id="COT-ld-aG3"/>
+                            <constraint firstItem="WPI-4x-Hjr" firstAttribute="leading" secondItem="xGU-QP-LL8" secondAttribute="leading" constant="38" id="DRt-0d-p6l"/>
+                            <constraint firstItem="CQg-8m-9lG" firstAttribute="top" secondItem="4vc-Kt-awW" secondAttribute="bottom" constant="20" id="Gkw-9C-Acd"/>
+                            <constraint firstItem="CQg-8m-9lG" firstAttribute="leading" secondItem="xGU-QP-LL8" secondAttribute="leading" constant="45" id="KKF-uw-gL5"/>
+                            <constraint firstItem="xGU-QP-LL8" firstAttribute="trailing" secondItem="4vc-Kt-awW" secondAttribute="trailing" constant="45" id="Lib-Nu-WJR"/>
+                            <constraint firstItem="xGU-QP-LL8" firstAttribute="bottom" secondItem="CQg-8m-9lG" secondAttribute="bottom" constant="222" id="Mu2-rw-zW3"/>
+                            <constraint firstItem="u7e-y2-8pF" firstAttribute="leading" secondItem="xGU-QP-LL8" secondAttribute="leading" constant="87" id="N9s-bU-olI"/>
+                            <constraint firstItem="xGU-QP-LL8" firstAttribute="trailing" secondItem="WPI-4x-Hjr" secondAttribute="trailing" constant="38" id="aKR-K3-xXx"/>
+                            <constraint firstItem="xGU-QP-LL8" firstAttribute="trailing" secondItem="u7e-y2-8pF" secondAttribute="trailing" constant="87" id="cGe-Bz-1su"/>
+                            <constraint firstItem="4vc-Kt-awW" firstAttribute="top" secondItem="WPI-4x-Hjr" secondAttribute="bottom" constant="84" id="cis-yZ-En6"/>
+                            <constraint firstItem="xGU-QP-LL8" firstAttribute="trailing" secondItem="CQg-8m-9lG" secondAttribute="trailing" constant="45" id="l3s-Xe-fg4"/>
+                            <constraint firstItem="4vc-Kt-awW" firstAttribute="leading" secondItem="xGU-QP-LL8" secondAttribute="leading" constant="45" id="pjW-T6-9bI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="createUser" destination="WPI-4x-Hjr" id="8sz-jH-LDh"/>
+                        <outlet property="facebookLogin" destination="4vc-Kt-awW" id="cWT-9u-nAo"/>
+                        <outlet property="googleLogin" destination="CQg-8m-9lG" id="XZZ-El-fGr"/>
+                        <outlet property="logoImage" destination="u7e-y2-8pF" id="o6W-H4-W5B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dja-GN-jfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="56.919642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Jeffrey" width="200" height="200"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

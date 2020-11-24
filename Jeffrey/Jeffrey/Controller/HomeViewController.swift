@@ -16,7 +16,7 @@ class HomeViewController: UIViewController{
     @IBOutlet weak var labelName: UILabel!
 
     
-    var arrayMovies = [Movie]()
+    var arrayMovies = [MenuMovie]()
    // var arrayMovies = [Series]()
 
 
@@ -31,26 +31,24 @@ class HomeViewController: UIViewController{
         self.tableViewList.separatorStyle = UITableViewCell.SeparatorStyle.none
 
         
-           arrayMovies.append(Movie(myImage: "csi"))
-           arrayMovies.append(Movie(myImage: "bly"))
-           arrayMovies.append(Movie(myImage: "eapeac"))
-           arrayMovies.append(Movie(myImage: "fear"))
-           arrayMovies.append(Movie(myImage: "mlnp"))
-           arrayMovies.append(Movie(myImage: "simpson"))
-            arrayMovies.append(Movie(myImage: "csi"))
-            arrayMovies.append(Movie(myImage: "bly"))
-            arrayMovies.append(Movie(myImage: "eapeac"))
-            arrayMovies.append(Movie(myImage: "fear"))
-            arrayMovies.append(Movie(myImage: "mlnp"))
-            arrayMovies.append(Movie(myImage: "simpson"))
-            arrayMovies.append(Movie(myImage: "csi"))
-            arrayMovies.append(Movie(myImage: "bly"))
-            arrayMovies.append(Movie(myImage: "eapeac"))
-            arrayMovies.append(Movie(myImage: "fear"))
-            arrayMovies.append(Movie(myImage: "mlnp"))
-            arrayMovies.append(Movie(myImage: "simpson"))
-
-        
+           arrayMovies.append(MenuMovie(myImage: "csi"))
+           arrayMovies.append(MenuMovie(myImage: "bly"))
+           arrayMovies.append(MenuMovie(myImage: "eapeac"))
+           arrayMovies.append(MenuMovie(myImage: "fear"))
+           arrayMovies.append(MenuMovie(myImage: "mlnp"))
+           arrayMovies.append(MenuMovie(myImage: "simpson"))
+            arrayMovies.append(MenuMovie(myImage: "csi"))
+            arrayMovies.append(MenuMovie(myImage: "bly"))
+            arrayMovies.append(MenuMovie(myImage: "eapeac"))
+            arrayMovies.append(MenuMovie(myImage: "fear"))
+            arrayMovies.append(MenuMovie(myImage: "mlnp"))
+            arrayMovies.append(MenuMovie(myImage: "simpson"))
+            arrayMovies.append(MenuMovie(myImage: "csi"))
+            arrayMovies.append(MenuMovie(myImage: "bly"))
+            arrayMovies.append(MenuMovie(myImage: "eapeac"))
+            arrayMovies.append(MenuMovie(myImage: "fear"))
+            arrayMovies.append(MenuMovie(myImage: "mlnp"))
+            arrayMovies.append(MenuMovie(myImage: "simpson"))
     }
 
     

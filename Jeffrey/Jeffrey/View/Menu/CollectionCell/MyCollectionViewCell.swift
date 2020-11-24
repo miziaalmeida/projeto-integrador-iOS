@@ -8,21 +8,18 @@
 import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var imageView: UIImageView!
     
     static let identifier = "MyCollectionViewCell"
+    var arrayMovie = [MenuMovie]()
     
     static func nib() -> UINib{
         return UINib(nibName: "MyCollectionViewCell", bundle: nil)
     }
     
-    public func configure(with movie: Movie){
+    public func configure(with movie: MenuMovie){
         self.imageView.image = UIImage(named: movie.myImage)
     }
-    
-    var arrayMovie = [Movie]()
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

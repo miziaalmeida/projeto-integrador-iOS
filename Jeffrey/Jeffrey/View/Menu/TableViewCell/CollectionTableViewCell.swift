@@ -10,7 +10,7 @@ import UIKit
 class CollectionTableViewCell: UITableViewCell {
     
     @IBOutlet weak var myCollectionView: UICollectionView!
-    var arrayMovie = [Movie]()
+    var arrayMovie = [MenuMovie]()
     
     static let identifier = "CollectionTableViewCell"
     
@@ -18,10 +18,9 @@ class CollectionTableViewCell: UITableViewCell {
         return UINib(nibName: "CollectionTableViewCell", bundle: nil)
     }
     
-    public func configure(with movie: [Movie]){
+    public func configure(with movie: [MenuMovie]){
         self.arrayMovie = movie
         myCollectionView.reloadData()
-        
     }
   
     
