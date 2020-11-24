@@ -23,16 +23,12 @@ class ViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet weak var googleButton: UIButton!
     
     //MARK: Variables
-   // let logoAnimationView = LogoAnimationView()
 //    private let database = Database.database().reference()
     
     //MARK: DidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK: Logo
-//        view.addSubview(logoAnimationView)
-//        logoAnimationView.pinEdgesToSuperView()
-//        logoAnimationView.logoGifImageView.delegate = self
         
         GIDSignIn.sharedInstance()?.delegate = self
         
