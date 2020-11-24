@@ -6,6 +6,9 @@ target 'Jeffrey' do
   use_frameworks!
 
   # Pods for Jeffrey
+  pod 'Alamofire'
+  pod 'SnapKit' , '~> 5.0.0'
+
   # For Login
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
@@ -14,12 +17,9 @@ target 'Jeffrey' do
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
   pod 'FBSDKShareKit'
-  
+
   #For Google Login
   pod 'GoogleSignIn'
-  
-  #For LaunchScreen
-  pod 'SwiftyGif'
 
   #For DataBase
   pod 'Firebase'
@@ -30,6 +30,8 @@ target 'Jeffrey' do
   target 'JeffreyTests' do
     inherit! :search_paths
     # Pods for testing
+   pod 'Kingfisher', '~> 5.0'
+
   end
 
   target 'JeffreyUITests' do
