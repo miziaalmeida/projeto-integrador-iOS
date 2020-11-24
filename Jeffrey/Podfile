@@ -29,10 +29,12 @@ target 'Jeffrey' do
   pod 'FirebaseCore'
   pod 'Firebase/Database'
   pod 'Firebase/Crashlytics'
-
+   
   target 'JeffreyTests' do
     inherit! :search_paths
     # Pods for testing
+   pod 'Kingfisher', '~> 5.0'
+
   end
 
   target 'JeffreyUITests' do
