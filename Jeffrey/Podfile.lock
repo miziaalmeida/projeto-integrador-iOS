@@ -124,7 +124,6 @@ PODS:
   - nanopb/encode (2.30906.0)
   - PromisesObjC (1.2.11)
   - SnapKit (5.0.1)
-  - SwiftyGif (5.3.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -140,7 +139,6 @@ DEPENDENCIES:
   - GoogleSignIn
   - Kingfisher (~> 5.0)
   - SnapKit (~> 5.0.0)
-  - SwiftyGif
 
 SPEC REPOS:
   trunk:
@@ -168,7 +166,6 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SnapKit
-    - SwiftyGif
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
@@ -195,8 +192,7 @@ SPEC CHECKSUMS:
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
 
-PODFILE CHECKSUM: 79c147329678639deff4666dde76c5bd3c796bca
+PODFILE CHECKSUM: b69e84047ac8074e849cc792852674da681cc699
 
 COCOAPODS: 1.10.0
