@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		191139022563058C0039C5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139012563058C0039C5A3 /* AppDelegate.swift */; };
 		191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139032563058C0039C5A3 /* SceneDelegate.swift */; };
-		191139062563058C0039C5A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139052563058C0039C5A3 /* ViewController.swift */; };
 		191139092563058C0039C5A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191139072563058C0039C5A3 /* Main.storyboard */; };
 		1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1911390A2563058F0039C5A3 /* Assets.xcassets */; };
 		1911390E2563058F0039C5A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
 		191139192563058F0039C5A3 /* JeffreyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139182563058F0039C5A3 /* JeffreyTests.swift */; };
 		191139242563058F0039C5A3 /* JeffreyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139232563058F0039C5A3 /* JeffreyUITests.swift */; };
+		19439113256DBB9000E7381C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19439110256DBB9000E7381C /* RegisterViewController.swift */; };
+		19439114256DBB9000E7381C /* CreateUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19439111256DBB9000E7381C /* CreateUserViewController.swift */; };
+		19439115256DBB9000E7381C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19439112256DBB9000E7381C /* ViewController.swift */; };
+		1943911A256DBB9C00E7381C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19439119256DBB9C00E7381C /* User.swift */; };
+		19439121256DBBDC00E7381C /* CreateUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943911F256DBBDC00E7381C /* CreateUser.storyboard */; };
+		19439122256DBBDC00E7381C /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19439120256DBBDC00E7381C /* Register.storyboard */; };
 		22843AFEEBF81CE0E1F9F4F4 /* Pods_JeffreyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6BD2C4BD1A6EBA84215DD5F /* Pods_JeffreyTests.framework */; };
 		7CCECDAC3916FCBE72FD77EF /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D25F9E518C8DA947BD2FD9B4 /* Pods_Jeffrey_JeffreyUITests.framework */; };
 		99D23ED44DD62504F2EE70F1 /* Pods_Jeffrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4199DF9C383E91D9FAF75068 /* Pods_Jeffrey.framework */; };
@@ -58,7 +63,6 @@
 		191138FE2563058B0039C5A3 /* Jeffrey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeffrey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		191139012563058C0039C5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		191139032563058C0039C5A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		191139052563058C0039C5A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		191139082563058C0039C5A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1911390A2563058F0039C5A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1911390D2563058F0039C5A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +73,12 @@
 		1911391F2563058F0039C5A3 /* JeffreyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeffreyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		191139232563058F0039C5A3 /* JeffreyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeffreyUITests.swift; sourceTree = "<group>"; };
 		191139252563058F0039C5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19439110256DBB9000E7381C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		19439111256DBB9000E7381C /* CreateUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserViewController.swift; sourceTree = "<group>"; };
+		19439112256DBB9000E7381C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		19439119256DBB9C00E7381C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1943911F256DBBDC00E7381C /* CreateUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateUser.storyboard; sourceTree = "<group>"; };
+		19439120256DBBDC00E7381C /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		4199DF9C383E91D9FAF75068 /* Pods_Jeffrey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jeffrey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CA11D3674E266BBCEA67B3 /* Pods-JeffreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.debug.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6405B972D02E6663AA33488E /* Pods-Jeffrey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey.debug.xcconfig"; path = "Target Support Files/Pods-Jeffrey/Pods-Jeffrey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +161,6 @@
 				D067545F25651AD000F71CCE /* View */,
 				191139012563058C0039C5A3 /* AppDelegate.swift */,
 				191139032563058C0039C5A3 /* SceneDelegate.swift */,
-				191139052563058C0039C5A3 /* ViewController.swift */,
 				191139072563058C0039C5A3 /* Main.storyboard */,
 				1911390A2563058F0039C5A3 /* Assets.xcassets */,
 				1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */,
@@ -176,6 +185,15 @@
 				191139252563058F0039C5A3 /* Info.plist */,
 			);
 			path = JeffreyUITests;
+			sourceTree = "<group>";
+		};
+		1943911E256DBBB000E7381C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1943911F256DBBDC00E7381C /* CreateUser.storyboard */,
+				19439120256DBBDC00E7381C /* Register.storyboard */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		32F779E2436B7779869EDA47 /* Frameworks */ = {
@@ -204,6 +222,7 @@
 		D067545F25651AD000F71CCE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1943911E256DBBB000E7381C /* Login */,
 				D083B355256A0F0E000B0881 /* SeenMovie */,
 				D083B354256A0EC4000B0881 /* SelectedMovie */,
 				D083B37A256A31CC000B0881 /* DataStore.swift */,
@@ -214,6 +233,7 @@
 		D067546025651ADB00F71CCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19439119256DBB9C00E7381C /* User.swift */,
 				D067546C256525AA00F71CCE /* MovieAPI */,
 			);
 			path = Model;
@@ -222,6 +242,9 @@
 		D067546125651AE800F71CCE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				19439111256DBB9000E7381C /* CreateUserViewController.swift */,
+				19439110256DBB9000E7381C /* RegisterViewController.swift */,
+				19439112256DBB9000E7381C /* ViewController.swift */,
 				D0E93C012568CD7200322962 /* SelectedMovieController.swift */,
 				D083B375256A15D7000B0881 /* SeenMovieController.swift */,
 			);
@@ -273,6 +296,7 @@
 				191138FB2563058B0039C5A3 /* Frameworks */,
 				191138FC2563058B0039C5A3 /* Resources */,
 				4A517823708134BA0177C2E4 /* [CP] Embed Pods Frameworks */,
+				CA75464B5EBD5D9029B851D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,6 +335,7 @@
 				1911391C2563058F0039C5A3 /* Frameworks */,
 				1911391D2563058F0039C5A3 /* Resources */,
 				C8D2C2749E3FF3B9901F8855 /* [CP] Embed Pods Frameworks */,
+				CA38A813444D14AD79F6BA9E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,6 +395,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D067546325651B4E00F71CCE /* SelectedMovie.storyboard in Resources */,
+				19439121256DBBDC00E7381C /* CreateUser.storyboard in Resources */,
+				19439122256DBBDC00E7381C /* Register.storyboard in Resources */,
 				1911390E2563058F0039C5A3 /* LaunchScreen.storyboard in Resources */,
 				1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */,
 				191139092563058C0039C5A3 /* Main.storyboard in Resources */,
@@ -494,6 +521,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CA38A813444D14AD79F6BA9E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA75464B5EBD5D9029B851D6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -504,7 +565,6 @@
 				D067546825651E9600F71CCE /* SelectedMovieViewController.swift in Sources */,
 				D083B37B256A31CC000B0881 /* DataStore.swift in Sources */,
 				D0E93C022568CD7200322962 /* SelectedMovieController.swift in Sources */,
-				191139062563058C0039C5A3 /* ViewController.swift in Sources */,
 				D0675477256525CB00F71CCE /* Movie.swift in Sources */,
 				D0675473256525CB00F71CCE /* SpokenLanguage.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
@@ -512,11 +572,15 @@
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
 				D0675474256525CB00F71CCE /* BelongsToCollection.swift in Sources */,
 				D083B361256A0F9A000B0881 /* SeenMoviewTableViewCell.swift in Sources */,
+				19439114256DBB9000E7381C /* CreateUserViewController.swift in Sources */,
 				D083B376256A15D7000B0881 /* SeenMovieController.swift in Sources */,
+				19439115256DBB9000E7381C /* ViewController.swift in Sources */,
+				19439113256DBB9000E7381C /* RegisterViewController.swift in Sources */,
 				D0675478256525CB00F71CCE /* ProductionCompany.swift in Sources */,
 				D06754852565294800F71CCE /* RequestMovieAPI.swift in Sources */,
 				D083B369256A107D000B0881 /* SeenMovieViewController.swift in Sources */,
 				D0675476256525CB00F71CCE /* Genre.swift in Sources */,
+				1943911A256DBB9C00E7381C /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
