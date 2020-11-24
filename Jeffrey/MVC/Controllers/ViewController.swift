@@ -23,16 +23,16 @@ class ViewController: UIViewController, GIDSignInDelegate {
     @IBOutlet weak var googleButton: UIButton!
     
     //MARK: Variables
-    let logoAnimationView = LogoAnimationView()
+   // let logoAnimationView = LogoAnimationView()
     private let database = Database.database().reference()
     
     //MARK: DidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         //MARK: Logo
-        view.addSubview(logoAnimationView)
-        logoAnimationView.pinEdgesToSuperView()
-        logoAnimationView.logoGifImageView.delegate = self
+//        view.addSubview(logoAnimationView)
+//        logoAnimationView.pinEdgesToSuperView()
+//        logoAnimationView.logoGifImageView.delegate = self
         
         GIDSignIn.sharedInstance()?.delegate = self
         
@@ -48,7 +48,7 @@ class ViewController: UIViewController, GIDSignInDelegate {
     //MARK: DidAppear
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
-        logoAnimationView.logoGifImageView.startAnimatingGif()
+       // logoAnimationView.logoGifImageView.startAnimatingGif()
     }
     
     @IBAction func didTapRegister(_ sender: Any) {
@@ -144,8 +144,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
 }
 
 //MARK: SwiftyGif
-extension ViewController: SwiftyGifDelegate{
-    func gifDidStop(sender: UIImageView){
-        logoAnimationView.isHidden = true
-    }
-}
+//extension ViewController: SwiftyGifDelegate{
+//    func gifDidStop(sender: UIImageView){
+//        logoAnimationView.isHidden = true
+//    }
+//}
