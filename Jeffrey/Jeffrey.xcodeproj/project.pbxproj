@@ -230,6 +230,43 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		19A215AB256DCD0500F69631 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				19439119256DBB9C00E7381C /* User.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		19A215AC256DCD2B00F69631 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				19439112256DBB9000E7381C /* ViewController.swift */,
+				19439110256DBB9000E7381C /* RegisterViewController.swift */,
+				19439111256DBB9000E7381C /* CreateUserViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		19A215AD256DCD6300F69631 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				19BAAB26256DC45E0081D215 /* SearchViewController.swift */,
+				19BAAB27256DC45E0081D215 /* HomeViewController.swift */,
+				19BAAB28256DC45E0081D215 /* MenuViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		19A215AE256DCD8700F69631 /* SelectedMovies */ = {
+			isa = PBXGroup;
+			children = (
+				D083B375256A15D7000B0881 /* SeenMovieController.swift */,
+				D0E93C012568CD7200322962 /* SelectedMovieController.swift */,
+			);
+			path = SelectedMovies;
+			sourceTree = "<group>";
+		};
 		19BAAAFB256DC3EF0081D215 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,8 +357,8 @@
 		D067546025651ADB00F71CCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19A215AB256DCD0500F69631 /* Login */,
 				19BAAB25256DC4330081D215 /* Menu */,
-				19439119256DBB9C00E7381C /* User.swift */,
 				D067546C256525AA00F71CCE /* MovieAPI */,
 			);
 			path = Model;
@@ -330,14 +367,9 @@
 		D067546125651AE800F71CCE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				19BAAB27256DC45E0081D215 /* HomeViewController.swift */,
-				19BAAB28256DC45E0081D215 /* MenuViewController.swift */,
-				19BAAB26256DC45E0081D215 /* SearchViewController.swift */,
-				19439111256DBB9000E7381C /* CreateUserViewController.swift */,
-				19439110256DBB9000E7381C /* RegisterViewController.swift */,
-				19439112256DBB9000E7381C /* ViewController.swift */,
-				D0E93C012568CD7200322962 /* SelectedMovieController.swift */,
-				D083B375256A15D7000B0881 /* SeenMovieController.swift */,
+				19A215AE256DCD8700F69631 /* SelectedMovies */,
+				19A215AD256DCD6300F69631 /* Home */,
+				19A215AC256DCD2B00F69631 /* Login */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
