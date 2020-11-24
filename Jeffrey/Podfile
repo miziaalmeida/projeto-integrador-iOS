@@ -1,0 +1,45 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Jeffrey' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Jeffrey
+<<<<<<< HEAD
+  # For Login
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+
+  #For Facebook Login
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKShareKit'
+  
+  #For Google Login
+  pod 'GoogleSignIn'
+  
+  #For LaunchScreen
+  pod 'SwiftyGif'
+
+  #For DataBase
+  pod 'Firebase'
+  pod 'FirebaseCore'
+  pod 'Firebase/Database'
+  pod 'Firebase/Crashlytics'
+=======
+pod 'Alamofire'
+pod 'SnapKit' , '~> 5.0.0'
+
+>>>>>>> develop
+
+  target 'JeffreyTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'JeffreyUITests' do
+    # Pods for testing
+  end
+
+end
