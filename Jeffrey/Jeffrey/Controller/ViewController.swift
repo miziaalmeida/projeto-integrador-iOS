@@ -24,7 +24,7 @@ class ViewController: UIViewController, GIDSignInDelegate {
     
     //MARK: Variables
    // let logoAnimationView = LogoAnimationView()
-    private let database = Database.database().reference()
+//    private let database = Database.database().reference()
     
     //MARK: DidLoad
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class ViewController: UIViewController, GIDSignInDelegate {
         configureSignIn()
         configureGoogleButton()
         configureFacebookButton()
-        currentUserName()
+//        currentUserName()
     }
     
     //MARK: DidAppear
@@ -98,8 +98,8 @@ class ViewController: UIViewController, GIDSignInDelegate {
     }
     
     func currentUserName()  {
-        if Auth.auth().currentUser != nil {
-        }
+//        if Auth.auth().currentUser != nil {
+//        }
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
