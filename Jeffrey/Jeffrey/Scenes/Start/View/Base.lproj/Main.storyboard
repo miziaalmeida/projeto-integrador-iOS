@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="17E-2A-6pY">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start View Controller-->
+        <scene sceneID="nKq-6j-Lfq">
+            <objects>
+                <viewController id="17E-2A-6pY" customClass="StartViewController" customModule="Jeffrey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CoY-vj-cGX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jeffrey" translatesAutoresizingMaskIntoConstraints="NO" id="qUJ-xL-N2U">
+                                <rect key="frame" x="87" y="144" width="240" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="oQM-tG-yiA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5K7-FE-6iY">
+                                <rect key="frame" x="38" y="534" width="338" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Nmm-ey-TqE"/>
+                                </constraints>
+                                <state key="normal" title="Logar"/>
+                                <connections>
+                                    <action selector="logar:" destination="17E-2A-6pY" eventType="touchUpInside" id="sK0-NM-4Nu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQX-yT-DPh">
+                                <rect key="frame" x="38" y="614" width="338" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uLj-RY-NH7"/>
+                                </constraints>
+                                <state key="normal" title="Cadastrar"/>
+                                <connections>
+                                    <action selector="cadastrar:" destination="17E-2A-6pY" eventType="touchUpInside" id="fN3-v6-p2L"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BML-HL-ueN"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="BML-HL-ueN" firstAttribute="trailing" secondItem="qUJ-xL-N2U" secondAttribute="trailing" constant="87" id="5A6-Ub-CWd"/>
+                            <constraint firstItem="BML-HL-ueN" firstAttribute="trailing" secondItem="5K7-FE-6iY" secondAttribute="trailing" constant="38" id="5iP-lv-IHd"/>
+                            <constraint firstItem="lQX-yT-DPh" firstAttribute="top" secondItem="5K7-FE-6iY" secondAttribute="bottom" constant="30" id="9HH-UR-gNJ"/>
+                            <constraint firstItem="BML-HL-ueN" firstAttribute="trailing" secondItem="lQX-yT-DPh" secondAttribute="trailing" constant="38" id="IEB-jb-ZMx"/>
+                            <constraint firstItem="BML-HL-ueN" firstAttribute="bottom" secondItem="lQX-yT-DPh" secondAttribute="bottom" constant="198" id="Som-sx-zhU"/>
+                            <constraint firstItem="lQX-yT-DPh" firstAttribute="leading" secondItem="BML-HL-ueN" secondAttribute="leading" constant="38" id="UBm-Au-pGh"/>
+                            <constraint firstItem="qUJ-xL-N2U" firstAttribute="leading" secondItem="BML-HL-ueN" secondAttribute="leading" constant="87" id="YsS-GK-Ndf"/>
+                            <constraint firstItem="5K7-FE-6iY" firstAttribute="top" secondItem="qUJ-xL-N2U" secondAttribute="bottom" constant="90" id="g2b-7c-RkL"/>
+                            <constraint firstItem="5K7-FE-6iY" firstAttribute="leading" secondItem="BML-HL-ueN" secondAttribute="leading" constant="38" id="qtL-nb-HtV"/>
+                            <constraint firstItem="qUJ-xL-N2U" firstAttribute="top" secondItem="BML-HL-ueN" secondAttribute="top" constant="100" id="r02-CR-urt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cadastrarButton" destination="lQX-yT-DPh" id="YVA-8u-smu"/>
+                        <outlet property="logarButton" destination="5K7-FE-6iY" id="9Je-sN-gNF"/>
+                        <outlet property="logoImage" destination="qUJ-xL-N2U" id="HMh-RB-m6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HfS-1g-AVl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="760.86956521739137" y="95.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Jeffrey" width="500" height="500"/>
+    </resources>
+</document>
