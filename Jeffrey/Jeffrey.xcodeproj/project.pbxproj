@@ -3,12 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0306BFEC9AFC2037113443C3 /* Pods_Jeffrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F560DA2409F521D8D09954 /* Pods_Jeffrey.framework */; };
 		178F09866E3E5A6739138324 /* Pods_JeffreyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56458720C37B3E4268DE8032 /* Pods_JeffreyTests.framework */; };
+		1909E476258E3E4E00435D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E475258E3E4E00435D07 /* Main.storyboard */; };
+		1909E47E258E3E6100435D07 /* PageStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E47D258E3E6100435D07 /* PageStartViewController.swift */; };
+		1909E483258E3E7B00435D07 /* PageStartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E482258E3E7B00435D07 /* PageStartViewModel.swift */; };
+		1909E488258E3E8F00435D07 /* StartOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E487258E3E8F00435D07 /* StartOptions.storyboard */; };
+		1909E48D258E3E9A00435D07 /* StartOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E48C258E3E9A00435D07 /* StartOptionsViewController.swift */; };
+		1909E492258E3EA600435D07 /* StartOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E491258E3EA600435D07 /* StartOptionsViewModel.swift */; };
+		1909E497258E491200435D07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E496258E491200435D07 /* LoginViewController.swift */; };
+		1909E49C258E491C00435D07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E49B258E491C00435D07 /* Login.storyboard */; };
+		1909E4A3258E493000435D07 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4A2258E493000435D07 /* LoginViewModel.swift */; };
+		1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4AA258E494E00435D07 /* RegisterViewController.swift */; };
+		1909E4B0258E495600435D07 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E4AF258E495600435D07 /* Register.storyboard */; };
+		1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4B4258E496200435D07 /* RegisterViewModel.swift */; };
+		1909E4C2258E7D8C00435D07 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4C1258E7D8C00435D07 /* UIImage+Extensions.swift */; };
+		1909E4C7258E8B4800435D07 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4C6258E8B4700435D07 /* HomeViewController.swift */; };
+		1909E4CC258E8B5600435D07 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E4CB258E8B5600435D07 /* Home.storyboard */; };
+		1909E4D7258E8BE100435D07 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4D6258E8BE100435D07 /* ForgotPasswordViewModel.swift */; };
+		1909E4DF258E8BF900435D07 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4DE258E8BF900435D07 /* ForgotPasswordViewController.swift */; };
+		1909E4E4258E8BFF00435D07 /* ForgotPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E4E3258E8BFF00435D07 /* ForgotPassword.storyboard */; };
 		191139022563058C0039C5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139012563058C0039C5A3 /* AppDelegate.swift */; };
 		191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139032563058C0039C5A3 /* SceneDelegate.swift */; };
 		1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1911390A2563058F0039C5A3 /* Assets.xcassets */; };
@@ -36,6 +54,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1909E475258E3E4E00435D07 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		1909E47D258E3E6100435D07 /* PageStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStartViewController.swift; sourceTree = "<group>"; };
+		1909E482258E3E7B00435D07 /* PageStartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStartViewModel.swift; sourceTree = "<group>"; };
+		1909E487258E3E8F00435D07 /* StartOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartOptions.storyboard; sourceTree = "<group>"; };
+		1909E48C258E3E9A00435D07 /* StartOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOptionsViewController.swift; sourceTree = "<group>"; };
+		1909E491258E3EA600435D07 /* StartOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOptionsViewModel.swift; sourceTree = "<group>"; };
+		1909E496258E491200435D07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1909E49B258E491C00435D07 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		1909E4A2258E493000435D07 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1909E4AA258E494E00435D07 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1909E4AF258E495600435D07 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		1909E4B4258E496200435D07 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		1909E4C1258E7D8C00435D07 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		1909E4C6258E8B4700435D07 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1909E4CB258E8B5600435D07 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		1909E4D6258E8BE100435D07 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		1909E4DE258E8BF900435D07 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		1909E4E3258E8BFF00435D07 /* ForgotPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPassword.storyboard; sourceTree = "<group>"; };
 		191138FE2563058B0039C5A3 /* Jeffrey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jeffrey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		191139012563058C0039C5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		191139032563058C0039C5A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +123,144 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1909E46B258E3DEC00435D07 /* PageStart */ = {
+			isa = PBXGroup;
+			children = (
+				1909E46D258E3DFA00435D07 /* ViewModel */,
+				1909E46C258E3DF600435D07 /* View */,
+			);
+			path = PageStart;
+			sourceTree = "<group>";
+		};
+		1909E46C258E3DF600435D07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1909E475258E3E4E00435D07 /* Main.storyboard */,
+				1909E47D258E3E6100435D07 /* PageStartViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1909E46D258E3DFA00435D07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1909E482258E3E7B00435D07 /* PageStartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1909E46E258E3DFF00435D07 /* StartOptions */ = {
+			isa = PBXGroup;
+			children = (
+				1909E470258E3E1100435D07 /* ViewModel */,
+				1909E46F258E3E0D00435D07 /* View */,
+			);
+			name = StartOptions;
+			sourceTree = "<group>";
+		};
+		1909E46F258E3E0D00435D07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1909E487258E3E8F00435D07 /* StartOptions.storyboard */,
+				1909E48C258E3E9A00435D07 /* StartOptionsViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1909E470258E3E1100435D07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1909E491258E3EA600435D07 /* StartOptionsViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		1909E471258E3E1C00435D07 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1909E473258E3E2700435D07 /* ViewModel */,
+				1909E472258E3E2300435D07 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1909E472258E3E2300435D07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1909E496258E491200435D07 /* LoginViewController.swift */,
+				1909E49B258E491C00435D07 /* Login.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1909E473258E3E2700435D07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1909E4A2258E493000435D07 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1909E474258E3E3000435D07 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				1909E4A1258E492400435D07 /* ViewModel */,
+				1909E4A0258E492000435D07 /* View */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		1909E4A0258E492000435D07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1909E4AA258E494E00435D07 /* RegisterViewController.swift */,
+				1909E4AF258E495600435D07 /* Register.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1909E4A1258E492400435D07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1909E4B4258E496200435D07 /* RegisterViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1909E4C0258E7D7400435D07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1909E4C1258E7D8C00435D07 /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1909E4D3258E8BBC00435D07 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				1909E4D5258E8BCF00435D07 /* ViewModel */,
+				1909E4D4258E8BC700435D07 /* View */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		1909E4D4258E8BC700435D07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1909E4DE258E8BF900435D07 /* ForgotPasswordViewController.swift */,
+				1909E4E3258E8BFF00435D07 /* ForgotPassword.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1909E4D5258E8BCF00435D07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1909E4D6258E8BE100435D07 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		191138F52563058B0039C5A3 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +318,7 @@
 		195E94C125799F6C00ACEC8D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1909E4C0258E7D7400435D07 /* Extensions */,
 				195E94C425799F8600ACEC8D /* Service */,
 				195E94C325799F7D00ACEC8D /* Environment */,
 				195E94C225799F7800ACEC8D /* Models */,
@@ -175,6 +350,13 @@
 		195E94C525799F9400ACEC8D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1909E4CB258E8B5600435D07 /* Home.storyboard */,
+				1909E4C6258E8B4700435D07 /* HomeViewController.swift */,
+				1909E4D3258E8BBC00435D07 /* ForgotPassword */,
+				1909E474258E3E3000435D07 /* Register */,
+				1909E471258E3E1C00435D07 /* Login */,
+				1909E46E258E3DFF00435D07 /* StartOptions */,
+				1909E46B258E3DEC00435D07 /* PageStart */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -213,6 +395,7 @@
 				191138FA2563058B0039C5A3 /* Sources */,
 				191138FB2563058B0039C5A3 /* Frameworks */,
 				191138FC2563058B0039C5A3 /* Resources */,
+				88B680AB13CCD96EB5D58D5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +433,7 @@
 				1911391B2563058F0039C5A3 /* Sources */,
 				1911391C2563058F0039C5A3 /* Frameworks */,
 				1911391D2563058F0039C5A3 /* Resources */,
+				E763A5FBE0A7089985DBFAB8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -308,8 +492,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1909E4CC258E8B5600435D07 /* Home.storyboard in Resources */,
+				1909E488258E3E8F00435D07 /* StartOptions.storyboard in Resources */,
+				1909E476258E3E4E00435D07 /* Main.storyboard in Resources */,
 				19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */,
+				1909E4E4258E8BFF00435D07 /* ForgotPassword.storyboard in Resources */,
+				1909E49C258E491C00435D07 /* Login.storyboard in Resources */,
 				1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */,
+				1909E4B0258E495600435D07 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +564,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		88B680AB13CCD96EB5D58D5E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C2EB403E696A8435351B8680 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,6 +603,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E763A5FBE0A7089985DBFAB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -403,8 +627,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */,
+				1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */,
+				1909E497258E491200435D07 /* LoginViewController.swift in Sources */,
+				1909E492258E3EA600435D07 /* StartOptionsViewModel.swift in Sources */,
+				1909E4C2258E7D8C00435D07 /* UIImage+Extensions.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
+				1909E4A3258E493000435D07 /* LoginViewModel.swift in Sources */,
+				1909E4DF258E8BF900435D07 /* ForgotPasswordViewController.swift in Sources */,
+				1909E48D258E3E9A00435D07 /* StartOptionsViewController.swift in Sources */,
+				1909E483258E3E7B00435D07 /* PageStartViewModel.swift in Sources */,
+				1909E4D7258E8BE100435D07 /* ForgotPasswordViewModel.swift in Sources */,
+				1909E47E258E3E6100435D07 /* PageStartViewController.swift in Sources */,
+				1909E4C7258E8B4800435D07 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
