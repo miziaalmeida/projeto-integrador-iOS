@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Ok!", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
-        viewModel?.signInTapped(controller: self)
+//        viewModel?.signInTapped(controller: self)
     }
     
     func setupButton(button: UIButton){

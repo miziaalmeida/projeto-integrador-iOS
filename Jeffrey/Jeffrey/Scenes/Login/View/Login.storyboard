@@ -11,7 +11,6 @@
         <!--Login View Controller-->
         <scene sceneID="bom-m4-tdk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1zD-xO-ZwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="ZhM-Gf-jVV" customClass="LoginViewController" customModule="Jeffrey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TiM-oE-bv6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -97,7 +96,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xuf-dT-M2x">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xuf-dT-M2x">
                                 <rect key="frame" x="37" y="467" width="340" height="80"/>
                                 <subviews>
                                     <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivm-ka-L7T">
@@ -189,16 +188,17 @@
                         <outlet property="signInButton" destination="yoB-LX-Fq2" id="Myq-q9-1Qu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zD-xO-ZwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-523.1884057971015" y="120.53571428571428"/>
         </scene>
     </scenes>
     <designables>
         <designable name="Jgs-UT-5X8">
-            <size key="intrinsicContentSize" width="49.5" height="34"/>
+            <size key="intrinsicContentSize" width="63.5" height="34"/>
         </designable>
         <designable name="dyR-bu-m6d">
-            <size key="intrinsicContentSize" width="54.5" height="34"/>
+            <size key="intrinsicContentSize" width="68.5" height="34"/>
         </designable>
     </designables>
     <resources>

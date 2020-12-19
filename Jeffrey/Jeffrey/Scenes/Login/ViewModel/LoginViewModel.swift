@@ -13,9 +13,7 @@ protocol LoginViewModelProtocol: AnyObject{
 class LoginViewModel: LoginViewModelProtocol{
     
     func signInTapped(controller: UIViewController) {
-        if let homeView = UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as? HomeViewController {
-            controller.navigationController?.pushViewController(homeView, animated: true)
-        }
+        print("Entrou")
     }
     
     func googleTap(controller: UIViewController) {
