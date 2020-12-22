@@ -18,6 +18,13 @@
 		19BAAB52256DC4DA0081D215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191139072563058C0039C5A3 /* Main.storyboard */; };
 		19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
 		61D9D72D2AB74F3C962371BC /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B45A95C1DFE9C686F2602 /* Pods_Jeffrey_JeffreyUITests.framework */; };
+		FF452A5F25917C0900C22193 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF452A5E25917C0900C22193 /* MovieAPI.swift */; };
+		FF452A6C259190EF00C22193 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF452A6B259190EF00C22193 /* Helpers.swift */; };
+		FF594B18258E92F0002E75D0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B17258E92F0002E75D0 /* Movie.swift */; };
+		FF594B1D258E9A20002E75D0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF594B1C258E9A20002E75D0 /* Home.storyboard */; };
+		FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B21258E9A47002E75D0 /* HomeViewController.swift */; };
+		FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */; };
+		FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,13 @@
 		E136EFFC1323C746AFBA30E5 /* Pods-Jeffrey-JeffreyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECBCE0AFBE32146CFCC3D7A0 /* Pods-Jeffrey-JeffreyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE03319350852EC7A80CDC64 /* Pods-JeffreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.debug.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF452A5E25917C0900C22193 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
+		FF452A6B259190EF00C22193 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		FF594B17258E92F0002E75D0 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		FF594B1C258E9A20002E75D0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		FF594B21258E9A47002E75D0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +135,7 @@
 				191139012563058C0039C5A3 /* AppDelegate.swift */,
 				191139032563058C0039C5A3 /* SceneDelegate.swift */,
 				191139072563058C0039C5A3 /* Main.storyboard */,
+				FF452A6B259190EF00C22193 /* Helpers.swift */,
 				195E94BC25799F4C00ACEC8D /* ViewController.swift */,
 				1911390A2563058F0039C5A3 /* Assets.xcassets */,
 				1911390F2563058F0039C5A3 /* Info.plist */,
@@ -181,6 +196,7 @@
 		195E94C525799F9400ACEC8D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FF594B14258E923B002E75D0 /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -195,7 +211,6 @@
 				EE03319350852EC7A80CDC64 /* Pods-JeffreyTests.debug.xcconfig */,
 				44CE52870E2F146882115B67 /* Pods-JeffreyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,6 +224,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FF594B14258E923B002E75D0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FF594B26258E9AB3002E75D0 /* View */,
+				FF594B16258E9253002E75D0 /* Model */,
+				FF594B15258E9243002E75D0 /* ViewModel */,
+			);
+			name = Home;
+			path = Jeffrey/Scenes/Home;
+			sourceTree = "<group>";
+		};
+		FF594B15258E9243002E75D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF594B21258E9A47002E75D0 /* HomeViewController.swift */,
+				FF452A5E25917C0900C22193 /* MovieAPI.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF594B16258E9253002E75D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF594B17258E92F0002E75D0 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF594B26258E9AB3002E75D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF594B1C258E9A20002E75D0 /* Home.storyboard */,
+				FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */,
+				FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,6 +273,7 @@
 				191138FA2563058B0039C5A3 /* Sources */,
 				191138FB2563058B0039C5A3 /* Frameworks */,
 				191138FC2563058B0039C5A3 /* Resources */,
+				D3E7A03873D5CB608B39BC74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,6 +311,7 @@
 				1911391B2563058F0039C5A3 /* Sources */,
 				1911391C2563058F0039C5A3 /* Frameworks */,
 				1911391D2563058F0039C5A3 /* Resources */,
+				7F44A3E9AFFD8D40250AA58E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +373,7 @@
 				19BAAB52256DC4DA0081D215 /* Main.storyboard in Resources */,
 				19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */,
 				1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */,
+				FF594B1D258E9A20002E75D0 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +438,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7F44A3E9AFFD8D40250AA58E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C2EB403E696A8435351B8680 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,6 +477,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3E7A03873D5CB608B39BC74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -411,8 +501,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */,
+				FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */,
+				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
+				FF452A5F25917C0900C22193 /* MovieAPI.swift in Sources */,
+				FF452A6C259190EF00C22193 /* Helpers.swift in Sources */,
 				195E94BD25799F4C00ACEC8D /* ViewController.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
+				FF594B18258E92F0002E75D0 /* Movie.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
