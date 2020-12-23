@@ -7,6 +7,7 @@ target 'Jeffrey' do
   pod 'Kingfisher', '~> 5.15'
   pod 'Alamofire', '~> 5.4'
   pod 'TextFieldEffects'
+  pod 'SnapKit', '~> 5.0.0'
 
   # Pods for Jeffrey
 
