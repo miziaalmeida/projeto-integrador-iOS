@@ -32,6 +32,11 @@
 		191139242563058F0039C5A3 /* JeffreyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139232563058F0039C5A3 /* JeffreyUITests.swift */; };
 		19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
 		61D9D72D2AB74F3C962371BC /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B45A95C1DFE9C686F2602 /* Pods_Jeffrey_JeffreyUITests.framework */; };
+		FF594B18258E92F0002E75D0 /* MenuMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B17258E92F0002E75D0 /* MenuMovie.swift */; };
+		FF594B1D258E9A20002E75D0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF594B1C258E9A20002E75D0 /* Home.storyboard */; };
+		FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B21258E9A47002E75D0 /* HomeViewController.swift */; };
+		FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */; };
+		FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,11 @@
 		E136EFFC1323C746AFBA30E5 /* Pods-Jeffrey-JeffreyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECBCE0AFBE32146CFCC3D7A0 /* Pods-Jeffrey-JeffreyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE03319350852EC7A80CDC64 /* Pods-JeffreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.debug.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF594B17258E92F0002E75D0 /* MenuMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuMovie.swift; sourceTree = "<group>"; };
+		FF594B1C258E9A20002E75D0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		FF594B21258E9A47002E75D0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +356,7 @@
 		195E94C525799F9400ACEC8D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FF594B14258E923B002E75D0 /* Home */,
 				1909E4D3258E8BBC00435D07 /* ForgotPassword */,
 				1909E474258E3E3000435D07 /* Register */,
 				1909E471258E3E1C00435D07 /* Login */,
@@ -376,6 +387,43 @@
 				56458720C37B3E4268DE8032 /* Pods_JeffreyTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FF594B14258E923B002E75D0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FF594B26258E9AB3002E75D0 /* View */,
+				FF594B16258E9253002E75D0 /* Model */,
+				FF594B15258E9243002E75D0 /* ViewModel */,
+			);
+			name = Home;
+			path = Jeffrey/Scenes/Home;
+			sourceTree = "<group>";
+		};
+		FF594B15258E9243002E75D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF594B21258E9A47002E75D0 /* HomeViewController.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF594B16258E9253002E75D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF594B17258E92F0002E75D0 /* MenuMovie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF594B26258E9AB3002E75D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF594B1C258E9A20002E75D0 /* Home.storyboard */,
+				FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */,
+				FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +540,7 @@
 				1909E4E4258E8BFF00435D07 /* ForgotPassword.storyboard in Resources */,
 				1909E49C258E491C00435D07 /* Login.storyboard in Resources */,
 				1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */,
+				FF594B1D258E9A20002E75D0 /* Home.storyboard in Resources */,
 				1909E4B0258E495600435D07 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,12 +669,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */,
+				FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */,
+				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
 				1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */,
 				1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */,
 				1909E497258E491200435D07 /* LoginViewController.swift in Sources */,
 				1909E492258E3EA600435D07 /* StartOptionsViewModel.swift in Sources */,
 				1909E4C2258E7D8C00435D07 /* UIImage+Extensions.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
+				FF594B18258E92F0002E75D0 /* MenuMovie.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
 				1909E4A3258E493000435D07 /* LoginViewModel.swift in Sources */,
 				1909E4DF258E8BF900435D07 /* ForgotPasswordViewController.swift in Sources */,
