@@ -12,7 +12,13 @@ import Kingfisher
 
 class HomeViewController: UIViewController {
     
-    let model:[[UIColor]] = generateRandomData()
+    let imageURL = [
+        "https://i.ytimg.com/vi/I6Gj8Fvukk4/maxresdefault.jpg",
+        "https://i.ytimg.com/vi/I6Gj8Fvukk4/maxresdefault.jpg",
+        "https://i.ytimg.com/vi/I6Gj8Fvukk4/maxresdefault.jpg",
+        "https://i.ytimg.com/vi/I6Gj8Fvukk4/maxresdefault.jpg",
+        "https://i.ytimg.com/vi/I6Gj8Fvukk4/maxresdefault.jpg"
+    ]
     
     // MARK: - Outlets
     
@@ -27,6 +33,8 @@ class HomeViewController: UIViewController {
         
         tableViewHome.delegate = self
         tableViewHome.dataSource = self
+        tableViewHome.estimatedRowHeight = 44.0
+        tableViewHome.rowHeight = UITableView.automaticDimension
        
         
         
@@ -36,26 +44,20 @@ class HomeViewController: UIViewController {
 // MARK: - Extensions
 extension HomeViewController : UITableViewDelegate{
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        // let tableViewCell = cell as? TableViewCell else { return }
-    }
-    
 }
 extension HomeViewController  : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if(indexPath.section == 0 && indexPath.row == 0 ){
+        if(indexPath.row == 0 ){
             return 400
-
-        }else {
+        }else{
             return 200
         }
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        return imageURL.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,10 +77,8 @@ extension HomeViewController : UICollectionViewDelegate{
 }
 extension HomeViewController : UICollectionViewDataSource{
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model[collectionView.tag].count
+        return imageURL.count
         
     }
     
@@ -86,36 +86,45 @@ extension HomeViewController : UICollectionViewDataSource{
         let  collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
         collectionCell.layer.cornerRadius = 10
         collectionCell.layer.masksToBounds = true
+        let imageView = UIImageView()
+        collectionCell.addSubview(imageView)
+        imageView.backgroundColor = .lightGray
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.leadingAnchor.constraint(equalTo: collectionCell.leadingAnchor, constant: 5).isActive = true
+        imageView.trailingAnchor.constraint(equalTo: collectionCell.trailingAnchor, constant: -5).isActive = true
+        imageView.topAnchor.constraint(equalTo: collectionCell.topAnchor, constant: 5).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: collectionCell.bottomAnchor, constant: 5).isActive = true
         
-        //        let url =  URL ( string : "https://assets.papelpop.com/wp-content/uploads/2019/07/Captura-de-Tela-2019-07-25-a%CC%80s-15.09.53.png " )
-        //        collectionCell.imageViewHome.kf.setImage (with: url)
-        collectionCell.backgroundColor = model[collectionView.tag][indexPath.row]
+        imageView.kf.setImage(with: URL(string: imageURL[indexPath.row]))
+    
         return collectionCell
     }
     
     
 }
-//extension HomeViewController: UICollectionViewDelegateFlowLayout{
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if(indexPath.section == 0){
-//            return CGSize(width: 50, height: 50)
-//        } else {
-//            return CGSize(width: 100, height: 100)
-//        }
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10.0
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout
-//                            collectionViewLayout: UICollectionViewLayout,
-//                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10.0
-//    }
-//}
+extension HomeViewController: UICollectionViewDelegateFlowLayout{
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if(indexPath.section == 0){
+            return CGSize(width: 150, height: 300)
+        } else {
+            return CGSize(width: 100, height: 100)
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout
+                            collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+}

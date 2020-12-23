@@ -18,10 +18,6 @@ class HomeTableViewCell: UITableViewCell {
     
     static let identifier = "tableCell"
     
-    static func nib() -> UINib{
-        return UINib(nibName: "CollectionTableViewCell", bundle: nil)
-    }
-    
    
     
     public func configure(with movie: [MenuMovie]){

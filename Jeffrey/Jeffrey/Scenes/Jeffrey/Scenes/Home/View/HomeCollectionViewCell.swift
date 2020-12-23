@@ -10,14 +10,11 @@ import Kingfisher
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
-  //  @IBOutlet weak var imageViewHome: UIImageView!
+ //  @IBOutlet weak var imageViewHome: UIImageView!
         
-        static let identifier = "collectionCell"
-        var arrayMovie = [MenuMovie]()
+        //var arrayMovie = [MenuMovie]()
         
-        static func nib() -> UINib{
-            return UINib(nibName: "MyCollectionViewCell", bundle: nil)
-        }
+    
         
 //        public func configure(with movie: MenuMovie){
 //            self.imageViewHome.image = UIImage(named: movie.myImage)
@@ -29,8 +26,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
             super.awakeFromNib()
             
 
-    //        let url = URL(string: "https://example.com/image.png")
-    //        imageView.kf.setImage(with: url)
+//            let url = URL (string: "https://www.womenshealthmag.com/sites/womenshealthmag.com/files/this-15-minute-workout-will-leave-you-feeling-like-wonder-woman-main.jpg")
+//            imageViewHome.kf.setImage (with: url)
 
         }
 

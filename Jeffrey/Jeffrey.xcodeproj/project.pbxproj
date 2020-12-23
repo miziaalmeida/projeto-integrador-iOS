@@ -19,7 +19,6 @@
 		19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
 		61D9D72D2AB74F3C962371BC /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B45A95C1DFE9C686F2602 /* Pods_Jeffrey_JeffreyUITests.framework */; };
 		FF452A5F25917C0900C22193 /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF452A5E25917C0900C22193 /* MovieAPI.swift */; };
-		FF452A6C259190EF00C22193 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF452A6B259190EF00C22193 /* Helpers.swift */; };
 		FF594B18258E92F0002E75D0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B17258E92F0002E75D0 /* Movie.swift */; };
 		FF594B1D258E9A20002E75D0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF594B1C258E9A20002E75D0 /* Home.storyboard */; };
 		FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B21258E9A47002E75D0 /* HomeViewController.swift */; };
@@ -69,7 +68,6 @@
 		ECBCE0AFBE32146CFCC3D7A0 /* Pods-Jeffrey-JeffreyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE03319350852EC7A80CDC64 /* Pods-JeffreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.debug.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF452A5E25917C0900C22193 /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
-		FF452A6B259190EF00C22193 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = ../../../Models/Helpers.swift; sourceTree = "<group>"; };
 		FF594B17258E92F0002E75D0 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		FF594B1C258E9A20002E75D0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FF594B21258E9A47002E75D0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 		195E94C225799F7800ACEC8D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FF452A6B259190EF00C22193 /* Helpers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -505,7 +502,6 @@
 				FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */,
 				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
 				FF452A5F25917C0900C22193 /* MovieAPI.swift in Sources */,
-				FF452A6C259190EF00C22193 /* Helpers.swift in Sources */,
 				195E94BD25799F4C00ACEC8D /* ViewController.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
 				FF594B18258E92F0002E75D0 /* Movie.swift in Sources */,
