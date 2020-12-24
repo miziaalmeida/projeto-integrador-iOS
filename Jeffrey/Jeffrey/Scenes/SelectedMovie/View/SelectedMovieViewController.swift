@@ -14,7 +14,7 @@ class SelectedMovieViewController: UIViewController {
     //    @IBOutlet var imageFilme: UIImageView! // retirado no novo layout da página
     @IBOutlet var imageButtonSeen: UIImageView! // MARK: ARRUMAR PARA UIButton
     @IBOutlet var imageButtonFavorite: UIImageView! // MARK: ARRUMAR PARA UIButton
-    @IBOutlet var imageButtonRaffle: UIImageView! // MARK: ARRUMAR PARA UIButton
+    @IBOutlet var imageButtonRaffle: UIButton! // MARK: ARRUMAR PARA UIButton
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelRelease: UILabel!
     @IBOutlet var labelVoteAvarage: UILabel!
@@ -22,6 +22,7 @@ class SelectedMovieViewController: UIViewController {
     @IBOutlet var segmentedControlDetails: UISegmentedControl!
     @IBOutlet var viewBackgorund: UIView!
     @IBOutlet  var buttonProviders: UIButton!
+    
     
     
     //MARK: Variables
@@ -86,27 +87,19 @@ class SelectedMovieViewController: UIViewController {
     
     // Sortar novo filme.
     @IBAction func buttonRaffle (_ sender: UIButton){
-        
-        viewModel.request { loaded in
-            if loaded{
-                // se load for true ele checa o streaming
-                
-                self.viewModel.checkProvidersOfMovie() { sucess in
-                    if sucess{
-                        // o streaming retornando true, ou seja, confirmando que existe o filme no streaming selecionado, dai mostra pro usuário
-                        self.setFields()
-                    }
-                }
+
+        viewModel.sortear { sucess in
+            if sucess{
+                self.setFields()
+            }else{
                 
             }
         }
         
+        resetButtonSeenAndFavorite()
+   
+    
         
-        // Reseta  as imagens dos icones para Não visto e Não favorito
-        imageButtonSeen.image = UIImage(systemName: "eye.slash")
-        imageButtonSeen.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        imageButtonFavorite.image = UIImage(systemName: "star")
-        imageButtonFavorite.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
     // Mostrar respectivo ao que esta selecionado no segmentedcontrol
@@ -147,15 +140,17 @@ class SelectedMovieViewController: UIViewController {
         // Chama a função que customiza o segmentControll
         customSegmentedControl.segmentControlCustom(custom: segmentedControlDetails, view: view)
         
-        // Controlador faz a requisição de um filme para API
-        viewModel.request { loaded in
-            if loaded{
+
+        
+        viewModel.sortear { sucess in
+            if sucess{
                 self.setFields()
             }
         }
         
         // Checar qual é seçao que está seleciona no segmentControll
         checkSegmentIndex()
+        resetButtonSeenAndFavorite()
     }
     
     
@@ -193,4 +188,14 @@ class SelectedMovieViewController: UIViewController {
         labelVoteAvarage.isHidden = toHideLabels
         buttonProviders.isHidden = toHideStreaming
     }
+    
+    func resetButtonSeenAndFavorite(){
+        // Reseta  as imagens dos icones para Não visto e Não favorito
+        imageButtonSeen.image = UIImage(systemName: "eye.slash")
+        imageButtonSeen.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        imageButtonFavorite.image = UIImage(systemName: "star")
+        imageButtonFavorite.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    
 }
