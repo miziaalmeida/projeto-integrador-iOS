@@ -11,7 +11,6 @@ class SelectedMovieViewController: UIViewController {
     
     //MARK: IBOutlet
     @IBOutlet var imageFilmeBackGround: UIImageView!
-    //    @IBOutlet var imageFilme: UIImageView! // retirado no novo layout da página
     @IBOutlet var imageButtonSeen: UIImageView! // MARK: ARRUMAR PARA UIButton
     @IBOutlet var imageButtonFavorite: UIImageView! // MARK: ARRUMAR PARA UIButton
     @IBOutlet var imageButtonRaffle: UIButton! // MARK: ARRUMAR PARA UIButton
@@ -26,12 +25,11 @@ class SelectedMovieViewController: UIViewController {
     
     
     //MARK: Variables
-    var viewModel = SelectedMovieViewModel() // Faz toda a lógica da viewController
+    var viewModel: SelectedMovieViewModelProtocol! 
     var customSegmentedControl = CustomSegmentControl()
     
     
     //MARK: IBACTION
-    
     // abre a tela de redirecionamento para o streaming .
     @IBAction func buttonProvider(_ sender: UIButton) {
         if let screenAddMovie = UIStoryboard(name: " Redirect", bundle: nil).instantiateInitialViewController() as? RedirectViewController{
@@ -70,7 +68,7 @@ class SelectedMovieViewController: UIViewController {
     // altera a imagem do button quando clicado  e adiciona no array
     @IBAction func buttonSeen(_ sender: UIButton){
         // altera o icone do olho aberto/fechdo
-        imageButtonSeen.image = viewModel.setButtonImageSeen(imageButton: imageButtonSeen)
+        imageButtonSeen.image = setButtonImageSeen(imageButton: imageButtonSeen)
         
         // adiciona o filme setado a lista de Já vistos
         viewModel.addMovieArraySeen()
@@ -79,7 +77,7 @@ class SelectedMovieViewController: UIViewController {
     // altera a imagem do button quando clicado  e adiciona no array
     @IBAction func buttonFavorite(_ sender: UIButton){
         // altera o icone coração
-        imageButtonFavorite.image = viewModel.setButtonImageFavorite(imageButton: imageButtonFavorite)
+        imageButtonFavorite.image = setButtonImageFavorite(imageButton: imageButtonFavorite)
         
         // adiciona o filme setado a lista de favoritos
         viewModel.addMovieArrayFavorites()
@@ -87,19 +85,16 @@ class SelectedMovieViewController: UIViewController {
     
     // Sortar novo filme.
     @IBAction func buttonRaffle (_ sender: UIButton){
-
-        viewModel.sortear { sucess in
+        
+        viewModel.raffle { sucess in
             if sucess{
                 self.setFields()
             }else{
-                
+                //                self.buttonRaffle(sender)
             }
         }
         
-        resetButtonSeenAndFavorite()
-   
-    
-        
+        resetColorButtonSeenAndFavorite()
     }
     
     // Mostrar respectivo ao que esta selecionado no segmentedcontrol
@@ -125,24 +120,21 @@ class SelectedMovieViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = SelectedMovieViewModel()
         
-        // faz a borda  arredonda da view  na parte superior.
-        viewBackgorund.layer.cornerRadius = 60
-        viewBackgorund.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        
-        
+        roundViewBorder() // Arredodondar a borda da view
+
         // arredondar botão sortear
-        viewModel.roundImage(image: imageButtonRaffle)
+        roundImageButtonRaffle(image: imageButtonRaffle)
         
-        // esconde a navigationBar
-        viewWillDisappear(false)
+        
+        viewWillDisappear(false) // esconde a navigationBar
         
         // Chama a função que customiza o segmentControll
         customSegmentedControl.segmentControlCustom(custom: segmentedControlDetails, view: view)
+   
         
-
-        
-        viewModel.sortear { sucess in
+        viewModel.raffle { sucess in
             if sucess{
                 self.setFields()
             }
@@ -150,7 +142,7 @@ class SelectedMovieViewController: UIViewController {
         
         // Checar qual é seçao que está seleciona no segmentControll
         checkSegmentIndex()
-        resetButtonSeenAndFavorite()
+        resetColorButtonSeenAndFavorite()
     }
     
     
@@ -158,7 +150,6 @@ class SelectedMovieViewController: UIViewController {
     func setFields(){
         labelTitle.text = viewModel.getTitle()
         labelRelease.text = viewModel.getRelease()
-        //        imageFilme.image = viewModel.getImageFilm()// alterado no novo layout
         textViewSinopse.text = viewModel.getOverView()
         imageFilmeBackGround.image = viewModel.getImageFilm()
         labelVoteAvarage.text = viewModel.getVoteAverage()
@@ -177,8 +168,6 @@ class SelectedMovieViewController: UIViewController {
         }
     }
     
-    
-    
     // ajusta quais Outlets são para mostrar na tela.
     func adjustLabelsLayout(toHideTextViewSinopse: Bool , toHideLabels: Bool, toHideStreaming: Bool){
         
@@ -189,12 +178,54 @@ class SelectedMovieViewController: UIViewController {
         buttonProviders.isHidden = toHideStreaming
     }
     
-    func resetButtonSeenAndFavorite(){
+    //
+    func resetColorButtonSeenAndFavorite(){
         // Reseta  as imagens dos icones para Não visto e Não favorito
         imageButtonSeen.image = UIImage(systemName: "eye.slash")
         imageButtonSeen.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         imageButtonFavorite.image = UIImage(systemName: "star")
         imageButtonFavorite.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    
+    // Arredonda a imagem do botão Sortear
+    func roundImageButtonRaffle(image:UIButton){
+        imageButtonRaffle.layer.cornerRadius = image.frame.size.width/2
+        imageButtonRaffle.clipsToBounds = true
+        
+        imageButtonRaffle.setImage(UIImage(named: "novofilme"), for: .normal)
+        imageButtonRaffle.backgroundColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
+        
+    }
+    
+    // Seta a imagem do botão Vistos
+    func setButtonImageSeen(imageButton: UIImageView) -> UIImage {
+        
+        if imageButtonSeen.image == UIImage(systemName: "eye"){
+            imageButtonSeen.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            return UIImage(systemName: "eye.slash")!
+        }else{
+            
+            imageButtonSeen.tintColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
+            return UIImage(systemName: "eye")!
+        }
+    }
+    // Seta a imagem do botão Favoritos
+    func setButtonImageFavorite(imageButton: UIImageView) -> UIImage{
+        
+        if imageButtonFavorite.image == UIImage(systemName: "star"){
+            imageButtonFavorite.tintColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
+            return UIImage(systemName: "star.fill")!
+        }else{
+            imageButtonFavorite.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+            return UIImage(systemName: "star")!
+        }
+    }
+    
+    // faz a borda  arredonda da view  na parte superior.
+    func roundViewBorder(){
+        viewBackgorund.layer.cornerRadius = 60
+        viewBackgorund.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     

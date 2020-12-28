@@ -20,7 +20,7 @@ class SelectedMovieAPI {
     //    private var flatrate = [Flatrate]()
     
     // faz o requeste de uma lista de filmes, onde pode ser filtrado por id do genero, numero da página. obs: requisição de uma lista de 20 filmes por página
-    func requestMovie(onComplete: @escaping ([Movie]) -> Void)  {
+    func listOfFilms(onComplete: @escaping ([Movie]) -> Void)  {
         //                idPageApi = Int.random(in: 1..<10) // altera a pagina que ira mostrar os filmes obs
         
         
@@ -42,14 +42,14 @@ class SelectedMovieAPI {
     }
     
     
-    // Func para saber em quais streaming o filme está disponível
-    func checkProvaider(idMovie: Int, onComplete: @escaping ([Flatrate]) -> Void){
+    // Func que faz o request  para saber em quais streaming o filme está disponível.
+    func getProviders(idMovie: Int, onComplete: @escaping ([Flatrate]) -> Void){
         
         // faz a requisição pelo id do filme.
         AF.request("https://api.themoviedb.org/3/movie/\(idMovie)/watch/providers?api_key=16b776cd87d99568d7cf733de5593752").responseJSON { response in
             // filtro para pegar apenas os filmes disponivel para assinantes das plataformas no Brasil, excluindo filmes para alugar ou comprar.
             if let dictionary = response.value as? [String: Any], let arrayResults = dictionary["results"] as? [String:Any] , let restultBrasil = arrayResults["BR"] as? [String: Any], let flatrate = restultBrasil["flatrate"] as? [[String: Any]] {
-            
+                
                 var arrayFlatrare = [Flatrate]()
                 
                 //faz o append dos streaming no arrayFlatrate
