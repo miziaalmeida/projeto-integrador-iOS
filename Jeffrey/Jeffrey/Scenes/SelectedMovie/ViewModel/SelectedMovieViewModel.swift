@@ -30,6 +30,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     private var genre = 28 // ID do gênero para a requisicão na API! Fixo 28 para testes! obs: Acão
     private var idProvider = 8 // testar
     private var providerName : String?
+    var idPage: Int = 8 // obs: page da app por padrão começa na primeira
     var idMovieInArray = 0 // Indice do Filme no array de Filmes, é alterado cada vez que é sorteado um novo filme.
     
     var arrayMovieFavorites = [Movie]() // Lista Filmes Favorios
@@ -46,24 +47,43 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             raffleListOfAPIMovies { sucess in
                 
                 self.checkProvidersOfMovies { sucess in
-                    print("\(self.arrayMovieFilterProvider [0])hhahahahahahah tem")
+                   
                     completion(true)
                     return
                 }
             }
         }else{ // se array não for vazio
-            if idMovieInArray < arrayMovieFilterProvider.count{
+            if idMovieInArray < arrayMovieFilterProvider.count - 1  {
+                print(arrayMovieFilterProvider.count)
+                print(idMovieInArray)
                 newMovieInArray()
                 completion(true)
                 return
+            }else{
+                arrayMovies = [Movie]()
+                arrayMovieFilterProvider = [Movie]()
+                idMovieInArray = 0
+                idPage += 1
+                raffleListOfAPIMovies { sucess in
+                    
+                    self.checkProvidersOfMovies { sucess in
+                       
+                        completion(true)
+                        return
+                    }
+                }
+                
             }
+            
+            
             
         }
     }
     
     // sortear uma lista de filmes
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void) {
-        selectedMovieAPI.listOfFilms { arrayMovies in
+        
+        selectedMovieAPI.listOfFilms(idPage: idPage) { arrayMovies in
             
             self.setArrayMovies(arrayMovie: arrayMovies)
             completion(true)
@@ -125,7 +145,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         setNameProvider(providerName: provider)
         for flatrate in flatrates{
             if flatrate.providerName == provider{
-                print("esse filme esta na \(provider)")
+               
                 return true
             }
             
@@ -157,7 +177,12 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     }
     
     func getTitle() -> String {
-        return arrayMovieFilterProvider [idMovieInArray].title
+        
+        if let tittle = arrayMovieFilterProvider [idMovieInArray].title{
+            return tittle
+        }
+         
+        return ""
     }
     
     func getRelease() -> String {

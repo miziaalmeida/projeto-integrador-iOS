@@ -17,9 +17,9 @@ class  RedirectViewModel{
     }
     
     func searchInTelecinePlay(movieName:String) -> String{
-        let str = movieName.replacingOccurrences(of: " ", with: "%20")
+        let str = movieName.replacingOccurrences(of: " ", with: "_")
         
-        return "https://www.telecineplay.com.br/search?term=\(str  )"
+        return "https://www.telecineplay.com.br/search?term=\(str  )".folding(options: .diacriticInsensitive, locale: .current) // retira acentos
  
     }
     

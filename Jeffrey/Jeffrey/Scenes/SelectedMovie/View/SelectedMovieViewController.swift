@@ -150,6 +150,7 @@ class SelectedMovieViewController: UIViewController {
     
     // setar o que vair ser mostrado na tela.
     func setFields(){
+        print(String(viewModel.getTitle()))
         labelTitle.text = viewModel.getTitle()
         labelRelease.text = viewModel.getRelease()
         textViewSinopse.text = viewModel.getOverView()

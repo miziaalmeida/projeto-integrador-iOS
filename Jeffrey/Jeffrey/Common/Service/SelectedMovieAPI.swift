@@ -20,11 +20,11 @@ class SelectedMovieAPI {
     //    private var flatrate = [Flatrate]()
     
     // faz o requeste de uma lista de filmes, onde pode ser filtrado por id do genero, numero da página. obs: requisição de uma lista de 20 filmes por página
-    func listOfFilms(onComplete: @escaping ([Movie]) -> Void)  {
-        //                idPageApi = Int.random(in: 1..<10) // altera a pagina que ira mostrar os filmes obs
+    func listOfFilms(idPage: Int, onComplete: @escaping ([Movie]) -> Void)  {
+//                        idPageApi = Int.random(in: 1..<50) // altera a pagina que ira mostrar os filmes obs
         
-        
-        AF.request("\(baseURLAPI)\(keyAPI)&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=\(idPageApi)&with_genres=\(genre)").responseJSON { response in
+        print("novo request")
+        AF.request("\(baseURLAPI)\(keyAPI)&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=\(idPage)&with_genres=\(genre)").responseJSON { response in
             if let dictionary = response.value as? [String: Any], let arrayResults = dictionary["results"] as? [[String:Any]]{
                 
                 var  arrayMovie = [Movie]()
