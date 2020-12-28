@@ -31,8 +31,10 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     private var idProvider = 8 // testar
     private var providerName : String?
     var idMovieInArray = 0 // Indice do Filme no array de Filmes, é alterado cada vez que é sorteado um novo filme.
+    
     var arrayMovieFavorites = [Movie]() // Lista Filmes Favorios
     var arrayMovieSeen = [Movie]() // Lista Filmes Já Vistos
+    var arrayMovieFilterProvider = [Movie]()
     
     var selectedMovieAPI = SelectedMovieAPI()
     private var customSegmentedControll = CustomSegmentControl()
@@ -40,24 +42,22 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     //MARK: FUNCS
     func raffle( completion: @escaping (Bool) -> Void){
         // se a lista for vazia, faz o request de umas lista de filmes
-        if arrayMovies .isEmpty {
+        if arrayMovieFilterProvider .isEmpty {
             raffleListOfAPIMovies { sucess in
                 
+                self.checkProvidersOfMovies { sucess in
+                    print("\(self.arrayMovieFilterProvider [0])hhahahahahahah tem")
+                    completion(true)
+                    return
+                }
+            }
+        }else{ // se array não for vazio
+            if idMovieInArray < arrayMovieFilterProvider.count{
+                newMovieInArray()
                 completion(true)
                 return
             }
-        }else{
-            newMovieInArray()
-            checkProvidersOfMovie { sucess in
-                if sucess{
-                    print("\(self.arrayMovies[self.idMovieInArray])hhahahahahahah tem")
-                    completion(true)
-                    return
-                    
-                }else{
-                    completion(false)
-                }
-            }
+            
         }
     }
     
@@ -90,17 +90,35 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         idMovieInArray += 1
     }
     
-    func checkProvidersOfMovie( completion: @escaping (Bool) -> Void) {
-        
-        if let idMovie = arrayMovies[idMovieInArray].id{
-            selectedMovieAPI.getProviders(idMovie: idMovie) { arrayFlatrate in
-                
-                if self.providerSelected(provider: "NOW", flatrates: arrayFlatrate){
-                    completion(true)
-                    return
+//    func checkProvidersOfMovie( completion: @escaping (Bool) -> Void) {
+//
+//        if let idMovie = arrayMovies[idMovieInArray].id{
+//            selectedMovieAPI.getProviders(idMovie: idMovie) { arrayFlatrate in
+//
+//                if self.providerSelected(provider: "NOW", flatrates: arrayFlatrate){
+//                    completion(true)
+//                    return
+//                }
+//            }
+//        }
+//    }
+    func checkProvidersOfMovies( completion: @escaping (Bool) -> Void) {
+        for movie in arrayMovies{
+            
+            if let idMovie = movie.id{
+                selectedMovieAPI.getProviders(idMovie: idMovie) { arrayFlatrate in
+                    
+                    if self.providerSelected(provider: "Telecine Play", flatrates: arrayFlatrate){
+                        self.arrayMovieFilterProvider.append(movie)
+                        completion(true)
+                        return
+                    }
                 }
             }
+            
         }
+        
+        
     }
     
     func providerSelected(provider: String, flatrates: [Flatrate]) -> Bool{
@@ -128,26 +146,26 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func getImageFilm() -> UIImage {
         
-        let idImage =  arrayMovies[idMovieInArray].posterPath
+        let idImage =  arrayMovieFilterProvider[idMovieInArray].posterPath
         let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage!)")
         let data = try? Data(contentsOf: url!)
         return  UIImage(data: data!)!
     }
     
     func getOverView() -> String {
-        return arrayMovies[idMovieInArray].overview
+        return arrayMovieFilterProvider[idMovieInArray].overview
     }
     
     func getTitle() -> String {
-        return arrayMovies[idMovieInArray].title
+        return arrayMovieFilterProvider [idMovieInArray].title
     }
     
     func getRelease() -> String {
-        return arrayMovies[idMovieInArray].releaseDate
+        return arrayMovieFilterProvider[idMovieInArray].releaseDate
     }
     
     func getVoteAverage() -> String {
-        let nota = arrayMovies[idMovieInArray].voteAverage!
+        let nota = arrayMovieFilterProvider[idMovieInArray].voteAverage!
         //        return "\(nota) / 10 ⭐  "
         return "\(nota) ⭐"
     }
@@ -167,27 +185,5 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         arrayMovieSeen.append(arrayMovies[idMovieInArray ])
         
     }
-    
-    
-    //    func checkProvidersOfMovie( completion: @escaping (Bool) -> Void) {
-    //
-    //        if let idMovie = arrauResultsAPI[idMovieInArray].id{
-    //            selectedMovieAPI.checkProvaider(idMovie: idMovie) { arrayFlatrate in
-    //
-    //                let provider = "Telecine Play"
-    //                for flatrate in arrayFlatrate{
-    //                    if flatrate.providerName == "Telecine Play"{
-    //                        print("esse filme esta na \(provider)")
-    //                        completion(true)
-    //                        return
-    //                    }
-    //
-    //                }
-    //
-    //
-    //            }
-    //        }
-    //       completion(false)
-    //    }
-    
+
 }

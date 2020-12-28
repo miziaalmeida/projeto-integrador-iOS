@@ -134,11 +134,13 @@ class SelectedMovieViewController: UIViewController {
         customSegmentedControl.segmentControlCustom(custom: segmentedControlDetails, view: view)
    
         
-        viewModel.raffle { sucess in
-            if sucess{
-                self.setFields()
-            }
+      viewModel.raffle { sucess in
+        if sucess{
+            self.setFields()
+        }else{
+            //                self.buttonRaffle(sender)
         }
+    }
         
         // Checar qual é seçao que está seleciona no segmentControll
         checkSegmentIndex()
