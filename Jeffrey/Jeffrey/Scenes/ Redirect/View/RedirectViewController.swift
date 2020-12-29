@@ -25,7 +25,7 @@ class RedirectViewController: UIViewController {
         
     }
     
-    
+    // fazer HBO Go, OldFlix, Amazon
     func streamingRedirect(){
         var url = self.viewModel.searchInNetflix(movieName: self.movieName!)
         
@@ -35,6 +35,10 @@ class RedirectViewController: UIViewController {
         
         if providerName == "Telecine Play"{
             url = self.viewModel.searchInTelecinePlay(movieName: self.movieName!)
+        }
+        
+        if providerName == "Claro video"{
+            url = self.viewModel.searchInClaroVideo(movieName: self.movieName!)
         }
         
         

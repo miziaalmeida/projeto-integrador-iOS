@@ -6,189 +6,142 @@
 //
 
 import UIKit
-//import Alamofire
 
-class SelectedMovieViewModel{
-    
+enum nameProviders: String{
+    case netflix = "Netflix"
+    case HBOGo = "HBO Go"
+    case telecine = "Telecine Play"
+    case now = "NOW"
+    case claro = "Claro video"
+    case looke = "Looke"
+    case netMovies = "NetMovies"
+    case disney = "Disney Plus"
+    case globo = "Globo Play"
+    case tnt = "TNTGo"
+}
+
+protocol SelectedMovieViewModelProtocol: AnyObject{
+    func getImageFilm() -> UIImage
+    func setArrayMovies(arrayMovie: [Movie])
+    func getOverView( ) -> String
+    func getTitle() -> String
+    func getRelease() -> String
+    func getVoteAverage() -> String
+    func getImageStreaming() -> String
+    func addMovieArrayFavorites()
+    func addMovieArraySeen()
+    func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void)
+    func raffle( completion: @escaping (Bool) -> Void) 
+    func setNameProvider(providerName: String)
+}
+
+class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     //MARK: VARIÁVEIS
-    
-    private var arrauResultsAPI = [Movie]() // Onde será carregado a request da API
-    private var idMovieInArray = 0 // Indice do Filme no array de Filmes, é alterado cada vez que é sorteado um novo filme.
-    private var idPageApi = 1 // Alterar a pagina na requisição da API
+    private var arrayMovies = [Movie]() // Onde será carregado a request da API
+    private var idPageApi = 2 // Alterar a pagina na requisição da API
     private var genre = 28 // ID do gênero para a requisicão na API! Fixo 28 para testes! obs: Acão
-    private var idProvider = 8
+    private var idProvider = 8 // testar
     private var providerName : String?
+    var idPage: Int = 8 // obs: page da app por padrão começa na primeira
+    var idMovieInArray = 0 // Indice do Filme no array de Filmes, é alterado cada vez que é sorteado um novo filme.
+    
     var arrayMovieFavorites = [Movie]() // Lista Filmes Favorios
     var arrayMovieSeen = [Movie]() // Lista Filmes Já Vistos
+    var arrayMovieFilterProvider = [Movie]()
     
     var selectedMovieAPI = SelectedMovieAPI()
-    
     private var customSegmentedControll = CustomSegmentControl()
     
-    //MARK: FUNCÕES PRIVADAS
-    
-    
-    
-    func getImageFilm() -> UIImage{
-        let idImage =  arrauResultsAPI[idMovieInArray].posterPath
-        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage!)")
-        
-        let data = try? Data(contentsOf: url!)
-        
-        return  UIImage(data: data!)!
-    }
-    
-    //MARK: FUNCÕES PÚBLICAS
-    
-    private  func setArrayMovies(arrayMovie: [Movie]){
-        arrauResultsAPI = arrayMovie
-    }
-    
-    func getOverView( ) -> String{
-        return arrauResultsAPI[idMovieInArray].overview
-    }
-    
-    func getTitle() -> String{
-//        print(arrauResultsAPI[idMovieInArray].id)x`
-        return arrauResultsAPI[idMovieInArray].title
-        
-    }
-    
-    
-    func getRelease() -> String{
-        return arrauResultsAPI[idMovieInArray].releaseDate
-    }
-    
-    func getVoteAverage() -> String{
-        let nota = arrauResultsAPI[idMovieInArray].voteAverage!
-//        return "\(nota) / 10 ⭐  "
-        return "\(nota) ⭐"
-    }
-    
-    func addMovieArrayFavorites(){
-        arrayMovieFavorites.append(arrauResultsAPI[idMovieInArray - 1])
-    }
-    
-    func addMovieArraySeen(){
-        arrayMovieSeen.append(arrauResultsAPI[idMovieInArray - 1 ])
-    }
-    
-    func setButtonImageSeen(imageButton: UIImageView) -> UIImage {
-        
-        if imageButton.image == UIImage(systemName: "eye"){
-            imageButton.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            return UIImage(systemName: "eye.slash")!
-        }else{
-            
-            imageButton.tintColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
-            return UIImage(systemName: "eye")!
-        }
-    }
-    
-    func setButtonImageFavorite(imageButton: UIImageView) -> UIImage{
-        
-        
-        
-        if imageButton.image == UIImage(systemName: "star"){
-            imageButton.tintColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
-            return UIImage(systemName: "star.fill")!
-        }else{
-            imageButton.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-            return UIImage(systemName: "star")!
-        }
-    }
-    
-    // MARK: Request
-    
-    func request( completion: @escaping (Bool) -> Void) {
-        if arrauResultsAPI.isEmpty{
-            selectedMovieAPI.requestMovie { arrayMovies in
+    //MARK: FUNCS
+    func raffle( completion: @escaping (Bool) -> Void){
+        // se a lista for vazia, faz o request de umas lista de filmes
+        if arrayMovieFilterProvider .isEmpty {
+            raffleListOfAPIMovies { sucess in
                 
-                
-                self.setArrayMovies(arrayMovie: arrayMovies)
-              
-                self.addOneToId()
-                completion(true)
-                
-                return
-                
-            }
-            
-        }else{
-         
-            
-            self.addOneToId()
-            
-            if self.newPageOfMovies() {
-                completion(false)
-                return
-            }
-            
-            completion(true)
-            
-            return
-        }
-        
-    }
-    
-    private func newPageOfMovies() -> Bool{
-        if self.idMovieInArray > 19 {
-            self.arrauResultsAPI = [Movie]()
-            self.idMovieInArray = 0
-            self.idPageApi += 1
-            return true
-        }
-        
-        return false
-    }
-    
-    private func addOneToId(){
-        
-        idMovieInArray += 1
-        
-    }
-    
-    
-    
-    //MARK: PERGUNTA: Preciso receber como parametro a imagem que quero arredondar ou existe outra maneira?
-    func roundImage(image:UIImageView){
-        image.layer.cornerRadius = image.frame.size.width/2
-        image.clipsToBounds = true
-    }
-    
-    func checkProvidersOfMovie( completion: @escaping (Bool) -> Void) {
- 
-        if let idMovie = arrauResultsAPI[idMovieInArray].id{
-            selectedMovieAPI.checkProvaider(idMovie: idMovie) { arrayFlatrate in
-                if !arrayFlatrate.isEmpty{
-                    if self.providerSelected(provider: "Telecine Play", flatrates: arrayFlatrate){
+                self.checkProvidersOfMovies { sucess in
+                    
+                    if sucess{
+                        print("array filtrado encontro \(self.arrayMovieFilterProvider.count) filmes no provedor")
+                        
                         completion(true)
                         return
                     }
-                    
-                
                 }
             }
+        } // se array não for vazio
+            if idMovieInArray < arrayMovieFilterProvider.count - 1 && arrayMovieFilterProvider.count > 1  {
+                newMovieInArray()
+                
+                completion(true)
+                return
+            }else{
+                print("aquii")
+                arrayMovies = [Movie]()
+                arrayMovieFilterProvider = [Movie]()
+                idMovieInArray = 0
+                idPage += 1
+//                completion(false)
+//                return
+                
+                raffleListOfAPIMovies { sucess in
+                    
+                    self.checkProvidersOfMovies { sucess in
+                        
+                        if sucess{
+                            print("array filtrado encontro \(self.arrayMovieFilterProvider.count) filmes no provedor")
+                            
+                            completion(true)
+                            return
+                        }
+                    }
+                }
+    
+            }
+
+        
+    }
+    
+    // sortear uma lista de filmes
+    func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void) {
+        
+        selectedMovieAPI.listOfFilms(idPage: idPage) { arrayMovies in
+            print("nova requi e o id da pag é \(self.idPage)")
+            self.setArrayMovies(arrayMovie: arrayMovies)
+            completion(true)
+            return
         }
     }
     
-    private func setNameProvider(providerName: String){
-        self.providerName = providerName
+    func newMovieInArray(){
+        idMovieInArray += 1
+        
     }
 
-    func getImageStreaming() -> String{
-        if let providerName = providerName{
-            return providerName
+    func checkProvidersOfMovies( completion: @escaping (Bool) -> Void) {
+        
+        for movie in arrayMovies{
+            
+            if let idMovie = movie.id{
+                selectedMovieAPI.getProviders(idMovie: idMovie) { arrayFlatrate in
+                    
+                    if self.providerSelected(provider: nameProviders.telecine.rawValue, flatrates: arrayFlatrate){
+                        self.arrayMovieFilterProvider.append(movie)
+                        completion(true)
+                        return
+                    }
+                }
+            }
+            
         }
-        return "star"
     }
     
     func providerSelected(provider: String, flatrates: [Flatrate]) -> Bool{
         setNameProvider(providerName: provider)
         for flatrate in flatrates{
+           
             if flatrate.providerName == provider{
-                print("esse filme esta na \(provider)")
+               
                 return true
             }
             
@@ -198,8 +151,60 @@ class SelectedMovieViewModel{
         
     }
     
+    //MARK: GET/SET
+    func setNameProvider(providerName: String) {
+        self.providerName = providerName
+    }
     
+    func setArrayMovies(arrayMovie: [Movie]) {
+        arrayMovies = arrayMovie
+    }
+    
+    func getImageFilm() -> UIImage {
+        
+        let idImage =  arrayMovieFilterProvider[idMovieInArray].posterPath
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage!)")
+        let data = try? Data(contentsOf: url!)
+        return  UIImage(data: data!)!
+    }
+    
+    func getOverView() -> String {
+        return arrayMovieFilterProvider[idMovieInArray].overview
+    }
+    
+    func getTitle() -> String {
+        
+        if let tittle = arrayMovieFilterProvider [idMovieInArray].title{
+            return tittle
+        }
+         
+        return ""
+    }
+    
+    func getRelease() -> String {
+        return arrayMovieFilterProvider[idMovieInArray].releaseDate
+    }
+    
+    func getVoteAverage() -> String {
+        let nota = arrayMovieFilterProvider[idMovieInArray].voteAverage!
+        //        return "\(nota) / 10 ⭐  "
+        return "\(nota) ⭐"
+    }
+    
+    func getImageStreaming() -> String{
+        if let providerName = providerName{
+            return providerName
+        }
+        return "star"
+    }
+    
+    func addMovieArrayFavorites() {
+        arrayMovieFavorites.append(arrayMovies[idMovieInArray])
+    }
+    
+    func addMovieArraySeen() {
+        arrayMovieSeen.append(arrayMovies[idMovieInArray ])
+        
+    }
 
 }
-
-
