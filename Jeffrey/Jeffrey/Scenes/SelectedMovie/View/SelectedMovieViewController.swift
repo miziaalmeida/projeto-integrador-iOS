@@ -90,7 +90,7 @@ class SelectedMovieViewController: UIViewController {
             if sucess{
                 self.setFields()
             }else{
-                //                self.buttonRaffle(sender)
+                                self.buttonRaffle(sender)
             }
         }
         
@@ -138,7 +138,7 @@ class SelectedMovieViewController: UIViewController {
         if sucess{
             self.setFields()
         }else{
-            //                self.buttonRaffle(sender)
+            self.buttonRaffle(self.imageButtonRaffle)
         }
     }
         
@@ -150,7 +150,7 @@ class SelectedMovieViewController: UIViewController {
     
     // setar o que vair ser mostrado na tela.
     func setFields(){
-        print(String(viewModel.getTitle()))
+        
         labelTitle.text = viewModel.getTitle()
         labelRelease.text = viewModel.getRelease()
         textViewSinopse.text = viewModel.getOverView()

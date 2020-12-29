@@ -23,7 +23,7 @@ class SelectedMovieAPI {
     func listOfFilms(idPage: Int, onComplete: @escaping ([Movie]) -> Void)  {
 //                        idPageApi = Int.random(in: 1..<50) // altera a pagina que ira mostrar os filmes obs
         
-        print("novo request")
+   
         AF.request("\(baseURLAPI)\(keyAPI)&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=\(idPage)&with_genres=\(genre)").responseJSON { response in
             if let dictionary = response.value as? [String: Any], let arrayResults = dictionary["results"] as? [[String:Any]]{
                 

@@ -13,7 +13,7 @@ class  RedirectViewModel{
     func searchInNetflix(movieName:String) -> String{
         let str = movieName.replacingOccurrences(of: " ", with: "%20")
         
-        return "https://www.netflix.com/search?q=\(str  )"
+        return "https://www.netflix.com/search?q=\(str  )".folding(options: .diacriticInsensitive, locale: .current) // retira acentos
     }
     
     func searchInTelecinePlay(movieName:String) -> String{
@@ -26,7 +26,21 @@ class  RedirectViewModel{
     func searchInNow(movieName:String) -> String{
         let str = movieName.replacingOccurrences(of: " ", with: "%20")
         
-        return "https://www.nowonline.com.br/busca?q=\(str  )"
+        return "https://www.nowonline.com.br/busca?q=\(str  )".folding(options: .diacriticInsensitive, locale: .current) // retira acentos
+ 
+    }
+    
+    func searchInDisney(movieName:String) -> String{
+        let str = movieName.replacingOccurrences(of: " ", with: "%20")
+        
+        return "https://www.nowonline.com.br/busca?q=\(str  )".folding(options: .diacriticInsensitive, locale: .current) // retira acentos
+ 
+    }
+    
+    func searchInClaroVideo(movieName:String) -> String{
+        let str = movieName.replacingOccurrences(of: " ", with: "%20")
+        
+        return "https://www.clarovideo.com/brasil/search?q=\(str  )".folding(options: .diacriticInsensitive, locale: .current) // retira acentos
  
     }
 

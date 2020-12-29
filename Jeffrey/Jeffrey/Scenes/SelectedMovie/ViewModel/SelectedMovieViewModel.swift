@@ -7,6 +7,19 @@
 
 import UIKit
 
+enum nameProviders: String{
+    case netflix = "Netflix"
+    case HBOGo = "HBO Go"
+    case telecine = "Telecine Play"
+    case now = "NOW"
+    case claro = "Claro video"
+    case looke = "Looke"
+    case netMovies = "NetMovies"
+    case disney = "Disney Plus"
+    case globo = "Globo Play"
+    case tnt = "TNTGo"
+}
+
 protocol SelectedMovieViewModelProtocol: AnyObject{
     func getImageFilm() -> UIImage
     func setArrayMovies(arrayMovie: [Movie])
@@ -47,44 +60,53 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             raffleListOfAPIMovies { sucess in
                 
                 self.checkProvidersOfMovies { sucess in
-                   
-                    completion(true)
-                    return
-                }
-            }
-        }else{ // se array não for vazio
-            if idMovieInArray < arrayMovieFilterProvider.count - 1  {
-                print(arrayMovieFilterProvider.count)
-                print(idMovieInArray)
-                newMovieInArray()
-                completion(true)
-                return
-            }else{
-                arrayMovies = [Movie]()
-                arrayMovieFilterProvider = [Movie]()
-                idMovieInArray = 0
-                idPage += 1
-                raffleListOfAPIMovies { sucess in
                     
-                    self.checkProvidersOfMovies { sucess in
-                       
+                    if sucess{
+                        print("array filtrado encontro \(self.arrayMovieFilterProvider.count) filmes no provedor")
+                        
                         completion(true)
                         return
                     }
                 }
-                
             }
-            
-            
-            
-        }
+        } // se array não for vazio
+            if idMovieInArray < arrayMovieFilterProvider.count - 1 && arrayMovieFilterProvider.count > 1  {
+                newMovieInArray()
+                
+                completion(true)
+                return
+            }else{
+                print("aquii")
+                arrayMovies = [Movie]()
+                arrayMovieFilterProvider = [Movie]()
+                idMovieInArray = 0
+                idPage += 1
+//                completion(false)
+//                return
+                
+                raffleListOfAPIMovies { sucess in
+                    
+                    self.checkProvidersOfMovies { sucess in
+                        
+                        if sucess{
+                            print("array filtrado encontro \(self.arrayMovieFilterProvider.count) filmes no provedor")
+                            
+                            completion(true)
+                            return
+                        }
+                    }
+                }
+    
+            }
+
+        
     }
     
     // sortear uma lista de filmes
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void) {
         
         selectedMovieAPI.listOfFilms(idPage: idPage) { arrayMovies in
-            
+            print("nova requi e o id da pag é \(self.idPage)")
             self.setArrayMovies(arrayMovie: arrayMovies)
             completion(true)
             return
@@ -95,40 +117,15 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         idMovieInArray += 1
         
     }
-    
-    private func newPageOfMovies() -> Bool{
-        if self.idMovieInArray > 19 {
-            self.arrayMovies = [Movie]()
-            self.idMovieInArray = 0
-            self.idPageApi += 1
-            return true
-        }
-        return false
-    }
-    //
-    private func addOneToId(){
-        idMovieInArray += 1
-    }
-    
-//    func checkProvidersOfMovie( completion: @escaping (Bool) -> Void) {
-//
-//        if let idMovie = arrayMovies[idMovieInArray].id{
-//            selectedMovieAPI.getProviders(idMovie: idMovie) { arrayFlatrate in
-//
-//                if self.providerSelected(provider: "NOW", flatrates: arrayFlatrate){
-//                    completion(true)
-//                    return
-//                }
-//            }
-//        }
-//    }
+
     func checkProvidersOfMovies( completion: @escaping (Bool) -> Void) {
+        
         for movie in arrayMovies{
             
             if let idMovie = movie.id{
                 selectedMovieAPI.getProviders(idMovie: idMovie) { arrayFlatrate in
                     
-                    if self.providerSelected(provider: "Telecine Play", flatrates: arrayFlatrate){
+                    if self.providerSelected(provider: nameProviders.telecine.rawValue, flatrates: arrayFlatrate){
                         self.arrayMovieFilterProvider.append(movie)
                         completion(true)
                         return
@@ -137,13 +134,12 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             }
             
         }
-        
-        
     }
     
     func providerSelected(provider: String, flatrates: [Flatrate]) -> Bool{
         setNameProvider(providerName: provider)
         for flatrate in flatrates{
+           
             if flatrate.providerName == provider{
                
                 return true
