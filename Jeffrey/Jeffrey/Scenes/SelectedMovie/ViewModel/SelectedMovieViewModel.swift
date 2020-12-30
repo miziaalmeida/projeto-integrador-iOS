@@ -62,8 +62,8 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     //MARK: VARIÁVEIS
     private var arrayMovies = [Movie]() // Onde será carregado a request da API
-    private var genre = nameGenres.Drama.rawValue// ID do gênero para a requisicão na API! Fixo 28 para testes! obs: Acão
-    private var providerName  = nameProviders.globo.rawValue
+    private var genre = nameGenres.Ação.rawValue// ID do gênero para a requisicão na API! Fixo 28 para testes! obs: Acão
+    private var providerName  = nameProviders.now.rawValue
     private var idPageApi = 2 // Alterar a pagina na requisição da API
     private var idProvider = 8 // testar
     var idPage: Int = 8 // obs: page da app por padrão começa na primeira
