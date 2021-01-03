@@ -6,20 +6,39 @@
 //
 
 import UIKit
-enum nameGenres: Int{
-    case Ação = 28
-    case Animação = 16
-    case Aventura = 12
-    case Comédia = 35
-    case Crime = 80
-    case Documentário = 99
-    case Drama = 18
-    case Fantasia = 14
-    case Terror = 27
-    case Romance = 10749
-    case Ficção_científica = 878
-    case Guerra = 10752
-    case Faroeste = 37
+
+enum nameGenres: String{
+    case action = "Ação"
+    case animation = "Animação"
+    case adventure = "Aventura"
+    case comedy = "Comédia"
+    case crime = "Crime"
+    case documentary = "Documentário"
+    case drama = "Drama"
+    case fantasy = "Fantasia"
+    case terror = "Terror"
+    case romance = "romance"
+    case sciencefiction = "Ficção Científica"
+    case war = "Guerra"
+    case Western = "Faroeste"
+
+}
+
+
+enum idGenres: Int{
+    case action = 28
+    case animation = 16
+    case adventure = 12
+    case comedy = 35
+    case crime = 80
+    case documentary = 99
+    case drama = 18
+    case fantasy = 14
+    case terror = 27
+    case romance = 10749
+    case sciencefiction = 878
+    case war = 10752
+    case Western = 37
 
 }
 
@@ -62,8 +81,8 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     //MARK: VARIÁVEIS
     private var arrayMovies = [Movie]() // Onde será carregado a request da API
-    private var genre = nameGenres.Ação.rawValue// ID do gênero para a requisicão na API! Fixo 28 para testes! obs: Acão
-    private var providerName  = nameProviders.now.rawValue
+    private var genreId = idGenres.drama.rawValue// ID do gênero para a requisicão na API! Fixo 28 para testes! obs: Acão
+    private var providerName  = nameProviders.telecine.rawValue
     private var idPageApi = 2 // Alterar a pagina na requisição da API
     private var idProvider = 8 // testar
     var idPage: Int = 8 // obs: page da app por padrão começa na primeira
@@ -128,7 +147,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     // sortear uma lista de filmes
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void) {
         
-        selectedMovieAPI.listOfFilms(idPage: idPage, genre: genre) { arrayMovies in
+        selectedMovieAPI.listOfFilms(idPage: idPage, genre: genreId) { arrayMovies in
             print("nova requi e o id da pag é \(self.idPage)")
             self.setArrayMovies(arrayMovie: arrayMovies)
             completion(true)
@@ -229,33 +248,33 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func getGenre() -> String{
 
-        switch genre {
-        case nameGenres.Ação.rawValue:
-            return "\(nameGenres.Ação)"
-        case nameGenres.Comédia.rawValue:
-            return "\(nameGenres.Comédia)"
-        case nameGenres.Animação.rawValue:
-            return "\(nameGenres.Animação)"
-        case nameGenres.Aventura.rawValue:
-            return "\(nameGenres.Aventura)"
-        case nameGenres.Crime.rawValue:
-            return "\(nameGenres.Crime)"
-        case nameGenres.Documentário.rawValue:
-            return "\(nameGenres.Documentário)"
-        case nameGenres.Drama.rawValue:
-            return "\(nameGenres.Drama)"
-        case nameGenres.Fantasia.rawValue:
-            return "\(nameGenres.Fantasia)"
-        case nameGenres.Faroeste.rawValue:
-            return "\(nameGenres.Faroeste)"
-        case nameGenres.Ficção_científica.rawValue:
-            return "Ficção Científica"
-        case nameGenres.Guerra.rawValue:
-            return "\(nameGenres.Guerra)"
-        case nameGenres.Romance.rawValue:
-            return "\(nameGenres.Romance)"
-        case nameGenres.Terror.rawValue:
-            return "\(nameGenres.Terror)"
+        switch genreId {
+        case idGenres.action.rawValue:
+            return "\(nameGenres.action)"
+        case idGenres.comedy.rawValue:
+            return "\(nameGenres.comedy)"
+        case idGenres.animation.rawValue:
+            return "\(nameGenres.animation)"
+        case idGenres.adventure.rawValue:
+            return "\(nameGenres.adventure)"
+        case idGenres.crime.rawValue:
+            return "\(nameGenres.crime)"
+        case idGenres.documentary.rawValue:
+            return "\(nameGenres.documentary)"
+        case idGenres.drama.rawValue:
+            return "\(nameGenres.drama)"
+        case idGenres.fantasy.rawValue:
+            return "\(nameGenres.fantasy)"
+        case idGenres.Western.rawValue:
+            return "\(nameGenres.Western)"
+        case idGenres.sciencefiction.rawValue:
+            return "\(nameGenres.sciencefiction)"
+        case idGenres.war.rawValue:
+            return "\(nameGenres.war)"
+        case idGenres.romance.rawValue:
+            return "\(nameGenres.romance)"
+        case idGenres.war.rawValue:
+            return "\(nameGenres.war)"
         default:
             return "Indefinido"
         }
