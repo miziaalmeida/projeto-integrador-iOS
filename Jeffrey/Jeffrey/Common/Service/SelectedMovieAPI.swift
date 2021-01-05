@@ -10,17 +10,17 @@ import Alamofire
 
 class SelectedMovieAPI {
     
-    private var genre = 28 // fixa gênero com id 28 (Ação)
+//    private var genre = 28 // fixa gênero com id 28 (Ação)
     private var keyAPI = "16b776cd87d99568d7cf733de5593752" // chave API
     private var baseURLAPI = "https://api.themoviedb.org/3/discover/movie?api_key="
     private var arrauResultsAPI = [Movie]() // Onde será carregado a request da API
-    private var idPageApi = 8 // Ida da pagia para fazer o requeste (Fixo por momento) obs: Padrão começa com id=1
+//    private var idPageApi = 8 // Ida da pagia para fazer o requeste (Fixo por momento) obs: Padrão começa com id=1
     private var resultsProviderBR: ResultAPIProvider?
     private var flatrate: Flatrate?
     //    private var flatrate = [Flatrate]()
     
     // faz o requeste de uma lista de filmes, onde pode ser filtrado por id do genero, numero da página. obs: requisição de uma lista de 20 filmes por página
-    func listOfFilms(idPage: Int, onComplete: @escaping ([Movie]) -> Void)  {
+    func listOfFilms(idPage: Int, genre: Int ,onComplete: @escaping ([Movie]) -> Void)  {
 //                        idPageApi = Int.random(in: 1..<50) // altera a pagina que ira mostrar os filmes obs
         
    

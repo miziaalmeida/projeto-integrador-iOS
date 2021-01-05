@@ -43,5 +43,12 @@ class  RedirectViewModel{
         return "https://www.clarovideo.com/brasil/search?q=\(str  )".folding(options: .diacriticInsensitive, locale: .current) // retira acentos
  
     }
+    
+    func searchInLook(movieName:String) -> String{
+        let str = movieName.replacingOccurrences(of: " ", with: "%20")
+        
+        return "https://www.looke.com.br/search/\(str  )".folding(options: .diacriticInsensitive, locale: .current) // retira acentos
+ 
+    }
 
 }

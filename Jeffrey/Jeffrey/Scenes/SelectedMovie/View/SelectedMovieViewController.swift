@@ -17,6 +17,8 @@ class SelectedMovieViewController: UIViewController {
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelRelease: UILabel!
     @IBOutlet var labelVoteAvarage: UILabel!
+    @IBOutlet var labelTime: UILabel!
+    @IBOutlet var textViewGenre: UITextField!
     @IBOutlet var textViewSinopse: UITextView!
     @IBOutlet var segmentedControlDetails: UISegmentedControl!
     @IBOutlet var viewBackgorund: UIView!
@@ -157,6 +159,8 @@ class SelectedMovieViewController: UIViewController {
         imageFilmeBackGround.image = viewModel.getImageFilm()
         labelVoteAvarage.text = viewModel.getVoteAverage()
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
+//        labelTime.text = viewModel.getTime()
+        textViewGenre.text =  viewModel.getGenre()
         
     }
     
