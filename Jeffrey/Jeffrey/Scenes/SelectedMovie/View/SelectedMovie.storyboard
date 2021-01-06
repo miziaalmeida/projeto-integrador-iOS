@@ -22,9 +22,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wY-kp-9HZ">
                                 <rect key="frame" x="0.0" y="397" width="390" height="447"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX2-as-UjY" userLabel="ButtonRaffle">
-                                        <rect key="frame" x="278" y="57" width="78" height="70"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX2-as-UjY" userLabel="ButtonRaffle">
+                                        <rect key="frame" x="247" y="39" width="127" height="92"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="novofilme"/>
                                         <connections>
                                             <action selector="buttonRaffle:" destination="0jm-pb-NkG" eventType="touchUpInside" id="g2X-Vm-ZID"/>
                                         </connections>
@@ -123,15 +124,6 @@
                                         <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="novofilme" translatesAutoresizingMaskIntoConstraints="NO" id="dIN-8r-cw0">
-                                        <rect key="frame" x="278" y="57" width="78" height="68"/>
-                                        <color key="backgroundColor" red="1" green="0.75686274509803919" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="68" id="PfO-UC-76a"/>
-                                            <constraint firstAttribute="width" constant="78" id="rTA-Nx-a5J"/>
-                                        </constraints>
-                                    </imageView>
                                     <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2RQ-Cw-L1l">
                                         <rect key="frame" x="-8" y="398" width="390" height="49"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -153,12 +145,10 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.1764705882352941" green="0.023529411764705882" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="dIN-8r-cw0" secondAttribute="trailing" constant="34" id="0K7-5R-NVA"/>
                                     <constraint firstItem="7P1-1A-w4W" firstAttribute="leading" secondItem="6wY-kp-9HZ" secondAttribute="leading" constant="16" id="2qY-NS-x4C"/>
                                     <constraint firstItem="ehD-gb-9ad" firstAttribute="leading" secondItem="hzc-xu-pMY" secondAttribute="trailing" constant="8" id="5XE-nX-jUG"/>
                                     <constraint firstItem="hzc-xu-pMY" firstAttribute="top" secondItem="HlJ-ha-wXN" secondAttribute="bottom" constant="-28" id="7iG-KF-ecQ"/>
                                     <constraint firstItem="kEX-eM-yCP" firstAttribute="top" secondItem="uJ5-G6-bqa" secondAttribute="bottom" constant="80" id="8WO-ih-8Fw"/>
-                                    <constraint firstItem="dIN-8r-cw0" firstAttribute="top" secondItem="uJ5-G6-bqa" secondAttribute="bottom" constant="4" id="9HW-sj-lyz"/>
                                     <constraint firstItem="HlJ-ha-wXN" firstAttribute="top" secondItem="uJ5-G6-bqa" secondAttribute="bottom" constant="82" id="AOM-u1-7tv"/>
                                     <constraint firstAttribute="trailing" secondItem="7P1-1A-w4W" secondAttribute="trailing" constant="16" id="B56-Tv-nGy"/>
                                     <constraint firstItem="NEQ-uO-q4i" firstAttribute="leading" secondItem="6wY-kp-9HZ" secondAttribute="leading" constant="16" id="CIf-nd-QZq"/>
@@ -237,13 +227,15 @@
                     <connections>
                         <outlet property="buttonProviders" destination="NEQ-uO-q4i" id="S6K-XT-xaQ"/>
                         <outlet property="imageButtonFavorite" destination="hzc-xu-pMY" id="Id5-so-QTK"/>
-                        <outlet property="imageButtonRaffle" destination="dIN-8r-cw0" id="5GA-TO-r24"/>
+                        <outlet property="imageButtonRaffle" destination="MX2-as-UjY" id="DQ4-kx-M4K"/>
                         <outlet property="imageButtonSeen" destination="ehD-gb-9ad" id="uMs-We-S5G"/>
                         <outlet property="imageFilmeBackGround" destination="pht-8f-eox" id="Nfg-s6-Fd5"/>
                         <outlet property="labelRelease" destination="noc-Fz-mBM" id="y47-q7-1mz"/>
+                        <outlet property="labelTime" destination="HlJ-ha-wXN" id="jza-gT-3Yj"/>
                         <outlet property="labelTitle" destination="uJ5-G6-bqa" id="ffC-u5-Vm7"/>
                         <outlet property="labelVoteAvarage" destination="kEX-eM-yCP" id="tJC-JC-u8L"/>
                         <outlet property="segmentedControlDetails" destination="j2K-X6-Qlk" id="zyA-nW-Euw"/>
+                        <outlet property="textViewGenre" destination="ibo-Mu-gv0" id="JhF-IC-H0d"/>
                         <outlet property="textViewSinopse" destination="7P1-1A-w4W" id="xL3-PB-yDG"/>
                         <outlet property="viewBackgorund" destination="6wY-kp-9HZ" id="wP0-CA-P0I"/>
                     </connections>
@@ -280,9 +272,6 @@
         <image name="novofilme" width="8" height="8"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
