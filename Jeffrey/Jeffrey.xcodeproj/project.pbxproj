@@ -30,6 +30,8 @@
 		1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1911390A2563058F0039C5A3 /* Assets.xcassets */; };
 		191139192563058F0039C5A3 /* JeffreyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139182563058F0039C5A3 /* JeffreyTests.swift */; };
 		191139242563058F0039C5A3 /* JeffreyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139232563058F0039C5A3 /* JeffreyUITests.swift */; };
+		1911938725A5052D00AD8928 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911938625A5052D00AD8928 /* ImagePicker.swift */; };
+		191193A225A513FE00AD8928 /* ProfileDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */; };
 		1986CDAE259B8E3F009112BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDAD259B8E3F009112BA /* ProfileViewController.swift */; };
 		1986CDB6259B8E47009112BA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986CDB5259B8E47009112BA /* Profile.storyboard */; };
 		1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDBA259B8E54009112BA /* ProfileViewModel.swift */; };
@@ -100,6 +102,8 @@
 		1911391F2563058F0039C5A3 /* JeffreyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeffreyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		191139232563058F0039C5A3 /* JeffreyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeffreyUITests.swift; sourceTree = "<group>"; };
 		191139252563058F0039C5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1911938625A5052D00AD8928 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		1986CDAD259B8E3F009112BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1986CDB5259B8E47009112BA /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1986CDBA259B8E54009112BA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -351,6 +355,13 @@
 			path = JeffreyUITests;
 			sourceTree = "<group>";
 		};
+		1911939D25A5119300AD8928 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		195E94C125799F6C00ACEC8D /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +379,7 @@
 				D00A949F259359C3009FB2D3 /* CustomSegmentControl.swift */,
 				D00A94A0259359C3009FB2D3 /* Genre.swift */,
 				D00A949E259359C2009FB2D3 /* Movie.swift */,
+				1911938625A5052D00AD8928 /* ImagePicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,6 +402,7 @@
 		195E94C525799F9400ACEC8D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1911939D25A5119300AD8928 /* EditProfile */,
 				1986CDAA259B8DF5009112BA /* Profile */,
 				D00A9485259358A8009FB2D3 /* SelectedMovie */,
 				D00A9474259358A0009FB2D3 /* Redirect */,
@@ -417,6 +430,7 @@
 			children = (
 				1986CDAD259B8E3F009112BA /* ProfileViewController.swift */,
 				1986CDB5259B8E47009112BA /* Profile.storyboard */,
+				191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -805,6 +819,7 @@
 				FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */,
 				D00A94A2259359C3009FB2D3 /* CustomSegmentControl.swift in Sources */,
 				D00A94A1259359C3009FB2D3 /* Movie.swift in Sources */,
+				191193A225A513FE00AD8928 /* ProfileDetailsTableViewCell.swift in Sources */,
 				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
 				1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */,
 				1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */,
@@ -824,6 +839,7 @@
 				1909E483258E3E7B00435D07 /* PageStartViewModel.swift in Sources */,
 				D00A949A259359B8009FB2D3 /* SelectedMovieAPI.swift in Sources */,
 				1909E4D7258E8BE100435D07 /* ForgotPasswordViewModel.swift in Sources */,
+				1911938725A5052D00AD8928 /* ImagePicker.swift in Sources */,
 				D00A947F259358A0009FB2D3 /* ResultAPIProvider.swift in Sources */,
 				1909E47E258E3E6100435D07 /* PageStartViewController.swift in Sources */,
 			);
