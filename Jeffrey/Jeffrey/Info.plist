@@ -73,8 +73,6 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
- feature/telaHomePrincipal
-					<string>HomeMain</string>
 					<string>SelectedMovie</string>
 				</dict>
 			</array>
@@ -85,8 +83,6 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-feature/telaHomePrincipal
-	<string>HomeMain</string>
 	<string>SelectedMovie</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>

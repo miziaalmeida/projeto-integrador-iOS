@@ -48,7 +48,7 @@ class CustomSegmentControl{
         segmentindicator = {
             let v = UIView()
             v.translatesAutoresizingMaskIntoConstraints = false
-            v.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) // Cor da barra que mostra qual segment esta selecionado
+            v.backgroundColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1) // Cor da barra que mostra qual segment esta selecionado
             return v
         }()
         
