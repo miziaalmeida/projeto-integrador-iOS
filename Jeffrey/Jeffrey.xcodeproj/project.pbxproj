@@ -49,11 +49,19 @@
 		D00A94A1259359C3009FB2D3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A949E259359C2009FB2D3 /* Movie.swift */; };
 		D00A94A2259359C3009FB2D3 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A949F259359C3009FB2D3 /* CustomSegmentControl.swift */; };
 		D00A94A3259359C3009FB2D3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A94A0259359C3009FB2D3 /* Genre.swift */; };
-		FF594B18258E92F0002E75D0 /* MenuMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B17258E92F0002E75D0 /* MenuMovie.swift */; };
-		FF594B1D258E9A20002E75D0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF594B1C258E9A20002E75D0 /* Home.storyboard */; };
+		FF430B4D25A3BA7300D776B1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF430B4C25A3BA7300D776B1 /* ListViewController.swift */; };
+		FF48DF1825978F8000A20E0A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48DF1725978F8000A20E0A /* HomeViewModel.swift */; };
 		FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B21258E9A47002E75D0 /* HomeViewController.swift */; };
 		FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */; };
 		FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */; };
+		FF5E73A425A3F4A800368D2C /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E73A325A3F4A800368D2C /* ListViewModel.swift */; };
+		FF5E73A925A3F7E000368D2C /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5E73A825A3F7E000368D2C /* Tip.storyboard */; };
+		FF5E73B125A3FA2C00368D2C /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E73B025A3FA2C00368D2C /* TipViewController.swift */; };
+		FF5E73B925A3FA3D00368D2C /* TipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E73B825A3FA3D00368D2C /* TipViewModel.swift */; };
+		FF5E73C125A3FAF400368D2C /* List.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5E73C025A3FAF400368D2C /* List.storyboard */; };
+		FF5E741F25A5FB5E00368D2C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E741E25A5FB5E00368D2C /* Home.swift */; };
+		FF5E742425A626C400368D2C /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E742325A626C400368D2C /* ListTableViewCell.swift */; };
+		FF5E742F25A62E5200368D2C /* HomeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5E742E25A62E5200368D2C /* HomeMain.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,11 +136,19 @@
 		E136EFFC1323C746AFBA30E5 /* Pods-Jeffrey-JeffreyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECBCE0AFBE32146CFCC3D7A0 /* Pods-Jeffrey-JeffreyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE03319350852EC7A80CDC64 /* Pods-JeffreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.debug.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		FF594B17258E92F0002E75D0 /* MenuMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuMovie.swift; sourceTree = "<group>"; };
-		FF594B1C258E9A20002E75D0 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		FF430B4C25A3BA7300D776B1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		FF48DF1725978F8000A20E0A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FF594B21258E9A47002E75D0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		FF5E73A325A3F4A800368D2C /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		FF5E73A825A3F7E000368D2C /* Tip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tip.storyboard; sourceTree = "<group>"; };
+		FF5E73B025A3FA2C00368D2C /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
+		FF5E73B825A3FA3D00368D2C /* TipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewModel.swift; sourceTree = "<group>"; };
+		FF5E73C025A3FAF400368D2C /* List.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = List.storyboard; sourceTree = "<group>"; };
+		FF5E741E25A5FB5E00368D2C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		FF5E742325A626C400368D2C /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		FF5E742E25A62E5200368D2C /* HomeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeMain.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +396,7 @@
 				D00A94A0259359C3009FB2D3 /* Genre.swift */,
 				D00A949E259359C2009FB2D3 /* Movie.swift */,
 				1911938625A5052D00AD8928 /* ImagePicker.swift */,
+				FF5E741E25A5FB5E00368D2C /* Home.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -407,6 +424,8 @@
 				D00A9485259358A8009FB2D3 /* SelectedMovie */,
 				D00A9474259358A0009FB2D3 /* Redirect */,
 				FF594B14258E923B002E75D0 /* Home */,
+				FF5E73AD25A3F9EC00368D2C /* Tip */,
+				FF430B4625A3AD5A00D776B1 /* List */,
 				1909E4D3258E8BBC00435D07 /* ForgotPassword */,
 				1909E474258E3E3000435D07 /* Register */,
 				1909E471258E3E1C00435D07 /* Login */,
@@ -528,39 +547,83 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FF430B4625A3AD5A00D776B1 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FF430B4825A3AD7900D776B1 /* ViewModel */,
+				FF430B4725A3AD6C00D776B1 /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		FF430B4725A3AD6C00D776B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF430B4C25A3BA7300D776B1 /* ListViewController.swift */,
+				FF5E73C025A3FAF400368D2C /* List.storyboard */,
+				FF5E742325A626C400368D2C /* ListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF430B4825A3AD7900D776B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF5E73A325A3F4A800368D2C /* ListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		FF594B14258E923B002E75D0 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				FF594B26258E9AB3002E75D0 /* View */,
-				FF594B16258E9253002E75D0 /* Model */,
 				FF594B15258E9243002E75D0 /* ViewModel */,
 			);
-			name = Home;
-			path = Jeffrey/Scenes/Home;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		FF594B15258E9243002E75D0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				FF594B21258E9A47002E75D0 /* HomeViewController.swift */,
+				FF48DF1725978F8000A20E0A /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		FF594B16258E9253002E75D0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FF594B17258E92F0002E75D0 /* MenuMovie.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		FF594B26258E9AB3002E75D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FF594B1C258E9A20002E75D0 /* Home.storyboard */,
+				FF594B21258E9A47002E75D0 /* HomeViewController.swift */,
 				FF594B32258EBB3F002E75D0 /* HomeTableViewCell.swift */,
 				FF594B37258ECCBF002E75D0 /* HomeCollectionViewCell.swift */,
+				FF5E742E25A62E5200368D2C /* HomeMain.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF5E73AD25A3F9EC00368D2C /* Tip */ = {
+			isa = PBXGroup;
+			children = (
+				FF5E73AF25A3FA0500368D2C /* View */,
+				FF5E73AE25A3F9F700368D2C /* ViewModel */,
+			);
+			path = Tip;
+			sourceTree = "<group>";
+		};
+		FF5E73AE25A3F9F700368D2C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF5E73B825A3FA3D00368D2C /* TipViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF5E73AF25A3FA0500368D2C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF5E73A825A3F7E000368D2C /* Tip.storyboard */,
+				FF5E73B025A3FA2C00368D2C /* TipViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -678,11 +741,13 @@
 				1909E476258E3E4E00435D07 /* Main.storyboard in Resources */,
 				19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */,
 				1909E4E4258E8BFF00435D07 /* ForgotPassword.storyboard in Resources */,
+				FF5E742F25A62E5200368D2C /* HomeMain.storyboard in Resources */,
 				1909E49C258E491C00435D07 /* Login.storyboard in Resources */,
 				1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */,
-				FF594B1D258E9A20002E75D0 /* Home.storyboard in Resources */,
 				1909E4B0258E495600435D07 /* Register.storyboard in Resources */,
+				FF5E73A925A3F7E000368D2C /* Tip.storyboard in Resources */,
 				D00A948C259358A8009FB2D3 /* SelectedMovie.storyboard in Resources */,
+				FF5E73C125A3FAF400368D2C /* List.storyboard in Resources */,
 				D00A9480259358A0009FB2D3 /*  Redirect.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -823,20 +888,26 @@
 				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
 				1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */,
 				1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */,
+				FF5E73B925A3FA3D00368D2C /* TipViewModel.swift in Sources */,
+				FF5E742425A626C400368D2C /* ListTableViewCell.swift in Sources */,
 				D00A948B259358A8009FB2D3 /* SelectedMovieViewModel.swift in Sources */,
 				1909E497258E491200435D07 /* LoginViewController.swift in Sources */,
 				1909E492258E3EA600435D07 /* StartOptionsViewModel.swift in Sources */,
+				FF5E741F25A5FB5E00368D2C /* Home.swift in Sources */,
 				1909E4C2258E7D8C00435D07 /* UIImage+Extensions.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
-				FF594B18258E92F0002E75D0 /* MenuMovie.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
+				FF5E73B125A3FA2C00368D2C /* TipViewController.swift in Sources */,
 				1909E4A3258E493000435D07 /* LoginViewModel.swift in Sources */,
 				1986CDAE259B8E3F009112BA /* ProfileViewController.swift in Sources */,
 				D00A947E259358A0009FB2D3 /* Flatrate.swift in Sources */,
 				1909E4DF258E8BF900435D07 /* ForgotPasswordViewController.swift in Sources */,
+				FF5E73A425A3F4A800368D2C /* ListViewModel.swift in Sources */,
 				1909E48D258E3E9A00435D07 /* StartOptionsViewController.swift in Sources */,
 				D00A9481259358A0009FB2D3 /* RedirectViewController.swift in Sources */,
 				1909E483258E3E7B00435D07 /* PageStartViewModel.swift in Sources */,
+				FF48DF1825978F8000A20E0A /* HomeViewModel.swift in Sources */,
+				FF430B4D25A3BA7300D776B1 /* ListViewController.swift in Sources */,
 				D00A949A259359B8009FB2D3 /* SelectedMovieAPI.swift in Sources */,
 				1909E4D7258E8BE100435D07 /* ForgotPasswordViewModel.swift in Sources */,
 				1911938725A5052D00AD8928 /* ImagePicker.swift in Sources */,
