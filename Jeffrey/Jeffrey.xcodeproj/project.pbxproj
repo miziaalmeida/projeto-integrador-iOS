@@ -30,6 +30,11 @@
 		1911390B2563058F0039C5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1911390A2563058F0039C5A3 /* Assets.xcassets */; };
 		191139192563058F0039C5A3 /* JeffreyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139182563058F0039C5A3 /* JeffreyTests.swift */; };
 		191139242563058F0039C5A3 /* JeffreyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139232563058F0039C5A3 /* JeffreyUITests.swift */; };
+		1911938725A5052D00AD8928 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911938625A5052D00AD8928 /* ImagePicker.swift */; };
+		191193A225A513FE00AD8928 /* ProfileDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */; };
+		1986CDAE259B8E3F009112BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDAD259B8E3F009112BA /* ProfileViewController.swift */; };
+		1986CDB6259B8E47009112BA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986CDB5259B8E47009112BA /* Profile.storyboard */; };
+		1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDBA259B8E54009112BA /* ProfileViewModel.swift */; };
 		19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
 		61D9D72D2AB74F3C962371BC /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B45A95C1DFE9C686F2602 /* Pods_Jeffrey_JeffreyUITests.framework */; };
 		D00A947D259358A0009FB2D3 /*  RedirectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A9476259358A0009FB2D3 /*  RedirectViewModel.swift */; };
@@ -105,6 +110,11 @@
 		1911391F2563058F0039C5A3 /* JeffreyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JeffreyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		191139232563058F0039C5A3 /* JeffreyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JeffreyUITests.swift; sourceTree = "<group>"; };
 		191139252563058F0039C5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1911938625A5052D00AD8928 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		1986CDAD259B8E3F009112BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1986CDB5259B8E47009112BA /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		1986CDBA259B8E54009112BA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		3FF4A3505CB5577504C62AAB /* Pods-Jeffrey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey/Pods-Jeffrey.release.xcconfig"; sourceTree = "<group>"; };
 		44CE52870E2F146882115B67 /* Pods-JeffreyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.release.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.release.xcconfig"; sourceTree = "<group>"; };
 		56458720C37B3E4268DE8032 /* Pods_JeffreyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JeffreyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -361,6 +371,13 @@
 			path = JeffreyUITests;
 			sourceTree = "<group>";
 		};
+		1911939D25A5119300AD8928 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		195E94C125799F6C00ACEC8D /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +395,7 @@
 				D00A949F259359C3009FB2D3 /* CustomSegmentControl.swift */,
 				D00A94A0259359C3009FB2D3 /* Genre.swift */,
 				D00A949E259359C2009FB2D3 /* Movie.swift */,
+				1911938625A5052D00AD8928 /* ImagePicker.swift */,
 				FF5E741E25A5FB5E00368D2C /* Home.swift */,
 			);
 			path = Models;
@@ -401,11 +419,13 @@
 		195E94C525799F9400ACEC8D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1911939D25A5119300AD8928 /* EditProfile */,
+				1986CDAA259B8DF5009112BA /* Profile */,
+				D00A9485259358A8009FB2D3 /* SelectedMovie */,
+				D00A9474259358A0009FB2D3 /* Redirect */,
 				FF594B14258E923B002E75D0 /* Home */,
 				FF5E73AD25A3F9EC00368D2C /* Tip */,
 				FF430B4625A3AD5A00D776B1 /* List */,
-				D00A9485259358A8009FB2D3 /* SelectedMovie */,
-				D00A9474259358A0009FB2D3 /*  Redirect */,
 				1909E4D3258E8BBC00435D07 /* ForgotPassword */,
 				1909E474258E3E3000435D07 /* Register */,
 				1909E471258E3E1C00435D07 /* Login */,
@@ -413,6 +433,33 @@
 				1909E46B258E3DEC00435D07 /* PageStart */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		1986CDAA259B8DF5009112BA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1986CDAC259B8E03009112BA /* ViewModel */,
+				1986CDAB259B8DFF009112BA /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		1986CDAB259B8DFF009112BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1986CDAD259B8E3F009112BA /* ProfileViewController.swift */,
+				1986CDB5259B8E47009112BA /* Profile.storyboard */,
+				191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1986CDAC259B8E03009112BA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1986CDBA259B8E54009112BA /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		5A8300490C7B1D28F45A0DC2 /* Pods */ = {
@@ -438,14 +485,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D00A9474259358A0009FB2D3 /*  Redirect */ = {
+		D00A9474259358A0009FB2D3 /* Redirect */ = {
 			isa = PBXGroup;
 			children = (
 				D00A9475259358A0009FB2D3 /* ViewModel */,
 				D00A9477259358A0009FB2D3 /* Model */,
 				D00A947A259358A0009FB2D3 /* View */,
 			);
-			path = " Redirect";
+			path = Redirect;
 			sourceTree = "<group>";
 		};
 		D00A9475259358A0009FB2D3 /* ViewModel */ = {
@@ -690,6 +737,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1909E488258E3E8F00435D07 /* StartOptions.storyboard in Resources */,
+				1986CDB6259B8E47009112BA /* Profile.storyboard in Resources */,
 				1909E476258E3E4E00435D07 /* Main.storyboard in Resources */,
 				19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */,
 				1909E4E4258E8BFF00435D07 /* ForgotPassword.storyboard in Resources */,
@@ -830,11 +878,13 @@
 			files = (
 				D00A94A3259359C3009FB2D3 /* Genre.swift in Sources */,
 				FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */,
+				1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */,
 				D00A948D259358A8009FB2D3 /* SelectedMovieViewController.swift in Sources */,
 				D00A947D259358A0009FB2D3 /*  RedirectViewModel.swift in Sources */,
 				FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */,
 				D00A94A2259359C3009FB2D3 /* CustomSegmentControl.swift in Sources */,
 				D00A94A1259359C3009FB2D3 /* Movie.swift in Sources */,
+				191193A225A513FE00AD8928 /* ProfileDetailsTableViewCell.swift in Sources */,
 				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
 				1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */,
 				1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */,
@@ -849,6 +899,7 @@
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
 				FF5E73B125A3FA2C00368D2C /* TipViewController.swift in Sources */,
 				1909E4A3258E493000435D07 /* LoginViewModel.swift in Sources */,
+				1986CDAE259B8E3F009112BA /* ProfileViewController.swift in Sources */,
 				D00A947E259358A0009FB2D3 /* Flatrate.swift in Sources */,
 				1909E4DF258E8BF900435D07 /* ForgotPasswordViewController.swift in Sources */,
 				FF5E73A425A3F4A800368D2C /* ListViewModel.swift in Sources */,
@@ -859,6 +910,7 @@
 				FF430B4D25A3BA7300D776B1 /* ListViewController.swift in Sources */,
 				D00A949A259359B8009FB2D3 /* SelectedMovieAPI.swift in Sources */,
 				1909E4D7258E8BE100435D07 /* ForgotPasswordViewModel.swift in Sources */,
+				1911938725A5052D00AD8928 /* ImagePicker.swift in Sources */,
 				D00A947F259358A0009FB2D3 /* ResultAPIProvider.swift in Sources */,
 				1909E47E258E3E6100435D07 /* PageStartViewController.swift in Sources */,
 			);

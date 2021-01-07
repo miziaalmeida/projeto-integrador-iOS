@@ -195,10 +195,10 @@
     </scenes>
     <designables>
         <designable name="Jgs-UT-5X8">
-            <size key="intrinsicContentSize" width="63.5" height="34"/>
+            <size key="intrinsicContentSize" width="49.5" height="34"/>
         </designable>
         <designable name="dyR-bu-m6d">
-            <size key="intrinsicContentSize" width="68.5" height="34"/>
+            <size key="intrinsicContentSize" width="54.5" height="34"/>
         </designable>
     </designables>
     <resources>
