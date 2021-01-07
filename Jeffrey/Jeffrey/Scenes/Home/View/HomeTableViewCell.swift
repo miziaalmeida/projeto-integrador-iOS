@@ -9,13 +9,14 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
-    
+    var numberOfIten:Int = 0 
     // MARK: Outlets
     
     
     @IBOutlet weak var collectionViewHome : UICollectionView!
     
-    var arrayImage = [String]()
+    var arrayMovies = [Movie]()
+   var viewComtroller = HomeViewController()
     
     
     override func awakeFromNib() {
@@ -35,19 +36,20 @@ class HomeTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        
+        
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return numberOfIten
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell: HomeCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? HomeCollectionViewCell
-        {
-            return cell
-        }
-        return UICollectionViewCell()
+        let cell: HomeCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? HomeCollectionViewCell)!
+        cell.setup(movie: arrayMovies[indexPath.row])
+        
+        return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
         
