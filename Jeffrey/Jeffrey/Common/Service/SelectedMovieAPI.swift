@@ -20,11 +20,11 @@ class SelectedMovieAPI {
     //    private var flatrate = [Flatrate]()
     
     // faz o requeste de uma lista de filmes, onde pode ser filtrado por id do genero, numero da página. obs: requisição de uma lista de 20 filmes por página
-    func listOfFilms(idPage: Int, genre: Int ,onComplete: @escaping ([Movie]) -> Void)  {
+    func listOfFilms(idPage: Int, genre: Int, provider: Int ,onComplete: @escaping ([Movie]) -> Void)  {
 //                        idPageApi = Int.random(in: 1..<50) // altera a pagina que ira mostrar os filmes obs
         
    
-        AF.request("\(baseURLAPI)\(keyAPI)&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=\(idPage)&with_genres=\(genre)").responseJSON { response in
+        AF.request("\(baseURLAPI)\(keyAPI)&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=\(idPage)&with_genres=\(genre)&with_watch_providers=\(provider)&watch_region=BR").responseJSON { response in
             if let dictionary = response.value as? [String: Any], let arrayResults = dictionary["results"] as? [[String:Any]]{
                 
                 var  arrayMovie = [Movie]()
@@ -34,6 +34,7 @@ class SelectedMovieAPI {
                     arrayMovie.append(resultValue)
                     
                 }
+                
                 onComplete(arrayMovie)
                 return
             }
@@ -56,6 +57,8 @@ class SelectedMovieAPI {
                 for i in flatrate{
                     let flatrete = Flatrate(fromDictionary: i)
                     arrayFlatrare.append(flatrete)
+                    print(flatrete.providerId)
+                    print(flatrete.providerName)
                 }
                 
                 onComplete(arrayFlatrare)
@@ -63,5 +66,23 @@ class SelectedMovieAPI {
             }
         }
         onComplete([])
+    }
+    
+    func getMovieSearch(textSearch: String ,onComplete: @escaping ([Movie]) -> Void){
+        AF.request("https://api.themoviedb.org/3/search/movie?api_key=16b776cd87d99568d7cf733de5593752&language=pt-BR&page=1&include_adult=false&query=\(textSearch)&watch_region=BR").responseJSON { response in
+            if let dictionary = response.value as? [String: Any], let arrayResults = dictionary["results"] as? [[String:Any]]{
+                
+                var  arrayMovie = [Movie]()
+                for result in arrayResults{
+                    
+                    let resultValue = Movie(fromDictionary: result)
+                    arrayMovie.append(resultValue)
+                    
+                }
+                onComplete(arrayMovie)
+                return
+            }
+            onComplete([])
+        }
     }
 }

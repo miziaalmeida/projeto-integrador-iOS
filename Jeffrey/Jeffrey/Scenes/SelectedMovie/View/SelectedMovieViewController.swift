@@ -27,18 +27,27 @@ class SelectedMovieViewController: UIViewController {
     
     
     //MARK: Variables
-    var viewModel: SelectedMovieViewModelProtocol! 
+    var viewModel: SelectedMovieViewModelProtocol!
     var customSegmentedControl = CustomSegmentControl()
+    var raffle = true
+    var movieScreenHome: Movie?
     
     
     //MARK: IBACTION
     // abre a tela de redirecionamento para o streaming .
     @IBAction func buttonProvider(_ sender: UIButton) {
-        if let screenAddMovie = UIStoryboard(name: " Redirect", bundle: nil).instantiateInitialViewController() as? RedirectViewController{
-            screenAddMovie.movieName = viewModel.getTitle() // passa o nome do filme
-            screenAddMovie.providerName = viewModel.getImageStreaming() // passa o nome do streaming selecionado
-            navigationController?.pushViewController(screenAddMovie, animated: true)
-        }
+//        if let screenAddMovie = UIStoryboard(name: " Redirect", bundle: nil).instantiateInitialViewController() as? RedirectViewController{
+//            screenAddMovie.movieName = viewModel.getTitle() // passa o nome do filme
+//            screenAddMovie.providerName = viewModel.getImageStreaming() // passa o nome do streaming selecionado
+//            navigationController?.pushViewController(screenAddMovie, animated: true)
+        let storyboard = UIStoryboard(name: " Redirect", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: " Redirect") as! RedirectViewController; // MySecondSecreen the storyboard ID
+        //        print("chegou o filme \(movie.title)")
+        vc.movieName = viewModel.getTitle()
+        vc.providerName = viewModel.getImageStreaming()
+        self.present(vc, animated: true, completion: nil);
+        
+//        }
         
     }
     
@@ -88,7 +97,7 @@ class SelectedMovieViewController: UIViewController {
     // Sortar novo filme.
     @IBAction func buttonRaffle (_ sender: UIButton){
         
-        viewModel.raffle { sucess in
+        viewModel.raffleListOfAPIMovies { sucess in
             if sucess{
                 self.setFields()
             }else{
@@ -123,6 +132,11 @@ class SelectedMovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SelectedMovieViewModel()
+        viewModel.setNameProvider()
+        if movieScreenHome != nil{
+            viewModel.setMovieSearchBar(movie: movieScreenHome!)
+        }
+        
         
         roundViewBorder() // Arredodondar a borda da view
 
@@ -130,19 +144,25 @@ class SelectedMovieViewController: UIViewController {
         roundImageButtonRaffle(image: imageButtonRaffle)
         
         
-        viewWillDisappear(false) // esconde a navigationBar
+//        viewWillDisappear(false) // esconde a navigationBar
         
         // Chama a função que customiza o segmentControll
         customSegmentedControl.segmentControlCustom(custom: segmentedControlDetails, view: view)
    
-        
-      viewModel.raffle { sucess in
-        if sucess{
-            self.setFields()
+        if raffle{
+            viewModel.raffleListOfAPIMovies { sucess in
+              if sucess{
+                  self.setFields()
+              }else{
+                  self.buttonRaffle(self.imageButtonRaffle)
+              }
+          }
         }else{
-            self.buttonRaffle(self.imageButtonRaffle)
+            imageButtonRaffle.isEnabled = false
+            imageButtonRaffle.isHidden = true
+            setFieldsMovieHome()
         }
-    }
+      
         
         // Checar qual é seçao que está seleciona no segmentControll
         checkSegmentIndex()
@@ -159,8 +179,28 @@ class SelectedMovieViewController: UIViewController {
         imageFilmeBackGround.image = viewModel.getImageFilm()
         labelVoteAvarage.text = viewModel.getVoteAverage()
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
-//        labelTime.text = viewModel.getTime()
         textViewGenre.text =  viewModel.getGenre()
+        
+    }
+    
+    func setFieldsMovieHome(){
+        
+        let idImage =  movieScreenHome?.posterPath
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage!)")
+        let data = try? Data(contentsOf: url!)
+        
+        
+        
+        
+        
+        labelTitle.text = viewModel.getTitle()
+        labelRelease.text = movieScreenHome?.releaseDate
+        textViewSinopse.text = viewModel.getOverView()
+        imageFilmeBackGround.image = viewModel.getImageFilm()
+        labelVoteAvarage.text = String((movieScreenHome?.voteAverage)!)
+        buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
+       
+        
         
     }
     
@@ -237,3 +277,4 @@ class SelectedMovieViewController: UIViewController {
     
     
 }
+
