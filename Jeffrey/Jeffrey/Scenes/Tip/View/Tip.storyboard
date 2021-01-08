@@ -510,6 +510,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Jtz-pK-B1n" secondAttribute="trailing" id="fSz-04-dLU"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="icon-raffle-jeffrey" id="gjx-6a-wJE">
+                        <inset key="imageInsets" minX="-20" minY="-48" maxX="-20" maxY="-10"/>
+                    </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttonNext" destination="dPx-ZR-eZI" id="Lwj-xh-Dwe"/>
                         <outletCollection property="buttonGenre" destination="62m-ks-Ne5" collectionClass="NSMutableArray" id="9Z5-C3-i7s"/>
@@ -548,6 +552,7 @@
         <image name="disney" width="33" height="33"/>
         <image name="globoPlay" width="33" height="33"/>
         <image name="hbogo" width="33" height="33"/>
+        <image name="icon-raffle-jeffrey" width="30" height="30"/>
         <image name="net" width="33" height="33"/>
         <image name="netflix-1" width="466.5" height="466.5"/>
         <image name="prime" width="33" height="33"/>
