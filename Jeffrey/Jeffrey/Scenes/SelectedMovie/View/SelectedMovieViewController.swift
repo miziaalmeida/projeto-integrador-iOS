@@ -31,6 +31,7 @@ class SelectedMovieViewController: UIViewController {
     var customSegmentedControl = CustomSegmentControl()
     var raffle = true
     var movieScreenHome: Movie?
+    var tipViewModel: TipViewModel?
     
     
     //MARK: IBACTION
@@ -182,6 +183,11 @@ class SelectedMovieViewController: UIViewController {
         textViewGenre.text =  viewModel.getGenre()
         
     }
+    
+    func setTip(gener: String, stream: String){
+        self.tipViewModel = TipViewModel(gener: gener, stream: stream)
+    }
+    
     
     func setFieldsMovieHome(){
         

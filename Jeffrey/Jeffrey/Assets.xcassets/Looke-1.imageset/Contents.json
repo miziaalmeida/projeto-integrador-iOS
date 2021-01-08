@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "claro.jpg",
+      "filename" : "Looke.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "claro@2x.jpg",
+      "filename" : "Looke@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "claro@3x.jpg",
+      "filename" : "Looke@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

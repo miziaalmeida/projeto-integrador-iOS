@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2By-3c-Ag1">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,375 +12,547 @@
             <objects>
                 <viewController id="2By-3c-Ag1" customClass="TipViewController" customModule="Jeffrey" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a83-ca-fux">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Qual o gênero que deseja ver?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fah-k3-3Dv">
-                                <rect key="frame" x="16" y="0.0" width="343" height="21.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qual o gênero que deseja ver?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUb-8t-e2c">
+                                <rect key="frame" x="20" y="60" width="374" height="176"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="LKg-PO-cVJ">
-                                <rect key="frame" x="16" y="29.5" width="343" height="122"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Em qual streaming?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtz-pK-B1n">
+                                <rect key="frame" x="20" y="378.5" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="whB-ZK-hgU">
+                                <rect key="frame" x="54" y="183" width="306" height="170"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="z9J-eV-Lzq">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="2U6-pG-z4X">
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yO-4W-MOi">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Aventura">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="UPf-h5-KIF"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdc-SJ-pq4">
-                                                <rect key="frame" x="119.5" y="0.0" width="104" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="62m-ks-Ne5" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="CHU-SD-1KY"/>
+                                                    <constraint firstAttribute="width" constant="80" id="XVq-NY-fdf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="Ação">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
+                                                        <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="uyU-Dd-HkD"/>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="6ie-bZ-XMx"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYj-dN-n1V">
-                                                <rect key="frame" x="239.5" y="0.0" width="103.5" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Drama">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfF-Ik-I3c" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="113" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="Y0o-pw-WEL"/>
+                                                    <constraint firstAttribute="height" constant="40" id="fL9-IO-9U2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Aventura">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
+                                                        <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Sfg-0M-H7L"/>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="HdP-6G-A6K"/>
                                                 </connections>
                                             </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="D0A-5h-ufz">
-                                        <rect key="frame" x="0.0" y="46" width="343" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxy-Ra-a1O">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Fantasia">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="7or-bG-aTX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sx0-Uy-rj3">
-                                                <rect key="frame" x="119.5" y="0.0" width="104" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Terror">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Rdd-S7-5m2"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Q-VS-um3">
-                                                <rect key="frame" x="239.5" y="0.0" width="103.5" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Romance">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="pEO-Nq-MOo"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4xV-bC-MH1">
-                                        <rect key="frame" x="0.0" y="92" width="343" height="30"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRl-YP-4yi">
-                                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23l-kz-OLS" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="226" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="2qa-8b-iG1"/>
+                                                    <constraint firstAttribute="height" constant="40" id="afu-Rr-C1j"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="Comédia">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
+                                                        <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="2BS-gP-hOz"/>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="7Fe-3w-fZf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkP-8y-mIU">
-                                                <rect key="frame" x="119.5" y="0.0" width="104" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Animação">
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="23l-kz-OLS" firstAttribute="top" secondItem="2U6-pG-z4X" secondAttribute="top" id="6us-BS-prh"/>
+                                            <constraint firstAttribute="trailing" secondItem="23l-kz-OLS" secondAttribute="trailing" id="BX7-9Y-3G6"/>
+                                            <constraint firstAttribute="bottom" secondItem="23l-kz-OLS" secondAttribute="bottom" id="Dtr-Jg-VzT"/>
+                                            <constraint firstItem="FfF-Ik-I3c" firstAttribute="top" secondItem="2U6-pG-z4X" secondAttribute="top" id="HJP-bi-UFh"/>
+                                            <constraint firstItem="62m-ks-Ne5" firstAttribute="leading" secondItem="2U6-pG-z4X" secondAttribute="leading" id="UDF-J3-fDP"/>
+                                            <constraint firstAttribute="bottom" secondItem="62m-ks-Ne5" secondAttribute="bottom" id="Ujh-Ha-zdB"/>
+                                            <constraint firstAttribute="bottom" secondItem="FfF-Ik-I3c" secondAttribute="bottom" id="bJe-vH-elP"/>
+                                            <constraint firstItem="62m-ks-Ne5" firstAttribute="top" secondItem="2U6-pG-z4X" secondAttribute="top" id="pYN-uD-gyS"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="cUi-jf-GLH">
+                                        <rect key="frame" x="0.0" y="65" width="306" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w83-hN-GqK" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="6yM-Aq-W9g"/>
+                                                    <constraint firstAttribute="width" constant="80" id="KwD-1h-Mhu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Romance">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
+                                                        <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="BRO-QB-44N"/>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="KRQ-YF-wmf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai4-nM-e4L">
-                                                <rect key="frame" x="239.5" y="0.0" width="103.5" height="30"/>
-                                                <color key="backgroundColor" red="0.22063031790000001" green="0.14873749019999999" blue="0.29382100700000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lr0-uc-XNR" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="113" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="GjI-ad-Kk8"/>
+                                                    <constraint firstAttribute="width" constant="80" id="o0l-l0-WhJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Drama">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="phb-6Q-wGg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIa-Cq-lW0" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="226" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="t3E-rG-UxM"/>
+                                                    <constraint firstAttribute="width" constant="80" id="va3-E1-pKV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                                 <state key="normal" title="Ficção">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
+                                                        <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="v7a-TF-qew"/>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="8YR-qt-MjS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="JIa-Cq-lW0" firstAttribute="top" secondItem="cUi-jf-GLH" secondAttribute="top" id="0dM-xK-TSm"/>
+                                            <constraint firstItem="w83-hN-GqK" firstAttribute="top" secondItem="cUi-jf-GLH" secondAttribute="top" id="460-AJ-bZn"/>
+                                            <constraint firstAttribute="bottom" secondItem="lr0-uc-XNR" secondAttribute="bottom" id="5Ep-JH-S2Z"/>
+                                            <constraint firstItem="w83-hN-GqK" firstAttribute="leading" secondItem="cUi-jf-GLH" secondAttribute="leading" id="7An-1n-VED"/>
+                                            <constraint firstAttribute="bottom" secondItem="w83-hN-GqK" secondAttribute="bottom" id="HNK-z6-1aQ"/>
+                                            <constraint firstItem="lr0-uc-XNR" firstAttribute="top" secondItem="cUi-jf-GLH" secondAttribute="top" id="c3k-60-ztE"/>
+                                            <constraint firstAttribute="bottom" secondItem="JIa-Cq-lW0" secondAttribute="bottom" id="d5R-gi-uSd"/>
+                                            <constraint firstAttribute="trailing" secondItem="JIa-Cq-lW0" secondAttribute="trailing" id="hf9-zV-Fee"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="7SH-kZ-NTe">
+                                        <rect key="frame" x="0.0" y="130" width="306" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCN-fM-2Sc" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="j6S-mi-aSg"/>
+                                                    <constraint firstAttribute="width" constant="80" id="yi4-Qu-cIx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                <state key="normal" title="Terror">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Iw8-jC-21M"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqi-Ex-XuF" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="113" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="5eB-wo-YGK"/>
+                                                    <constraint firstAttribute="width" constant="80" id="80H-QR-ubf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Animação">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="SO2-0c-ayt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNf-6w-EXX" customClass="CustomButton" customModule="Jeffrey" customModuleProvider="target">
+                                                <rect key="frame" x="226" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="mLk-Wq-X7Q"/>
+                                                    <constraint firstAttribute="height" constant="40" id="wh2-Fa-ehf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Fantasia">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonGenre:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Pn2-ht-e1y"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="YNf-6w-EXX" firstAttribute="top" secondItem="7SH-kZ-NTe" secondAttribute="top" id="M0V-MT-A5t"/>
+                                            <constraint firstAttribute="bottom" secondItem="uCN-fM-2Sc" secondAttribute="bottom" id="NJH-eY-vrL"/>
+                                            <constraint firstAttribute="bottom" secondItem="YNf-6w-EXX" secondAttribute="bottom" id="cCL-ma-F0L"/>
+                                            <constraint firstItem="uCN-fM-2Sc" firstAttribute="top" secondItem="7SH-kZ-NTe" secondAttribute="top" id="hSP-1V-n2m"/>
+                                            <constraint firstAttribute="bottom" secondItem="dqi-Ex-XuF" secondAttribute="bottom" id="qQd-xf-xFR"/>
+                                            <constraint firstItem="dqi-Ex-XuF" firstAttribute="top" secondItem="7SH-kZ-NTe" secondAttribute="top" id="rSR-w9-105"/>
+                                            <constraint firstAttribute="trailing" secondItem="YNf-6w-EXX" secondAttribute="trailing" id="xru-dd-Wx6"/>
+                                            <constraint firstItem="uCN-fM-2Sc" firstAttribute="leading" secondItem="7SH-kZ-NTe" secondAttribute="leading" id="yCC-MA-Nil"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="elS-9E-aNg">
+                                <rect key="frame" x="62" y="423" width="290" height="210"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lJp-NC-iEq">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-vg-0VD" userLabel="hboGo">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Ylm-pF-Gl7"/>
+                                                    <constraint firstAttribute="height" constant="50" id="ggE-K5-sA7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                <state key="normal" title="hboGo" backgroundImage="hbogo"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="ao8-gg-TPu"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMt-I4-T14" userLabel="appleTv">
+                                                <rect key="frame" x="80" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="1do-KV-w0s"/>
+                                                    <constraint firstAttribute="height" constant="50" id="U92-rZ-yhq"/>
+                                                </constraints>
+                                                <state key="normal" title="appleTV" backgroundImage="appletv"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Sz8-9L-4vY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSI-of-Pxr" userLabel="claroVideo">
+                                                <rect key="frame" x="160" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="0Xk-RB-p3S"/>
+                                                    <constraint firstAttribute="height" constant="50" id="sCp-E0-IOm"/>
+                                                </constraints>
+                                                <state key="normal" title="claroTv" backgroundImage="claro"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="ptN-il-59E"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjS-Kp-blx" userLabel="appleTV+">
+                                                <rect key="frame" x="240" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="AVt-jy-Cu9"/>
+                                                    <constraint firstAttribute="width" constant="50" id="iRo-eV-uYt"/>
+                                                </constraints>
+                                                <state key="normal" title="appleTVPlus" backgroundImage="tvapple +"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="IB4-Aj-nMo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="R9i-Wp-7XZ">
+                                        <rect key="frame" x="0.0" y="80" width="290" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-Xt-co8" userLabel="disneyPlus">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="0KE-4P-Jkf"/>
+                                                    <constraint firstAttribute="width" constant="50" id="EtY-cb-WAH"/>
+                                                </constraints>
+                                                <state key="normal" title="disneyPlus" backgroundImage="disney"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="T4c-FS-wXa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5R-Z8-2Oy" userLabel="globoPlay">
+                                                <rect key="frame" x="80" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="MMK-s1-qbt"/>
+                                                    <constraint firstAttribute="height" constant="50" id="NFX-ev-qKL"/>
+                                                </constraints>
+                                                <state key="normal" title="globoPlay" backgroundImage="globoPlay"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Kxu-wV-LFF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTS-gl-70H" userLabel="looke">
+                                                <rect key="frame" x="160" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="LHE-j9-ylJ"/>
+                                                    <constraint firstAttribute="width" constant="50" id="rai-bu-eW8"/>
+                                                </constraints>
+                                                <state key="normal" title="looke" backgroundImage="Looke-1"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="ZRq-V3-icd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYf-55-HfR" userLabel="telecine">
+                                                <rect key="frame" x="240" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="7hZ-8m-tQb"/>
+                                                    <constraint firstAttribute="width" constant="50" id="Wjb-2f-QgI"/>
+                                                </constraints>
+                                                <state key="normal" title="telecinePlay" backgroundImage="telecine"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="FgN-d3-fMG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NvO-dT-y8M">
+                                        <rect key="frame" x="0.0" y="160" width="290" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFA-8g-7id" userLabel="netflix">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="2OH-3e-49d"/>
+                                                    <constraint firstAttribute="width" constant="50" id="Uvf-0f-KaC"/>
+                                                </constraints>
+                                                <state key="normal" title="netflix" backgroundImage="netflix-1"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="L0h-Na-0R6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoP-Q2-blG" userLabel="primeVideo">
+                                                <rect key="frame" x="80" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="I8t-1Q-Cn0"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Jw8-wA-RfI"/>
+                                                </constraints>
+                                                <state key="normal" title="primeVideo" backgroundImage="prime"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="HNN-cU-Bw1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSw-mg-WxD" userLabel="tntGo">
+                                                <rect key="frame" x="160" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="5gH-mS-Asb"/>
+                                                    <constraint firstAttribute="height" constant="50" id="t3c-nr-Tcl"/>
+                                                </constraints>
+                                                <state key="normal" title="tntGo" backgroundImage="tnt"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Oi6-S8-ReP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z9-zi-hzl" userLabel="netMovie">
+                                                <rect key="frame" x="240" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="feZ-2W-KV4"/>
+                                                    <constraint firstAttribute="width" constant="50" id="vwy-c8-ktP"/>
+                                                </constraints>
+                                                <state key="normal" title="netMovie" backgroundImage="net"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="K0Z-dm-mLs"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Em que stremiang gostaria de ver?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quY-vp-oEr">
-                                <rect key="frame" x="16" y="159.5" width="343" height="21.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPx-ZR-eZI">
+                                <rect key="frame" x="180.5" y="674" width="53" height="53"/>
+                                <color key="backgroundColor" red="0.14068623669999999" green="0.0078431372550000003" blue="0.23529839520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21.5" id="ma1-CU-cg1"/>
-                                    <constraint firstAttribute="width" constant="343" id="oeu-jp-tge"/>
+                                    <constraint firstAttribute="width" constant="53" id="4mo-Z4-ea2"/>
+                                    <constraint firstAttribute="height" constant="58" id="CQT-pw-vkd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOY-CM-xlY">
-                                <rect key="frame" x="16" y="545" width="343" height="30"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Próximo">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                <state key="normal" backgroundImage="arrow.right" catalog="system"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
+                                        <integer key="value" value="25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionButtonNext:" destination="2By-3c-Ag1" eventType="touchUpInside" id="1aM-Nl-tVW"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i90-tO-ZOV">
-                                <rect key="frame" x="16" y="189" width="343" height="340"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hjc-Hk-7wC">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frO-XL-iFn">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="appletv"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="JaL-Td-SKN"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RX-Rz-R6L">
-                                                <rect key="frame" x="121" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="claro"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="tat-J9-Vr3"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e21-sW-Zuq">
-                                                <rect key="frame" x="242" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="disney"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="iwP-W4-Bze"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4yr-kY-WO3">
-                                        <rect key="frame" x="0.0" y="120" width="343" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JgW-el-2De">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="globoPlay"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Xfh-Hr-Rx1"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnN-MI-F7L">
-                                                <rect key="frame" x="121" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="hbogo"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Fhr-BY-3uA"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-Ea-wro">
-                                                <rect key="frame" x="242" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="net"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="yGb-kd-1EG"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rdU-ka-tyF">
-                                        <rect key="frame" x="0.0" y="240" width="343" height="100"/>
-                                        <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-hM-YuV">
-                                                <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="prime"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="ShT-Qk-WBj"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iu1-GI-UBO">
-                                                <rect key="frame" x="121" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="telecine"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="cpo-9l-Yfq"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u12-pC-rEx">
-                                                <rect key="frame" x="242" y="0.0" width="101" height="100"/>
-                                                <state key="normal" backgroundImage="appletv"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Gnq-ag-brP"/>
-                        <color key="backgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.23921568627450979" green="0.039215686274509803" blue="0.29803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="quY-vp-oEr" firstAttribute="leading" secondItem="a83-ca-fux" secondAttribute="leadingMargin" id="7Fd-is-4Op"/>
-                            <constraint firstItem="GOY-CM-xlY" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="DKM-xD-cIW"/>
-                            <constraint firstItem="LKg-PO-cVJ" firstAttribute="leading" secondItem="a83-ca-fux" secondAttribute="leadingMargin" id="ME4-kV-9Bn"/>
-                            <constraint firstItem="LKg-PO-cVJ" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="OLz-4W-LJq"/>
-                            <constraint firstItem="i90-tO-ZOV" firstAttribute="leading" secondItem="a83-ca-fux" secondAttribute="leadingMargin" id="Ohs-GY-gaO"/>
-                            <constraint firstItem="quY-vp-oEr" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="UyU-eF-RX3"/>
-                            <constraint firstItem="fah-k3-3Dv" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="YUx-ax-UuQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GOY-CM-xlY" secondAttribute="trailing" id="YkR-PA-mg3"/>
-                            <constraint firstItem="LKg-PO-cVJ" firstAttribute="top" secondItem="fah-k3-3Dv" secondAttribute="bottom" constant="8" id="bp4-wR-qL5"/>
-                            <constraint firstItem="quY-vp-oEr" firstAttribute="top" secondItem="LKg-PO-cVJ" secondAttribute="bottom" constant="8" id="c1S-Kq-lgz"/>
-                            <constraint firstItem="GOY-CM-xlY" firstAttribute="top" secondItem="i90-tO-ZOV" secondAttribute="bottom" constant="16" id="j8D-23-eXa"/>
-                            <constraint firstItem="i90-tO-ZOV" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="k1N-aR-UPC"/>
-                            <constraint firstItem="i90-tO-ZOV" firstAttribute="top" secondItem="quY-vp-oEr" secondAttribute="bottom" constant="8" id="peZ-mY-Jmt"/>
-                            <constraint firstItem="fah-k3-3Dv" firstAttribute="leading" secondItem="a83-ca-fux" secondAttribute="leadingMargin" id="sww-LQ-wAv"/>
-                            <constraint firstItem="fah-k3-3Dv" firstAttribute="top" secondItem="a83-ca-fux" secondAttribute="topMargin" id="vpM-Cm-TTX"/>
+                            <constraint firstItem="elS-9E-aNg" firstAttribute="centerY" secondItem="a83-ca-fux" secondAttribute="centerY" constant="80" id="0tc-M6-0OZ"/>
+                            <constraint firstItem="mUb-8t-e2c" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="4Br-zY-Bn4"/>
+                            <constraint firstItem="dPx-ZR-eZI" firstAttribute="centerY" secondItem="a83-ca-fux" secondAttribute="centerY" constant="252.5" id="4JT-C5-MYF"/>
+                            <constraint firstItem="mUb-8t-e2c" firstAttribute="leading" secondItem="a83-ca-fux" secondAttribute="leadingMargin" id="7Hs-Eh-kbf"/>
+                            <constraint firstItem="elS-9E-aNg" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="7Vq-nm-5YH"/>
+                            <constraint firstItem="dPx-ZR-eZI" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="7yg-UJ-FsZ"/>
+                            <constraint firstItem="mUb-8t-e2c" firstAttribute="trailing" secondItem="a83-ca-fux" secondAttribute="trailingMargin" id="8yF-C0-Lle"/>
+                            <constraint firstItem="whB-ZK-hgU" firstAttribute="centerY" secondItem="a83-ca-fux" secondAttribute="centerY" constant="-180" id="COz-Sw-jFe"/>
+                            <constraint firstItem="Jtz-pK-B1n" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="HA6-WN-fck"/>
+                            <constraint firstItem="mUb-8t-e2c" firstAttribute="centerY" secondItem="a83-ca-fux" secondAttribute="centerY" constant="-300" id="Kst-dF-rZ6"/>
+                            <constraint firstItem="Jtz-pK-B1n" firstAttribute="centerY" secondItem="a83-ca-fux" secondAttribute="centerY" constant="-60" id="RC1-7E-XQE"/>
+                            <constraint firstItem="whB-ZK-hgU" firstAttribute="centerX" secondItem="a83-ca-fux" secondAttribute="centerX" id="T4W-nk-LGH"/>
+                            <constraint firstItem="mUb-8t-e2c" firstAttribute="top" secondItem="a83-ca-fux" secondAttribute="topMargin" constant="16" id="VeE-KG-0aJ"/>
+                            <constraint firstItem="Jtz-pK-B1n" firstAttribute="leading" secondItem="a83-ca-fux" secondAttribute="leadingMargin" id="fAa-bf-R7s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jtz-pK-B1n" secondAttribute="trailing" id="fSz-04-dLU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="sE2-9x-d0g">
-                        <barButtonItem key="backBarButtonItem" title="Próximo" id="x27-8y-rGy"/>
-                    </navigationItem>
                     <connections>
-                        <outletCollection property="buttonGenre" destination="2yO-4W-MOi" collectionClass="NSMutableArray" id="0WO-LR-jVk"/>
-                        <outletCollection property="buttonGenre" destination="fdc-SJ-pq4" collectionClass="NSMutableArray" id="ZdK-fa-3m6"/>
-                        <outletCollection property="buttonGenre" destination="TYj-dN-n1V" collectionClass="NSMutableArray" id="KUk-a2-VCw"/>
-                        <outletCollection property="buttonGenre" destination="Vxy-Ra-a1O" collectionClass="NSMutableArray" id="U8d-eA-a8c"/>
-                        <outletCollection property="buttonGenre" destination="sx0-Uy-rj3" collectionClass="NSMutableArray" id="Qe6-Jd-sMz"/>
-                        <outletCollection property="buttonGenre" destination="Q6Q-VS-um3" collectionClass="NSMutableArray" id="dhJ-Ch-qCz"/>
-                        <outletCollection property="buttonGenre" destination="HRl-YP-4yi" collectionClass="NSMutableArray" id="bZF-YZ-Cyf"/>
-                        <outletCollection property="buttonGenre" destination="qkP-8y-mIU" collectionClass="NSMutableArray" id="Hrd-Vj-3xc"/>
-                        <outletCollection property="buttonGenre" destination="ai4-nM-e4L" collectionClass="NSMutableArray" id="sry-T9-PtR"/>
-                        <outletCollection property="buttonStreaming" destination="frO-XL-iFn" collectionClass="NSMutableArray" id="yre-Ew-6ou"/>
-                        <outletCollection property="buttonStreaming" destination="1RX-Rz-R6L" collectionClass="NSMutableArray" id="viw-yd-Xac"/>
-                        <outletCollection property="buttonStreaming" destination="e21-sW-Zuq" collectionClass="NSMutableArray" id="3OJ-PE-cLr"/>
-                        <outletCollection property="buttonStreaming" destination="JgW-el-2De" collectionClass="NSMutableArray" id="I5G-ah-Mxy"/>
-                        <outletCollection property="buttonStreaming" destination="EnN-MI-F7L" collectionClass="NSMutableArray" id="2t5-uU-i08"/>
-                        <outletCollection property="buttonStreaming" destination="Amf-Ea-wro" collectionClass="NSMutableArray" id="pRD-pP-8JX"/>
-                        <outletCollection property="buttonStreaming" destination="iJV-hM-YuV" collectionClass="NSMutableArray" id="pal-8q-WqG"/>
-                        <outletCollection property="buttonStreaming" destination="Iu1-GI-UBO" collectionClass="NSMutableArray" id="ffP-JO-58D"/>
-                        <outletCollection property="buttonStreaming" destination="u12-pC-rEx" collectionClass="NSMutableArray" id="fe8-pn-YIc"/>
+                        <outlet property="buttonNext" destination="dPx-ZR-eZI" id="Lwj-xh-Dwe"/>
+                        <outletCollection property="buttonGenre" destination="62m-ks-Ne5" collectionClass="NSMutableArray" id="9Z5-C3-i7s"/>
+                        <outletCollection property="buttonGenre" destination="FfF-Ik-I3c" collectionClass="NSMutableArray" id="FF6-fw-Wt5"/>
+                        <outletCollection property="buttonGenre" destination="23l-kz-OLS" collectionClass="NSMutableArray" id="vSi-q1-nCq"/>
+                        <outletCollection property="buttonGenre" destination="w83-hN-GqK" collectionClass="NSMutableArray" id="YRy-gH-rVH"/>
+                        <outletCollection property="buttonGenre" destination="lr0-uc-XNR" collectionClass="NSMutableArray" id="QPp-K1-Oc1"/>
+                        <outletCollection property="buttonGenre" destination="JIa-Cq-lW0" collectionClass="NSMutableArray" id="z0e-6u-8U2"/>
+                        <outletCollection property="buttonGenre" destination="uCN-fM-2Sc" collectionClass="NSMutableArray" id="f6T-zq-9Z0"/>
+                        <outletCollection property="buttonGenre" destination="dqi-Ex-XuF" collectionClass="NSMutableArray" id="rvD-s4-AsB"/>
+                        <outletCollection property="buttonGenre" destination="YNf-6w-EXX" collectionClass="NSMutableArray" id="atd-gM-zoD"/>
+                        <outletCollection property="buttonStreaming" destination="eo3-vg-0VD" collectionClass="NSMutableArray" id="qCN-B3-nzl"/>
+                        <outletCollection property="buttonStreaming" destination="wMt-I4-T14" collectionClass="NSMutableArray" id="ICg-f6-tVB"/>
+                        <outletCollection property="buttonStreaming" destination="wSI-of-Pxr" collectionClass="NSMutableArray" id="iVm-Bf-AOr"/>
+                        <outletCollection property="buttonStreaming" destination="zjS-Kp-blx" collectionClass="NSMutableArray" id="mWx-Ez-hb8"/>
+                        <outletCollection property="buttonStreaming" destination="T0Q-Xt-co8" collectionClass="NSMutableArray" id="hKi-8a-RuV"/>
+                        <outletCollection property="buttonStreaming" destination="v5R-Z8-2Oy" collectionClass="NSMutableArray" id="2gT-VZ-1SW"/>
+                        <outletCollection property="buttonStreaming" destination="KTS-gl-70H" collectionClass="NSMutableArray" id="7sJ-je-Qux"/>
+                        <outletCollection property="buttonStreaming" destination="TYf-55-HfR" collectionClass="NSMutableArray" id="RuO-gZ-xIa"/>
+                        <outletCollection property="buttonStreaming" destination="SFA-8g-7id" collectionClass="NSMutableArray" id="Br1-0P-cLr"/>
+                        <outletCollection property="buttonStreaming" destination="PoP-Q2-blG" collectionClass="NSMutableArray" id="haO-pf-90O"/>
+                        <outletCollection property="buttonStreaming" destination="FSw-mg-WxD" collectionClass="NSMutableArray" id="1SV-9P-qq7"/>
+                        <outletCollection property="buttonStreaming" destination="7z9-zi-hzl" collectionClass="NSMutableArray" id="bH8-5n-F1c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcD-lf-jA2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3900" y="467.3163418290855"/>
+            <point key="canvasLocation" x="3607" y="390"/>
         </scene>
     </scenes>
     <resources>
-        <image name="appletv" width="100" height="100"/>
-        <image name="claro" width="100" height="100"/>
-        <image name="disney" width="100" height="100"/>
-        <image name="globoPlay" width="100" height="100"/>
-        <image name="hbogo" width="100" height="100"/>
-        <image name="net" width="100" height="100"/>
-        <image name="prime" width="100" height="100"/>
-        <image name="telecine" width="100" height="100"/>
+        <image name="Looke-1" width="75" height="75"/>
+        <image name="appletv" width="33" height="33"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="claro" width="33" height="33"/>
+        <image name="disney" width="33" height="33"/>
+        <image name="globoPlay" width="33" height="33"/>
+        <image name="hbogo" width="33" height="33"/>
+        <image name="net" width="33" height="33"/>
+        <image name="netflix-1" width="466.5" height="466.5"/>
+        <image name="prime" width="33" height="33"/>
+        <image name="telecine" width="33" height="33"/>
+        <image name="tnt" width="33" height="33"/>
+        <image name="tvapple +" width="33" height="33"/>
     </resources>
 </document>

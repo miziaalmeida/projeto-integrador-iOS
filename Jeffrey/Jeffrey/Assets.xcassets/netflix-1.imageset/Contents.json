@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "claro.jpg",
+      "filename" : "netflix.jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "claro@2x.jpg",
+      "filename" : "netflix@2x.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "claro@3x.jpg",
+      "filename" : "netflix@3x.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }
