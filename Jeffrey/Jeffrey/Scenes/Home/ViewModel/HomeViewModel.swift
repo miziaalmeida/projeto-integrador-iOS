@@ -16,6 +16,7 @@ protocol HomeViewModelProtocol: AnyObject{
     func getArrayAction() -> [Movie]
     func getArrayAnimation() -> [Movie]
     func getArrayTerror() -> [Movie]
+   
 
 }
 
@@ -76,6 +77,11 @@ class HomeViewModel:HomeViewModelProtocol{
         
         return arrayMoviesTerror
     }
+    
+ 
+    
+    
+  
     
     //sem utilizar no momento
   

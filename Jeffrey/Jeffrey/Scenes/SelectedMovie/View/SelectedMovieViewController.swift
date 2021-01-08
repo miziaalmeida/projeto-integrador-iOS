@@ -31,6 +31,7 @@ class SelectedMovieViewController: UIViewController {
     var customSegmentedControl = CustomSegmentControl()
     var raffle = true
     var movieScreenHome: Movie?
+    var genteHomeListSearch:String?
     
     
     //MARK: IBACTION
@@ -185,10 +186,10 @@ class SelectedMovieViewController: UIViewController {
     
     func setFieldsMovieHome(){
         
-        let idImage =  movieScreenHome?.posterPath
-        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage!)")
-        let data = try? Data(contentsOf: url!)
-        
+//        let idImage =  movieScreenHome?.backdropPath
+//        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage!)")
+//        let data = try? Data(contentsOf: url!)
+//
         
         
         
@@ -199,7 +200,7 @@ class SelectedMovieViewController: UIViewController {
         imageFilmeBackGround.image = viewModel.getImageFilm()
         labelVoteAvarage.text = String((movieScreenHome?.voteAverage)!)
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
-       
+        textViewGenre.text =  genteHomeListSearch
         
         
     }

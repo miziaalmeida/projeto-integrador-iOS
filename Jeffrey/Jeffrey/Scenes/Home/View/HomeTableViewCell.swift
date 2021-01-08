@@ -16,11 +16,18 @@ class HomeTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
     @IBOutlet weak var collectionViewHome : UICollectionView!
     
     var arrayMovies = [Movie]()
-   var viewComtroller = HomeViewController()
+    var sectionInTableView = 0
+    var controller:UIViewController?
+    var genre:String?
+    
+   
+    
+   
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         
         self.collectionViewHome.delegate = self
         self.collectionViewHome.dataSource = self
@@ -34,11 +41,26 @@ class HomeTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
         // Configure the view for the selected state
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+     
+        
+        let storyboard = UIStoryboard(name: "SelectedMovie", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController;
+        vc.raffle = false
+        vc.movieScreenHome = arrayMovies[indexPath.row]
+        vc.genteHomeListSearch = genre
+        controller!.present(vc, animated: true, completion: nil);
         
         
+        
+        
+       
     }
+    
+    
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
