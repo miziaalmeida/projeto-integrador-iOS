@@ -31,11 +31,12 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         viewModel = HomeViewModel()
         
         viewModel.raffleListOfAPIMovies(genre: 35) { (sucess) in
-            self.viewModel.raffleListOfAPIMovies(genre: 28) { (sucee) in
+            self.viewModel.raffleListOfAPIMovies(genre: 28) { (sucess) in
                 self.viewModel.raffleListOfAPIMovies(genre: 16) { (sucess) in
                     self.viewModel.raffleListOfAPIMovies(genre: 27) { (sucess) in
                         self.tableViewHome.delegate = self
                         self.tableViewHome.dataSource = self
+                        self.tableViewHome.reloadData()
                     }
                     
                 }
@@ -50,7 +51,7 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
 
         tableViewHome.estimatedRowHeight = 85.0
         tableViewHome.rowHeight = UITableView.automaticDimension
-       
+        
         
         
     }
