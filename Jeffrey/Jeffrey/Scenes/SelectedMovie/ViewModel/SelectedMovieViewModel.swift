@@ -82,6 +82,7 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
     func getImageStreaming() -> String
 //    func getTime() -> String
     func getGenre() -> String
+    func getArrayFavorites() -> [Movie]
     func addMovieArrayFavorites()
     func addMovieArraySeen()
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void)
@@ -89,6 +90,7 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
     func setNameProvider(providerName: String)
     func setMovieSearchBar(movie:Movie)
     func setNameProvider()
+    
     
 
 }
@@ -103,7 +105,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     private var arrayMovies = [Movie]() // Onde será carregado a request da API
     private var genreId = idGenres.animation.rawValue// ID do gênero para a requisicão na API! Fixo 28 para testes! obs: Acão
     private var providerName  = nameProviders.netflix.rawValue
-    private var idProvider  = idProviders.globo.rawValue
+    private var idProvider  = idProviders.netflix.rawValue
     private var idPageApi = 2 // Alterar a pagina na requisição da API
 //    private var idProvider = 8 // testar
     var idPage: Int = 1 // obs: page da app por padrão começa na primeira
@@ -385,8 +387,19 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         
     }
     
+    func getArrayFavorites() -> [Movie]{
+        
+        return arrayMovieFavorites
+    }
+    
     func addMovieArrayFavorites() {
-        arrayMovieFavorites.append(arrayMovies[idMovieInArray])
+        if arrayMovies.isEmpty{
+            arrayMovieFavorites.append(movieSearchBar!)
+        }else{
+            arrayMovieFavorites.append(arrayMovies[idMovieInArray])
+        }
+        
+       
     }
     
     func addMovieArraySeen() {

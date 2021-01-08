@@ -13,7 +13,7 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableViewList: UITableView!
     
     var customSegmentedControl = CustomSegmentControl()
-    //var arrayMovie = [String]
+    var arrayMovie : [Movie]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,12 +42,19 @@ extension ListViewController : UITableViewDelegate{
 
 extension  ListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return arrayMovie!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
+        
+        cell.setup(movie: arrayMovie![indexPath.row])
+        
+        
+        
         return cell
+        
+        
     }
     
     
