@@ -13,7 +13,8 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableViewList: UITableView!
     
     var customSegmentedControl = CustomSegmentControl()
-    var arrayMovie : [Movie]?
+    var arrayMovieFavorites : [Movie]?
+    var arrayMovieSee : [Movie]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ListViewController: UIViewController {
         
         tableViewList.delegate = self
         tableViewList.dataSource = self
+       
         
       
     }
@@ -30,7 +32,9 @@ class ListViewController: UIViewController {
 
     @IBAction func segmentControlList(_ sender: UISegmentedControl) {
         
-        customSegmentedControl.indexChangedSegmentControll(segmentedControll: segmentedControlList, view: view)
+//        customSegmentedControl.indexChangedSegmentControll(segmentedControll: segmentedControlList, view: view)
+        print(segmentedControlList.selectedSegmentIndex)
+        tableViewList.reloadData()
         
         
         }
@@ -42,13 +46,21 @@ extension ListViewController : UITableViewDelegate{
 
 extension  ListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayMovie!.count
+        if segmentedControlList.selectedSegmentIndex == 0{
+            return arrayMovieFavorites!.count
+        }else{
+            return arrayMovieSee!.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
+        if segmentedControlList.selectedSegmentIndex == 0{
+            cell.setup(movie: arrayMovieFavorites![indexPath.row])
+        }else{
+            cell.setup(movie: arrayMovieSee![indexPath.row])
+        }
         
-        cell.setup(movie: arrayMovie![indexPath.row])
         
         
         
@@ -56,6 +68,10 @@ extension  ListViewController: UITableViewDataSource{
         
         
     }
+    
+    
+    
+    
     
     
 }

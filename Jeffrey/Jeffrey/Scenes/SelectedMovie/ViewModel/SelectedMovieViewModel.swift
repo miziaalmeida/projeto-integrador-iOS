@@ -83,6 +83,7 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
 //    func getTime() -> String
     func getGenre() -> String
     func getArrayFavorites() -> [Movie]
+    func getArraySee() -> [Movie]
     func addMovieArrayFavorites()
     func addMovieArraySeen()
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void)
@@ -390,6 +391,11 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     func getArrayFavorites() -> [Movie]{
         
         return arrayMovieFavorites
+    }
+    
+    func getArraySee() -> [Movie]{
+        
+        return arrayMovieSeen
     }
     
     func addMovieArrayFavorites() {

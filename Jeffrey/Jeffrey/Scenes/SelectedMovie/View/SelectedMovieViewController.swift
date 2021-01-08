@@ -35,13 +35,9 @@ class SelectedMovieViewController: UIViewController {
     var tipViewModel: TipViewModel?
 
 
-    //MARK: IBACTION
-    // abre a tela de redirecionamento para o streaming .
+  
     @IBAction func buttonProvider(_ sender: UIButton) {
-//        if let screenAddMovie = UIStoryboard(name: " Redirect", bundle: nil).instantiateInitialViewController() as? RedirectViewController{
-//            screenAddMovie.movieName = viewModel.getTitle() // passa o nome do filme
-//            screenAddMovie.providerName = viewModel.getImageStreaming() // passa o nome do streaming selecionado
-//            navigationController?.pushViewController(screenAddMovie, animated: true)
+
         let storyboard = UIStoryboard(name: " Redirect", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: " Redirect") as! RedirectViewController; // MySecondSecreen the storyboard ID
         //        print("chegou o filme \(movie.title)")
@@ -49,7 +45,7 @@ class SelectedMovieViewController: UIViewController {
         vc.providerName = viewModel.getImageStreaming()
         self.present(vc, animated: true, completion: nil);
 
-//        }
+
 
     }
 
@@ -67,7 +63,8 @@ class SelectedMovieViewController: UIViewController {
     
         @IBAction func goFavorites(_ sender: UIButton){
             if let screenAddMovie = UIStoryboard(name: "List", bundle: nil).instantiateInitialViewController() as? ListViewController{
-                screenAddMovie.arrayMovie = viewModel.getArrayFavorites()
+                screenAddMovie.arrayMovieFavorites = viewModel.getArrayFavorites()
+                screenAddMovie.arrayMovieSee = viewModel.getArraySee()
 //                screenAddMovie.whichListToDisplay = "see"
     
                 self.present(screenAddMovie, animated: true)
@@ -80,10 +77,11 @@ class SelectedMovieViewController: UIViewController {
     // Abre a tela com os filmes Vistos
         @IBAction func goSee(_ sender: UIButton){
             if let screenAddMovie = UIStoryboard(name: "List", bundle: nil).instantiateInitialViewController() as? ListViewController{
-                screenAddMovie.arrayMovie = viewModel.getArrayFavorites()
+                screenAddMovie.arrayMovieSee = viewModel.getArraySee()
 //                screenAddMovie.whichListToDisplay = "see"
     
-                navigationController?.pushViewController(screenAddMovie, animated: true)
+                self.present(screenAddMovie, animated: true)
+//                navigationController?.pushViewController(screenAddMovie, animated: true)
             }
         }
 
