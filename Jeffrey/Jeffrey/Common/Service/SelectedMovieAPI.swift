@@ -43,6 +43,32 @@ class SelectedMovieAPI {
     }
     
     
+    
+    func listOfFilmswithoutProvider(idPage: Int, genre: Int,onComplete: @escaping ([Movie]) -> Void)  {
+//                        idPageApi = Int.random(in: 1..<50) // altera a pagina que ira mostrar os filmes obs
+        
+   
+        AF.request("\(baseURLAPI)\(keyAPI)&language=pt-BR&sort_by=popularity.desc&include_adult=false&include_video=false&page=\(idPage)&with_genres=\(genre)&watch_region=BR").responseJSON { response in
+            if let dictionary = response.value as? [String: Any], let arrayResults = dictionary["results"] as? [[String:Any]]{
+                
+                var  arrayMovie = [Movie]()
+                for result in arrayResults{
+                    
+                    let resultValue = Movie(fromDictionary: result)
+                    arrayMovie.append(resultValue)
+                    
+                }
+                
+                onComplete(arrayMovie)
+                return
+            }
+            onComplete([])
+        }
+    }
+    
+    
+    
+    
     // Func que faz o request  para saber em quais streaming o filme está disponível.
     func getProviders(idMovie: Int, onComplete: @escaping ([Flatrate]) -> Void){
         
@@ -86,3 +112,4 @@ class SelectedMovieAPI {
         }
     }
 }
+

@@ -8,9 +8,13 @@
 import UIKit
 import Kingfisher
 
+//protocol HomeViewControllerProtocol: AnyObject{
+//    
+//    func openopenScreenMovieDetail(indexSectionTableView:Int, indexMovie: Int)
+//
+//}
 
-
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     
     
@@ -18,18 +22,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableViewHome:UITableView!
     
-    
+    var viewModel: HomeViewModelProtocol!
     
     
     // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = HomeViewModel()
         
-        self.tableViewHome.delegate = self
-        self.tableViewHome.dataSource = self
+        viewModel.raffleListOfAPIMovies(genre: 35) { (sucess) in
+            self.viewModel.raffleListOfAPIMovies(genre: 28) { (sucee) in
+                self.viewModel.raffleListOfAPIMovies(genre: 16) { (sucess) in
+                    self.viewModel.raffleListOfAPIMovies(genre: 27) { (sucess) in
+                        self.tableViewHome.delegate = self
+                        self.tableViewHome.dataSource = self
+                    }
+                    
+                }
+               
+            }
+            
+        }
         
-//        let customTabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home.png"),tag: 0)
-//        self.tabBarItem = customTabBarItem
+       
+        
+
 
         tableViewHome.estimatedRowHeight = 85.0
         tableViewHome.rowHeight = UITableView.automaticDimension
@@ -38,18 +55,52 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    func openopenScreenMovieDetail(movie:Movie){
+//
+//        
+//        
+        let storyboard = UIStoryboard(name: "SelectedMovie", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController;
+        vc.raffle = false
+        vc.movieScreenHome = movie
+        self.present(vc, animated: true, completion: nil);
+        
+        
+    }
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Comédia"
+        case 1:
+            return "Ação"
+        case 2:
+            return "Animação"
+        case 3:
+            return "Terror"
+        default:
+            return ""
+        }
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
+            return 4
 
         }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        if(indexPath.row == 0 ){
+        if(indexPath.section == 0 ){
             return 400
         }else{
             return 200
@@ -59,7 +110,27 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! HomeTableViewCell
-
+//        cell.numberOfIten = viewModel.getCountArray()
+        cell.numberOfIten = 20
+        switch indexPath.section {
+        case 0:
+            cell.arrayMovies = viewModel.getArrayComedy()
+            cell.genre = "Comédia"
+        case 1:
+            cell.arrayMovies = viewModel.getArrayAction()
+            cell.genre = "Ação"
+        case 2:
+            cell.arrayMovies = viewModel.getArrayAnimation()
+            cell.genre = "Animação"
+        case 3:
+            cell.arrayMovies = viewModel.getArrayTerror()
+            cell.genre = "Terror"
+        default:
+            ""
+        }
+        
+        cell.controller = self
+        cell.sectionInTableView = indexPath.section
 
         return cell
     }
