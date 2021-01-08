@@ -110,15 +110,15 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rIq-jY-KL7">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.17836663126945496" green="0.01253842655569315" blue="0.23122021555900574" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="r6O-9I-jgQ" kind="relationship" relationship="viewControllers" id="HYw-Kw-Pqb"/>
                         <segue destination="GIf-yF-LeE" kind="relationship" relationship="viewControllers" id="oWv-h1-njT"/>
                         <segue destination="5xR-kW-1Qm" kind="relationship" relationship="viewControllers" id="Zip-Ch-mNt"/>
+                        <segue destination="tLf-HF-xBK" kind="relationship" relationship="viewControllers" id="u8n-gD-MUL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjZ-0o-lJG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -142,15 +142,36 @@
             <objects>
                 <viewControllerPlaceholder storyboardName="Tip" id="5xR-kW-1Qm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="2jw-xJ-m5N">
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1uI-o5-vpm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="286" y="564"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="t4w-XI-EdK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="tLf-HF-xBK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="rGv-XO-4Ho"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C6C-Pu-WQO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="510" y="563"/>
+        </scene>
+        <!--SelectedMovie-->
+        <scene sceneID="vc6-cb-NUZ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectedMovie" id="KfE-6e-qun" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="RKp-lT-AWa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfu-Wj-Teu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="543"/>
+        </scene>
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
     </resources>
 </document>

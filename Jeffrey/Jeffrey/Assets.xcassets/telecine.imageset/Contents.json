@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "telecine@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "telecine@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

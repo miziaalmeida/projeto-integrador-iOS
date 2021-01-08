@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "claro.jpg",
+      "filename" : "tvapple +.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "claro@2x.jpg",
+      "filename" : "tvapple +@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "claro@3x.jpg",
+      "filename" : "tvapple +@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
