@@ -44,11 +44,6 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
             }
             
         }
-        
-       
-        
-
-
         tableViewHome.estimatedRowHeight = 85.0
         tableViewHome.rowHeight = UITableView.automaticDimension
         
