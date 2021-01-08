@@ -7,6 +7,6 @@
 
 import Foundation
 
-class TipViewModel{
-    
+struct TipViewModel {
+    let gener, stream: String
 }
