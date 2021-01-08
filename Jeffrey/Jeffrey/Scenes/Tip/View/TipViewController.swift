@@ -34,8 +34,11 @@ class TipViewController: UIViewController {
     }
     
     @IBAction func actionButtonGenre(_ sender: UIButton) {
-        sender.isSelected = false
-        sender.backgroundColor = UIColor.lightGray
+        buttonGenre.forEach{
+            $0.isSelected = false
+        }
+        sender.isSelected = true
+        //sender.backgroundColor = UIColor.lightGray
         if let unwarappedGenre = sender.currentTitle{
             self.gener = unwarappedGenre
         }
@@ -43,6 +46,10 @@ class TipViewController: UIViewController {
     }
     
     @IBAction func actionButtonStreaming(_ sender: UIButton) {
+        buttonStreaming.forEach{
+            $0.isSelected = false
+        }
+        sender.isSelected = true
         if let unwrappedStream = sender.currentTitle {
             self.stream = unwrappedStream
     }

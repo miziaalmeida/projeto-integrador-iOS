@@ -32,7 +32,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wcq-h0-Tuz">
-                                <rect key="frame" x="0.0" y="74" width="375" height="593"/>
+                                <rect key="frame" x="0.0" y="74" width="375" height="544"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="171" id="xMJ-Pg-FPI">
@@ -120,7 +120,8 @@
                             <constraint firstItem="6ZX-Wq-qd8" firstAttribute="trailing" secondItem="KJ4-rz-I6S" secondAttribute="trailing" constant="16" id="sgM-UW-37g"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Listas" image="list.dash" catalog="system" id="9zV-6T-7aK"/>
+                    <tabBarItem key="tabBarItem" title="Listas" image="list.bullet" catalog="system" id="Dwy-mu-fQf"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="segmentedControlList" destination="KJ4-rz-I6S" id="2rR-bR-f9B"/>
                         <outlet property="tableViewList" destination="wcq-h0-Tuz" id="P9W-54-hC5"/>
@@ -132,7 +133,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.dash" catalog="system" width="128" height="85"/>
-        <image name="net" width="100" height="100"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <image name="net" width="33" height="33"/>
     </resources>
 </document>

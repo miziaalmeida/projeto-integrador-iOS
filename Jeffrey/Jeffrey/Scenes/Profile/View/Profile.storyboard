@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile View Controller-->
+        <!--Perfil-->
         <scene sceneID="WcR-lB-ef8">
             <objects>
                 <viewController id="AVc-gw-pes" customClass="ProfileViewController" customModule="Jeffrey" customModuleProvider="target" sceneMemberID="viewController">
@@ -105,6 +105,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jlk-6j-M05"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="BSJ-4n-rDr"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editProfileBtn" destination="BUY-a5-xcF" id="Uoz-PG-Uma"/>
                         <outlet property="exitBtn" destination="J1r-7l-lJH" id="zQc-zQ-9FU"/>
@@ -139,6 +141,7 @@
     </scenes>
     <resources>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="profile-Ariana" width="253" height="209.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
