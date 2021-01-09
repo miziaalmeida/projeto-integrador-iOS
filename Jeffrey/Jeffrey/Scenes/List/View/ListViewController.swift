@@ -32,7 +32,7 @@ class ListViewController: UIViewController {
 
     @IBAction func segmentControlList(_ sender: UISegmentedControl) {
         
-//        customSegmentedControl.indexChangedSegmentControll(segmentedControll: segmentedControlList, view: view)
+        customSegmentedControl.indexChangedSegmentControll(segmentedControll: segmentedControlList, view: view)
         print(segmentedControlList.selectedSegmentIndex)
         tableViewList.reloadData()
         

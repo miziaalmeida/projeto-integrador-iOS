@@ -125,7 +125,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="net" width="33" height="33"/>
     </resources>
 </document>
