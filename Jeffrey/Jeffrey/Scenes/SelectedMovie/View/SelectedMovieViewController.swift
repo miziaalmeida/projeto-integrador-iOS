@@ -33,6 +33,8 @@ class SelectedMovieViewController: UIViewController {
     var movieScreenHome: Movie?
     var genteHomeListSearch:String?
     var tipViewModel: TipViewModel?
+    var idGenre: Int = 16
+    var idProvider: Int = 8
 
 
   
@@ -142,12 +144,14 @@ class SelectedMovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SelectedMovieViewModel()
-        viewModel.setNameProvider()
+        
         if movieScreenHome != nil{
             viewModel.setMovieSearchBar(movie: movieScreenHome!)
         }
 
-
+        viewModel.setIdGenre(id: idGenre)
+        viewModel.setIdProvider(id: idProvider)
+        viewModel.setNameProvider()
         roundViewBorder() // Arredodondar a borda da view
 
         // arredondar botão sortear
@@ -255,8 +259,8 @@ class SelectedMovieViewController: UIViewController {
         imageButtonRaffle.layer.cornerRadius = image.frame.size.width/2
         imageButtonRaffle.clipsToBounds = true
 
-        imageButtonRaffle.setImage(UIImage(named: "novofilme"), for: .normal)
-        imageButtonRaffle.backgroundColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
+//        imageButtonRaffle.setImage(UIImage(named: "novofilme"), for: .normal)
+//        imageButtonRaffle.backgroundColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
 
     }
 
