@@ -112,9 +112,9 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     var idPage: Int = 1 // obs: page da app por padrão começa na primeira
     var idMovieInArray = 0 // Indice do Filme no array de Filmes, é alterado cada vez que é sorteado um novo filme.
     
-    var arrayMovieFavorites = [Movie]() // Lista Filmes Favorios
-    var arrayMovieSeen = [Movie]() // Lista Filmes Já Vistos
-    var arrayMovieFilterProvider = [Movie]()
+    static var arrayMovieFavorites = [Movie]() // Lista Filmes Favorios
+   static var arrayMovieSeen = [Movie]() // Lista Filmes Já Vistos
+   static var arrayMovieFilterProvider = [Movie]()
     var movieSearchBar:Movie?
     
     var selectedMovieAPI = SelectedMovieAPI()
@@ -123,13 +123,13 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     //MARK: FUNCS
     func raffle( completion: @escaping (Bool) -> Void){
         // se a lista for vazia, faz o request de umas lista de filmes
-        if arrayMovieFilterProvider .isEmpty {
+        if SelectedMovieViewModel.arrayMovieFilterProvider .isEmpty {
             raffleListOfAPIMovies { sucess in
 
                 self.checkProvidersOfMovies { sucess in
 
                     if sucess{
-                        print("array filtrado encontro \(self.arrayMovieFilterProvider.count) filmes no provedor")
+                        print("array filtrado encontro \(SelectedMovieViewModel.arrayMovieFilterProvider.count) filmes no provedor")
 
                         completion(true)
                         return
@@ -137,7 +137,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
                 }
             }
         } // se array não for vazio
-            if idMovieInArray < arrayMovieFilterProvider.count - 1 && arrayMovieFilterProvider.count > 1  {
+        if idMovieInArray < SelectedMovieViewModel.arrayMovieFilterProvider.count - 1 && SelectedMovieViewModel.arrayMovieFilterProvider.count > 1  {
                 newMovieInArray()
 
                 completion(true)
@@ -145,7 +145,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             }else{
                 print("aquii")
                 arrayMovies = [Movie]()
-                arrayMovieFilterProvider = [Movie]()
+                SelectedMovieViewModel.arrayMovieFilterProvider = [Movie]()
                 idMovieInArray = 0
                 idPage += 1
 //                completion(false)
@@ -156,7 +156,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
                     self.checkProvidersOfMovies { sucess in
 
                         if sucess{
-                            print("array filtrado encontro \(self.arrayMovieFilterProvider.count) filmes no provedor")
+                            print("array filtrado encontro \(SelectedMovieViewModel.arrayMovieFilterProvider.count) filmes no provedor")
 
                             completion(true)
                             return
@@ -187,7 +187,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             }else{
                 print("aquii")
                 arrayMovies = [Movie]()
-                arrayMovieFilterProvider = [Movie]()
+                SelectedMovieViewModel.arrayMovieFilterProvider = [Movie]()
                 idMovieInArray = 0
                 idPage += 1
 
@@ -222,7 +222,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
                 selectedMovieAPI.getProviders(idMovie: idMovie) { arrayFlatrate in
                     
                     if self.providerSelected(provider: self.providerName, flatrates: arrayFlatrate){
-                        self.arrayMovieFilterProvider.append(movie)
+                        SelectedMovieViewModel.arrayMovieFilterProvider.append(movie)
                         completion(true)
                         return
                     }
@@ -390,19 +390,19 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func getArrayFavorites() -> [Movie]{
         
-        return arrayMovieFavorites
+        return SelectedMovieViewModel.arrayMovieFavorites
     }
     
     func getArraySee() -> [Movie]{
         
-        return arrayMovieSeen
+        return SelectedMovieViewModel.arrayMovieSeen
     }
     
     func addMovieArrayFavorites() {
         if arrayMovies.isEmpty{
-            arrayMovieFavorites.append(movieSearchBar!)
+            SelectedMovieViewModel.arrayMovieFavorites.append(movieSearchBar!)
         }else{
-            arrayMovieFavorites.append(arrayMovies[idMovieInArray])
+            SelectedMovieViewModel.arrayMovieFavorites.append(arrayMovies[idMovieInArray])
         }
         
        
@@ -410,9 +410,9 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func addMovieArraySeen() {
         if arrayMovies.isEmpty{
-            arrayMovieFavorites.append(movieSearchBar!)
+            SelectedMovieViewModel.arrayMovieSeen.append(movieSearchBar!)
         }else{
-            arrayMovieFavorites.append(arrayMovies[idMovieInArray])
+            SelectedMovieViewModel.arrayMovieSeen.append(arrayMovies[idMovieInArray])
         }
         
     }
