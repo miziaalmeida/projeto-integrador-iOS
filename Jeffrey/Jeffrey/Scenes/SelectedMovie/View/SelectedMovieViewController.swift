@@ -35,13 +35,9 @@ class SelectedMovieViewController: UIViewController {
     var tipViewModel: TipViewModel?
 
 
-    //MARK: IBACTION
-    // abre a tela de redirecionamento para o streaming .
+  
     @IBAction func buttonProvider(_ sender: UIButton) {
-//        if let screenAddMovie = UIStoryboard(name: " Redirect", bundle: nil).instantiateInitialViewController() as? RedirectViewController{
-//            screenAddMovie.movieName = viewModel.getTitle() // passa o nome do filme
-//            screenAddMovie.providerName = viewModel.getImageStreaming() // passa o nome do streaming selecionado
-//            navigationController?.pushViewController(screenAddMovie, animated: true)
+
         let storyboard = UIStoryboard(name: " Redirect", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: " Redirect") as! RedirectViewController; // MySecondSecreen the storyboard ID
         //        print("chegou o filme \(movie.title)")
@@ -49,33 +45,45 @@ class SelectedMovieViewController: UIViewController {
         vc.providerName = viewModel.getImageStreaming()
         self.present(vc, animated: true, completion: nil);
 
-//        }
+
 
     }
 
 
-    // MARK: Para quando criar a tela com as tableView
-    // Abre a tela com os filmes Favoritos
-    //    @IBAction func goFavorites(_ sender: UIButton){
-    //        if let screenAddMovie = UIStoryboard(name: "SeenMovie", bundle: nil).instantiateInitialViewController() as? SeenMovieViewController{
-    //
-    //            screenAddMovie.arraymovieFavorites = viewModel.arrayMovieFavorites
-    //
-    //            navigationController?.pushViewController(screenAddMovie, animated: true)
-    //        }
-    //    }
+//     MARK: Para quando criar a tela com as tableView
+//     Abre a tela com os filmes Favoritos
+//    let storyboard = UIStoryboard(name: "List", bundle: nil);
+//    let vc = storyboard.instantiateViewController(withIdentifier: "List") as! ListViewController; // MySecondSecreen the storyboard ID
+//    //        print("chegou o filme \(movie.title)")
+//    vc.raffle = false
+//    vc.movieScreenHome = viewModel.getMovieInArray(index: indexPath.row)
+//    self.present(vc, animated: true, completion: nil);
+    
+    
+    
+        @IBAction func goFavorites(_ sender: UIButton){
+            if let screenAddMovie = UIStoryboard(name: "List", bundle: nil).instantiateInitialViewController() as? ListViewController{
+                screenAddMovie.arrayMovieFavorites = viewModel.getArrayFavorites()
+                screenAddMovie.arrayMovieSee = viewModel.getArraySee()
+//                screenAddMovie.whichListToDisplay = "see"
+    
+                self.present(screenAddMovie, animated: true)
+//                navigationController?.pushViewController(screenAddMovie, animated: true)
+            }
+        }
 
 
     // MARK: Para quando criar a tela com as tableView
     // Abre a tela com os filmes Vistos
-    //    @IBAction func goSee(_ sender: UIButton){
-    //        if let screenAddMovie = UIStoryboard(name: "SeenMovie", bundle: nil).instantiateInitialViewController() as? SeenMovieViewController{
-    //            screenAddMovie.arraymovieSeen = viewModel.arrayMovieSeen
-    //            screenAddMovie.whichListToDisplay = "see"
-    //
-    //            navigationController?.pushViewController(screenAddMovie, animated: true)
-    //        }
-    //    }
+        @IBAction func goSee(_ sender: UIButton){
+            if let screenAddMovie = UIStoryboard(name: "List", bundle: nil).instantiateInitialViewController() as? ListViewController{
+                screenAddMovie.arrayMovieSee = viewModel.getArraySee()
+//                screenAddMovie.whichListToDisplay = "see"
+    
+                self.present(screenAddMovie, animated: true)
+//                navigationController?.pushViewController(screenAddMovie, animated: true)
+            }
+        }
 
 
     // altera a imagem do button quando clicado  e adiciona no array
