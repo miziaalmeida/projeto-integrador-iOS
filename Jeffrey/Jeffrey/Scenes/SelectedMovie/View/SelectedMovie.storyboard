@@ -22,14 +22,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wY-kp-9HZ">
                                 <rect key="frame" x="0.0" y="397" width="390" height="447"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX2-as-UjY" userLabel="ButtonRaffle">
-                                        <rect key="frame" x="247" y="39" width="127" height="92"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="novofilme"/>
-                                        <connections>
-                                            <action selector="buttonRaffle:" destination="0jm-pb-NkG" eventType="touchUpInside" id="g2X-Vm-ZID"/>
-                                        </connections>
-                                    </button>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-X6-Qlk">
                                         <rect key="frame" x="16" y="167" width="358" height="32"/>
                                         <segments>
@@ -41,9 +33,9 @@
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJ5-G6-bqa">
-                                        <rect key="frame" x="36" y="16" width="328" height="37"/>
+                                        <rect key="frame" x="36" y="16" width="244" height="37"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="328" id="xKM-OW-PQA"/>
+                                            <constraint firstAttribute="width" constant="244" id="xKM-OW-PQA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,12 +134,24 @@
                                             <action selector="buttonSeen:" destination="0jm-pb-NkG" eventType="touchUpInside" id="6ic-ji-CYG"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX2-as-UjY" userLabel="ButtonRaffle">
+                                        <rect key="frame" x="282" y="24" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Rkm-z5-61Q"/>
+                                            <constraint firstAttribute="width" constant="100" id="dT8-4z-Sqx"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="icon-raffle-jeffrey"/>
+                                        <connections>
+                                            <action selector="buttonRaffle:" destination="0jm-pb-NkG" eventType="touchUpInside" id="g2X-Vm-ZID"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1764705882352941" green="0.023529411764705882" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="7P1-1A-w4W" firstAttribute="leading" secondItem="6wY-kp-9HZ" secondAttribute="leading" constant="16" id="2qY-NS-x4C"/>
                                     <constraint firstItem="ehD-gb-9ad" firstAttribute="leading" secondItem="hzc-xu-pMY" secondAttribute="trailing" constant="8" id="5XE-nX-jUG"/>
                                     <constraint firstItem="hzc-xu-pMY" firstAttribute="top" secondItem="HlJ-ha-wXN" secondAttribute="bottom" constant="-28" id="7iG-KF-ecQ"/>
+                                    <constraint firstItem="MX2-as-UjY" firstAttribute="top" secondItem="6wY-kp-9HZ" secondAttribute="top" constant="24" id="7pB-a9-AYe"/>
                                     <constraint firstItem="kEX-eM-yCP" firstAttribute="top" secondItem="uJ5-G6-bqa" secondAttribute="bottom" constant="80" id="8WO-ih-8Fw"/>
                                     <constraint firstItem="HlJ-ha-wXN" firstAttribute="top" secondItem="uJ5-G6-bqa" secondAttribute="bottom" constant="82" id="AOM-u1-7tv"/>
                                     <constraint firstAttribute="trailing" secondItem="7P1-1A-w4W" secondAttribute="trailing" constant="16" id="B56-Tv-nGy"/>
@@ -158,6 +162,7 @@
                                     <constraint firstItem="noc-Fz-mBM" firstAttribute="top" secondItem="uJ5-G6-bqa" secondAttribute="bottom" constant="80" id="PEL-cE-PRm"/>
                                     <constraint firstItem="NEQ-uO-q4i" firstAttribute="top" secondItem="j2K-X6-Qlk" secondAttribute="bottom" constant="16" id="Qx4-rD-pcP"/>
                                     <constraint firstItem="2RQ-Cw-L1l" firstAttribute="leading" secondItem="6wY-kp-9HZ" secondAttribute="leading" constant="-8" id="U3F-5I-0TE"/>
+                                    <constraint firstAttribute="trailing" secondItem="MX2-as-UjY" secondAttribute="trailing" constant="8" id="Ubn-Wd-VKh"/>
                                     <constraint firstItem="j2K-X6-Qlk" firstAttribute="leading" secondItem="6wY-kp-9HZ" secondAttribute="leading" constant="16" id="WzZ-AB-QEs"/>
                                     <constraint firstItem="ehD-gb-9ad" firstAttribute="top" secondItem="HlJ-ha-wXN" secondAttribute="bottom" constant="-28" id="Y48-Cw-fAk"/>
                                     <constraint firstItem="2RQ-Cw-L1l" firstAttribute="trailing" secondItem="6wY-kp-9HZ" secondAttribute="trailingMargin" id="a1X-YG-uwv"/>
@@ -269,9 +274,9 @@
     <resources>
         <image name="Netflix" width="300" height="168"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
-        <image name="novofilme" width="8" height="8"/>
+        <image name="icon-raffle-jeffrey" width="166.66667175292969" height="166.66667175292969"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="star" catalog="system" width="32" height="32"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -17,8 +17,8 @@ enum nameGenres: String{
     case drama = "Drama"
     case fantasy = "Fantasia"
     case terror = "Terror"
-    case romance = "romance"
-    case sciencefiction = "Ficção Científica"
+    case romance = "Romance"
+    case sciencefiction = "Ficção"
     case war = "Guerra"
     case Western = "Faroeste"
 
@@ -56,6 +56,7 @@ enum nameProviders: String{
     case tnt = "TNT Go" //
     case amazon = "Amazon Video"//
     case apple = "Apples"
+    
 }
 
 enum idProviders: Int{
@@ -70,6 +71,7 @@ enum idProviders: Int{
     case disney = 337
     case looke = 47
     case globo = 307
+    case netMovie  = 19
 }
 
 protocol SelectedMovieViewModelProtocol: AnyObject{
@@ -91,6 +93,8 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
     func setNameProvider(providerName: String)
     func setMovieSearchBar(movie:Movie)
     func setNameProvider()
+    func setIdGenre(id: Int)
+    func setIdProvider(id: Int)
     
     
 
@@ -346,6 +350,9 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             providerName = nameProviders.apple.rawValue
         case idProviders.globo.rawValue:
             providerName = nameProviders.globo.rawValue
+        case idProviders.netMovie.rawValue:
+            providerName = nameProviders.netMovies.rawValue
+       
         default:
             ""
         }
@@ -380,6 +387,8 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             return "\(nameGenres.romance.rawValue)"
         case idGenres.war.rawValue:
             return "\(nameGenres.war.rawValue)"
+        case idGenres.terror.rawValue:
+            return "\(nameGenres.terror.rawValue)"
             
             
         default:
@@ -415,6 +424,13 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             SelectedMovieViewModel.arrayMovieSeen.append(arrayMovies[idMovieInArray])
         }
         
+    }
+    
+    func setIdGenre(id: Int){
+        genreId = id
+    }
+    func setIdProvider(id: Int){
+        idProvider = id
     }
 
 }
