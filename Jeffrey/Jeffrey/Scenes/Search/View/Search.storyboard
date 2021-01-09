@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Busca-->
         <scene sceneID="ldu-PN-XhN">
             <objects>
                 <viewController id="NBC-1H-xiW" customClass="SearchViewController" customModule="Jeffrey" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,7 +93,9 @@
                             <constraint firstItem="XiM-Ck-HQe" firstAttribute="trailing" secondItem="vzw-ew-Jzo" secondAttribute="trailing" id="bdf-bO-PQU"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Busca" image="magnifyingglass" catalog="system" id="n4X-8J-Bgg"/>
                     <navigationItem key="navigationItem" id="Qmx-jC-HFE"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="NHI-QG-Gh4" id="O2Q-fU-PVn"/>
                         <outlet property="table" destination="vzw-ew-Jzo" id="SXV-cL-ctm"/>
@@ -122,4 +124,7 @@
             <point key="canvasLocation" x="-26.086956521739133" y="148.66071428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+    </resources>
 </document>
