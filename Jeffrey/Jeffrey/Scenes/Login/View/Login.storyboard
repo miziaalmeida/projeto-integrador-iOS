@@ -19,39 +19,71 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoB-fq-hRS">
                                 <rect key="frame" x="20" y="94" width="374" height="85"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="Uya-vX-gKA"/>
+                                    <constraint firstAttribute="height" constant="85" id="WGU-9C-5DX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-UT-5X8" customClass="YoshikoTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="20" y="204" width="374" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KOa-MU-ZCg">
+                                <rect key="frame" x="20" y="219" width="374" height="88"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-UT-5X8" customClass="YoshikoTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="aaa-Ho-pVJ"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderSize">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dyR-bu-m6d" customClass="YoshikoTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="54" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="1q9-zB-9jm"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderSize">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="fbT-9c-Zcr"/>
+                                    <constraint firstAttribute="height" constant="88" id="DHl-jq-y5I"/>
+                                    <constraint firstItem="dyR-bu-m6d" firstAttribute="top" secondItem="Jgs-UT-5X8" secondAttribute="bottom" constant="20" id="vbs-ir-aJl"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderSize">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoB-LX-Fq2">
-                                <rect key="frame" x="20" y="357" width="374" height="60"/>
+                                <rect key="frame" x="20" y="367" width="374" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="O6C-pO-7vz"/>
+                                    <constraint firstAttribute="height" constant="60" id="22y-jJ-AnV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Entrar"/>
@@ -60,7 +92,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PQZ-hF-Ng7">
-                                <rect key="frame" x="54" y="617" width="306" height="83"/>
+                                <rect key="frame" x="50" y="662" width="314" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="NDT-Cm-zD4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Esqueceu sua senha?">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
@@ -70,10 +105,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleAspectFit" spacing="79" translatesAutoresizingMaskIntoConstraints="NO" id="FI7-yC-3Pc">
-                                <rect key="frame" x="56" y="798" width="302" height="34"/>
+                                <rect key="frame" x="50" y="807" width="314" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKU-mR-vdN">
-                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="169.5" height="25"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Não tem uma conta?">
                                                 <attributes>
@@ -85,7 +120,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kxw-fq-wRV">
-                                        <rect key="frame" x="248.5" y="0.0" width="53.5" height="34"/>
+                                        <rect key="frame" x="248.5" y="0.0" width="65.5" height="25"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="Criar.">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,84 +131,60 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Xuf-dT-M2x">
-                                <rect key="frame" x="37" y="467" width="340" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="phA-bq-cyU">
+                                <rect key="frame" x="20" y="472" width="374" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivm-ka-L7T">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
-                                        <state key="normal" image="icon-apple"/>
-                                        <connections>
-                                            <action selector="appleTapped:" destination="ZhM-Gf-jVV" eventType="touchUpInside" id="3cZ-Mg-uuZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2i-dh-BoO">
-                                        <rect key="frame" x="120" y="0.0" width="100" height="80"/>
-                                        <state key="normal" image="icon-google"/>
-                                        <connections>
-                                            <action selector="googleTapped:" destination="ZhM-Gf-jVV" eventType="touchUpInside" id="YC6-Tn-oZ6"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-9P-koB">
-                                        <rect key="frame" x="240" y="0.0" width="100" height="80"/>
-                                        <state key="normal" image="icon-facebook"/>
-                                        <connections>
-                                            <action selector="facebookTapped:" destination="ZhM-Gf-jVV" eventType="touchUpInside" id="c92-7d-i7Z"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xuf-dT-M2x">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivm-ka-L7T">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="100"/>
+                                                <state key="normal" image="icon-apple"/>
+                                                <connections>
+                                                    <action selector="appleTapped:" destination="ZhM-Gf-jVV" eventType="touchUpInside" id="3cZ-Mg-uuZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2i-dh-BoO">
+                                                <rect key="frame" x="134" y="0.0" width="104" height="100"/>
+                                                <state key="normal" image="icon-google"/>
+                                                <connections>
+                                                    <action selector="googleTapped:" destination="ZhM-Gf-jVV" eventType="touchUpInside" id="YC6-Tn-oZ6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-9P-koB">
+                                                <rect key="frame" x="268" y="0.0" width="106" height="100"/>
+                                                <state key="normal" image="icon-facebook"/>
+                                                <connections>
+                                                    <action selector="facebookTapped:" destination="ZhM-Gf-jVV" eventType="touchUpInside" id="c92-7d-i7Z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="qJb-ar-vrs"/>
-                                </constraints>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dyR-bu-m6d" customClass="YoshikoTextField" customModule="TextFieldEffects">
-                                <rect key="frame" x="20" y="274" width="374" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bqw-Xa-iDa"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderSize">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="activeBorderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RtB-Mm-W2N"/>
                         <color key="backgroundColor" red="0.1764705882352941" green="0.023529411764705882" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Jgs-UT-5X8" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="20" id="4zu-KD-WcC"/>
-                            <constraint firstItem="PQZ-hF-Ng7" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="54" id="5oB-Yg-c8O"/>
-                            <constraint firstItem="Jgs-UT-5X8" firstAttribute="top" secondItem="aoB-fq-hRS" secondAttribute="bottom" constant="25" id="6A4-Ds-7bB"/>
-                            <constraint firstItem="FI7-yC-3Pc" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="56" id="6jl-i1-wOl"/>
-                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="aoB-fq-hRS" secondAttribute="trailing" constant="20" id="733-Oa-oRb"/>
-                            <constraint firstItem="aoB-fq-hRS" firstAttribute="top" secondItem="RtB-Mm-W2N" secondAttribute="top" constant="50" id="8i7-sp-ddY"/>
-                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="FI7-yC-3Pc" secondAttribute="trailing" constant="56" id="9dz-p7-slG"/>
-                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="Jgs-UT-5X8" secondAttribute="trailing" constant="20" id="9gn-lg-Q0p"/>
-                            <constraint firstItem="aoB-fq-hRS" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="20" id="EgW-nT-Vdu"/>
-                            <constraint firstItem="Xuf-dT-M2x" firstAttribute="top" secondItem="yoB-LX-Fq2" secondAttribute="bottom" constant="50" id="Fxh-CG-9q9"/>
-                            <constraint firstItem="PQZ-hF-Ng7" firstAttribute="top" secondItem="Xuf-dT-M2x" secondAttribute="bottom" constant="70" id="HKV-V9-AGd"/>
-                            <constraint firstItem="yoB-LX-Fq2" firstAttribute="top" secondItem="dyR-bu-m6d" secondAttribute="bottom" constant="33" id="KZt-DZ-O3T"/>
-                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="yoB-LX-Fq2" secondAttribute="trailing" constant="20" id="M1O-Jc-jpO"/>
-                            <constraint firstItem="yoB-LX-Fq2" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="20" id="Wju-Kh-fhL"/>
-                            <constraint firstItem="dyR-bu-m6d" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="20" id="Yyj-te-0y6"/>
-                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="PQZ-hF-Ng7" secondAttribute="trailing" constant="54" id="Zua-0R-rgh"/>
-                            <constraint firstItem="Xuf-dT-M2x" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="37" id="fHk-ib-j1F"/>
-                            <constraint firstItem="dyR-bu-m6d" firstAttribute="top" secondItem="Jgs-UT-5X8" secondAttribute="bottom" constant="20" id="lYS-t9-dw0"/>
-                            <constraint firstItem="FI7-yC-3Pc" firstAttribute="top" secondItem="PQZ-hF-Ng7" secondAttribute="bottom" constant="98" id="nK9-bc-GLz"/>
-                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="Xuf-dT-M2x" secondAttribute="trailing" constant="37" id="ub4-M7-lzo"/>
-                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="dyR-bu-m6d" secondAttribute="trailing" constant="20" id="y0l-D4-8WP"/>
-                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="bottom" secondItem="FI7-yC-3Pc" secondAttribute="bottom" constant="30" id="yiP-Ll-AiE"/>
+                            <constraint firstItem="FI7-yC-3Pc" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="50" id="5f8-Hj-fQ1"/>
+                            <constraint firstItem="KOa-MU-ZCg" firstAttribute="top" secondItem="aoB-fq-hRS" secondAttribute="bottom" constant="40" id="APY-Bk-afR"/>
+                            <constraint firstItem="yoB-LX-Fq2" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="20" id="CBb-M5-ChW"/>
+                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="PQZ-hF-Ng7" secondAttribute="trailing" constant="50" id="EYt-dl-Z78"/>
+                            <constraint firstItem="phA-bq-cyU" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="20" id="FlT-KX-Vib"/>
+                            <constraint firstItem="yoB-LX-Fq2" firstAttribute="top" secondItem="KOa-MU-ZCg" secondAttribute="bottom" constant="60" id="K3S-eB-gwt"/>
+                            <constraint firstItem="KOa-MU-ZCg" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="20" id="Lb9-Db-PpY"/>
+                            <constraint firstItem="PQZ-hF-Ng7" firstAttribute="top" secondItem="phA-bq-cyU" secondAttribute="bottom" constant="90" id="NE4-RM-kWi"/>
+                            <constraint firstItem="aoB-fq-hRS" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="20" id="PMl-3a-zo7"/>
+                            <constraint firstItem="aoB-fq-hRS" firstAttribute="top" secondItem="RtB-Mm-W2N" secondAttribute="top" constant="50" id="SId-l0-y3P"/>
+                            <constraint firstItem="FI7-yC-3Pc" firstAttribute="top" secondItem="PQZ-hF-Ng7" secondAttribute="bottom" constant="100" id="bSE-vH-4GE"/>
+                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="bottom" secondItem="FI7-yC-3Pc" secondAttribute="bottom" constant="30" id="dMB-CS-PGJ"/>
+                            <constraint firstItem="phA-bq-cyU" firstAttribute="top" secondItem="yoB-LX-Fq2" secondAttribute="bottom" constant="45" id="kTa-W8-70P"/>
+                            <constraint firstItem="PQZ-hF-Ng7" firstAttribute="leading" secondItem="RtB-Mm-W2N" secondAttribute="leading" constant="50" id="lq0-xB-eM4"/>
+                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="phA-bq-cyU" secondAttribute="trailing" constant="20" id="pHy-FY-JaF"/>
+                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="aoB-fq-hRS" secondAttribute="trailing" constant="20" id="qrV-xP-Are"/>
+                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="FI7-yC-3Pc" secondAttribute="trailing" constant="50" id="wlT-No-Hih"/>
+                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="yoB-LX-Fq2" secondAttribute="trailing" constant="20" id="wpv-SI-UFa"/>
+                            <constraint firstItem="RtB-Mm-W2N" firstAttribute="trailing" secondItem="KOa-MU-ZCg" secondAttribute="trailing" constant="20" id="zph-HR-lrQ"/>
                         </constraints>
                     </view>
                     <connections>
