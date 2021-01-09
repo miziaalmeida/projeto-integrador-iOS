@@ -47,9 +47,18 @@ extension ListViewController : UITableViewDelegate{
 extension  ListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentedControlList.selectedSegmentIndex == 0{
-            return arrayMovieFavorites!.count
+            if arrayMovieFavorites?.count != nil{
+                return arrayMovieFavorites!.count
+            }else{
+                return 0
+            }
+            
         }else{
-            return arrayMovieSee!.count
+            if arrayMovieFavorites?.count != nil{
+                return arrayMovieSee!.count
+            }else{
+                return 0
+            }
         }
     }
     
@@ -75,4 +84,5 @@ extension  ListViewController: UITableViewDataSource{
     
     
 }
+
 

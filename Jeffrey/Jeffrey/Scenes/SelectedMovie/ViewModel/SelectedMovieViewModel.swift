@@ -87,7 +87,7 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
     func addMovieArrayFavorites()
     func addMovieArraySeen()
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void)
-//    func raffle( completion: @escaping (Bool) -> Void) 
+//    func raffle( completion: @escaping (Bool) -> Void)
     func setNameProvider(providerName: String)
     func setMovieSearchBar(movie:Movie)
     func setNameProvider()
@@ -409,8 +409,13 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     }
     
     func addMovieArraySeen() {
-        arrayMovieSeen.append(arrayMovies[idMovieInArray ])
+        if arrayMovies.isEmpty{
+            arrayMovieFavorites.append(movieSearchBar!)
+        }else{
+            arrayMovieFavorites.append(arrayMovies[idMovieInArray])
+        }
         
     }
 
 }
+
