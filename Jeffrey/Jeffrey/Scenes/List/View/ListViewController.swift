@@ -48,6 +48,20 @@ class ListViewController: UIViewController {
 
 extension ListViewController : UITableViewDelegate{
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            let storyboard = UIStoryboard(name: "SelectedMovie", bundle: nil);
+            let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController; // MySecondSecreen the storyboard ID
+            //        print("chegou o filme \(movie.title)")
+            vc.raffle = false
+            if segmentedControlList.selectedSegmentIndex == 0{
+                vc.movieScreenHome = SelectedMovieViewModel.arrayMovieFavorites[indexPath.row]
+            }else{
+                vc.movieScreenHome = SelectedMovieViewModel.arrayMovieSeen[indexPath.row]
+            }
+            
+            self.present(vc, animated: true, completion: nil);
+        }
 }
 
 extension  ListViewController: UITableViewDataSource{
