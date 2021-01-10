@@ -50,6 +50,27 @@ class SelectedMovieViewController: UIViewController {
 
 
     }
+    
+    @IBAction func buttonShare(_ sender: UIButton) {
+
+        let titleMovie = viewModel.getTitle()
+               let text = "O filme certo; na hora certa. Conheça o Jeffrey; o app que mostra o que há de melhor nos streamings! Olha só o que ele me indicou: \(titleMovie)"
+
+               // set up activity view controller
+               let textToShare = [ text ]
+               let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+               activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+
+               // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+
+               // present the view controller
+               self.present(activityViewController, animated: true, completion: nil)
+
+
+
+    }
+
 
 
 //     MARK: Para quando criar a tela com as tableView
