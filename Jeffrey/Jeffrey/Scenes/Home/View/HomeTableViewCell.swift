@@ -69,7 +69,7 @@ class HomeTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? HomeCollectionViewCell)!
-        cell.setup(movie: arrayMovies[indexPath.row])
+            cell.setup(movie: arrayMovies[indexPath.row])
         
         return cell
     }
