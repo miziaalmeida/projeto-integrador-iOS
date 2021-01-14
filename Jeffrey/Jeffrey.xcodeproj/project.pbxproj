@@ -71,6 +71,7 @@
 		FF5E741F25A5FB5E00368D2C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E741E25A5FB5E00368D2C /* Home.swift */; };
 		FF5E742425A626C400368D2C /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E742325A626C400368D2C /* ListTableViewCell.swift */; };
 		FF5E742F25A62E5200368D2C /* HomeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5E742E25A62E5200368D2C /* HomeMain.storyboard */; };
+		FF63790325B07091006D1D47 /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63790225B07091006D1D47 /* ActivityIndicatorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,7 @@
 		FF5E741E25A5FB5E00368D2C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		FF5E742325A626C400368D2C /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		FF5E742E25A62E5200368D2C /* HomeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeMain.storyboard; sourceTree = "<group>"; };
+		FF63790225B07091006D1D47 /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 		1909E4C0258E7D7400435D07 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF63790225B07091006D1D47 /* ActivityIndicatorViewController.swift */,
 				1909E4C1258E7D8C00435D07 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
@@ -963,6 +966,7 @@
 				D0BA3B5A25A6BE3B007C8D8E /* SelectedMovieViewModel.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
 				D0BA3B7025A6BE96007C8D8E /* SearchViewController.swift in Sources */,
+				FF63790325B07091006D1D47 /* ActivityIndicatorViewController.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
 				194A304D25A8DDFC002D9E0F /* ExitAccountViewController.swift in Sources */,
 				FF5E73B125A3FA2C00368D2C /* TipViewController.swift in Sources */,

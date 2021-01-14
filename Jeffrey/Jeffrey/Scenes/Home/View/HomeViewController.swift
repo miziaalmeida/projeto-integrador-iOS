@@ -16,34 +16,37 @@ import Kingfisher
 
 class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
    
-    
-    
     // MARK: - Outlets
     
     @IBOutlet weak var tableViewHome:UITableView!
     
     var viewModel: HomeViewModelProtocol!
+
+    var activity = ActivityIndicatorViewController()
     
     
+
     // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = HomeViewModel()
         
-        viewModel.raffleListOfAPIMovies(genre: 35) { (sucess) in
-            self.viewModel.raffleListOfAPIMovies(genre: 28) { (sucess) in
-                self.viewModel.raffleListOfAPIMovies(genre: 16) { (sucess) in
-                    self.viewModel.raffleListOfAPIMovies(genre: 27) { (sucess) in
-                        self.tableViewHome.delegate = self
-                        self.tableViewHome.dataSource = self
-                        self.tableViewHome.reloadData()
+        activity.showActivityIndicator(view: view, targetVC: self)
+                viewModel.raffleListOfAPIMovies(genre: 35) { (sucess) in
+                    self.viewModel.raffleListOfAPIMovies(genre: 28) { (sucess) in
+                        self.viewModel.raffleListOfAPIMovies(genre: 16) { (sucess) in
+                            self.viewModel.raffleListOfAPIMovies(genre: 27) { (sucess) in
+                                self.activity.hideActivityIndicator(view: self.view)
+                                self.tableViewHome.delegate = self
+                                self.tableViewHome.dataSource = self
+                                self.tableViewHome.reloadData()
+                            }
+                            
+                        }
+                       
                     }
                     
                 }
-               
-            }
-            
-        }
         tableViewHome.estimatedRowHeight = 85.0
         tableViewHome.rowHeight = UITableView.automaticDimension
         
@@ -69,7 +72,18 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+            let tableHeader = view as! UITableViewHeaderFooterView
+              tableHeader.tintColor = UIColor.clear
+              tableHeader.textLabel?.textColor = .white
+              tableHeader.textLabel?.font = UIFont(name: "Helvetica-Neue", size: 25)
+              tableHeader.textLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            
+            return 40
+        }
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

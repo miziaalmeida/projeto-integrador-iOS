@@ -27,8 +27,6 @@ class ListViewController: UIViewController {
 
         tableViewList.reloadData()
         customSegmentedControl.segmentControlCustom(custom: segmentedControlList, view: view)
-       
-        
       
     }
     

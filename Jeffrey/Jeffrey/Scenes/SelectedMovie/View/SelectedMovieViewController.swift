@@ -24,8 +24,6 @@ class SelectedMovieViewController: UIViewController {
     @IBOutlet var viewBackgorund: UIView!
     @IBOutlet  var buttonProviders: UIButton!
 
-
-
     //MARK: Variables
     var viewModel: SelectedMovieViewModelProtocol!
     var customSegmentedControl = CustomSegmentControl()
@@ -46,8 +44,6 @@ class SelectedMovieViewController: UIViewController {
         vc.movieName = viewModel.getTitle()
         vc.providerName = viewModel.getImageStreaming()
         self.present(vc, animated: true, completion: nil);
-
-
 
     }
     
@@ -229,8 +225,6 @@ class SelectedMovieViewController: UIViewController {
 //        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage!)")
 //        let data = try? Data(contentsOf: url!)
 //
-
-
 
 
         labelTitle.text = viewModel.getTitle()
