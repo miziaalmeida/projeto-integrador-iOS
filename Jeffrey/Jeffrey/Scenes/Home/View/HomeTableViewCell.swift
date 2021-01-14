@@ -78,7 +78,6 @@ class HomeTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
    }
     
-
 }
 
 

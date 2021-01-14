@@ -16,16 +16,14 @@ import Kingfisher
 
 class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
    
-    
-    
     // MARK: - Outlets
     
     @IBOutlet weak var tableViewHome:UITableView!
     
     var viewModel: HomeViewModelProtocol!
     var activity = ActivityIndicatorViewController()
-
     
+
     // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()

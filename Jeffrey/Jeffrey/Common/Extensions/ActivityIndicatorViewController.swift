@@ -8,10 +8,7 @@
 import UIKit
 
 class ActivityIndicatorViewController: UIViewController {
-    
-    
    func showActivityIndicator(view: UIView, targetVC: UIViewController) {
-
         var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))

@@ -14,11 +14,9 @@ class TipViewController: UIViewController {
     var selectedMovie = SelectedMovieViewController()
     var activityIndicator = ActivityIndicatorViewController()
     
-    
     @IBOutlet var buttonGenre: [UIButton]!
     @IBOutlet var buttonStreaming: [UIButton]!
     @IBOutlet var buttonNext: UIButton!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,8 +62,6 @@ class TipViewController: UIViewController {
         default:
             vc.idGenre = idGenres.animation.rawValue
         }
-        
-        
         
         
         switch stream {

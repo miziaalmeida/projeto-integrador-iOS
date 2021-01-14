@@ -16,8 +16,6 @@ class ListViewController: UIViewController {
     var arrayMovieFavorites : [Movie]?
     var arrayMovieSee : [Movie]?
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(SelectedMovieViewModel.arrayMovieFavorites.count)
@@ -29,8 +27,6 @@ class ListViewController: UIViewController {
 
         tableViewList.reloadData()
         customSegmentedControl.segmentControlCustom(custom: segmentedControlList, view: view)
-       
-        
       
     }
     
