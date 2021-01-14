@@ -13,17 +13,12 @@ class SearchViewController: UIViewController {
     @IBOutlet var searchBar:UISearchBar!
     
     var viewModel : SearchViewModelProtocol!
-    var activityIndicator = ActivityIndicatorViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         viewModel = SearchViewModel()
         
-        
         searchBar.delegate = self
-        
-        
         
         
         
@@ -83,16 +78,13 @@ extension SearchViewController: UITableViewDataSource{
 extension SearchViewController: UISearchBarDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
-        searchBar.tintColor = UIColor.white
         let textSearch = searchBar.text!.replacingOccurrences(of: " ", with: "+")
         print(textSearch)
-        activityIndicator.showActivityIndicator(view: view, targetVC: self)
         viewModel.raffleListOfAPIMovies(textSearch: textSearch) { (sucess) in
             if sucess{
                 self.table.delegate = self
                 self.table.dataSource = self
                 self.table.reloadData()
-                self.activityIndicator.hideActivityIndicator(view: self.view)
             }
         }
     }

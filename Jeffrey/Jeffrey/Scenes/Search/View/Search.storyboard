@@ -17,18 +17,16 @@
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="NHI-QG-Gh4">
                                 <rect key="frame" x="8" y="108" width="398" height="56"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" red="0.24166193599999999" green="0.02032416314" blue="0.30271148679999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="4" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vzw-ew-Jzo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" sectionIndexMinimumDisplayRowCount="4" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vzw-ew-Jzo">
                                 <rect key="frame" x="0.0" y="180" width="414" height="716"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="sectionIndexColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.1764705882352941" green="0.023529411764705882" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="153" id="NdI-iw-2pR" customClass="SearchTableViewCell" customModule="Jeffrey" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="153"/>
@@ -51,10 +49,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smf-QX-4VD">
-                                                    <rect key="frame" x="0.0" y="148" width="420" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="148" width="420" height="5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" id="Dm9-wn-mgX"/>
+                                                        <constraint firstAttribute="height" constant="5" id="Dm9-wn-mgX"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-ml-4Va">
@@ -93,7 +91,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XiM-Ck-HQe"/>
                         <color key="backgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XiM-Ck-HQe" firstAttribute="trailing" secondItem="NHI-QG-Gh4" secondAttribute="trailing" constant="8" id="3Eg-Z5-oTS"/>
                             <constraint firstItem="NHI-QG-Gh4" firstAttribute="leading" secondItem="XiM-Ck-HQe" secondAttribute="leading" constant="8" id="9j6-79-oBW"/>
@@ -124,7 +122,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2tG-W7-TtR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

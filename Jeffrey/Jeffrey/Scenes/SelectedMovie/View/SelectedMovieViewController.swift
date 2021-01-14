@@ -25,7 +25,6 @@ class SelectedMovieViewController: UIViewController {
     @IBOutlet  var buttonProviders: UIButton!
 
     //MARK: Variables
-    var activityIndicator = ActivityIndicatorViewController()
     var viewModel: SelectedMovieViewModelProtocol!
     var customSegmentedControl = CustomSegmentControl()
     var raffle = true
@@ -126,18 +125,16 @@ class SelectedMovieViewController: UIViewController {
 
     // Sortar novo filme.
     @IBAction func buttonRaffle (_ sender: UIButton){
-        //activityIndicator.showActivityIndicator(view: view, targetVC: self)
+
         viewModel.raffleListOfAPIMovies { sucess in
             if sucess{
-                self.activityIndicator.hideActivityIndicator(view: self.view)
                 self.setFields()
             }else{
-                self.buttonRaffle(sender)
+                                self.buttonRaffle(sender)
             }
         }
-        
+
         resetColorButtonSeenAndFavorite()
-        
     }
 
     // Mostrar respectivo ao que esta selecionado no segmentedcontrol

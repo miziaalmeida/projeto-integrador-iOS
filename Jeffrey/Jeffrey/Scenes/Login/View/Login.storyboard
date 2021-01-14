@@ -85,7 +85,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="22y-jJ-AnV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="Entrar"/>
                                 <connections>
                                     <action selector="signInTapped:" destination="ZhM-Gf-jVV" eventType="touchUpInside" id="Mgu-cg-lxz"/>

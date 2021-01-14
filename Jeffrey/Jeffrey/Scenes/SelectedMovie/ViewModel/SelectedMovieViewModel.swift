@@ -176,7 +176,6 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     // sortear uma lista de filmes
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void) {
         if arrayMovies .isEmpty {
-            
             selectedMovieAPI.listOfFilms(idPage: idPage, genre: genreId, provider: idProvider) { arrayMovies in
                 print("nova requi e o id da pag é \(self.idPage)")
                 self.setArrayMovies(arrayMovie: arrayMovies)

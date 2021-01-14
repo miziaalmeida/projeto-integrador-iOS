@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,11 +34,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wcq-h0-Tuz">
                                 <rect key="frame" x="0.0" y="74" width="375" height="544"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="pnZ-GV-Q7G">
-                                    <rect key="frame" x="0.0" y="227" width="375" height="0.0"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTableViewCell" rowHeight="171" id="xMJ-Pg-FPI" customClass="ListTableViewCell" customModule="Jeffrey" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="171"/>
@@ -133,8 +127,5 @@
     <resources>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="net" width="33" height="33"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
