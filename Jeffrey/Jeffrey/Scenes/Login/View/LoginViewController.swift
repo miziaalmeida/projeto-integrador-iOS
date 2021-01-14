@@ -1,11 +1,6 @@
 import UIKit
 import TextFieldEffects
 
-protocol LoginViewEvents: AnyObject {
-    func present(viewController: UIViewController)
-    func push(viewController: UIViewController)
-}
-
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
@@ -35,14 +30,14 @@ class LoginViewController: UIViewController {
         label.text = "Olá \nPronto para logar?"
         
         self.viewModel = LoginViewModel()
-        self.viewModel?.viewController = self
+        
 }
     
     
     @IBAction func signInTapped(_ sender: Any) {
         view.endEditing(true)
         clearTextFields()
-        viewModel?.signInTapped()
+        alertProvisorioLogin()
     }
     
     @IBAction func googleTapped(_ sender: Any) {
@@ -93,9 +88,13 @@ class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
-//    func alertProvisorioLogin(){
-//        viewModel?.signInTapped()
-//    }
+    func alertProvisorioLogin(){
+        let alert = UIAlertController(title: "Login realizado com sucesso!", message: "Seja bem vindo ao Jeffrey!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok!", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+//        viewModel?.signInTapped(controller: self)
+    }
     
     func setupButton(button: UIButton){
         button.backgroundColor = .red
@@ -112,15 +111,6 @@ class LoginViewController: UIViewController {
         button.tintColor = .white
         button.clipsToBounds = true
         button.imageView?.contentMode = .scaleAspectFit
-    }
-}
-extension LoginViewController: LoginViewEvents {
-    func push(viewController: UIViewController) {
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
-    func present(viewController: UIViewController) {
-        present(viewController, animated: true, completion: nil)
     }
 }
 

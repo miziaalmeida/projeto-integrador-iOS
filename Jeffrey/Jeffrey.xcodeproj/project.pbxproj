@@ -31,10 +31,6 @@
 		191139242563058F0039C5A3 /* JeffreyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191139232563058F0039C5A3 /* JeffreyUITests.swift */; };
 		1911938725A5052D00AD8928 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911938625A5052D00AD8928 /* ImagePicker.swift */; };
 		191193A225A513FE00AD8928 /* ProfileDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */; };
-		194A302925A8D724002D9E0F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194A302825A8D724002D9E0F /* EditProfileViewController.swift */; };
-		194A303125A8D72E002D9E0F /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194A303025A8D72E002D9E0F /* EditProfile.storyboard */; };
-		194A303B25A8D745002D9E0F /* ExitAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194A303A25A8D745002D9E0F /* ExitAccount.storyboard */; };
-		194A304D25A8DDFC002D9E0F /* ExitAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194A304C25A8DDFC002D9E0F /* ExitAccountViewController.swift */; };
 		1986CDAE259B8E3F009112BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDAD259B8E3F009112BA /* ProfileViewController.swift */; };
 		1986CDB6259B8E47009112BA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986CDB5259B8E47009112BA /* Profile.storyboard */; };
 		1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDBA259B8E54009112BA /* ProfileViewModel.swift */; };
@@ -120,10 +116,6 @@
 		191139252563058F0039C5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1911938625A5052D00AD8928 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		194A302825A8D724002D9E0F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		194A303025A8D72E002D9E0F /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
-		194A303A25A8D745002D9E0F /* ExitAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExitAccount.storyboard; sourceTree = "<group>"; };
-		194A304C25A8DDFC002D9E0F /* ExitAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitAccountViewController.swift; sourceTree = "<group>"; };
 		1986CDAD259B8E3F009112BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1986CDB5259B8E47009112BA /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1986CDBA259B8E54009112BA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -392,19 +384,8 @@
 		1911939D25A5119300AD8928 /* EditProfile */ = {
 			isa = PBXGroup;
 			children = (
-				194A302825A8D724002D9E0F /* EditProfileViewController.swift */,
-				194A303025A8D72E002D9E0F /* EditProfile.storyboard */,
 			);
 			path = EditProfile;
-			sourceTree = "<group>";
-		};
-		194A302725A8D6FF002D9E0F /* ExitAccount */ = {
-			isa = PBXGroup;
-			children = (
-				194A303A25A8D745002D9E0F /* ExitAccount.storyboard */,
-				194A304C25A8DDFC002D9E0F /* ExitAccountViewController.swift */,
-			);
-			path = ExitAccount;
 			sourceTree = "<group>";
 		};
 		195E94C125799F6C00ACEC8D /* Common */ = {
@@ -450,7 +431,6 @@
 			isa = PBXGroup;
 			children = (
 				D0BA3B6825A6BE96007C8D8E /* Search */,
-				194A302725A8D6FF002D9E0F /* ExitAccount */,
 				1911939D25A5119300AD8928 /* EditProfile */,
 				1986CDAA259B8DF5009112BA /* Profile */,
 				D00A9485259358A8009FB2D3 /* SelectedMovie */,
@@ -799,10 +779,8 @@
 				1986CDB6259B8E47009112BA /* Profile.storyboard in Resources */,
 				1909E476258E3E4E00435D07 /* Main.storyboard in Resources */,
 				19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */,
-				194A303B25A8D745002D9E0F /* ExitAccount.storyboard in Resources */,
 				FF4B87B825A764420081AAEC /* Assets.xcassets in Resources */,
 				D0BA3B7125A6BE96007C8D8E /* Search.storyboard in Resources */,
-				194A303125A8D72E002D9E0F /* EditProfile.storyboard in Resources */,
 				1909E4E4258E8BFF00435D07 /* ForgotPassword.storyboard in Resources */,
 				FF5E742F25A62E5200368D2C /* HomeMain.storyboard in Resources */,
 				1909E49C258E491C00435D07 /* Login.storyboard in Resources */,
@@ -958,13 +936,11 @@
 				1909E492258E3EA600435D07 /* StartOptionsViewModel.swift in Sources */,
 				FF4B87C025A7CD280081AAEC /* CustomButton.swift in Sources */,
 				FF5E741F25A5FB5E00368D2C /* Home.swift in Sources */,
-				194A302925A8D724002D9E0F /* EditProfileViewController.swift in Sources */,
 				1909E4C2258E7D8C00435D07 /* UIImage+Extensions.swift in Sources */,
 				D0BA3B5A25A6BE3B007C8D8E /* SelectedMovieViewModel.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
 				D0BA3B7025A6BE96007C8D8E /* SearchViewController.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
-				194A304D25A8DDFC002D9E0F /* ExitAccountViewController.swift in Sources */,
 				FF5E73B125A3FA2C00368D2C /* TipViewController.swift in Sources */,
 				1909E4A3258E493000435D07 /* LoginViewModel.swift in Sources */,
 				1986CDAE259B8E3F009112BA /* ProfileViewController.swift in Sources */,

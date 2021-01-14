@@ -2,23 +2,18 @@ import Foundation
 import UIKit
 
 protocol LoginViewModelProtocol: AnyObject{
-        func signInTapped()
+        func signInTapped(controller: UIViewController)
         func googleTap(controller: UIViewController)
         func appleTap(controller: UIViewController)
         func facebookTap(controller: UIViewController)
         func forgotPasswordTap(controller: UIViewController)
         func registerTap(controller: UIViewController)
-        var viewController: LoginViewEvents? {get set}
 }
 
 class LoginViewModel: LoginViewModelProtocol{
-    weak var viewController: LoginViewEvents?
-
-    func signInTapped() {
-        guard  let homeViewControler = UIStoryboard(name: "HomeMain",
-                                                    bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-        
-        viewController?.push(viewController: homeViewControler)
+    
+    func signInTapped(controller: UIViewController) {
+        print("Entrou")
     }
     
     func googleTap(controller: UIViewController) {

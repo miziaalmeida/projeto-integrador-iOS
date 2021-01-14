@@ -43,8 +43,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-7s-9rX">
-                                                    <rect key="frame" x="236" y="31" width="172" height="24"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <rect key="frame" x="237" y="56" width="172" height="23"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -55,25 +55,17 @@
                                                         <constraint firstAttribute="height" constant="5" id="Dm9-wn-mgX"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-ml-4Va">
-                                                    <rect key="frame" x="236" y="63" width="39.5" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="TKa-7s-9rX" firstAttribute="leading" secondItem="CPz-gX-brn" secondAttribute="trailing" constant="15" id="4Dg-Ll-6GF"/>
+                                                <constraint firstItem="TKa-7s-9rX" firstAttribute="leading" secondItem="CPz-gX-brn" secondAttribute="trailing" constant="16" id="4Dg-Ll-6GF"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="smf-QX-4VD" secondAttribute="trailing" constant="-26" id="AyF-GX-gzQ"/>
-                                                <constraint firstItem="fNx-ml-4Va" firstAttribute="top" secondItem="TKa-7s-9rX" secondAttribute="bottom" constant="8" id="Fgr-QF-CVp"/>
                                                 <constraint firstItem="CPz-gX-brn" firstAttribute="leading" secondItem="nA2-XN-kCs" secondAttribute="leading" id="Kkd-zd-4wx"/>
-                                                <constraint firstItem="TKa-7s-9rX" firstAttribute="top" secondItem="nA2-XN-kCs" secondAttribute="topMargin" constant="20" id="MHZ-ad-TPF"/>
-                                                <constraint firstItem="TKa-7s-9rX" firstAttribute="trailing" secondItem="nA2-XN-kCs" secondAttribute="trailingMargin" constant="14" id="di1-J1-CJK"/>
+                                                <constraint firstItem="TKa-7s-9rX" firstAttribute="top" secondItem="nA2-XN-kCs" secondAttribute="topMargin" constant="45" id="MHZ-ad-TPF"/>
+                                                <constraint firstItem="TKa-7s-9rX" firstAttribute="trailing" secondItem="nA2-XN-kCs" secondAttribute="trailingMargin" constant="15" id="di1-J1-CJK"/>
                                                 <constraint firstAttribute="bottom" secondItem="CPz-gX-brn" secondAttribute="bottom" constant="8" id="fVU-8O-UpF"/>
                                                 <constraint firstItem="smf-QX-4VD" firstAttribute="top" secondItem="CPz-gX-brn" secondAttribute="bottom" constant="3" id="gkn-U0-9ri"/>
-                                                <constraint firstItem="fNx-ml-4Va" firstAttribute="leading" secondItem="CPz-gX-brn" secondAttribute="trailing" constant="15" id="hsi-2Z-vAI"/>
                                                 <constraint firstItem="CPz-gX-brn" firstAttribute="leading" secondItem="smf-QX-4VD" secondAttribute="leading" id="rOP-P6-atP"/>
                                                 <constraint firstItem="CPz-gX-brn" firstAttribute="top" secondItem="nA2-XN-kCs" secondAttribute="top" constant="4" id="wB0-Vx-5RF"/>
                                             </constraints>
@@ -82,7 +74,6 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="imageMovie" destination="CPz-gX-brn" id="hy1-fi-pro"/>
-                                            <outlet property="labelRelease" destination="fNx-ml-4Va" id="7XC-zD-rti"/>
                                             <outlet property="labelnameMovie" destination="TKa-7s-9rX" id="qj0-Vc-2D6"/>
                                         </connections>
                                     </tableViewCell>
