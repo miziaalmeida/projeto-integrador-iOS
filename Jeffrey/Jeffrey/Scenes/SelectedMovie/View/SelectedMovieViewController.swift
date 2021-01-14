@@ -33,15 +33,13 @@ class SelectedMovieViewController: UIViewController {
     var movieScreenHome: Movie?
     var genteHomeListSearch:String?
     var tipViewModel: TipViewModel?
+    var idGenre: Int = 16
+    var idProvider: Int = 8
 
 
-    //MARK: IBACTION
-    // abre a tela de redirecionamento para o streaming .
+  
     @IBAction func buttonProvider(_ sender: UIButton) {
-//        if let screenAddMovie = UIStoryboard(name: " Redirect", bundle: nil).instantiateInitialViewController() as? RedirectViewController{
-//            screenAddMovie.movieName = viewModel.getTitle() // passa o nome do filme
-//            screenAddMovie.providerName = viewModel.getImageStreaming() // passa o nome do streaming selecionado
-//            navigationController?.pushViewController(screenAddMovie, animated: true)
+
         let storyboard = UIStoryboard(name: " Redirect", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: " Redirect") as! RedirectViewController; // MySecondSecreen the storyboard ID
         //        print("chegou o filme \(movie.title)")
@@ -49,33 +47,66 @@ class SelectedMovieViewController: UIViewController {
         vc.providerName = viewModel.getImageStreaming()
         self.present(vc, animated: true, completion: nil);
 
-//        }
+
+
+    }
+    
+    @IBAction func buttonShare(_ sender: UIButton) {
+
+        let titleMovie = viewModel.getTitle()
+               let text = "O filme certo; na hora certa. Conheça o Jeffrey; o app que mostra o que há de melhor nos streamings! Olha só o que ele me indicou: \(titleMovie)"
+
+               // set up activity view controller
+               let textToShare = [ text ]
+               let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+               activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+
+               // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+
+               // present the view controller
+               self.present(activityViewController, animated: true, completion: nil)
+
+
 
     }
 
 
-    // MARK: Para quando criar a tela com as tableView
-    // Abre a tela com os filmes Favoritos
-    //    @IBAction func goFavorites(_ sender: UIButton){
-    //        if let screenAddMovie = UIStoryboard(name: "SeenMovie", bundle: nil).instantiateInitialViewController() as? SeenMovieViewController{
-    //
-    //            screenAddMovie.arraymovieFavorites = viewModel.arrayMovieFavorites
-    //
-    //            navigationController?.pushViewController(screenAddMovie, animated: true)
-    //        }
-    //    }
+
+//     MARK: Para quando criar a tela com as tableView
+//     Abre a tela com os filmes Favoritos
+//    let storyboard = UIStoryboard(name: "List", bundle: nil);
+//    let vc = storyboard.instantiateViewController(withIdentifier: "List") as! ListViewController; // MySecondSecreen the storyboard ID
+//    //        print("chegou o filme \(movie.title)")
+//    vc.raffle = false
+//    vc.movieScreenHome = viewModel.getMovieInArray(index: indexPath.row)
+//    self.present(vc, animated: true, completion: nil);
+    
+    
+    
+        @IBAction func goFavorites(_ sender: UIButton){
+            if let screenAddMovie = UIStoryboard(name: "List", bundle: nil).instantiateInitialViewController() as? ListViewController{
+                screenAddMovie.arrayMovieFavorites = viewModel.getArrayFavorites()
+                screenAddMovie.arrayMovieSee = viewModel.getArraySee()
+//                screenAddMovie.whichListToDisplay = "see"
+    
+                self.present(screenAddMovie, animated: true)
+//                navigationController?.pushViewController(screenAddMovie, animated: true)
+            }
+        }
 
 
     // MARK: Para quando criar a tela com as tableView
     // Abre a tela com os filmes Vistos
-    //    @IBAction func goSee(_ sender: UIButton){
-    //        if let screenAddMovie = UIStoryboard(name: "SeenMovie", bundle: nil).instantiateInitialViewController() as? SeenMovieViewController{
-    //            screenAddMovie.arraymovieSeen = viewModel.arrayMovieSeen
-    //            screenAddMovie.whichListToDisplay = "see"
-    //
-    //            navigationController?.pushViewController(screenAddMovie, animated: true)
-    //        }
-    //    }
+        @IBAction func goSee(_ sender: UIButton){
+            if let screenAddMovie = UIStoryboard(name: "List", bundle: nil).instantiateInitialViewController() as? ListViewController{
+                screenAddMovie.arrayMovieSee = viewModel.getArraySee()
+//                screenAddMovie.whichListToDisplay = "see"
+    
+                self.present(screenAddMovie, animated: true)
+//                navigationController?.pushViewController(screenAddMovie, animated: true)
+            }
+        }
 
 
     // altera a imagem do button quando clicado  e adiciona no array
@@ -134,12 +165,14 @@ class SelectedMovieViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = SelectedMovieViewModel()
-        viewModel.setNameProvider()
+        
         if movieScreenHome != nil{
             viewModel.setMovieSearchBar(movie: movieScreenHome!)
         }
 
-
+        viewModel.setIdGenre(id: idGenre)
+        viewModel.setIdProvider(id: idProvider)
+        viewModel.setNameProvider()
         roundViewBorder() // Arredodondar a borda da view
 
         // arredondar botão sortear
@@ -247,8 +280,8 @@ class SelectedMovieViewController: UIViewController {
         imageButtonRaffle.layer.cornerRadius = image.frame.size.width/2
         imageButtonRaffle.clipsToBounds = true
 
-        imageButtonRaffle.setImage(UIImage(named: "novofilme"), for: .normal)
-        imageButtonRaffle.backgroundColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
+//        imageButtonRaffle.setImage(UIImage(named: "novofilme"), for: .normal)
+//        imageButtonRaffle.backgroundColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
 
     }
 

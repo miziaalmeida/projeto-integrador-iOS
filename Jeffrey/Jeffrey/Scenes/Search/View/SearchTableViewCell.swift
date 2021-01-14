@@ -11,6 +11,7 @@ class SearchTableViewCell: UITableViewCell {
     
     @IBOutlet var imageMovie:UIImageView!
     @IBOutlet var labelnameMovie:UILabel!
+    @IBOutlet var labelRelease:UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,7 @@ class SearchTableViewCell: UITableViewCell {
             let data = try? Data(contentsOf: url!)
             imageMovie.image = UIImage(data: data!)
             labelnameMovie.text = movie.title
+            labelRelease.text = movie.releaseDate
             print(movie.title)
             print(movie.id)
             
