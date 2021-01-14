@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pht-8f-eox">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="450"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="401"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wY-kp-9HZ">
                                 <rect key="frame" x="0.0" y="397" width="390" height="447"/>
@@ -195,6 +195,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KOZ-um-tep"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttonProviders" destination="NEQ-uO-q4i" id="S6K-XT-xaQ"/>
                         <outlet property="imageButtonFavorite" destination="hzc-xu-pMY" id="Id5-so-QTK"/>

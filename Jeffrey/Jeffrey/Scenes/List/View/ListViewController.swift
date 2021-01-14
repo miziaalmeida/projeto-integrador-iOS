@@ -16,6 +16,8 @@ class ListViewController: UIViewController {
     var arrayMovieFavorites : [Movie]?
     var arrayMovieSee : [Movie]?
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(SelectedMovieViewModel.arrayMovieFavorites.count)
@@ -47,6 +49,7 @@ class ListViewController: UIViewController {
 }
 
 extension ListViewController : UITableViewDelegate{
+   
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)

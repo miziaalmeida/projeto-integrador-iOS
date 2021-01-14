@@ -23,17 +23,19 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var tableViewHome:UITableView!
     
     var viewModel: HomeViewModelProtocol!
-    
+    var activity = ActivityIndicatorViewController()
+
     
     // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = HomeViewModel()
-        
+        activity.showActivityIndicator(view: view, targetVC: self)
         viewModel.raffleListOfAPIMovies(genre: 35) { (sucess) in
             self.viewModel.raffleListOfAPIMovies(genre: 28) { (sucess) in
                 self.viewModel.raffleListOfAPIMovies(genre: 16) { (sucess) in
                     self.viewModel.raffleListOfAPIMovies(genre: 27) { (sucess) in
+                        self.activity.hideActivityIndicator(view: self.view)
                         self.tableViewHome.delegate = self
                         self.tableViewHome.dataSource = self
                         self.tableViewHome.reloadData()
@@ -51,10 +53,13 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    
     
     func openopenScreenMovieDetail(movie:Movie){
 //
@@ -69,13 +74,24 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let tableHeader = view as! UITableViewHeaderFooterView
+          tableHeader.tintColor = UIColor.clear
+          tableHeader.textLabel?.textColor = .white
+          tableHeader.textLabel?.font = UIFont(name: "Helvetica-Neue", size: 25)
+          tableHeader.textLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+    }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return 40
+    }
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Comédia"
+            return "Populares"
         case 1:
             return "Ação"
         case 2:

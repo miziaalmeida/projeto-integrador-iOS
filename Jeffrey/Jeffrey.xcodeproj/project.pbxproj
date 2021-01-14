@@ -58,6 +58,7 @@
 		D0BA3B7A25A6BEC5007C8D8E /* SelectedMovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA3B7925A6BEC5007C8D8E /* SelectedMovieAPI.swift */; };
 		FF430B4D25A3BA7300D776B1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF430B4C25A3BA7300D776B1 /* ListViewController.swift */; };
 		FF48DF1825978F8000A20E0A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48DF1725978F8000A20E0A /* HomeViewModel.swift */; };
+		FF4B3E1F25AFB6B0000AB235 /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4B3E1E25AFB6B0000AB235 /* ActivityIndicatorViewController.swift */; };
 		FF4B87B825A764420081AAEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF4B87B725A764420081AAEC /* Assets.xcassets */; };
 		FF4B87C025A7CD280081AAEC /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4B87BF25A7CD270081AAEC /* CustomButton.swift */; };
 		FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF594B21258E9A47002E75D0 /* HomeViewController.swift */; };
@@ -154,6 +155,7 @@
 		EE03319350852EC7A80CDC64 /* Pods-JeffreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.debug.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF430B4C25A3BA7300D776B1 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		FF48DF1725978F8000A20E0A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		FF4B3E1E25AFB6B0000AB235 /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
 		FF4B87B725A764420081AAEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF4B87BF25A7CD270081AAEC /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		FF594B21258E9A47002E75D0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				1909E4C1258E7D8C00435D07 /* UIImage+Extensions.swift */,
+				FF4B3E1E25AFB6B0000AB235 /* ActivityIndicatorViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -963,6 +966,7 @@
 				D0BA3B5A25A6BE3B007C8D8E /* SelectedMovieViewModel.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
 				D0BA3B7025A6BE96007C8D8E /* SearchViewController.swift in Sources */,
+				FF4B3E1F25AFB6B0000AB235 /* ActivityIndicatorViewController.swift in Sources */,
 				191139042563058C0039C5A3 /* SceneDelegate.swift in Sources */,
 				194A304D25A8DDFC002D9E0F /* ExitAccountViewController.swift in Sources */,
 				FF5E73B125A3FA2C00368D2C /* TipViewController.swift in Sources */,

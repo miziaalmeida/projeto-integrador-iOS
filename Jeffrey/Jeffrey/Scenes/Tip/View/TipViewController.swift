@@ -12,6 +12,7 @@ class TipViewController: UIViewController {
     var gener: String = ""
     var stream: String = ""
     var selectedMovie = SelectedMovieViewController()
+    var activityIndicator = ActivityIndicatorViewController()
     
     
     @IBOutlet var buttonGenre: [UIButton]!
@@ -34,6 +35,7 @@ class TipViewController: UIViewController {
         selectedMovie.setTip(gener: self.gener, stream: self.stream)
         let storyboard = UIStoryboard(name: "SelectedMovie", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController;
+       
         if gener == nameGenres.action.rawValue{
             vc.idGenre = idGenres.action.rawValue
             
