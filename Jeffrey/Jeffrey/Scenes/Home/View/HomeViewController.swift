@@ -44,16 +44,16 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
             }
             
         }
-        
-       
-        
-
-
         tableViewHome.estimatedRowHeight = 85.0
         tableViewHome.rowHeight = UITableView.automaticDimension
         
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func openopenScreenMovieDetail(movie:Movie){
