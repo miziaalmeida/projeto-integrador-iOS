@@ -116,7 +116,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     static var arrayMovieSeen = [Movie]() // Lista Filmes Já Vistos
     static var arrayMovieFilterProvider = [Movie]()
     var movieSearchBar:Movie?
-    var selectedMovieAPI = SelectedMovieAPI()
+    var apiManager = APIManager()
     //    private var customSegmentedControll = CustomSegmentControl()
     
     //MARK: FUNCS
@@ -124,7 +124,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     // sortear uma lista de filmes
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void) {
         if arrayMovies .isEmpty {
-            selectedMovieAPI.listOfFilms(idPage: idPage, genre: genreId, provider: idProvider) { arrayMovies in
+            apiManager.listOfFilms(idPage: idPage, genre: genreId, provider: idProvider) { arrayMovies in
                 print("nova requi e o id da pag é \(self.idPage)")
                 self.setArrayMovies(arrayMovie: arrayMovies)
                 completion(true)
@@ -171,7 +171,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     //        for movie in arrayMovies{
     //
     //            if let idMovie = movie.id{
-    //                selectedMovieAPI.getProviders(idMovie: idMovie) { arrayFlatrate in
+    //                APIManager.getProviders(idMovie: idMovie) { arrayFlatrate in
     //
     //                    if self.providerSelected(provider: self.providerName, flatrates: arrayFlatrate){
     //                        SelectedMovieViewModel.arrayMovieFilterProvider.append(movie)
@@ -264,8 +264,6 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func setNameProvider() {
         switch idProvider {
-        case idProviders.netflix.rawValue:
-            providerName = nameProviders.netflix.rawValue
         case idProviders.now.rawValue:
             providerName = nameProviders.now.rawValue
         case idProviders.amazon.rawValue:
@@ -288,9 +286,8 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             providerName = nameProviders.globo.rawValue
         case idProviders.netMovie.rawValue:
             providerName = nameProviders.netMovies.rawValue
-            
         default:
-            ""
+            providerName = nameProviders.netflix.rawValue
         }
     }
     

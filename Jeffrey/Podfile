@@ -9,6 +9,12 @@ target 'Jeffrey' do
   pod 'TextFieldEffects'
   pod 'SnapKit', '~> 5.0.0'
 
+  # add the Firebase pod for Google Analytics
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
+
   # Pods for Jeffrey
 
   target 'JeffreyTests' do

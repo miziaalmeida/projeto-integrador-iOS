@@ -8,12 +8,10 @@
 import Foundation
 
 class ListViewModel{
-    
     var arrayMovieFavorites = [Movie]()
     var arrayMovieSeen = [Movie]()
     
-    var selectedMovieAPI = SelectedMovieAPI()
+    var apiManager = APIManager()
     private var customSegmentedControll = CustomSegmentControl()
-    
     
 }

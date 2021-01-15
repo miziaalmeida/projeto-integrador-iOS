@@ -12,15 +12,15 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet var imageMovie:UIImageView!
     @IBOutlet var labelnameMovie:UILabel!
     @IBOutlet var labelRelease:UILabel!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -31,17 +31,8 @@ class SearchTableViewCell: UITableViewCell {
             imageMovie.image = UIImage(data: data!)
             labelnameMovie.text = movie.title
             labelRelease.text = movie.releaseDate
-            print(movie.title)
-            print(movie.id)
-            
-           
             imageMovie.clipsToBounds = true
             imageMovie.layer.cornerRadius = 20.0
-            
         }
-       
-        
-        
     }
-
 }

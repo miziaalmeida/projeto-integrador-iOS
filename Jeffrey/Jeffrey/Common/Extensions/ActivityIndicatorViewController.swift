@@ -22,13 +22,13 @@ class ActivityIndicatorViewController: UIViewController {
         activityIndicator.tag = 1
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        //UIApplication.shared.beginIgnoringInteractionEvents() -> Taíze
     }
 
    func hideActivityIndicator(view: UIView) {
         let activityIndicator = view.viewWithTag(1) as? UIActivityIndicatorView
         activityIndicator?.stopAnimating()
         activityIndicator?.removeFromSuperview()
-        UIApplication.shared.endIgnoringInteractionEvents()
+       //UIApplication.shared.endIgnoringInteractionEvents() -> Taíze
     }
 }

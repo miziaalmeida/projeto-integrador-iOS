@@ -105,7 +105,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="pSh-1x-XXU">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="PxI-wj-6ch" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="HomeMain" storyboardIdentifier="HomeMain" automaticallyAdjustsScrollViewInsets="NO" id="PxI-wj-6ch" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rIq-jY-KL7">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

@@ -12,28 +12,19 @@ protocol SearchViewModelProtocol: AnyObject{
     func getArrayCount() -> Int
     func getMovieInArray(index: Int) -> Movie
     func raffleListOfAPIMovies(textSearch: String ,completion: @escaping (Bool) -> Void)
-   
-
 }
-
 
 class SearchViewModel: SearchViewModelProtocol {
     
-    
-    
     private var arrayMovies = [Movie]()
     
-    var apimanager =  SelectedMovieAPI()
-    
-   
-    
+    var apimanager =  APIManager()
     
     func getArrayCount() -> Int{
         return arrayMovies.count
     }
     
     func raffleListOfAPIMovies(textSearch: String ,completion: @escaping (Bool) -> Void) {
-        
         apimanager.getMovieSearch(textSearch: textSearch, onComplete: { (arraySearch) in
             self.arrayMovies = arraySearch
             completion(true)
@@ -42,12 +33,6 @@ class SearchViewModel: SearchViewModelProtocol {
     }
     
     func getMovieInArray(index: Int) -> Movie{
-        print(arrayMovies[index].id)
-        print(arrayMovies[index].title)
         return arrayMovies[index]
     }
-       
-        
-    
-    
 }

@@ -38,6 +38,7 @@
 		1986CDAE259B8E3F009112BA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDAD259B8E3F009112BA /* ProfileViewController.swift */; };
 		1986CDB6259B8E47009112BA /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986CDB5259B8E47009112BA /* Profile.storyboard */; };
 		1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDBA259B8E54009112BA /* ProfileViewModel.swift */; };
+		1996198425B1C69F00C988CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1996198325B1C69F00C988CA /* GoogleService-Info.plist */; };
 		19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
 		61D9D72D2AB74F3C962371BC /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B45A95C1DFE9C686F2602 /* Pods_Jeffrey_JeffreyUITests.framework */; };
 		D00A947D259358A0009FB2D3 /*  RedirectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A9476259358A0009FB2D3 /*  RedirectViewModel.swift */; };
@@ -128,6 +129,7 @@
 		1986CDAD259B8E3F009112BA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1986CDB5259B8E47009112BA /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1986CDBA259B8E54009112BA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		1996198325B1C69F00C988CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FF4A3505CB5577504C62AAB /* Pods-Jeffrey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey/Pods-Jeffrey.release.xcconfig"; sourceTree = "<group>"; };
 		44CE52870E2F146882115B67 /* Pods-JeffreyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.release.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.release.xcconfig"; sourceTree = "<group>"; };
 		56458720C37B3E4268DE8032 /* Pods_JeffreyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JeffreyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -369,6 +371,7 @@
 				FF4B87B725A764420081AAEC /* Assets.xcassets */,
 				191139032563058C0039C5A3 /* SceneDelegate.swift */,
 				1911390F2563058F0039C5A3 /* Info.plist */,
+				1996198325B1C69F00C988CA /* GoogleService-Info.plist */,
 				1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */,
 			);
 			path = Jeffrey;
@@ -810,6 +813,7 @@
 				FF5E742F25A62E5200368D2C /* HomeMain.storyboard in Resources */,
 				1909E49C258E491C00435D07 /* Login.storyboard in Resources */,
 				1909E4B0258E495600435D07 /* Register.storyboard in Resources */,
+				1996198425B1C69F00C988CA /* GoogleService-Info.plist in Resources */,
 				D0BA3B6425A6BE68007C8D8E /* SelectedMovie.storyboard in Resources */,
 				FF5E73A925A3F7E000368D2C /* Tip.storyboard in Resources */,
 				FF5E73C125A3FAF400368D2C /* List.storyboard in Resources */,
