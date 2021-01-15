@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="450"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wY-kp-9HZ">
-                                <rect key="frame" x="0.0" y="397" width="390" height="447"/>
+                                <rect key="frame" x="0.0" y="353" width="390" height="491"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="j2K-X6-Qlk">
                                         <rect key="frame" x="16" y="161" width="358" height="32"/>
@@ -51,7 +51,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7P1-1A-w4W">
-                                        <rect key="frame" x="16" y="208" width="358" height="239"/>
+                                        <rect key="frame" x="16" y="208" width="358" height="283"/>
                                         <color key="backgroundColor" red="0.23921568627450979" green="0.074509803921568626" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
@@ -163,7 +163,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jy5-JT-z7O">
-                                <rect key="frame" x="313" y="115.00000000000001" width="32" height="32.666666666666657"/>
+                                <rect key="frame" x="313" y="71" width="32" height="32.666666666666671"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="4vb-YF-iAk"/>
@@ -213,27 +213,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niM-m4-VDk" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046.1538461538462" y="102.3696682464455"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="t2S-k0-gOm">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GUe-V0-Oz3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FUd-0i-6V8">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uKw-xp-nCv">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="0jm-pb-NkG" kind="relationship" relationship="rootViewController" id="2iq-tR-pD6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yco-dV-DIe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="139.13043478260872" y="103.79464285714285"/>
         </scene>
     </scenes>
     <resources>
