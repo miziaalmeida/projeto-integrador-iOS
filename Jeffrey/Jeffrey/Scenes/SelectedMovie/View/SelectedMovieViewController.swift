@@ -35,8 +35,8 @@ class SelectedMovieViewController: UIViewController {
     var movieScreenHome: Movie?
     var genteHomeListSearch:String?
     var tipViewModel: TipViewModel?
-    var idGenre: Int = 16
-    var idProvider: Int = 8
+    var idGenre: Int = idGenres.animation.rawValue
+    var idProvider: Int = idProviders.netflix.rawValue
     
     
     
@@ -90,8 +90,6 @@ class SelectedMovieViewController: UIViewController {
         viewModel.raffleListOfAPIMovies { sucess in
             if sucess{
                 self.setFields()
-            }else{
-                self.buttonRaffle(sender)
             }
         }
         
@@ -146,8 +144,6 @@ class SelectedMovieViewController: UIViewController {
             viewModel.raffleListOfAPIMovies { sucess in
                 if sucess{
                     self.setFields()
-                }else{
-                    self.buttonRaffle(self.imageButtonRaffle)
                 }
             }
         }else{
