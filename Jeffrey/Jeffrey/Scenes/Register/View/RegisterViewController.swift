@@ -1,7 +1,13 @@
 import UIKit
+import Firebase
+import FirebaseDatabase
+
+protocol RegisterViewEvents: AnyObject {
+    func present(viewController: UIViewController)
+    func push(viewController: UIViewController)
+}
 
 class RegisterViewController: UIViewController {
-    
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -12,6 +18,8 @@ class RegisterViewController: UIViewController {
     
     private var viewModel: RegisterViewModelProtocol?
     
+    let usuario = Auth.auth()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,21 +28,33 @@ class RegisterViewController: UIViewController {
         configureTextFieldDelegate()
         
         self.viewModel = RegisterViewModel()
+        self.viewModel?.viewController = self
     }
     
     
     @IBAction func register(_ sender: Any) {
-        viewModel?.registerTapped(controller: self)
-        
-        let alert = UIAlertController(title: "Cadastro realizado com sucesso!", message: "Retorne para fazer o login!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok!", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        viewModel?.registerTapped()
+        Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
+                let credential = EmailAuthProvider.credential(withEmail: self.nameTextField.text ?? "", password: self.passwordTextField.text ?? "")
+        }
+//        Auth.auth().createUser(withEmail: emailTextField.text, password: password) { authResult, error in
+//                    // [START_EXCLUDE]
+//                    strongSelf.hideSpinner {
+//                      guard let user = authResult?.user, error == nil else {
+//                        strongSelf.showMessagePrompt(error!.localizedDescription)
+//                        return
+//                      }
+//                      print("\(user.email!) created")
+//                      strongSelf.navigationController?.popViewController(animated: true)
+//                    }
+//                    // [END_EXCLUDE]
+//                  }
         
         clearTextFields()
     }
     
     @IBAction func login(_ sender: Any) {
-        viewModel?.loginTapped(controller: self)
+        viewModel?.loginTapped()
     }
     
     func configureTextFieldDelegate(){
@@ -60,9 +80,34 @@ class RegisterViewController: UIViewController {
     }
 }
 
+extension RegisterViewController: RegisterViewEvents {
+    func push(viewController: UIViewController) {
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func present(viewController: UIViewController) {
+        present(viewController, animated: true, completion: nil)
+    }
+}
+
 extension RegisterViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+extension UIViewController {
+    class func replaceRootViewController(viewController: UIViewController) {
+        guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first
+        else {
+            return
+        }
+        let rootViewController = window.rootViewController!
+        viewController.view.frame = rootViewController.view.frame
+        viewController.view.layoutIfNeeded()
+        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft, animations: {
+            window.rootViewController = viewController
+        }, completion: nil)
     }
 }
