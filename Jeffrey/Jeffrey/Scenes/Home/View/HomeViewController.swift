@@ -130,18 +130,18 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         switch indexPath.section {
         case 0:
             cell.arrayMovies = viewModel.getArrayComedy()
-            cell.genre = "Comédia"
+            cell.genre = nameGenres.comedy.rawValue
         case 1:
             cell.arrayMovies = viewModel.getArrayAction()
-            cell.genre = "Ação"
+            cell.genre = nameGenres.action.rawValue
         case 2:
             cell.arrayMovies = viewModel.getArrayAnimation()
-            cell.genre = "Animação"
+            cell.genre = nameGenres.animation.rawValue
         case 3:
             cell.arrayMovies = viewModel.getArrayTerror()
-            cell.genre = "Terror"
+            cell.genre = nameGenres.terror.rawValue
         default:
-            ""
+            print("Próximos generos")
         }
         
         cell.controller = self

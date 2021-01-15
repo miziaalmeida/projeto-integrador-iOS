@@ -24,7 +24,7 @@ class HomeViewModel:HomeViewModelProtocol{
     
     
     
-    let apimanager = SelectedMovieAPI()
+    let apimanager = APIManager()
     
     var arrayMoviesComedy = [Movie]()
     var arrayMoviesAction = [Movie]()
