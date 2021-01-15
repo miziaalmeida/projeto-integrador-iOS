@@ -25,10 +25,12 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     
     func setup(movie:Movie){
-        let idImage =  movie.backdropPath
-        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage!)")
-        let data = try? Data(contentsOf: url!)
-        imageViewHome.image = UIImage(data: data!)
+        if let idImage =  movie.backdropPath{
+            let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage)")
+            let data = try? Data(contentsOf: url!)
+            imageViewHome.image = UIImage(data: data!)
+        }
+        
     }
 
 }
