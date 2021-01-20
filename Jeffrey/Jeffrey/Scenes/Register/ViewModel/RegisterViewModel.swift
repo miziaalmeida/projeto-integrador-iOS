@@ -12,6 +12,10 @@ class RegisterViewModel: RegisterViewModelProtocol {
     
     func registerTapped() {
         print("Usuário cadastrado com sucesso!")
+        guard  let homeViewControler = UIStoryboard(name: "HomeMain",
+                                                    bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
+        
+        viewController?.push(viewController: homeViewControler)
     }
     
     func loginTapped() {

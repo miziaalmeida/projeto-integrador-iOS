@@ -1,5 +1,5 @@
 import UIKit
-
+import Firebase
 class ProfileViewController: UIViewController{
 
     @IBOutlet weak var profilePhoto: UIImageView!
@@ -45,7 +45,12 @@ class ProfileViewController: UIViewController{
     
     @IBAction func tapExitAccount(_ sender: Any) {
         viewModel?.didTapExitAccount(controller: self)
-        print("entrou")
+        do {
+            try Auth.auth().signOut()
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
     }
 
     

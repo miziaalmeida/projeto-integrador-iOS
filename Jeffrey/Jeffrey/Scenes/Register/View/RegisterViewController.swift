@@ -33,22 +33,17 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func register(_ sender: Any) {
-        viewModel?.registerTapped()
-        Auth.auth().createUser(withEmail: emailTextField.text ?? "", password: passwordTextField.text ?? "") { authResult, error in
-                let credential = EmailAuthProvider.credential(withEmail: self.nameTextField.text ?? "", password: self.passwordTextField.text ?? "")
+        if let email = emailTextField.text, let password = passwordTextField.text{
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                
+                if let error = error{
+                    print(error.localizedDescription)
+                }else{
+                    self.viewModel?.registerTapped()
+                }
+   
+            }
         }
-//        Auth.auth().createUser(withEmail: emailTextField.text, password: password) { authResult, error in
-//                    // [START_EXCLUDE]
-//                    strongSelf.hideSpinner {
-//                      guard let user = authResult?.user, error == nil else {
-//                        strongSelf.showMessagePrompt(error!.localizedDescription)
-//                        return
-//                      }
-//                      print("\(user.email!) created")
-//                      strongSelf.navigationController?.popViewController(animated: true)
-//                    }
-//                    // [END_EXCLUDE]
-//                  }
         
         clearTextFields()
     }
