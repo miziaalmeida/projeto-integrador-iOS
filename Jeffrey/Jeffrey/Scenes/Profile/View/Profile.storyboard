@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F3O-uo-prY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AVc-gw-pes">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -18,13 +18,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-Ariana" translatesAutoresizingMaskIntoConstraints="NO" id="Lpn-Nu-z2O">
-                                <rect key="frame" x="20" y="102" width="374" height="366"/>
+                                <rect key="frame" x="20" y="58" width="374" height="366"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="366" id="9BD-rw-cp0"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PU4-fg-qF2">
-                                <rect key="frame" x="20" y="488" width="374" height="40"/>
+                                <rect key="frame" x="20" y="444" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Y1u-K4-gXW"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVK-Na-KZH">
-                                <rect key="frame" x="315" y="403" width="64" height="65"/>
+                                <rect key="frame" x="315" y="359" width="64" height="65"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -47,16 +47,16 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1Le-zL-Omk">
-                                <rect key="frame" x="20" y="558" width="374" height="208"/>
+                                <rect key="frame" x="20" y="514" width="374" height="203"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJ0-HJ-fyU">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="208"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="203"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="26a-4s-seN">
-                                                <rect key="frame" x="0.0" y="30" width="374" height="148"/>
+                                                <rect key="frame" x="0.0" y="30" width="374" height="143"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-a5-xcF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="69"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="66.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <state key="normal" title="Editar Perfil"/>
                                                         <connections>
@@ -64,7 +64,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1r-7l-lJH">
-                                                        <rect key="frame" x="0.0" y="79" width="374" height="69"/>
+                                                        <rect key="frame" x="0.0" y="76.5" width="374" height="66.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <state key="normal" title="Sair da conta"/>
                                                         <connections>
@@ -104,8 +104,8 @@
                             <constraint firstItem="jVK-Na-KZH" firstAttribute="leading" secondItem="mGS-LB-zrD" secondAttribute="leading" constant="315" id="zAj-bg-Abd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Jlk-6j-M05"/>
                     <tabBarItem key="tabBarItem" title="Perfil" image="person.fill" catalog="system" id="BSJ-4n-rDr"/>
+                    <navigationItem key="navigationItem" id="Jlk-6j-M05"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editProfileBtn" destination="BUY-a5-xcF" id="Uoz-PG-Uma"/>
@@ -119,24 +119,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ma-N0-XDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="581.15942028985512" y="35.491071428571423"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CYP-Gj-0mS">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F3O-uo-prY" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y6n-EC-Gdk">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="AVc-gw-pes" kind="relationship" relationship="rootViewController" id="QvW-gm-AuO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x8Z-hE-J8H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-328.98550724637681" y="35.491071428571423"/>
         </scene>
     </scenes>
     <resources>

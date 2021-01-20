@@ -1,5 +1,7 @@
 import UIKit
 import TextFieldEffects
+import Firebase
+
 
 protocol LoginViewEvents: AnyObject {
     func present(viewController: UIViewController)
@@ -41,8 +43,18 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInTapped(_ sender: Any) {
         view.endEditing(true)
-        clearTextFields()
-        viewModel?.signInTapped()
+        
+        if let email = emailTextField.text, let password = passwordTextField.text{
+            Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                }else{
+                    self.viewModel?.signInTapped()
+                }
+            }
+        }
+        
+        self.clearTextFields()
     }
     
     @IBAction func googleTapped(_ sender: Any) {
