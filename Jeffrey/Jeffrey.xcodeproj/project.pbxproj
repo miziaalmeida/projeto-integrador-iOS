@@ -10,7 +10,6 @@
 		0306BFEC9AFC2037113443C3 /* Pods_Jeffrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F560DA2409F521D8D09954 /* Pods_Jeffrey.framework */; };
 		178F09866E3E5A6739138324 /* Pods_JeffreyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56458720C37B3E4268DE8032 /* Pods_JeffreyTests.framework */; };
 		1904481625B87089008502E4 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 1904481225B87089008502E4 /* Appfile */; };
-		1904481725B87089008502E4 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1904481325B87089008502E4 /* SnapshotHelper.swift */; };
 		1904481825B87089008502E4 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 1904481425B87089008502E4 /* Fastfile */; };
 		1904481925B87089008502E4 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 1904481525B87089008502E4 /* Snapfile */; };
 		1909E476258E3E4E00435D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E475258E3E4E00435D07 /* Main.storyboard */; };
@@ -98,7 +97,6 @@
 
 /* Begin PBXFileReference section */
 		1904481225B87089008502E4 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
-		1904481325B87089008502E4 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		1904481425B87089008502E4 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
 		1904481525B87089008502E4 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
 		1909E475258E3E4E00435D07 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				1904481225B87089008502E4 /* Appfile */,
-				1904481325B87089008502E4 /* SnapshotHelper.swift */,
 				1904481425B87089008502E4 /* Fastfile */,
 				1904481525B87089008502E4 /* Snapfile */,
 			);
@@ -982,7 +979,6 @@
 				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
 				1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */,
 				1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */,
-				1904481725B87089008502E4 /* SnapshotHelper.swift in Sources */,
 				FF5E73B925A3FA3D00368D2C /* TipViewModel.swift in Sources */,
 				FF5E742425A626C400368D2C /* ListTableViewCell.swift in Sources */,
 				1909E497258E491200435D07 /* LoginViewController.swift in Sources */,
