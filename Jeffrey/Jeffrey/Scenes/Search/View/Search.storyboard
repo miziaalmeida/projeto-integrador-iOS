@@ -28,15 +28,15 @@
                                 <color key="sectionIndexBackgroundColor" red="0.1764705882352941" green="0.023529411764705882" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="153" id="NdI-iw-2pR" customClass="SearchTableViewCell" customModule="Jeffrey" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="153"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="160" id="NdI-iw-2pR" customClass="SearchTableViewCell" customModule="Jeffrey" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NdI-iw-2pR" id="nA2-XN-kCs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="153"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CPz-gX-brn">
-                                                    <rect key="frame" x="0.0" y="4" width="221" height="141"/>
+                                                    <rect key="frame" x="0.0" y="4" width="221" height="148"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="221" id="Tkh-Ym-yHo"/>
                                                         <constraint firstAttribute="height" constant="141" id="WMl-aY-TN9"/>
@@ -49,10 +49,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smf-QX-4VD">
-                                                    <rect key="frame" x="0.0" y="148" width="420" height="5"/>
+                                                    <rect key="frame" x="0.0" y="155" width="420" height="1"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="5" id="Dm9-wn-mgX"/>
+                                                        <constraint firstAttribute="height" constant="1" id="Dm9-wn-mgX"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-ml-4Va">
