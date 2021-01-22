@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0306BFEC9AFC2037113443C3 /* Pods_Jeffrey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7F560DA2409F521D8D09954 /* Pods_Jeffrey.framework */; };
 		178F09866E3E5A6739138324 /* Pods_JeffreyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56458720C37B3E4268DE8032 /* Pods_JeffreyTests.framework */; };
+		1904481625B87089008502E4 /* Appfile in Resources */ = {isa = PBXBuildFile; fileRef = 1904481225B87089008502E4 /* Appfile */; };
+		1904481825B87089008502E4 /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 1904481425B87089008502E4 /* Fastfile */; };
+		1904481925B87089008502E4 /* Snapfile in Resources */ = {isa = PBXBuildFile; fileRef = 1904481525B87089008502E4 /* Snapfile */; };
 		1909E476258E3E4E00435D07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E475258E3E4E00435D07 /* Main.storyboard */; };
 		1909E47E258E3E6100435D07 /* PageStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E47D258E3E6100435D07 /* PageStartViewController.swift */; };
 		1909E483258E3E7B00435D07 /* PageStartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E482258E3E7B00435D07 /* PageStartViewModel.swift */; };
@@ -96,6 +99,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1904481225B87089008502E4 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Appfile; sourceTree = "<group>"; };
+		1904481425B87089008502E4 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; };
+		1904481525B87089008502E4 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Snapfile; sourceTree = "<group>"; };
 		1909E475258E3E4E00435D07 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1909E47D258E3E6100435D07 /* PageStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStartViewController.swift; sourceTree = "<group>"; };
 		1909E482258E3E7B00435D07 /* PageStartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStartViewModel.swift; sourceTree = "<group>"; };
@@ -207,6 +213,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1904481125B87089008502E4 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				1904481225B87089008502E4 /* Appfile */,
+				1904481425B87089008502E4 /* Fastfile */,
+				1904481525B87089008502E4 /* Snapfile */,
+			);
+			path = fastlane;
+			sourceTree = SOURCE_ROOT;
+		};
 		1909E46B258E3DEC00435D07 /* PageStart */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +388,7 @@
 		191139002563058C0039C5A3 /* Jeffrey */ = {
 			isa = PBXGroup;
 			children = (
+				1904481125B87089008502E4 /* fastlane */,
 				195E94C525799F9400ACEC8D /* Scenes */,
 				195E94C125799F6C00ACEC8D /* Common */,
 				191139012563058C0039C5A3 /* AppDelegate.swift */,
@@ -814,14 +831,17 @@
 				1986CDB6259B8E47009112BA /* Profile.storyboard in Resources */,
 				1909E476258E3E4E00435D07 /* Main.storyboard in Resources */,
 				19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */,
+				1904481825B87089008502E4 /* Fastfile in Resources */,
 				194A303B25A8D745002D9E0F /* ExitAccount.storyboard in Resources */,
 				FF4B87B825A764420081AAEC /* Assets.xcassets in Resources */,
 				D0BA3B7125A6BE96007C8D8E /* Search.storyboard in Resources */,
 				194A303125A8D72E002D9E0F /* EditProfile.storyboard in Resources */,
 				1909E4E4258E8BFF00435D07 /* ForgotPassword.storyboard in Resources */,
+				1904481925B87089008502E4 /* Snapfile in Resources */,
 				FF5E742F25A62E5200368D2C /* HomeMain.storyboard in Resources */,
 				1909E49C258E491C00435D07 /* Login.storyboard in Resources */,
 				1909E4B0258E495600435D07 /* Register.storyboard in Resources */,
+				1904481625B87089008502E4 /* Appfile in Resources */,
 				1996198425B1C69F00C988CA /* GoogleService-Info.plist in Resources */,
 				D0BA3B6425A6BE68007C8D8E /* SelectedMovie.storyboard in Resources */,
 				FF5E73A925A3F7E000368D2C /* Tip.storyboard in Resources */,
