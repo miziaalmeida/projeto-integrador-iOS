@@ -26,8 +26,9 @@ class SearchViewController: UIViewController {
         if movie == nil {
             movie = MovieData(context: context)
         }
-        let textSearch = mySearchTextField.text!.replacingOccurrences(of: " ", with: " ")
-        movie.textSearch = textSearch
+        let textSearch = mySearchTextField.text!.replacingOccurrences(of: " ", with: "+")
+        let text = mySearchTextField.text
+        movie.textSearch = text
         
         do{
             try context.save()
@@ -37,7 +38,7 @@ class SearchViewController: UIViewController {
         }
         viewModel.raffleListOfAPIMovies(textSearch: textSearch) { (sucess) in
             if sucess{
-                self.arraySearch.append(textSearch)
+                self.arraySearch.append(self.mySearchTextField.text!)
                 self.mySearchTextField.filterStrings(self.arraySearch)
                 self.table.delegate = self
                 self.table.dataSource = self
@@ -89,6 +90,7 @@ class SearchViewController: UIViewController {
                 array.append(data.value(forKey: "textSearch") as! String)
             }
             mySearchTextField.filterStrings(array)
+            arraySearch = array
         } catch {
             print("Failed")
         }
