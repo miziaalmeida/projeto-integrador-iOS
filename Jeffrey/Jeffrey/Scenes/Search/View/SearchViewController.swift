@@ -83,14 +83,6 @@ class SearchViewController: UIViewController {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieData")
         request.returnsObjectsAsFaults = false
         do {
-//            let arrUsrObj = try context.fetch(request)
-//                for usrObj in arrUsrObj as! [NSManagedObject] {
-//                    context.delete(usrObj)
-//                }
-//               try context.save() //don't forget
-//                } catch let error as NSError {
-//                print("delete fail--",error)
-//              }
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 print(data.value(forKey: "textSearch") as! String)
