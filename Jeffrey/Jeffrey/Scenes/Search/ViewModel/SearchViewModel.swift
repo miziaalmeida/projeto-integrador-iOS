@@ -24,6 +24,7 @@ class SearchViewModel: SearchViewModelProtocol {
         return arrayMovies.count
     }
     
+    
     func raffleListOfAPIMovies(textSearch: String ,completion: @escaping (Bool) -> Void) {
         apimanager.getMovieSearch(textSearch: textSearch, onComplete: { (arraySearch) in
             self.arrayMovies = arraySearch
