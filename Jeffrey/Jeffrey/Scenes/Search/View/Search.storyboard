@@ -84,27 +84,32 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tRg-xv-ht4" customClass="SearchTextField" customModule="SearchTextField">
-                                <rect key="frame" x="20" y="64" width="374" height="50"/>
+                                <rect key="frame" x="20" y="64" width="324" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="tWk-MB-4ci"/>
+                                    <constraint firstAttribute="height" constant="50" id="iJA-bn-DpT"/>
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYJ-rC-QRY">
-                                <rect key="frame" x="349" y="75" width="35" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYJ-rC-QRY">
+                                <rect key="frame" x="344" y="64" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="Ykh-KS-I7j"/>
-                                    <constraint firstAttribute="height" constant="35" id="hZb-eE-1ca"/>
+                                    <constraint firstAttribute="width" constant="50" id="0Ec-CX-Gxr"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZCq-fT-TEs"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" backgroundImage="magnifyingglass" catalog="system">
+                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" image="magnifyingglass" catalog="system">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWith">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonSearchTitle:" destination="NBC-1H-xiW" eventType="touchUpInside" id="PGX-zB-0gu"/>
                                 </connections>
@@ -114,21 +119,23 @@
                         <color key="backgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="tRg-xv-ht4" firstAttribute="top" secondItem="XiM-Ck-HQe" secondAttribute="top" constant="20" id="GR1-aX-Gff"/>
-                            <constraint firstItem="XiM-Ck-HQe" firstAttribute="trailing" secondItem="cYJ-rC-QRY" secondAttribute="trailing" constant="30" id="Hiz-Bd-un3"/>
+                            <constraint firstItem="XiM-Ck-HQe" firstAttribute="trailing" secondItem="cYJ-rC-QRY" secondAttribute="trailing" constant="20" id="FVp-ls-OeW"/>
+                            <constraint firstItem="cYJ-rC-QRY" firstAttribute="top" secondItem="XiM-Ck-HQe" secondAttribute="top" constant="20" id="Klm-28-XN7"/>
                             <constraint firstItem="vzw-ew-Jzo" firstAttribute="leading" secondItem="XiM-Ck-HQe" secondAttribute="leading" id="LVl-yK-ali"/>
+                            <constraint firstItem="vzw-ew-Jzo" firstAttribute="top" secondItem="cYJ-rC-QRY" secondAttribute="bottom" constant="20" id="SJp-mv-cq4"/>
                             <constraint firstAttribute="bottom" secondItem="vzw-ew-Jzo" secondAttribute="bottom" id="ape-jv-dvI"/>
                             <constraint firstItem="XiM-Ck-HQe" firstAttribute="trailing" secondItem="vzw-ew-Jzo" secondAttribute="trailing" id="bdf-bO-PQU"/>
-                            <constraint firstItem="vzw-ew-Jzo" firstAttribute="top" secondItem="tRg-xv-ht4" secondAttribute="bottom" constant="20" id="dc3-Gz-TdB"/>
-                            <constraint firstItem="XiM-Ck-HQe" firstAttribute="trailing" secondItem="tRg-xv-ht4" secondAttribute="trailing" constant="20" id="jqZ-vl-wLC"/>
-                            <constraint firstItem="cYJ-rC-QRY" firstAttribute="top" secondItem="XiM-Ck-HQe" secondAttribute="top" constant="30" id="sFV-z6-sZS"/>
-                            <constraint firstItem="tRg-xv-ht4" firstAttribute="leading" secondItem="XiM-Ck-HQe" secondAttribute="leading" constant="20" id="zVi-8r-huY"/>
+                            <constraint firstItem="tRg-xv-ht4" firstAttribute="leading" secondItem="XiM-Ck-HQe" secondAttribute="leading" constant="20" id="kM0-wM-XGl"/>
+                            <constraint firstItem="cYJ-rC-QRY" firstAttribute="leading" secondItem="tRg-xv-ht4" secondAttribute="trailing" id="l2Y-Xm-3iL"/>
+                            <constraint firstItem="tRg-xv-ht4" firstAttribute="top" secondItem="XiM-Ck-HQe" secondAttribute="top" constant="20" id="mZb-Qf-hHj"/>
+                            <constraint firstItem="vzw-ew-Jzo" firstAttribute="top" secondItem="tRg-xv-ht4" secondAttribute="bottom" constant="20" id="wm0-CS-QOy"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Busca" image="magnifyingglass" catalog="system" id="n4X-8J-Bgg"/>
                     <navigationItem key="navigationItem" id="Qmx-jC-HFE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonSearch" destination="cYJ-rC-QRY" id="Sh2-iz-LDr"/>
                         <outlet property="mySearchTextField" destination="tRg-xv-ht4" id="3gt-vj-uxd"/>
                         <outlet property="table" destination="vzw-ew-Jzo" id="SXV-cL-ctm"/>
                     </connections>

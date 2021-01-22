@@ -12,20 +12,17 @@ class DataManager {
     static let shared = DataManager()
     var moviesData: [MovieData] = []
     
-    func saveData(textSearch: String, with context: NSManagedObjectContext){
-        let movieData = MovieData(context: context)
-        movieData.textSearch = textSearch
-        
-        try? context.save()
-    }
     
-    
-    func loadData(with context: NSManagedObjectContext) {
+    func loadMovies(with context: NSManagedObjectContext) {
         let fetchRequest : NSFetchRequest<MovieData> = MovieData.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "textSearch", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        moviesData = try! context.fetch(fetchRequest)
+        do{
+            moviesData = try context.fetch(fetchRequest)
+        } catch{
+            print(error.localizedDescription)
         }
+    }
     
     func deleteData(index: Int, context: NSManagedObjectContext){
         let movieData = moviesData[index]
