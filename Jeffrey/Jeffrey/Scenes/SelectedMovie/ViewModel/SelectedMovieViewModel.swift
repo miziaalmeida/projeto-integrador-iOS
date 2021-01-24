@@ -40,18 +40,18 @@ enum idGenres: Int{
 }
 
 enum nameProviders: String{
-    case netflix = "Netflix"//
-    case HBOGo = "HBO Go"//
-    case telecine = "Telecine Play"//
-    case now = "NOW"//
-    case claro = "Claro video" //
-    case looke = "Looke"
-    case netMovies = "NetMovies"
-    case disney = "Disney Plus"//
-    case globo = "Globo Play"
-    case tnt = "TNT Go" //
-    case amazon = "Amazon Video"//
-    case apple = "Apples"
+    case netflix = "logo-netflix"//
+    case HBOGo = "logo-hboGo"//
+    case telecine = "logo-telecine"//
+    case now = "logo-now"//
+    case claro = "logo-claroVideo" //
+    case looke = "logo-Looke"
+    case netMovies = "logo-netMovies"
+    case disney = "logo-disney+"//
+    case globo = "logo-globoplay"
+    case tnt = "logo-tntGo" //
+    case amazon = "logo-prime"//
+    case apple = "logo-appleTV"
     
 }
 
