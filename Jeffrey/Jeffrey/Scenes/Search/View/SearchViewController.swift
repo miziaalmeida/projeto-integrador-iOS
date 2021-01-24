@@ -53,9 +53,17 @@ class SearchViewController: UIViewController {
         setupSearchTexfield()
         viewModel = SearchViewModel()
         
-        buttonSearch.layer.borderWidth = 1.5
-        buttonSearch.layer.cornerRadius = 10
-        buttonSearch.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    
+        buttonSearch.addBorder(edge: .top, color: .white, thickness: 1.0)
+        buttonSearch.addBorder(edge: .bottom , color: .white, thickness: 1.0)
+        //buttonSearch.addBorder(edge: .left, color: .white, thickness: 1.0)
+        buttonSearch.addBorder(edge: .right, color: .white, thickness: 1.0)
+        mySearchTextField.addBorder(edge: .top, color: .white, thickness: 1.0)
+        mySearchTextField.addBorder(edge: .bottom , color: .white, thickness: 1.0)
+        mySearchTextField.addBorder(edge: .left, color: .white, thickness: 1.0)
+        //mySearchTextField.addBorder(edge: .right, color: .white, thickness: 1.0)
+    
+        
         
     }
     
@@ -68,9 +76,9 @@ class SearchViewController: UIViewController {
     }
     
     func setupSearchTexfield(){
-        mySearchTextField.layer.borderWidth = 1.5
-        mySearchTextField.layer.cornerRadius = 8
-        mySearchTextField.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+//        mySearchTextField.layer.borderWidth = 1.5
+//        mySearchTextField.layer.cornerRadius = 8
+//        mySearchTextField.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         mySearchTextField.filterStrings(arraySearch)
         mySearchTextField.maxNumberOfResults  =  10
         mySearchTextField.startVisible  =  true
@@ -127,4 +135,33 @@ extension SearchViewController: UITableViewDataSource{
         return cell
         
     }
+}
+
+extension UIView {
+
+func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+
+    let border = CALayer()
+
+    switch edge {
+    case .top:
+        border.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: thickness)
+        break
+    case .bottom:
+        border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: self.frame.width, height: thickness)
+        break
+    case .left:
+        border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
+        break
+    case .right:
+        border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
+        break
+    default:
+        break
+    }
+   
+    border.backgroundColor = color.cgColor
+
+    layer.addSublayer(border)
+}
 }

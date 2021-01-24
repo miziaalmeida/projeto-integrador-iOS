@@ -27,7 +27,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="161"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j5t-Sm-9cP">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="j5t-Sm-9cP">
                                                     <rect key="frame" x="16" y="11" width="343" height="139"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Yu-Ku-o09">
@@ -47,22 +47,36 @@
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ue5-bI-JBb">
                                                                         <rect key="frame" x="0.0" y="0.0" width="105" height="109"/>
                                                                     </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homem - Aranha" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nss-EK-qeT">
+                                                                        <rect key="frame" x="0.0" y="79" width="105" height="30"/>
+                                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25220271289975532" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="30" id="vAi-AW-D6B"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                                 <constraints>
                                                                     <constraint firstAttribute="bottom" secondItem="Ue5-bI-JBb" secondAttribute="bottom" id="FnL-Dn-Pcu"/>
                                                                     <constraint firstItem="Ue5-bI-JBb" firstAttribute="top" secondItem="kmc-8Q-CpT" secondAttribute="top" id="Js8-Ii-BU2"/>
                                                                     <constraint firstAttribute="trailing" secondItem="Ue5-bI-JBb" secondAttribute="trailing" id="NCH-y9-bX0"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Nss-EK-qeT" secondAttribute="trailing" id="NlT-cD-sPm"/>
+                                                                    <constraint firstItem="Nss-EK-qeT" firstAttribute="leading" secondItem="kmc-8Q-CpT" secondAttribute="leading" id="P2C-Au-dlq"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Nss-EK-qeT" secondAttribute="bottom" id="XFe-LB-5jb"/>
                                                                     <constraint firstItem="Ue5-bI-JBb" firstAttribute="leading" secondItem="kmc-8Q-CpT" secondAttribute="leading" id="oyh-J3-mBo"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
                                                             <size key="customSize" width="105" height="109"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="20"/>
+                                                                    <integer key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="imageViewHome" destination="Ue5-bI-JBb" id="gl8-MY-Mwd"/>
+                                                                <outlet property="labelTitleViewHome" destination="Nss-EK-qeT" id="abJ-mn-Uki"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
