@@ -23,19 +23,30 @@ class SearchViewController: UIViewController {
     
     @IBAction func buttonSearchTitle(_ sender: UIButton) {
         
+        let textSearch = mySearchTextField.text!.replacingOccurrences(of: " ", with: "+")
+        
+        saveMovie(textSearch: textSearch)
+        getFilms(textSearch: textSearch)
+    }
+    
+    func saveMovie(textSearch: String) {
         if movie == nil {
             movie = MovieData(context: context)
         }
-        let textSearch = mySearchTextField.text!.replacingOccurrences(of: " ", with: "+")
-        let text = mySearchTextField.text
-        movie.textSearch = text
         
-        do{
-            try context.save()
-            loadMovies()
-        } catch {
-            print(error.localizedDescription)
+        movie.textSearch = mySearchTextField.text
+        
+        if(!arraySearch.contains(textSearch)) {
+            do{
+                try context.save()
+                loadMovies()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
+    }
+    
+    func getFilms(textSearch: String) {
         viewModel.raffleListOfAPIMovies(textSearch: textSearch) { (sucess) in
             if sucess{
                 self.arraySearch.append(self.mySearchTextField.text!)
@@ -49,22 +60,9 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadMovies()
+        
         setupSearchTexfield()
         viewModel = SearchViewModel()
-        
-    
-        buttonSearch.addBorder(edge: .top, color: .white, thickness: 1.0)
-        buttonSearch.addBorder(edge: .bottom , color: .white, thickness: 1.0)
-        //buttonSearch.addBorder(edge: .left, color: .white, thickness: 1.0)
-        buttonSearch.addBorder(edge: .right, color: .white, thickness: 1.0)
-        mySearchTextField.addBorder(edge: .top, color: .white, thickness: 1.0)
-        mySearchTextField.addBorder(edge: .bottom , color: .white, thickness: 1.0)
-        mySearchTextField.addBorder(edge: .left, color: .white, thickness: 1.0)
-        //mySearchTextField.addBorder(edge: .right, color: .white, thickness: 1.0)
-    
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -76,10 +74,12 @@ class SearchViewController: UIViewController {
     }
     
     func setupSearchTexfield(){
-//        mySearchTextField.layer.borderWidth = 1.5
-//        mySearchTextField.layer.cornerRadius = 8
-//        mySearchTextField.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        mySearchTextField.filterStrings(arraySearch)
+        buttonSearch.addBorder(edge: .top, color: .white, thickness: 1.5)
+        buttonSearch.addBorder(edge: .bottom , color: .white, thickness: 1.5)
+        buttonSearch.addBorder(edge: .right, color: .white, thickness: 1.5)
+        mySearchTextField.addBorder(edge: .top, color: .white, thickness: 1.5)
+        mySearchTextField.addBorder(edge: .bottom , color: .white, thickness: 1.5)
+        mySearchTextField.addBorder(edge: .left, color: .white, thickness: 1.5)
         mySearchTextField.maxNumberOfResults  =  10
         mySearchTextField.startVisible  =  true
         mySearchTextField.theme  = SearchTextFieldTheme.darkTheme ()
@@ -88,19 +88,37 @@ class SearchViewController: UIViewController {
         mySearchTextField.theme.borderColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
         mySearchTextField.theme.bgColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.8)
         
-        var array:[String] = []
+        requestDataBase()
+
+    }
+    
+    func requestDataBase(){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieData")
         request.returnsObjectsAsFaults = false
-        do {
+        do{
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 print(data.value(forKey: "textSearch") as! String)
-                array.append(data.value(forKey: "textSearch") as! String)
+                arraySearch.append(data.value(forKey: "textSearch") as! String)
             }
-            mySearchTextField.filterStrings(array)
-            arraySearch = array
+            mySearchTextField.filterStrings(arraySearch)
         } catch {
             print("Failed")
+        }
+    }
+    
+    func deleteDataBase(){
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "MovieData")
+        request.returnsObjectsAsFaults = false
+        do {
+            let arrUsrObj = try context.fetch(request)
+            for usrObj in arrUsrObj as! [NSManagedObject] {
+                context.delete(usrObj)
+            }
+            try context.save() //don't forget
+        } catch let error as NSError {
+            print("delete fail--",error)
+            
         }
     }
 }
