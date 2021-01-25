@@ -31,6 +31,8 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         viewModel = HomeViewModel()
         
+        
+        
         activity.showActivityIndicator(view: view, targetVC: self)
                 viewModel.raffleListOfAPIMovies(genre: 35) { (sucess) in
                     self.viewModel.raffleListOfAPIMovies(genre: 28) { (sucess) in
@@ -47,8 +49,8 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
                     }
                     
                 }
-        tableViewHome.estimatedRowHeight = 85.0
-        tableViewHome.rowHeight = UITableView.automaticDimension
+//        tableViewHome.estimatedRowHeight = 85.0
+//        tableViewHome.rowHeight = UITableView.automaticDimension
         
         
         
@@ -87,18 +89,21 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0:
-            return "Comédia"
-        case 1:
-            return "Ação"
-        case 2:
-            return "Animação"
-        case 3:
-            return "Terror"
-        default:
-            return ""
-        }
+        let arrayTitleSection = ["Comédia","Ação","Animação","Terror"]
+        
+        return arrayTitleSection[section]
+//        switch section {
+//        case 0:
+//            return "Comédia"
+//        case 1:
+//            return "Ação"
+//        case 2:
+//            return "Animação"
+//        case 3:
+//            return "Terror"
+//        default:
+//            return ""
+//        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -113,12 +118,13 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
-        if(indexPath.section == 0 ){
-            return 400
+        if(indexPath.section == 0){
+            return 350
         }else{
-            return 200
+            return 175
         }
 
     }
@@ -146,6 +152,7 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         
         cell.controller = self
         cell.sectionInTableView = indexPath.section
+    
 
         return cell
     }

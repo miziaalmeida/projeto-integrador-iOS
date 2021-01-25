@@ -31,7 +31,7 @@ class HomeTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
         
         self.collectionViewHome.delegate = self
         self.collectionViewHome.dataSource = self
-        
+       
         
     }
     
@@ -69,15 +69,17 @@ class HomeTableViewCell: UITableViewCell, UICollectionViewDelegate,UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: HomeCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? HomeCollectionViewCell)!
+        
         cell.setup(movie: arrayMovies[indexPath.row])
+        
+        
         
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
-   }
     
-}
-
-
+     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
+           return CGSize(width: ((self.frame.size.width/2) - 10), height: collectionView.frame.height)
+        }
+ 
+   }
