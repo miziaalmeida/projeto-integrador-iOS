@@ -72,7 +72,7 @@ extension  ListViewController: UITableViewDataSource{
             }
             
         }else{
-            if arrayMovieFavorites?.count != nil{
+            if arrayMovieSee?.count != nil{
                 return SelectedMovieViewModel.arrayMovieSeen.count
             }else{
                 return 0
