@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -203,6 +204,104 @@
             </objects>
             <point key="canvasLocation" x="-523.1884057971015" y="120.53571428571428"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="1xr-tA-pKm">
+            <objects>
+                <viewController id="kgZ-O9-TQl" customClass="SecondViewController" customModule="Jeffrey" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AEx-95-2lp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="obU-ta-ycf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8V-q6-WoZ">
+                                        <rect key="frame" x="20" y="328" width="374" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="  Acessar com seu e-mail" image="envelope" catalog="system"/>
+                                        <state key="selected">
+                                            <imageReference key="image" image="envelope" catalog="system" renderingMode="original"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            </preferredSymbolConfiguration>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKK-yU-KEB">
+                                        <rect key="frame" x="20" y="396" width="374" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="  Criar uma nova conta" image="person.crop.circle.badge.plus" catalog="system"/>
+                                        <state key="selected">
+                                            <imageReference key="image" image="person.crop.circle.badge.plus" catalog="system" renderingMode="original"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                        </state>
+                                    </button>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cqi-YL-mWk">
+                                        <rect key="frame" x="20" y="557" width="374" height="208"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVq-lA-mSe">
+                                                <rect key="frame" x="34" y="89" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" backgroundImage="icons8-apple-logo-1024 1">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    </preferredSymbolConfiguration>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEd-KH-pak">
+                                                <rect key="frame" x="266" y="89" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" backgroundImage="icons8-facebook-f-1024 1"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azh-Xh-Kex">
+                                                <rect key="frame" x="157" y="89" width="60" height="60"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" backgroundImage="image 27"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conectar com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFI-H7-vSz">
+                                                <rect key="frame" x="8" y="17" width="358" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xOF-4Q-h4m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="obU-ta-ycf" secondAttribute="bottom" id="4St-ty-IlA"/>
+                            <constraint firstItem="obU-ta-ycf" firstAttribute="top" secondItem="AEx-95-2lp" secondAttribute="top" id="7n6-hI-VNo"/>
+                            <constraint firstItem="obU-ta-ycf" firstAttribute="leading" secondItem="xOF-4Q-h4m" secondAttribute="leading" id="OK3-gu-OLQ"/>
+                            <constraint firstItem="xOF-4Q-h4m" firstAttribute="trailing" secondItem="obU-ta-ycf" secondAttribute="trailing" id="eh2-7B-ZjX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appleBtn" destination="tVq-lA-mSe" id="Ro2-EP-PKh"/>
+                        <outlet property="emailAcess" destination="M8V-q6-WoZ" id="HP2-31-5QS"/>
+                        <outlet property="facebookBtn" destination="lEd-KH-pak" id="dKy-HH-obl"/>
+                        <outlet property="googleBtn" destination="Azh-Xh-Kex" id="N34-cn-8Jc"/>
+                        <outlet property="registerAcess" destination="LKK-yU-KEB" id="mhb-wC-TJD"/>
+                        <outlet property="socialMediaView" destination="Cqi-YL-mWk" id="Hon-um-BFJ"/>
+                        <outlet property="videoLayerView" destination="obU-ta-ycf" id="JQd-qG-ggY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mlB-fL-rYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="204" y="121"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="Jgs-UT-5X8">
@@ -213,9 +312,14 @@
         </designable>
     </designables>
     <resources>
+        <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="icon-apple" width="100" height="100"/>
         <image name="icon-facebook" width="100" height="100"/>
         <image name="icon-google" width="100" height="100"/>
+        <image name="icons8-apple-logo-1024 1" width="550" height="550"/>
+        <image name="icons8-facebook-f-1024 1" width="1024" height="1024"/>
+        <image name="image 27" width="1024" height="1028"/>
+        <image name="person.crop.circle.badge.plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

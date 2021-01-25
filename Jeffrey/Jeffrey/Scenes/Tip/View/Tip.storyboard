@@ -303,15 +303,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="lJp-NC-iEq">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-vg-0VD" userLabel="hboGo">
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo3-vg-0VD" userLabel="hboGo">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="Ylm-pF-Gl7"/>
                                                     <constraint firstAttribute="height" constant="50" id="ggE-K5-sA7"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="HBO Go" backgroundImage="hbogo">
+                                                <state key="normal" title="HBO Go" image="logo-hboGo">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -323,14 +322,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="ao8-gg-TPu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMt-I4-T14" userLabel="appleTv">
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMt-I4-T14" userLabel="appleTv">
                                                 <rect key="frame" x="80" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="1do-KV-w0s"/>
                                                     <constraint firstAttribute="height" constant="50" id="U92-rZ-yhq"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Apples" backgroundImage="appletv">
+                                                <state key="normal" title="Apples" image="logo-appleTV">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -342,14 +341,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Sz8-9L-4vY"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSI-of-Pxr" userLabel="claroVideo">
+                                            <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSI-of-Pxr" userLabel="claroVideo">
                                                 <rect key="frame" x="160" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="0Xk-RB-p3S"/>
                                                     <constraint firstAttribute="height" constant="50" id="sCp-E0-IOm"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Claro video" backgroundImage="claro">
+                                                <state key="normal" title="Claro video" image="logo-claroVideo">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -361,14 +360,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="ptN-il-59E"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjS-Kp-blx" userLabel="appleTV+">
+                                            <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjS-Kp-blx" userLabel="appleTV+">
                                                 <rect key="frame" x="240" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="AVt-jy-Cu9"/>
                                                     <constraint firstAttribute="width" constant="50" id="iRo-eV-uYt"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="NetMovies" backgroundImage="net">
+                                                <state key="normal" title="NetMovies" image="logo-netMovies">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -385,14 +384,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="R9i-Wp-7XZ">
                                         <rect key="frame" x="0.0" y="80" width="290" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-Xt-co8" userLabel="disneyPlus">
+                                            <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0Q-Xt-co8" userLabel="disneyPlus">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0KE-4P-Jkf"/>
                                                     <constraint firstAttribute="width" constant="50" id="EtY-cb-WAH"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Disney Plus" backgroundImage="disney">
+                                                <state key="normal" title="Disney Plus" image="logo-disney+">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -404,14 +403,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="T4c-FS-wXa"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5R-Z8-2Oy" userLabel="globoPlay">
+                                            <button opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5R-Z8-2Oy" userLabel="globoPlay">
                                                 <rect key="frame" x="80" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="MMK-s1-qbt"/>
                                                     <constraint firstAttribute="height" constant="50" id="NFX-ev-qKL"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Globo Play" backgroundImage="globoPlay">
+                                                <state key="normal" title="Globo Play" image="logo-globoplay">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -423,14 +422,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Kxu-wV-LFF"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTS-gl-70H" userLabel="looke">
+                                            <button opaque="NO" clipsSubviews="YES" tag="7" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTS-gl-70H" userLabel="looke">
                                                 <rect key="frame" x="160" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="LHE-j9-ylJ"/>
                                                     <constraint firstAttribute="width" constant="50" id="rai-bu-eW8"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Looke" backgroundImage="Looke-1">
+                                                <state key="normal" title="Looke" image="logo-Looke">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -442,14 +441,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="ZRq-V3-icd"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYf-55-HfR" userLabel="telecine">
+                                            <button opaque="NO" clipsSubviews="YES" tag="8" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYf-55-HfR" userLabel="telecine">
                                                 <rect key="frame" x="240" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="7hZ-8m-tQb"/>
                                                     <constraint firstAttribute="width" constant="50" id="Wjb-2f-QgI"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Telecine Play" backgroundImage="telecine">
+                                                <state key="normal" title="Telecine Play" image="logo-telecine">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -466,14 +465,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NvO-dT-y8M">
                                         <rect key="frame" x="0.0" y="160" width="290" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFA-8g-7id" userLabel="netflix">
+                                            <button opaque="NO" clipsSubviews="YES" tag="9" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFA-8g-7id" userLabel="netflix">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2OH-3e-49d"/>
                                                     <constraint firstAttribute="width" constant="50" id="Uvf-0f-KaC"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Netflix" backgroundImage="netflix-1">
+                                                <state key="normal" title="Netflix" image="logo-netflix">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -485,14 +484,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="L0h-Na-0R6"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoP-Q2-blG" userLabel="primeVideo">
+                                            <button opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoP-Q2-blG" userLabel="primeVideo">
                                                 <rect key="frame" x="80" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="I8t-1Q-Cn0"/>
                                                     <constraint firstAttribute="height" constant="50" id="Jw8-wA-RfI"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Amazon Video" backgroundImage="Amazon Video">
+                                                <state key="normal" title="logo-prime" image="logo-prime">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -504,14 +503,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="HNN-cU-Bw1"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSw-mg-WxD" userLabel="tntGo">
+                                            <button opaque="NO" clipsSubviews="YES" tag="11" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSw-mg-WxD" userLabel="tntGo">
                                                 <rect key="frame" x="160" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="50" id="5gH-mS-Asb"/>
                                                     <constraint firstAttribute="height" constant="50" id="t3c-nr-Tcl"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="TNT Go" backgroundImage="tnt">
+                                                <state key="normal" title="logo-tntGo" image="logo-tntGo">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -523,14 +522,14 @@
                                                     <action selector="actionButtonStreaming:" destination="2By-3c-Ag1" eventType="touchUpInside" id="Oi6-S8-ReP"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z9-zi-hzl" userLabel="netMovie">
+                                            <button opaque="NO" clipsSubviews="YES" tag="12" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z9-zi-hzl" userLabel="netMovie">
                                                 <rect key="frame" x="240" y="0.0" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="feZ-2W-KV4"/>
                                                     <constraint firstAttribute="width" constant="50" id="vwy-c8-ktP"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="NOW" backgroundImage="NOW">
+                                                <state key="normal" title="NOW" image="logo-now">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -620,19 +619,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Amazon Video" width="33" height="33"/>
-        <image name="Looke-1" width="75" height="75"/>
-        <image name="NOW" width="512" height="341"/>
-        <image name="appletv" width="33" height="33"/>
         <image name="arrow.right.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="claro" width="33" height="33"/>
-        <image name="disney" width="33" height="33"/>
-        <image name="globoPlay" width="33" height="33"/>
-        <image name="hbogo" width="33" height="33"/>
         <image name="icon-raffle-jeffrey" width="30" height="30"/>
-        <image name="net" width="33" height="33"/>
-        <image name="netflix-1" width="466.5" height="466.5"/>
-        <image name="telecine" width="33" height="33"/>
-        <image name="tnt" width="33" height="33"/>
+        <image name="logo-Looke" width="1024" height="1024"/>
+        <image name="logo-appleTV" width="1024" height="1024"/>
+        <image name="logo-claroVideo" width="1024" height="1024"/>
+        <image name="logo-disney+" width="1024" height="1024"/>
+        <image name="logo-globoplay" width="1024" height="1024"/>
+        <image name="logo-hboGo" width="1024" height="1024"/>
+        <image name="logo-netMovies" width="1024" height="1024"/>
+        <image name="logo-netflix" width="1024" height="1024"/>
+        <image name="logo-now" width="1024" height="1024"/>
+        <image name="logo-prime" width="1024" height="1024"/>
+        <image name="logo-telecine" width="1024" height="1024"/>
+        <image name="logo-tntGo" width="1024" height="1024"/>
     </resources>
 </document>

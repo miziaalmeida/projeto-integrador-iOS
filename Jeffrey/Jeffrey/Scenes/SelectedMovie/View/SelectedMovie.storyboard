@@ -63,7 +63,7 @@
                                             <constraint firstAttribute="width" constant="100" id="Wzx-hX-I1w"/>
                                             <constraint firstAttribute="height" constant="100" id="gAK-eu-LBn"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="Netflix"/>
+                                        <state key="normal" title="Button" image="logo-netflix"/>
                                         <connections>
                                             <action selector="buttonProvider:" destination="0jm-pb-NkG" eventType="touchUpInside" id="FLa-Fe-S99"/>
                                         </connections>
@@ -216,9 +216,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Netflix" width="300" height="168"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
         <image name="icon-raffle-jeffrey" width="166.66667175292969" height="166.66667175292969"/>
+        <image name="logo-netflix" width="1024" height="1024"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemYellowColor">

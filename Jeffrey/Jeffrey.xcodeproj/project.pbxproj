@@ -43,6 +43,7 @@
 		1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDBA259B8E54009112BA /* ProfileViewModel.swift */; };
 		1996198425B1C69F00C988CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1996198325B1C69F00C988CA /* GoogleService-Info.plist */; };
 		19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
+		19BCDF0425BE3F2E00988B72 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCDF0325BE3F2E00988B72 /* SecondViewController.swift */; };
 		61D9D72D2AB74F3C962371BC /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B45A95C1DFE9C686F2602 /* Pods_Jeffrey_JeffreyUITests.framework */; };
 		D00A947D259358A0009FB2D3 /*  RedirectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A9476259358A0009FB2D3 /*  RedirectViewModel.swift */; };
 		D00A947E259358A0009FB2D3 /* Flatrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A9478259358A0009FB2D3 /* Flatrate.swift */; };
@@ -139,6 +140,7 @@
 		1986CDB5259B8E47009112BA /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1986CDBA259B8E54009112BA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		1996198325B1C69F00C988CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		19BCDF0325BE3F2E00988B72 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		3FF4A3505CB5577504C62AAB /* Pods-Jeffrey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey/Pods-Jeffrey.release.xcconfig"; sourceTree = "<group>"; };
 		44CE52870E2F146882115B67 /* Pods-JeffreyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.release.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.release.xcconfig"; sourceTree = "<group>"; };
 		56458720C37B3E4268DE8032 /* Pods_JeffreyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JeffreyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				1909E496258E491200435D07 /* LoginViewController.swift */,
+				19BCDF0325BE3F2E00988B72 /* SecondViewController.swift */,
 				1909E49B258E491C00435D07 /* Login.storyboard */,
 			);
 			path = View;
@@ -974,6 +977,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19BCDF0425BE3F2E00988B72 /* SecondViewController.swift in Sources */,
 				D00A94A3259359C3009FB2D3 /* Genre.swift in Sources */,
 				D0BA3B6325A6BE68007C8D8E /* SelectedMovieViewController.swift in Sources */,
 				FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */,
