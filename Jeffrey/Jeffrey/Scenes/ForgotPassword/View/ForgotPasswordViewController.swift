@@ -1,5 +1,4 @@
 import UIKit
-import TextFieldEffects
 
 class ForgotPasswordViewController: UIViewController {
     

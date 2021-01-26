@@ -1,7 +1,7 @@
 import UIKit
-import TextFieldEffects
 import Firebase
-
+import FBSDKLoginKit
+import GoogleSignIn
 
 protocol LoginViewEvents: AnyObject {
     func present(viewController: UIViewController)
@@ -9,123 +9,102 @@ protocol LoginViewEvents: AnyObject {
 }
 
 class LoginViewController: UIViewController {
-    
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var googleButton: UIButton!
-    @IBOutlet weak var facebookButton: UIButton!
-    @IBOutlet weak var appleButton: UIButton!
-    @IBOutlet weak var forgotPassword: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var socialMediaView: UIView!
+    //@IBOutlet weak var videoLayerView: UIView!
+    @IBOutlet weak var emailAcess: UIButton!
+    @IBOutlet weak var registerAcess: UIButton!
+    @IBOutlet weak var facebookBtn: UIButton!
+    @IBOutlet weak var googleBtn: UIButton!
+    @IBOutlet weak var appleBtn: UIButton!
     
     private var viewModel: LoginViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextFieldsDelegate()
-        configureTextField(textField: emailTextField)
-        configureTextField(textField: passwordTextField)
+        configView()
         
-        setupButton(button: signInButton)
+        configButtons(button: emailAcess)
+        configButtons(button: registerAcess)
         
-        setupButtonSocialMedia(button: googleButton)
-        setupButtonSocialMedia(button: facebookButton)
-        setupButtonSocialMedia(button: appleButton)
-        
-        label.text = "Olá \nPronto para logar?"
+        configButtonsMedia(button: facebookBtn)
+        configButtonsMedia(button: googleBtn)
+        configButtonsMedia(button: appleBtn)
         
         self.viewModel = LoginViewModel()
         self.viewModel?.viewController = self
-}
-    
-    
-    @IBAction func signInTapped(_ sender: Any) {
-        view.endEditing(true)
         
-        if let email = emailTextField.text, let password = passwordTextField.text{
-            Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
-                if let error = error {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    func configButtons(button: UIButton?){
+        button?.backgroundColor = UIColor.tertiaryLabel.withAlphaComponent(1.0)
+        button?.tintColor = UIColor.black
+        button?.layer.cornerRadius = 10
+        button?.clipsToBounds = true
+    }
+    
+    func configButtonsMedia(button: UIButton?){
+        button?.layer.cornerRadius = (button?.layer.frame.size.height)!/2
+        button?.layer.borderColor = UIColor.clear.cgColor
+        button?.layer.borderWidth = 0.5
+        button?.clipsToBounds = true
+    }
+    
+    func configView(){
+        socialMediaView.backgroundColor = UIColor(white: 0.2, alpha: 0.2)
+        socialMediaView.layer.borderWidth = 0.5
+        socialMediaView.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+    
+    @IBAction func didTapLoginFacebook(_ sender: Any) {
+        let loginManager = LoginManager()
+        
+        if let _ = AccessToken.current {
+            loginManager.logOut()
+            print("~ Deu Logout!! ~")
+        } else {
+            loginManager.logIn(permissions: [], viewController: self) { (result) in
+                switch result {
+                case .success(granted: let permissions,
+                              declined: let declined,
+                              token: let token):
+                    print("#SUCESSO#")
+                    print(permissions)
+                    print(declined)
+                    print(token)
+                case .cancelled:
+                    print("#CANCELADO#")
+                case .failed(let error):
+                    print("#FALHA#")
                     print(error.localizedDescription)
-                }else{
-                    self.viewModel?.signInTapped()
                 }
             }
         }
-        
-        self.clearTextFields()
-    }
-    
-    @IBAction func googleTapped(_ sender: Any) {
-        viewModel?.googleTap(controller: self)
-        print("Entrou google")
-    }
-    
-    @IBAction func facebookTapped(_ sender: Any) {
-        viewModel?.facebookTap(controller: self)
-        print("Entrou facebook")
-    }
-    
-    @IBAction func appleTapped(_ sender: Any) {
-        viewModel?.appleTap(controller: self)
-        print("Entrou apple")
     }
     
     
-    @IBAction func forgotPasswordTapped(_ sender: Any) {
-        viewModel?.forgotPasswordTap(controller: self)
+    @IBAction func didTapGoogleLogin(_ sender: Any) {
+        GIDSignIn.sharedInstance()?.signIn()
     }
     
     
-    @IBAction func registerTapped(_ sender: Any) {
-        viewModel?.registerTap(controller: self)
+    @IBAction func loginEmail(_ sender: Any) {
+        viewModel?.loginEmail()
     }
     
-    private func configureTextFieldsDelegate() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+    @IBAction func registerAccount(_ sender: Any) {
+        viewModel?.registerAccount()
     }
     
-    private func configureTapGesture(){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
-        view.addGestureRecognizer(tapGesture)
+    
+    @IBAction func appleLogin(_ sender: Any) {
     }
     
-    @objc func handleTap(){
-        view.endEditing(true)
-    }
     
-    func configureTextField(textField: UITextField){
-        textField.backgroundColor = UIColor.clear
-    }
-    
-    func clearTextFields(){
-        emailTextField.text = ""
-        passwordTextField.text = ""
-    }
-    
-//    func alertProvisorioLogin(){
-//        viewModel?.signInTapped()
-//    }
-    
-    func setupButton(button: UIButton){
-        button.backgroundColor = .red
-        button.tintColor = .white
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.layer.cornerRadius = 10
-        button.clipsToBounds = true
-    }
-    
-    func setupButtonSocialMedia(button: UIButton){
-        button.layer.cornerRadius = button.frame.width / 2
-        let image = button.currentImage?.withRenderingMode(.alwaysTemplate)
-        button.setImage(image, for: .normal)
-        button.tintColor = .white
-        button.clipsToBounds = true
-        button.imageView?.contentMode = .scaleAspectFit
-    }
 }
+
 extension LoginViewController: LoginViewEvents {
     func push(viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
@@ -136,9 +115,39 @@ extension LoginViewController: LoginViewEvents {
     }
 }
 
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+extension LoginViewController: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        let token = result?.token?.tokenString
+        let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
+                                                 parameters: ["fields": "email, name"],
+                                                 tokenString: token,
+                                                 version: nil,
+                                                 httpMethod: .get)
+        request.start(completionHandler: { connection, result, error in
+            print("\(String(describing: result))")
+        })
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+    }
+}
+
+extension LoginViewController: GIDSignInDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        guard let auth = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        Auth.auth().signIn(with: credentials) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Login Successful.")
+                //This is where you should add the functionality of successful login
+                //i.e. dismissing this view or push the home view controller etc
+            }
+        }
     }
 }
