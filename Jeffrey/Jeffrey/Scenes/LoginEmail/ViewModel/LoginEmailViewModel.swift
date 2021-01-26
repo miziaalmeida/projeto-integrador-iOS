@@ -1,23 +1,36 @@
+//import Foundation
+//import UIKit
 //
-//  LoginEmailViewModel.swift
-//  Jeffrey
+//protocol LoginEmailViewModelProtocol: AnyObject{
+//        func signInTapped()
+//        func registerTap(controller: UIViewController)
+//        var viewController: LoginEmailViewEvents? {get set}
+//}
 //
-//  Created by Mizia Lima on 1/25/21.
+//class LoginEmailViewModel: LoginEmailViewModelProtocol{
+//    weak var viewController: LoginEmailViewEvents?
+//    
+//    
 //
-
-import Foundation
-
-//
-//
-//func forgotPasswordTap(controller: UIViewController) {
-//    if let forgotPassView = UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateInitialViewController() as? ForgotPasswordViewController {
-//        controller.navigationController?.pushViewController(forgotPassView, animated: true)
+//    func signInTapped() {
+//        guard  let homeViewControler = UIStoryboard(name: "HomeMain",
+//                                                    bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
+//        
+//        viewController?.push(viewController: homeViewControler)
+//    }
+//    
+//   
+//    
+//    func forgotPasswordTap(controller: UIViewController) {
+//        if let forgotPassView = UIStoryboard(name: "ForgotPassword", bundle: nil).instantiateInitialViewController() as? ForgotPasswordViewController {
+//            controller.navigationController?.pushViewController(forgotPassView, animated: true)
+//        }
+//    }
+//    
+//    func registerTap(controller: UIViewController) {
+//        if let registerView = UIStoryboard(name: "Register", bundle: nil).instantiateInitialViewController() as? RegisterViewController {
+//            controller.navigationController?.pushViewController(registerView, animated: true)
+//        }
 //    }
 //}
 //
-//func signInTapped() {
-//    guard  let homeViewControler = UIStoryboard(name: "HomeMain",
-//                                                bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-//    
-//    viewController?.push(viewController: homeViewControler)
-//}
