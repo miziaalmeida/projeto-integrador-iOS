@@ -70,6 +70,12 @@ class LoginViewController: UIViewController {
                 case .success(granted: let permissions,
                               declined: let declined,
                               token: let token):
+                    
+                    guard  let homeViewControler = UIStoryboard(name: "HomeMain",
+                                                                bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
+                    
+                    self.navigationController?.pushViewController(homeViewControler, animated: true)
+                    
                     print("#SUCESSO#")
                     print(permissions)
                     print(declined)
@@ -84,6 +90,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+   
     
     @IBAction func didTapGoogleLogin(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
@@ -145,8 +152,10 @@ extension LoginViewController: GIDSignInDelegate {
                 print(error.localizedDescription)
             } else {
                 print("Login Successful.")
-                //This is where you should add the functionality of successful login
-                //i.e. dismissing this view or push the home view controller etc
+                 guard  let homeViewControler = UIStoryboard(name: "HomeMain",
+                                                              bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
+                  
+                  self.navigationController?.pushViewController(homeViewControler, animated: true)
             }
         }
     }
