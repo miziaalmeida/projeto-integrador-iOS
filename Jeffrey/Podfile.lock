@@ -213,12 +213,27 @@ PODS:
     - abseil/base/config
     - abseil/meta/type_traits
   - Alamofire (5.4.0)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
   - BoringSSL-GRPC (0.0.7):
     - BoringSSL-GRPC/Implementation (= 0.0.7)
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
+  - FBSDKCoreKit (8.1.0):
+    - FBSDKCoreKit/Basics (= 8.1.0)
+    - FBSDKCoreKit/Core (= 8.1.0)
+  - FBSDKCoreKit/Basics (8.1.0)
+  - FBSDKCoreKit/Core (8.1.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (8.1.0):
+    - FBSDKLoginKit/Login (= 8.1.0)
+  - FBSDKLoginKit/Login (8.1.0):
+    - FBSDKCoreKit (~> 8.1.0)
   - Firebase/Analytics (7.1.0):
     - Firebase/Core
   - Firebase/Auth (7.1.0):
@@ -286,6 +301,10 @@ PODS:
     - nanopb (~> 2.30906.0)
   - GoogleDataTransport (8.0.1):
     - nanopb (~> 2.30906.0)
+  - GoogleSignIn (5.0.2):
+    - AppAuth (~> 1.2)
+    - GTMAppAuth (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleUtilities/AppDelegateSwizzler (7.1.0):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -329,7 +348,14 @@ PODS:
     - BoringSSL-GRPC (= 0.0.7)
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
+  - GTMAppAuth (1.1.0):
+    - AppAuth/Core (~> 1.4)
+    - GTMSessionFetcher (~> 1.4)
+  - GTMSessionFetcher (1.5.0):
+    - GTMSessionFetcher/Full (= 1.5.0)
   - GTMSessionFetcher/Core (1.5.0)
+  - GTMSessionFetcher/Full (1.5.0):
+    - GTMSessionFetcher/Core (= 1.5.0)
   - Kingfisher (5.15.7):
     - Kingfisher/Core (= 5.15.7)
   - Kingfisher/Core (5.15.7)
@@ -342,24 +368,27 @@ PODS:
   - PromisesObjC (1.2.11)
   - SearchTextField (1.2.4)
   - SnapKit (5.0.1)
-  - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
+  - FBSDKLoginKit
   - Firebase/Analytics
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Firestore
+  - GoogleSignIn
   - Kingfisher (~> 5.15)
   - SearchTextField (~> 1.2)
   - SnapKit (~> 5.0.0)
-  - TextFieldEffects
 
 SPEC REPOS:
   trunk:
     - abseil
     - Alamofire
+    - AppAuth
     - BoringSSL-GRPC
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -370,9 +399,11 @@ SPEC REPOS:
     - FirebaseInstallations
     - GoogleAppMeasurement
     - GoogleDataTransport
+    - GoogleSignIn
     - GoogleUtilities
     - "gRPC-C++"
     - gRPC-Core
+    - GTMAppAuth
     - GTMSessionFetcher
     - Kingfisher
     - leveldb-library
@@ -380,12 +411,14 @@ SPEC REPOS:
     - PromisesObjC
     - SearchTextField
     - SnapKit
-    - TextFieldEffects
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
+  FBSDKCoreKit: b3ca27e124dae67122d3bb47c8f96800b39986a6
+  FBSDKLoginKit: a3a92ba9380759cd0c1aa8319465fb5f2857c602
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
   FirebaseAnalytics: 7f165a56dea86ddd5b8ce02af3bee982c683405c
   FirebaseAuth: f82c2cfcc1c107bb0a97735cdbce4eb2a601f710
@@ -396,9 +429,11 @@ SPEC CHECKSUMS:
   FirebaseInstallations: 3de38553e86171b5f81d83cdeef63473d37bfdb0
   GoogleAppMeasurement: 89e1a64593f968713b0506ba1b53b38a154bf9a5
   GoogleDataTransport: e4085e6762f36a6141738f46b0153473ce57fb18
+  GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GoogleUtilities: f734da554aade8cc7928a31c2f3311897933a1bd
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
+  GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
@@ -406,8 +441,7 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
-  TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: f0f6f8cefa22712319c54c0a9df5b698ceb3d28e
+PODFILE CHECKSUM: fdd70bf4f62aa14d9fa1cf3c6cc2891f0bf59ac0
 
 COCOAPODS: 1.10.0
