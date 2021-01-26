@@ -6,7 +6,6 @@ target 'Jeffrey' do
   use_frameworks!
   pod 'Kingfisher', '~> 5.15'
   pod 'Alamofire', '~> 5.4'
-  pod 'TextFieldEffects'
   pod 'SnapKit', '~> 5.0.0'
   pod 'SearchTextField', '~> 1.2'
 
@@ -16,6 +15,13 @@ target 'Jeffrey' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Database'
 
+
+  # add Facebook Login
+  pod 'FBSDKLoginKit'
+   
+  # add Google Login
+  pod 'GoogleSignIn'
+    
   # Pods for Jeffrey
 
   target 'JeffreyTests' do

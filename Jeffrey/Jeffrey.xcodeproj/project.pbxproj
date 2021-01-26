@@ -18,7 +18,6 @@
 		1909E488258E3E8F00435D07 /* StartOptions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E487258E3E8F00435D07 /* StartOptions.storyboard */; };
 		1909E48D258E3E9A00435D07 /* StartOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E48C258E3E9A00435D07 /* StartOptionsViewController.swift */; };
 		1909E492258E3EA600435D07 /* StartOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E491258E3EA600435D07 /* StartOptionsViewModel.swift */; };
-		1909E497258E491200435D07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E496258E491200435D07 /* LoginViewController.swift */; };
 		1909E49C258E491C00435D07 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1909E49B258E491C00435D07 /* Login.storyboard */; };
 		1909E4A3258E493000435D07 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4A2258E493000435D07 /* LoginViewModel.swift */; };
 		1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909E4AA258E494E00435D07 /* RegisterViewController.swift */; };
@@ -43,7 +42,10 @@
 		1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1986CDBA259B8E54009112BA /* ProfileViewModel.swift */; };
 		1996198425B1C69F00C988CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1996198325B1C69F00C988CA /* GoogleService-Info.plist */; };
 		19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1911390C2563058F0039C5A3 /* LaunchScreen.storyboard */; };
-		19BCDF0425BE3F2E00988B72 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCDF0325BE3F2E00988B72 /* SecondViewController.swift */; };
+		19BCDF0425BE3F2E00988B72 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCDF0325BE3F2E00988B72 /* LoginViewController.swift */; };
+		19EDDBF125BF5DA0002F8473 /* LoginEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDDBF025BF5DA0002F8473 /* LoginEmailViewController.swift */; };
+		19EDDBF925BF5DAD002F8473 /* LoginEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19EDDBF825BF5DAD002F8473 /* LoginEmailViewModel.swift */; };
+		19EDDBFB25BF5DB8002F8473 /* LoginEmail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19EDDBFA25BF5DB8002F8473 /* LoginEmail.storyboard */; };
 		61D9D72D2AB74F3C962371BC /* Pods_Jeffrey_JeffreyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876B45A95C1DFE9C686F2602 /* Pods_Jeffrey_JeffreyUITests.framework */; };
 		D00A947D259358A0009FB2D3 /*  RedirectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A9476259358A0009FB2D3 /*  RedirectViewModel.swift */; };
 		D00A947E259358A0009FB2D3 /* Flatrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A9478259358A0009FB2D3 /* Flatrate.swift */; };
@@ -109,7 +111,6 @@
 		1909E487258E3E8F00435D07 /* StartOptions.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartOptions.storyboard; sourceTree = "<group>"; };
 		1909E48C258E3E9A00435D07 /* StartOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOptionsViewController.swift; sourceTree = "<group>"; };
 		1909E491258E3EA600435D07 /* StartOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartOptionsViewModel.swift; sourceTree = "<group>"; };
-		1909E496258E491200435D07 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1909E49B258E491C00435D07 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		1909E4A2258E493000435D07 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1909E4AA258E494E00435D07 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +141,10 @@
 		1986CDB5259B8E47009112BA /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1986CDBA259B8E54009112BA /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		1996198325B1C69F00C988CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		19BCDF0325BE3F2E00988B72 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		19BCDF0325BE3F2E00988B72 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		19EDDBF025BF5DA0002F8473 /* LoginEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewController.swift; sourceTree = "<group>"; };
+		19EDDBF825BF5DAD002F8473 /* LoginEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailViewModel.swift; sourceTree = "<group>"; };
+		19EDDBFA25BF5DB8002F8473 /* LoginEmail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginEmail.storyboard; sourceTree = "<group>"; };
 		3FF4A3505CB5577504C62AAB /* Pods-Jeffrey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey/Pods-Jeffrey.release.xcconfig"; sourceTree = "<group>"; };
 		44CE52870E2F146882115B67 /* Pods-JeffreyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.release.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.release.xcconfig"; sourceTree = "<group>"; };
 		56458720C37B3E4268DE8032 /* Pods_JeffreyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JeffreyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,8 +293,7 @@
 		1909E472258E3E2300435D07 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1909E496258E491200435D07 /* LoginViewController.swift */,
-				19BCDF0325BE3F2E00988B72 /* SecondViewController.swift */,
+				19BCDF0325BE3F2E00988B72 /* LoginViewController.swift */,
 				1909E49B258E491C00435D07 /* Login.storyboard */,
 			);
 			path = View;
@@ -495,6 +498,7 @@
 				FF430B4625A3AD5A00D776B1 /* List */,
 				1909E4D3258E8BBC00435D07 /* ForgotPassword */,
 				1909E474258E3E3000435D07 /* Register */,
+				19EDDBEF25BF5D66002F8473 /* LoginEmail */,
 				1909E471258E3E1C00435D07 /* Login */,
 				1909E46E258E3DFF00435D07 /* StartOptions */,
 				1909E46B258E3DEC00435D07 /* PageStart */,
@@ -525,6 +529,32 @@
 			isa = PBXGroup;
 			children = (
 				1986CDBA259B8E54009112BA /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		19EDDBEF25BF5D66002F8473 /* LoginEmail */ = {
+			isa = PBXGroup;
+			children = (
+				19EDDC2C25BF642D002F8473 /* ViewModel */,
+				19EDDC2B25BF6429002F8473 /* View */,
+			);
+			path = LoginEmail;
+			sourceTree = "<group>";
+		};
+		19EDDC2B25BF6429002F8473 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				19EDDBFA25BF5DB8002F8473 /* LoginEmail.storyboard */,
+				19EDDBF025BF5DA0002F8473 /* LoginEmailViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		19EDDC2C25BF642D002F8473 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				19EDDBF825BF5DAD002F8473 /* LoginEmailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -734,6 +764,7 @@
 				191138FB2563058B0039C5A3 /* Frameworks */,
 				191138FC2563058B0039C5A3 /* Resources */,
 				88B680AB13CCD96EB5D58D5E /* [CP] Embed Pods Frameworks */,
+				BFE0371CC9895F7BDBE4EBCB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -772,6 +803,7 @@
 				1911391C2563058F0039C5A3 /* Frameworks */,
 				1911391D2563058F0039C5A3 /* Resources */,
 				E763A5FBE0A7089985DBFAB8 /* [CP] Embed Pods Frameworks */,
+				B51546C54F8E4F46375586B7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -832,6 +864,7 @@
 			files = (
 				1909E488258E3E8F00435D07 /* StartOptions.storyboard in Resources */,
 				1986CDB6259B8E47009112BA /* Profile.storyboard in Resources */,
+				19EDDBFB25BF5DB8002F8473 /* LoginEmail.storyboard in Resources */,
 				1909E476258E3E4E00435D07 /* Main.storyboard in Resources */,
 				19BAAB53256DC4DA0081D215 /* LaunchScreen.storyboard in Resources */,
 				1904481825B87089008502E4 /* Fastfile in Resources */,
@@ -931,6 +964,40 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B51546C54F8E4F46375586B7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFE0371CC9895F7BDBE4EBCB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jeffrey/Pods-Jeffrey-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C2EB403E696A8435351B8680 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -977,7 +1044,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19BCDF0425BE3F2E00988B72 /* SecondViewController.swift in Sources */,
+				19BCDF0425BE3F2E00988B72 /* LoginViewController.swift in Sources */,
 				D00A94A3259359C3009FB2D3 /* Genre.swift in Sources */,
 				D0BA3B6325A6BE68007C8D8E /* SelectedMovieViewController.swift in Sources */,
 				FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */,
@@ -996,12 +1063,13 @@
 				1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */,
 				1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */,
 				FF5E73B925A3FA3D00368D2C /* TipViewModel.swift in Sources */,
+				19EDDBF925BF5DAD002F8473 /* LoginEmailViewModel.swift in Sources */,
 				FF5E742425A626C400368D2C /* ListTableViewCell.swift in Sources */,
-				1909E497258E491200435D07 /* LoginViewController.swift in Sources */,
 				1909E492258E3EA600435D07 /* StartOptionsViewModel.swift in Sources */,
 				FF4B87C025A7CD280081AAEC /* CustomButton.swift in Sources */,
 				FF5E741F25A5FB5E00368D2C /* Home.swift in Sources */,
 				194A302925A8D724002D9E0F /* EditProfileViewController.swift in Sources */,
+				19EDDBF125BF5DA0002F8473 /* LoginEmailViewController.swift in Sources */,
 				1909E4C2258E7D8C00435D07 /* UIImage+Extensions.swift in Sources */,
 				D0BA3B5A25A6BE3B007C8D8E /* SelectedMovieViewModel.swift in Sources */,
 				191139022563058C0039C5A3 /* AppDelegate.swift in Sources */,
