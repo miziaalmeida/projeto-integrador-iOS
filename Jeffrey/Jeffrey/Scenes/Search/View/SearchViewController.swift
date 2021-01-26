@@ -149,6 +149,10 @@ extension SearchViewController: UITableViewDataSource{
         let movie: Movie =  viewModel.getMovieInArray(index: indexPath.row)
         
         cell.setup(movie: movie)
+        let imageIndicator = UIImageView(image: UIImage(named:"icon-right-arrow"))
+        cell.accessoryView = imageIndicator
+        imageIndicator.tintColor = UIColor.yellow
+        imageIndicator.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         
         return cell
         
