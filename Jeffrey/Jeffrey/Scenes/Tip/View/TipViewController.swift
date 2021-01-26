@@ -29,7 +29,7 @@ class TipViewController: UIViewController {
 
     }
     @IBAction func actionButtonNext(_ sender: Any) {
-        selectedMovie.setTip(gener: self.gener, stream: self.stream)
+        
         let storyboard = UIStoryboard(name: "SelectedMovie", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController;
         if gener == nameGenres.action.rawValue{
@@ -94,7 +94,7 @@ class TipViewController: UIViewController {
         
         
         
-        
+        selectedMovie.setTip(gener: self.gener, stream: self.stream)
         self.present(vc, animated: true, completion: nil);
     }
     

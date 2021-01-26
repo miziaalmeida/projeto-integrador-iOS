@@ -310,7 +310,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="ggE-K5-sA7"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="HBO Go" image="logo-hboGo">
+                                                <state key="normal" title="logo-hboGo" image="logo-hboGo">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -329,7 +329,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="U92-rZ-yhq"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Apples" image="logo-appleTV">
+                                                <state key="normal" title="logo-appleTV" image="logo-appleTV">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -348,7 +348,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="sCp-E0-IOm"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Claro video" image="logo-claroVideo">
+                                                <state key="normal" title="logo-claroVideo" image="logo-claroVideo">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -367,7 +367,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="iRo-eV-uYt"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="NetMovies" image="logo-netMovies">
+                                                <state key="normal" title="logo-netMovies" image="logo-netMovies">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -391,7 +391,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="EtY-cb-WAH"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Disney Plus" image="logo-disney+">
+                                                <state key="normal" title="logo-disney+" image="logo-disney+">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -410,7 +410,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="NFX-ev-qKL"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Globo Play" image="logo-globoplay">
+                                                <state key="normal" title="logo-globoplay" image="logo-globoplay">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -429,7 +429,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="rai-bu-eW8"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Looke" image="logo-Looke">
+                                                <state key="normal" title="logo-Looke" image="logo-Looke">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -448,7 +448,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="Wjb-2f-QgI"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Telecine Play" image="logo-telecine">
+                                                <state key="normal" title="logo-telecine" image="logo-telecine">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -472,7 +472,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="Uvf-0f-KaC"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Netflix" image="logo-netflix">
+                                                <state key="normal" title="logo-netflix" image="logo-netflix">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -529,7 +529,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="vwy-c8-ktP"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="NOW" image="logo-now">
+                                                <state key="normal" title="logo-now" image="logo-now">
                                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
