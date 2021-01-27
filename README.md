@@ -15,7 +15,8 @@
 [![Xcode][xcode-image]][xcode-url]
 [![CocoaPods][cocoapods-image]][cocoapods-url]
 
-Integrantes:
+```
+**Integrantes:**
 
 Mízia Lima 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/miziaalmeida)
@@ -28,6 +29,8 @@ Michel dos Santos
 Taize Carminatti
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/taizecarminatti)
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/taize-s-s-carminatti-a5542a138/) 
+
+```
 
 O projeto integrador faz parte do ciclo de finalização do curso [iOS mobile developer][curso-ios-url] desenvolvido pela [Digital House Brasil][digital-house-url] em parceria com o Santander Universidades pelo projeto [Becas Santander][santander-mobile-coders-url]. 
 
