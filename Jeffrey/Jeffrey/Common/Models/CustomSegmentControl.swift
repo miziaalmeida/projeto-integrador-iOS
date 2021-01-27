@@ -23,7 +23,7 @@ class CustomSegmentControl{
         segmentindicator!.snp.remakeConstraints { (make) in
             make.top.equalTo(segmentedControll.snp.bottom).offset(3)
             make.height.equalTo(2)
-            make.width.equalTo(15 + titlecount * 8)
+            make.width.equalTo(60 + titlecount * 10)
             make.centerX.equalTo(segmentedControll.snp.centerX).dividedBy(numberOfSegments / CGFloat(3.0 + CGFloat(selectedIndex-1.0)*2.0))
         }
         
@@ -48,7 +48,7 @@ class CustomSegmentControl{
         segmentindicator = {
             let v = UIView()
             v.translatesAutoresizingMaskIntoConstraints = false
-            v.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) // Cor da barra que mostra qual segment esta selecionado
+            v.backgroundColor = #colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1) // Cor da barra que mostra qual segment esta selecionado
             return v
         }()
         
@@ -57,7 +57,7 @@ class CustomSegmentControl{
         segmentindicator!.snp.makeConstraints { (make) in
             make.top.equalTo(custom.snp.bottom).offset(3)
             make.height.equalTo(2)
-            make.width.equalTo(15 + custom.titleForSegment(at: 0)!.count * 8)
+            make.width.equalTo(60 + custom.titleForSegment(at: 0)!.count * 10)
             make.centerX.equalTo(custom.snp.centerX).dividedBy(custom.numberOfSegments)
         }
     }

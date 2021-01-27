@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions )
+        
+        //obter endereco banco de dados
+//        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+//        print(urls[urls.count-1] as URL)
+        
         return true
     }
     

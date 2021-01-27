@@ -88,7 +88,10 @@ extension  ListViewController: UITableViewDataSource{
             cell.setup(movie: SelectedMovieViewModel.arrayMovieSeen[indexPath.row])
         }
         
-        
+        let imageIndicator = UIImageView(image: UIImage(named:"icon-right-arrow"))
+        cell.accessoryView = imageIndicator
+        imageIndicator.tintColor = UIColor.yellow
+        imageIndicator.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
         
         
         return cell
