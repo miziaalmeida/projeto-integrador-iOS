@@ -16,15 +16,16 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var mySearchTextField: SearchTextField!
     @IBOutlet weak var buttonSearch: UIButton!
     
+    var activity = ActivityIndicatorViewController()
     var viewModel : SearchViewModelProtocol!
     var movie: MovieData!
     var movieData = DataManager.shared
     var arraySearch = [String]()
     
     @IBAction func buttonSearchTitle(_ sender: UIButton) {
-        
+        mySearchTextField.endEditing(true)
         let textSearch = mySearchTextField.text!.replacingOccurrences(of: " ", with: "+")
-        
+        activity.showActivityIndicator(view: view, targetVC: self)
         saveMovie(textSearch: textSearch)
         getFilms(textSearch: textSearch)
     }
@@ -39,7 +40,6 @@ class SearchViewController: UIViewController {
         if(!arraySearch.contains(textSearch)) {
             do{
                 try context.save()
-                loadMovies()
             } catch {
                 print(error.localizedDescription)
             }
@@ -49,8 +49,7 @@ class SearchViewController: UIViewController {
     func getFilms(textSearch: String) {
         viewModel.raffleListOfAPIMovies(textSearch: textSearch) { (sucess) in
             if sucess{
-                self.arraySearch.append(self.mySearchTextField.text!)
-                self.mySearchTextField.filterStrings(self.arraySearch)
+                self.activity.hideActivityIndicator(view: self.view)
                 self.table.delegate = self
                 self.table.dataSource = self
                 self.table.reloadData()
@@ -89,6 +88,7 @@ class SearchViewController: UIViewController {
         mySearchTextField.theme.bgColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.8)
         
         requestDataBase()
+        //deleteDataBase()
 
     }
     

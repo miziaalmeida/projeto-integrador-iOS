@@ -36,11 +36,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Film" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-7s-9rX">
-                                                    <rect key="frame" x="163" y="31" width="172" height="21.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="172" id="khK-TQ-BoW"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name Film" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-7s-9rX">
+                                                    <rect key="frame" x="163" y="31" width="196" height="21.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -73,7 +70,7 @@
                                                     <color key="textColor" systemColor="systemYellowColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CPz-gX-brn">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CPz-gX-brn">
                                                     <rect key="frame" x="20" y="10" width="135" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="ujR-tl-UcD"/>
@@ -95,6 +92,7 @@
                                                 <constraint firstItem="fNx-ml-4Va" firstAttribute="top" secondItem="TKa-7s-9rX" secondAttribute="bottom" constant="20" id="bpO-X9-QRq"/>
                                                 <constraint firstItem="TKa-7s-9rX" firstAttribute="leading" secondItem="CPz-gX-brn" secondAttribute="trailing" constant="8" id="fw5-8c-4W6"/>
                                                 <constraint firstItem="fJM-eC-4oZ" firstAttribute="leading" secondItem="CPz-gX-brn" secondAttribute="trailing" constant="8" id="hhn-rm-dDa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TKa-7s-9rX" secondAttribute="trailing" constant="16" id="nBp-uj-drU"/>
                                                 <constraint firstAttribute="bottom" secondItem="CPz-gX-brn" secondAttribute="bottom" constant="11" id="t7h-RQ-4un"/>
                                                 <constraint firstItem="fNx-ml-4Va" firstAttribute="leading" secondItem="CPz-gX-brn" secondAttribute="trailing" constant="8" id="x7I-TB-XeJ"/>
                                             </constraints>
@@ -119,7 +117,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYJ-rC-QRY">
                                 <rect key="frame" x="344" y="64" width="50" height="50"/>
