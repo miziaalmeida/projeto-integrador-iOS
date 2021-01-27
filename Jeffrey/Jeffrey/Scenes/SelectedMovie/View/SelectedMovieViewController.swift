@@ -180,7 +180,7 @@ class SelectedMovieViewController: UIViewController {
     func setFieldsMovieHome(){
         
         labelTitle.text = viewModel.getTitle()
-        labelRelease.text = movieScreenHome?.releaseDate
+        labelRelease.text = viewModel.getRelease()
         textViewSinopse.text = viewModel.getOverView()
         imageFilmeBackGround.image = viewModel.getImageFilm()
         labelVoteAvarage.text = String((movieScreenHome?.voteAverage)!)

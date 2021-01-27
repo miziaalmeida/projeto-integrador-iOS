@@ -241,9 +241,9 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func getRelease() -> String {
         if arrayMovies.isEmpty{
-            return (movieSearchBar?.releaseDate)!
+             return formatDate(date: (movieSearchBar?.releaseDate)!)
         }
-        return arrayMovies[idMovieInArray].releaseDate
+        return formatDate(date: arrayMovies[idMovieInArray].releaseDate)
     }
     
     func getVoteAverage() -> String {
@@ -374,6 +374,20 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         homeViewControler.providerName = getImageStreaming()
         
         viewController?.present(viewController: homeViewControler)
+    }
+    
+    func formatDate(date:String) -> String{
+        
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd/MM/yyyy"
+
+        let date: NSDate? = dateFormatterGet.date(from: String(date)) as NSDate?
+        print(dateFormatterPrint.string(from: date! as Date))
+        
+        return dateFormatterPrint.string(from: date! as Date)
     }
     
     

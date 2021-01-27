@@ -21,7 +21,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb680483936001732</string>
+				<string>fb162072065461341</string>
 			</array>
 		</dict>
 		<dict>
@@ -29,14 +29,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.262658093720-erkd97nauvtmr3ou7cf553mpfnvp4f8m</string>
+				<string>com.googleusercontent.apps.20449369062-5v19dtblpvrvad6osv0pb88dvp72llcq</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>680483936001732</string>
+	<string>162072065461341</string>
 	<key>FacebookDisplayName</key>
 	<string>Jeffrey</string>
 	<key>LSApplicationQueriesSchemes</key>

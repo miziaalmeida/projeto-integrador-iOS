@@ -1,5 +1,7 @@
 import UIKit
 import Firebase
+import FBSDKLoginKit
+
 class ProfileViewController: UIViewController{
 
     @IBOutlet weak var profilePhoto: UIImageView!
@@ -47,11 +49,29 @@ class ProfileViewController: UIViewController{
         viewModel?.didTapExitAccount(controller: self)
         do {
             try Auth.auth().signOut()
+            print("Deu Logout no Email")
             navigationController?.popToRootViewController(animated: true)
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
-    }
+        
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+        
+        
+        
+        let loginManager = LoginManager()
+        
+        if let _ = AccessToken.current {
+            loginManager.logOut()
+            print("~ Deu Logout no facebook!! ~")
+        }
+            }
+      
 
     
     func customButtons(button: UIButton, title: String){

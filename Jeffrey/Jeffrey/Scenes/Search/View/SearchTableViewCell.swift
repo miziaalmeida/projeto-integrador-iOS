@@ -14,6 +14,7 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet var labelnameMovie:UILabel!
     @IBOutlet var labelRelease:UILabel!
     
+    @IBOutlet weak var labelVoteAverage: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,6 +33,7 @@ class SearchTableViewCell: UITableViewCell {
             imageMovie.image = UIImage(data: data!)
             labelnameMovie.text = movie.title
             labelRelease.text = movie.releaseDate
+            labelVoteAverage.text = String(movie.voteAverage)
             imageMovie.clipsToBounds = true
             imageMovie.layer.cornerRadius = 20.0
         }
