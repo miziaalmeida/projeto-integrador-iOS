@@ -35,7 +35,7 @@ O projeto integrador faz parte do ciclo de finalização do curso [iOS mobile de
 O aplicativo desenvolvido se chama **Jeffrey** e tem por finalidade sortear filmes dentro da plataforma utilizando como parâmetro gêneros e streamings setados pelo usuário. O aplicativo ainda apresenta diversos títulos na sua home principal, tem opção de guardar listas de favoritos e já vistos para que não seja carregadas como opções no botão de sorteio, e uma tela de de busca de informações onde se pode realizar busca de títulos.
 
 Para este projeto está sendo consumida a API do [The Movie DataBase][tmdb-api-url], conforme uma das exigências de entrega do projeto: consumo de API.
-``
+```
 
 # Requisitos do Projeto
 
