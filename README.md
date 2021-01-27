@@ -15,7 +15,6 @@
 [![Xcode][xcode-image]][xcode-url]
 [![CocoaPods][cocoapods-image]][cocoapods-url]
 
-```
 **Integrantes:**
 
 Mízia Lima 
@@ -31,12 +30,12 @@ Taize Carminatti
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white) ](https://www.linkedin.com/in/taize-s-s-carminatti-a5542a138/) 
 
 ```
-
 O projeto integrador faz parte do ciclo de finalização do curso [iOS mobile developer][curso-ios-url] desenvolvido pela [Digital House Brasil][digital-house-url] em parceria com o Santander Universidades pelo projeto [Becas Santander][santander-mobile-coders-url]. 
 
 O aplicativo desenvolvido se chama **Jeffrey** e tem por finalidade sortear filmes dentro da plataforma utilizando como parâmetro gêneros e streamings setados pelo usuário. O aplicativo ainda apresenta diversos títulos na sua home principal, tem opção de guardar listas de favoritos e já vistos para que não seja carregadas como opções no botão de sorteio, e uma tela de de busca de informações onde se pode realizar busca de títulos.
 
 Para este projeto está sendo consumida a API do [The Movie DataBase][tmdb-api-url], conforme uma das exigências de entrega do projeto: consumo de API.
+``
 
 # Requisitos do Projeto
 
