@@ -250,6 +250,9 @@ PODS:
   - Firebase/Firestore (7.1.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 7.1.0)
+  - Firebase/Storage (7.1.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (~> 7.1.0)
   - FirebaseAnalytics (7.1.0):
     - FirebaseCore (~> 7.0)
     - FirebaseInstallations (~> 7.0)
@@ -293,6 +296,9 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseStorage (7.1.0):
+    - FirebaseCore (~> 7.0)
+    - GTMSessionFetcher/Core (~> 1.4)
   - GoogleAppMeasurement (7.1.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
     - GoogleUtilities/MethodSwizzler (~> 7.0)
@@ -365,6 +371,7 @@ PODS:
     - nanopb/encode (= 2.30906.0)
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
+  - ProgressHUD (13.4)
   - PromisesObjC (1.2.11)
   - SearchTextField (1.2.4)
   - SnapKit (5.0.1)
@@ -376,8 +383,10 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Firestore
+  - Firebase/Storage
   - GoogleSignIn
   - Kingfisher (~> 5.15)
+  - ProgressHUD
   - SearchTextField (~> 1.2)
   - SnapKit (~> 5.0.0)
 
@@ -397,6 +406,7 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleSignIn
@@ -408,6 +418,7 @@ SPEC REPOS:
     - Kingfisher
     - leveldb-library
     - nanopb
+    - ProgressHUD
     - PromisesObjC
     - SearchTextField
     - SnapKit
@@ -427,6 +438,7 @@ SPEC CHECKSUMS:
   FirebaseDatabase: bf02ea57590aaab4e72b9b12b412a4c881ee81e2
   FirebaseFirestore: bbf303f0638a93e6ecb38433aad283cebdfece5f
   FirebaseInstallations: 3de38553e86171b5f81d83cdeef63473d37bfdb0
+  FirebaseStorage: 80e2cd5200791540ca544f4dcac5e6b56994fc97
   GoogleAppMeasurement: 89e1a64593f968713b0506ba1b53b38a154bf9a5
   GoogleDataTransport: e4085e6762f36a6141738f46b0153473ce57fb18
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
@@ -438,10 +450,11 @@ SPEC CHECKSUMS:
   Kingfisher: 6e1a13523fcb1c86924ce53affe4ac957e544d59
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
+  ProgressHUD: 137a7fc677487c5581668f4490563124fb35c232
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   SearchTextField: 40dc3cc57def5a211f263cac263622c163bbc25a
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: fdd70bf4f62aa14d9fa1cf3c6cc2891f0bf59ac0
+PODFILE CHECKSUM: eb7b54597b03c38fa12b6d11ee4d92f1c8da03df
 
 COCOAPODS: 1.10.0

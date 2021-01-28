@@ -21,6 +21,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configNavigationItem()
+        
         configView()
         
         configButtons(button: emailAcess)
@@ -37,8 +40,22 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance().delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController!.navigationBar.barStyle = .black
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func configButtons(button: UIButton?){
-        button?.backgroundColor = UIColor.tertiaryLabel.withAlphaComponent(1.0)
+        button?.backgroundColor = UIColor.white.withAlphaComponent(1.0)
         button?.tintColor = UIColor.black
         button?.layer.cornerRadius = 10
         button?.clipsToBounds = true
@@ -90,8 +107,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-   
-    
     @IBAction func didTapGoogleLogin(_ sender: Any) {
         GIDSignIn.sharedInstance()?.signIn()
     }
@@ -107,6 +122,12 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func appleLogin(_ sender: Any) {
+    }
+    
+    func configNavigationItem(){
+        let backButton = UIBarButtonItem()
+        backButton.title = "Voltar"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
     
