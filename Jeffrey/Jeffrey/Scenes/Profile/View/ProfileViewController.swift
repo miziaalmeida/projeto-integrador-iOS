@@ -99,24 +99,3 @@ extension ProfileViewController: ImagePickerDelegate {
         self.profilePhoto.image = image
     }
 }
-
-//extension ProfileViewController: UITableViewDelegate {
-//   
-//}
-
-//extension ProfileViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 2
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//       let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
-//
-//        cell.textLabel?.text = sections[indexPath.row]
-//        cell.contentView.backgroundColor = UIColor(red: 45.0, green: 6.0, blue: 58.0, alpha: 1.0)
-//        tableView.separatorColor = UIColor.lightGray
-//        return cell
-//
-//    }
-//}
-

@@ -11,7 +11,6 @@ class RegisterViewModel: RegisterViewModelProtocol {
     weak var viewController: RegisterViewEvents?
     
     func registerTapped() {
-        print("Usuário cadastrado com sucesso!")
         guard  let homeViewControler = UIStoryboard(name: "HomeMain",
                                                     bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
         
