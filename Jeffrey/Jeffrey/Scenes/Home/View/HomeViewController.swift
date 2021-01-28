@@ -15,17 +15,17 @@ import Kingfisher
 //}
 
 class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+    
     // MARK: - Outlets
     
     @IBOutlet weak var tableViewHome:UITableView!
     
     var viewModel: HomeViewModelProtocol!
-
+    
     var activity = ActivityIndicatorViewController()
     
     
-
+    
     // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +34,29 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         
         
         activity.showActivityIndicator(view: view, targetVC: self)
-                viewModel.raffleListOfAPIMovies(genre: 35) { (sucess) in
-                    self.viewModel.raffleListOfAPIMovies(genre: 28) { (sucess) in
-                        self.viewModel.raffleListOfAPIMovies(genre: 16) { (sucess) in
-                            self.viewModel.raffleListOfAPIMovies(genre: 27) { (sucess) in
+        viewModel.raffleListOfAPIMovies(genre: idGenres.comedy.rawValue) { (sucess) in
+            self.viewModel.raffleListOfAPIMovies(genre: idGenres.action.rawValue) { (sucess) in
+                self.viewModel.raffleListOfAPIMovies(genre: idGenres.animation.rawValue) { (sucess) in
+                    self.viewModel.raffleListOfAPIMovies(genre: idGenres.terror.rawValue) { (sucess) in
+                        self.viewModel.raffleListOfAPIMovies(genre: idGenres.romance.rawValue) { (sucess) in
+                            self.viewModel.raffleListOfAPIMovies(genre: idGenres.fantasy.rawValue) { (sucess) in
+                                
+                                
                                 self.activity.hideActivityIndicator(view: self.view)
                                 self.tableViewHome.delegate = self
                                 self.tableViewHome.dataSource = self
                                 self.tableViewHome.reloadData()
                             }
-                            
                         }
-                       
+                        
                     }
                     
                 }
-//        tableViewHome.estimatedRowHeight = 85.0
-//        tableViewHome.rowHeight = UITableView.automaticDimension
+            }
+            
+        }
+        //        tableViewHome.estimatedRowHeight = 85.0
+        //        tableViewHome.rowHeight = UITableView.automaticDimension
         
         
         
@@ -62,9 +68,9 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func openopenScreenMovieDetail(movie:Movie){
-//
-//        
-//        
+        //
+        //
+        //
         let storyboard = UIStoryboard(name: "SelectedMovie", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController;
         vc.raffle = false
@@ -75,44 +81,44 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-            let tableHeader = view as! UITableViewHeaderFooterView
-              tableHeader.tintColor = UIColor.clear
-              tableHeader.textLabel?.textColor = .white
-              tableHeader.textLabel?.font = UIFont(name: "Helvetica-Neue", size: 25)
-              tableHeader.textLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        }
+        let tableHeader = view as! UITableViewHeaderFooterView
+        tableHeader.tintColor = UIColor.clear
+        tableHeader.textLabel?.textColor = .white
+        tableHeader.textLabel?.font = UIFont(name: "Helvetica-Neue", size: 25)
+        tableHeader.textLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+    }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            
-            return 40
-        }
+        
+        return 40
+    }
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let arrayTitleSection = ["Comédia","Ação","Animação","Terror"]
+        let arrayTitleSection = ["Pra gargalhar um pouco ..","Para quebrar tudo..","Adulto também assiste ..","Deixa a luz acesa.","Pra curtir a dois","Pra toda a família"]
         
         return arrayTitleSection[section]
-//        switch section {
-//        case 0:
-//            return "Comédia"
-//        case 1:
-//            return "Ação"
-//        case 2:
-//            return "Animação"
-//        case 3:
-//            return "Terror"
-//        default:
-//            return ""
-//        }
+        //        switch section {
+        //        case 0:
+        //            return "Comédia"
+        //        case 1:
+        //            return "Ação"
+        //        case 2:
+        //            return "Animação"
+        //        case 3:
+        //            return "Terror"
+        //        default:
+        //            return ""
+        //        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return 4
-
-        }
+        return 5
+        
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,18 +126,18 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-
+        
         if(indexPath.section == 0){
             return 350
         }else{
             return 175
         }
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! HomeTableViewCell
-//        cell.numberOfIten = viewModel.getCountArray()
+        //        cell.numberOfIten = viewModel.getCountArray()
         cell.numberOfIten = 20
         switch indexPath.section {
         case 0:
@@ -146,14 +152,21 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         case 3:
             cell.arrayMovies = viewModel.getArrayTerror()
             cell.genre = nameGenres.terror.rawValue
+        case 4:
+            cell.arrayMovies = viewModel.getArrayRomance()
+            cell.genre = nameGenres.romance.rawValue
+        case 5:
+            cell.arrayMovies = viewModel.getArrayFantasy()
+            cell.genre = nameGenres.fantasy.rawValue
         default:
             print("Próximos generos")
+            
         }
         
         cell.controller = self
         cell.sectionInTableView = indexPath.section
-    
-
+        
+        
         return cell
     }
 }
@@ -164,7 +177,7 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
 //}
 //extension HomeViewController  : UITableViewDataSource{
 //
-    
+
 //
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return imageURL.count
@@ -172,7 +185,7 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
 //
 //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //
-        
+
 //}
 //
 //extension HomeViewController : UICollectionViewDelegate{

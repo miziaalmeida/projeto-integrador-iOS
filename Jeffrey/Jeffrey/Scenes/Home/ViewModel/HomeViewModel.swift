@@ -16,6 +16,9 @@ protocol HomeViewModelProtocol: AnyObject{
     func getArrayAction() -> [Movie]
     func getArrayAnimation() -> [Movie]
     func getArrayTerror() -> [Movie]
+    func getArrayRomance() -> [Movie]
+    func getArrayFantasy() -> [Movie]
+    
    
 
 }
@@ -30,22 +33,30 @@ class HomeViewModel:HomeViewModelProtocol{
     var arrayMoviesAction = [Movie]()
     var arrayMoviesAnimation = [Movie]()
     var arrayMoviesTerror = [Movie]()
+    var arrayMoviesRomance = [Movie]()
+    var arrayMoviesFantasy = [Movie]()
     
     func raffleListOfAPIMovies(genre: Int ,completion: @escaping (Bool) -> Void) {
         
         apimanager.listOfFilmswithoutProvider(idPage: 1, genre: genre) { (arraymovie) in
             
-            if genre == 35 {
+            if genre == idGenres.comedy.rawValue {
                 self.arrayMoviesComedy = arraymovie
             }
-            if genre == 28 {
+            if genre == idGenres.action.rawValue {
                 self.arrayMoviesAction = arraymovie
             }
-            if genre == 16 {
+            if genre == idGenres.animation.rawValue {
                 self.arrayMoviesAnimation = arraymovie
             }
-            if genre == 27 {
+            if genre == idGenres.terror.rawValue {
                 self.arrayMoviesTerror = arraymovie
+            }
+            if genre == idGenres.romance.rawValue {
+                self.arrayMoviesRomance = arraymovie
+            }
+            if genre == idGenres.fantasy.rawValue {
+                self.arrayMoviesFantasy = arraymovie
             }
             
             completion(true)
@@ -76,6 +87,16 @@ class HomeViewModel:HomeViewModelProtocol{
     func getArrayTerror() -> [Movie]{
         
         return arrayMoviesTerror
+    }
+    
+    func getArrayRomance() -> [Movie]{
+        
+        return arrayMoviesRomance
+    }
+    
+    func getArrayFantasy() -> [Movie]{
+        
+        return arrayMoviesFantasy
     }
     
  
