@@ -1,6 +1,8 @@
 import UIKit
-import Firebase
+import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
+import ProgressHUD
 
 protocol RegisterViewEvents: AnyObject {
     func present(viewController: UIViewController)
@@ -15,42 +17,81 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var avatar: UIImageView!
     
     private var viewModel: RegisterViewModelProtocol?
     
-    let usuario = Auth.auth()
+    var image: UIImage? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupButton(button: registerButton)
-        
+        configNavigationItem()
         configureTextFieldDelegate()
+        configAvatar()
         
         self.viewModel = RegisterViewModel()
         self.viewModel?.viewController = self
     }
     
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func validateFields() {
+        guard let name = nameTextField.text, !name.isEmpty else {
+            ProgressHUD.showError("Por favor preencha o campo de nome")
+            return
+        }
+        guard let email = emailTextField.text, !email.isEmpty else {
+            ProgressHUD.showError("Por favor preencha o campo de email")
+            return
+        }
+        guard let password = passwordTextField.text, !password.isEmpty else {
+            ProgressHUD.showError("Por favor preencha com sua senha")
+            return
+        }
+        guard let confirmPass = confirmPasswordTextField.text, !confirmPass.isEmpty else {
+            ProgressHUD.showError("Por favor confirme sua senha")
+            return
+        }
+    }
     
     @IBAction func register(_ sender: Any) {
-        if let email = emailTextField.text, let password = passwordTextField.text{
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                
-                if let error = error{
-                    print(error.localizedDescription)
-                }else{
-                    self.viewModel?.registerTapped()
-                }
-   
-            }
-        }
+        self.view.endEditing(true)
+        self.validateFields()
+        self.signUp()
         
-        clearTextFields()
     }
     
     @IBAction func login(_ sender: Any) {
         viewModel?.loginTapped()
     }
+    
+    func configAvatar(){
+        avatar.frame = CGRect(x: 10, y: 10, width: 100, height: 100);
+        avatar.layer.cornerRadius = 50.0;
+        avatar.layer.masksToBounds = true;
+        // avatar.layer.cornerRadius = avatar.frame.size.width/2.0
+        avatar.layer.borderColor = UIColor.lightGray.cgColor
+        avatar.layer.borderWidth = 0.2
+        avatar.clipsToBounds = true
+        avatar.isUserInteractionEnabled = true
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPickerImageView))
+        avatar.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func presentPickerImageView(){
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        // picker.sourceType = .camera
+        picker.allowsEditing = true
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+    }
+    
     
     func configureTextFieldDelegate(){
         nameTextField.delegate = self
@@ -72,6 +113,27 @@ class RegisterViewController: UIViewController {
         emailTextField.text = ""
         passwordTextField.text = ""
         confirmPasswordTextField.text = ""
+    }
+    
+    func configNavigationItem(){
+        let backButton = UIBarButtonItem()
+        backButton.title = "Voltar"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+    func signUp(){
+        guard let imageSelected = self.image else {
+            ProgressHUD.showError("Por favor escolha uma foto")
+            return
+        }
+        AuthUser.User.signUp(withUsername: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, image: self.image,
+            onSucess: {
+                print("Foi")
+            }){ (errorMessage) in
+            print(errorMessage)
+        }
+        self.viewModel?.registerTapped()
+        clearTextFields()
     }
 }
 
@@ -104,5 +166,19 @@ extension UIViewController {
         UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft, animations: {
             window.rootViewController = viewController
         }, completion: nil)
+    }
+}
+
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            image = imageSelected
+            avatar.image = imageSelected
+        }
+        if let imageOriginal = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            image = imageOriginal
+            avatar.image = imageOriginal
+        }
+        picker.dismiss(animated: true, completion: nil)
     }
 }

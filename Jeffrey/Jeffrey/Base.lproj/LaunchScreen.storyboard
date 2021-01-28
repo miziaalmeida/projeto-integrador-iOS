@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Jeffrey" translatesAutoresizingMaskIntoConstraints="NO" id="bKU-TT-cvU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-app-small" translatesAutoresizingMaskIntoConstraints="NO" id="bKU-TT-cvU">
                                 <rect key="frame" x="80" y="259" width="254" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="WWK-2k-4od"/>
@@ -23,7 +23,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.10588235294117647" green="0.0" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.011764705882352941" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bKU-TT-cvU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="215" id="7rC-Br-qTF"/>
                             <constraint firstItem="bKU-TT-cvU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="DPE-Kn-xFn"/>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Jeffrey" width="500" height="500"/>
+        <image name="logo-app-small" width="166.5" height="166.5"/>
     </resources>
 </document>
