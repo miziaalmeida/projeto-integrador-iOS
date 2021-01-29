@@ -8,6 +8,6 @@
 import Foundation
 
 struct AuthUser{
-    static var User = UserAuth()
+    static var User = UserRef()
     //static var Message = MessageUser()
 }

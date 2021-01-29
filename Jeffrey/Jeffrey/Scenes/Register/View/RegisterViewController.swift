@@ -41,15 +41,15 @@ class RegisterViewController: UIViewController {
     
     func validateFields() {
         guard let name = nameTextField.text, !name.isEmpty else {
-            ProgressHUD.showError("Por favor preencha o campo de nome")
+            ProgressHUD.showError(ERROR_EMPTY_USERNAME)
             return
         }
         guard let email = emailTextField.text, !email.isEmpty else {
-            ProgressHUD.showError("Por favor preencha o campo de email")
+            ProgressHUD.showError(ERROR_EMPTY_EMAIL)
             return
         }
         guard let password = passwordTextField.text, !password.isEmpty else {
-            ProgressHUD.showError("Por favor preencha com sua senha")
+            ProgressHUD.showError(ERROR_EMPTY_PASSWORD)
             return
         }
         guard let confirmPass = confirmPasswordTextField.text, !confirmPass.isEmpty else {
@@ -61,8 +61,11 @@ class RegisterViewController: UIViewController {
     @IBAction func register(_ sender: Any) {
         self.view.endEditing(true)
         self.validateFields()
-        self.signUp()
-        
+        self.signUp(onSucess: {
+            print("Foi")
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
+        }
     }
     
     @IBAction func login(_ sender: Any) {
@@ -121,18 +124,16 @@ class RegisterViewController: UIViewController {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
-    func signUp(){
-        guard let imageSelected = self.image else {
-            ProgressHUD.showError("Por favor escolha uma foto")
-            return
-        }
+    func signUp(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+        ProgressHUD.show()
         AuthUser.User.signUp(withUsername: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, image: self.image,
-            onSucess: {
-                print("Foi")
-            }){ (errorMessage) in
-            print(errorMessage)
+                             onSucess: {
+                                ProgressHUD.dismiss()
+                                self.viewModel?.registerTapped()
+                                onSucess()
+                             }) { (errorMessage) in
+            onError(errorMessage)
         }
-        self.viewModel?.registerTapped()
         clearTextFields()
     }
 }

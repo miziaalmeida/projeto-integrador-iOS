@@ -6,6 +6,7 @@
 //
 import Firebase
 import UIKit
+import Firebase
 import ProgressHUD
 
 protocol LoginEmailViewEvents: AnyObject {
@@ -34,7 +35,7 @@ class LoginEmailViewController: UIViewController{
         super.viewWillAppear(animated)
         
         configNavigationItem()
-    
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationController!.navigationBar.barStyle = .black
         self.navigationController!.navigationBar.isTranslucent = true
@@ -51,26 +52,14 @@ class LoginEmailViewController: UIViewController{
         self.view.endEditing(true)
     }
     
-    
-    
     @IBAction func signInTapped(_ sender: Any) {
         self.view.endEditing(true)
         self.validateFields()
-        if let email = emailTextField.text, let password = passwordTextField.text{
-            Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    
-                }else{
-                    self.viewModel?.signInTapped()
-                    //                    guard  let homeViewControler = UIStoryboard(name: "HomeMain",
-                    //                                                                bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-                    //
-                    //                    self.navigationController?.pushViewController(homeViewControler, animated: true)
-                }
-            }
+        self.signIn(onSucess: {
+            //Validou, entrou na tela Home
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
         }
-        self.clearTextFields()
     }
     
     
@@ -80,11 +69,11 @@ class LoginEmailViewController: UIViewController{
     
     func validateFields() {
         guard let email = emailTextField.text, !email.isEmpty else {
-            ProgressHUD.showError("Por favor entre com um email")
+            ProgressHUD.showError(ERROR_EMPTY_EMAIL)
             return
         }
         guard let password = passwordTextField.text, !password.isEmpty else {
-            ProgressHUD.showError("Por favor entre com uma senha")
+            ProgressHUD.showError(ERROR_EMPTY_PASSWORD)
             return
         }
     }
@@ -105,6 +94,18 @@ class LoginEmailViewController: UIViewController{
         let backButton = UIBarButtonItem()
         backButton.title = "Voltar"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+    }
+    
+    func signIn(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+        ProgressHUD.show()
+        AuthUser.User.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, onSucess: {
+            onSucess()
+            ProgressHUD.dismiss()
+            self.viewModel?.signInTapped()
+        }) { (errorMessage) in
+            onError(errorMessage)
+        }
+        self.clearTextFields()
     }
 }
 
