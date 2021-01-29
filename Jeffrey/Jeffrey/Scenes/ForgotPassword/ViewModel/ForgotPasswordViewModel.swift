@@ -3,7 +3,7 @@ import UIKit
 import FirebaseAuth
 
 protocol ForgotPasswordViewModelProtocol: AnyObject {
-    func sendTapped()
+    func resetPassDidTapped()
     func loginTapped()
     var viewController: ForgotPasswordViewEvents? { get set }
 }
@@ -11,22 +11,19 @@ protocol ForgotPasswordViewModelProtocol: AnyObject {
 class ForgotPasswordViewModel: ForgotPasswordViewModelProtocol {    
     weak var viewController: ForgotPasswordViewEvents?
     
-    func sendTapped() {
-        
-        
+    func resetPassDidTapped() {
         alertSend()
-        
-        
     }
     
     func loginTapped() {
+        //essa parte precisa ser alterada!!
         guard  let loginView = UIStoryboard(name: "Login",
                                             bundle: nil).instantiateInitialViewController() as? LoginViewController else { return }
         viewController?.push(viewController: loginView)
     }
     
     func alertSend(){
-        let alert = UIAlertController(title: "Email enviado com sucesso!", message: "Seu email foi enviado com sucesso, verifique sua caixa de entrada.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Email enviado com sucesso!", message: "Nós enviamos um reset de senha para o seu email, verifique sua caixa de entrada.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
         viewController?.present(viewController: alert)
     }

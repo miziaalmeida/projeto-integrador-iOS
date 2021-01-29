@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qxA-4y-2vz">
-                                <rect key="frame" x="20" y="164" width="374" height="265"/>
+                                <rect key="frame" x="20" y="164" width="374" height="280"/>
                                 <subviews>
                                     <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@ e-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jxn-jr-fy5">
                                         <rect key="frame" x="0.0" y="-4" width="374" height="45"/>
@@ -47,28 +47,31 @@
                                             <action selector="signInTapped:" destination="TFR-Wa-2A4" eventType="touchUpInside" id="4cm-hR-Vzc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVL-IG-Gw4">
-                                        <rect key="frame" x="8" y="204" width="358" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfZ-ig-6hl">
+                                        <rect key="frame" x="0.0" y="214" width="374" height="58"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <state key="normal" title="Esqueceu sua senha?">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="forgotPasswordTapped:" destination="TFR-Wa-2A4" eventType="touchUpInside" id="6vo-qv-Yza"/>
+                                            <action selector="forgotPasswordTapped:" destination="TFR-Wa-2A4" eventType="touchUpInside" id="wMY-o6-5PL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="eCn-P4-tkx" firstAttribute="trailing" secondItem="eQB-qF-An1" secondAttribute="trailing" id="Kh8-9W-59Y"/>
+                                    <constraint firstItem="OfZ-ig-6hl" firstAttribute="trailing" secondItem="eCn-P4-tkx" secondAttribute="trailing" id="NV1-sP-r6u"/>
+                                    <constraint firstItem="OfZ-ig-6hl" firstAttribute="leading" secondItem="eCn-P4-tkx" secondAttribute="leading" id="TAA-Bc-PPZ"/>
                                     <constraint firstItem="eQB-qF-An1" firstAttribute="top" secondItem="Jxn-jr-fy5" secondAttribute="bottom" constant="8" id="Tjh-y4-PLR"/>
                                     <constraint firstItem="eCn-P4-tkx" firstAttribute="top" secondItem="qxA-4y-2vz" secondAttribute="top" constant="114" id="Y69-WY-87L"/>
                                     <constraint firstItem="eCn-P4-tkx" firstAttribute="trailing" secondItem="Jxn-jr-fy5" secondAttribute="trailing" id="YN6-mR-Ze4"/>
+                                    <constraint firstItem="OfZ-ig-6hl" firstAttribute="top" secondItem="eCn-P4-tkx" secondAttribute="bottom" constant="40" id="Z29-Qn-0t9"/>
                                     <constraint firstItem="eCn-P4-tkx" firstAttribute="leading" secondItem="Jxn-jr-fy5" secondAttribute="leading" id="Zt2-k7-wUV"/>
                                     <constraint firstAttribute="trailing" secondItem="eCn-P4-tkx" secondAttribute="trailing" id="bRz-m5-z1O"/>
                                     <constraint firstItem="eCn-P4-tkx" firstAttribute="leading" secondItem="qxA-4y-2vz" secondAttribute="leading" id="ooX-Pq-eHJ"/>
                                     <constraint firstItem="eCn-P4-tkx" firstAttribute="leading" secondItem="eQB-qF-An1" secondAttribute="leading" id="rnf-wc-gia"/>
                                     <constraint firstItem="eCn-P4-tkx" firstAttribute="top" secondItem="eQB-qF-An1" secondAttribute="bottom" constant="20" id="ulK-VF-0uX"/>
+                                    <constraint firstAttribute="bottom" secondItem="OfZ-ig-6hl" secondAttribute="bottom" constant="8" id="yiD-IL-qO1"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Começar sessão" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bom-wt-qtT">
@@ -87,7 +90,7 @@
                         <constraints>
                             <constraint firstItem="Bom-wt-qtT" firstAttribute="leading" secondItem="bwr-SG-eFp" secondAttribute="leading" constant="20" id="2Oa-bT-tvc"/>
                             <constraint firstItem="bwr-SG-eFp" firstAttribute="trailing" secondItem="qxA-4y-2vz" secondAttribute="trailing" constant="20" id="4hY-eD-AlT"/>
-                            <constraint firstItem="bwr-SG-eFp" firstAttribute="bottom" secondItem="qxA-4y-2vz" secondAttribute="bottom" constant="433" id="EkF-mf-MDF"/>
+                            <constraint firstItem="bwr-SG-eFp" firstAttribute="bottom" secondItem="qxA-4y-2vz" secondAttribute="bottom" constant="418" id="84b-Hf-p9X"/>
                             <constraint firstItem="bwr-SG-eFp" firstAttribute="trailing" secondItem="Bom-wt-qtT" secondAttribute="trailing" constant="20" id="QbO-FF-bj3"/>
                             <constraint firstItem="Bom-wt-qtT" firstAttribute="top" secondItem="bwr-SG-eFp" secondAttribute="top" constant="40" id="YT1-Nk-riW"/>
                             <constraint firstItem="qxA-4y-2vz" firstAttribute="leading" secondItem="bwr-SG-eFp" secondAttribute="leading" constant="20" id="jHb-Lz-h6b"/>

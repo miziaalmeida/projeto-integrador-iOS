@@ -1,5 +1,6 @@
 import UIKit
 import Firebase
+import ProgressHUD
 
 protocol ForgotPasswordViewEvents: AnyObject {
     func present(viewController: UIViewController)
@@ -30,8 +31,8 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     @IBAction func send(_ sender: Any) {
-        viewModel?.sendTapped()
-        clearTextFields()
+        viewModel?.resetPassDidTapped()
+        self.resetPassword()
     }
     
     
@@ -47,6 +48,19 @@ class ForgotPasswordViewController: UIViewController {
         button.clipsToBounds = true
     }
     
+    func resetPassword(){
+        guard let email = emailTextField.text, email != " " else {
+            ProgressHUD.showError(ERROR_EMPTY_EMAIL_RESET)
+            return
+        }
+        AuthUser.User.resetPassword(withEmail: email, onSucess: {
+            self.view.endEditing(true)
+            self.clearTextFields()
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
+        }
+    }
+     
     func clearTextFields(){
         emailTextField.text = ""
     }

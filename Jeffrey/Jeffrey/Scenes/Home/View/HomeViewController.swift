@@ -29,9 +29,8 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.popViewController(animated: true)
         viewModel = HomeViewModel()
-        
-        
         
         activity.showActivityIndicator(view: view, targetVC: self)
         viewModel.raffleListOfAPIMovies(genre: idGenres.comedy.rawValue) { (sucess) in
@@ -58,26 +57,24 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         //        tableViewHome.estimatedRowHeight = 85.0
         //        tableViewHome.rowHeight = UITableView.automaticDimension
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func openopenScreenMovieDetail(movie:Movie){
-        //
-        //
-        //
         let storyboard = UIStoryboard(name: "SelectedMovie", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController;
         vc.raffle = false
         vc.movieScreenHome = movie
         self.present(vc, animated: true, completion: nil);
-        
-        
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -132,7 +129,6 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
         }else{
             return 175
         }
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -160,7 +156,6 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
             cell.genre = nameGenres.fantasy.rawValue
         default:
             print("Próximos generos")
-            
         }
         
         cell.controller = self

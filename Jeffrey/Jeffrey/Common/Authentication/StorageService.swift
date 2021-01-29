@@ -20,21 +20,17 @@ class StorageService {
                 onError(error!.localizedDescription)
                 return
             }
-            
             storageAvatarProfileRef.downloadURL(completion: { (url, error) in
                 if let metadataImageUrl = url?.absoluteString {
-                    
-                    
                     if let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest(){
                         changeRequest.photoURL = url
                         changeRequest.displayName = username
-                        changeRequest.commitChanges { (error) in
+                        changeRequest.commitChanges(completion: { (error) in
                             if let error = error {
                                 ProgressHUD.showError(error.localizedDescription)
                             }
-                        }
+                        })
                     }
-                    
                     var dictTemp = dict
                     dictTemp[PROFILE_IMAGE_URL] = metadataImageUrl
                     
