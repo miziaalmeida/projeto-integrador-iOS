@@ -21,7 +21,8 @@ target 'Jeffrey' do
 
 
   # add Facebook Login
-  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
    
   # add Google Login
   pod 'GoogleSignIn'
