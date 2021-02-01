@@ -155,21 +155,6 @@ extension RegisterViewController: UITextFieldDelegate{
     }
 }
 
-extension UIViewController {
-    class func replaceRootViewController(viewController: UIViewController) {
-        guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first
-        else {
-            return
-        }
-        let rootViewController = window.rootViewController!
-        viewController.view.frame = rootViewController.view.frame
-        viewController.view.layoutIfNeeded()
-        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft, animations: {
-            window.rootViewController = viewController
-        }, completion: nil)
-    }
-}
-
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {

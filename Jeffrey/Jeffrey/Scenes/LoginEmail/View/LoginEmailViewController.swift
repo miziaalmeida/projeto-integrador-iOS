@@ -97,30 +97,15 @@ class LoginEmailViewController: UIViewController{
     }
     
     func signIn(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+        
+        guard let mainView = self.viewModel?.signInTapped() else {return}
         ProgressHUD.show()
         AuthUser.User.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, onSucess: {
             onSucess()
-            ProgressHUD.dismiss()
-//            self.viewModel?.signInTapped()
-            
-            
-                let homeViewControler = HomeViewController()
-           
-                guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first
-                else {
-                    return
-                }
-                let rootViewController = window.rootViewController!
-                self.view.frame = rootViewController.view.frame
-                self.view.layoutIfNeeded()
-                UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft, animations: {
-                    window.rootViewController = self.viewModel?.signInTapped()
-                }, completion: nil)
-            
-            
-            
-            
-            
+            DispatchQueue.main.async {
+                ProgressHUD.dismiss()
+                UIViewController.replaceRootViewController(viewController: mainView)
+            }
             
             
             

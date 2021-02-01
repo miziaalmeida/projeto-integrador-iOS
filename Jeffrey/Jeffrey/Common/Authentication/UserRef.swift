@@ -13,6 +13,10 @@ import ProgressHUD
 
 class UserRef {
     
+    static func isLogged() -> Bool {
+            return Auth.auth().currentUser != nil
+    }
+    
     func signIn(withEmail email: String, password: String,
                 onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
         Auth.auth().signIn(withEmail: email, password: password) { (authData, error) in

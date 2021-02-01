@@ -49,8 +49,13 @@ class ProfileViewController: UIViewController{
         viewModel?.didTapExitAccount(controller: self)
         do {
             try Auth.auth().signOut()
-            print("Deu Logout no Email")
-            navigationController?.popToRootViewController(animated: true)
+            
+            
+            
+            guard let viewController = UIStoryboard(name: "Main",
+                                                    bundle: nil).instantiateInitialViewController() as? PageStartViewController else { return }
+            UIViewController.replaceRootViewController(viewController: viewController)
+            
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
