@@ -97,11 +97,18 @@ class LoginEmailViewController: UIViewController{
     }
     
     func signIn(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+        
+        guard let mainView = self.viewModel?.signInTapped() else {return}
         ProgressHUD.show()
         AuthUser.User.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, onSucess: {
             onSucess()
-            ProgressHUD.dismiss()
-            self.viewModel?.signInTapped()
+            DispatchQueue.main.async {
+                ProgressHUD.dismiss()
+                UIViewController.replaceRootViewController(viewController: mainView)
+            }
+            
+            
+            
         }) { (errorMessage) in
             onError(errorMessage)
         }
