@@ -1,6 +1,8 @@
 import UIKit
 import Firebase
-import FBSDKLoginKit
+import FirebaseAuth
+import FacebookLogin
+import FacebookCore
 import GoogleSignIn
 
 protocol LoginViewEvents: AnyObject {
@@ -76,34 +78,23 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func didTapLoginFacebook(_ sender: Any) {
-        let loginManager = LoginManager()
-        
-        if let _ = AccessToken.current {
-            loginManager.logOut()
-            print("~ Deu Logout!! ~")
-        } else {
-            loginManager.logIn(permissions: [], viewController: self) { (result) in
-                switch result {
-                case .success(granted: let permissions,
-                              declined: let declined,
-                              token: let token):
-                    
-                    guard  let homeViewControler = UIStoryboard(name: "HomeMain",
-                                                                bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-                    
+        let manager = LoginManager()
+        manager.logIn(permissions: [.publicProfile, .email], viewController: self) { (result) in
+            switch result {
+            case .success(granted: let grantedPermissions, declined: let declinedPermission, token: let acessToken):
+                let credential = FacebookAuthProvider.credential(withAccessToken: acessToken.tokenString)
+                Auth.auth().signIn(with: credential) { (result, error) in
+                    guard  let homeViewControler = UIStoryboard(name: "HomeMain", bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
                     self.navigationController?.pushViewController(homeViewControler, animated: true)
-                    
-                    print("#SUCESSO#")
-                    print(permissions)
-                    print(declined)
-                    print(token)
-                case .cancelled:
-                    print("#CANCELADO#")
-                case .failed(let error):
-                    print("#FALHA#")
-                    print(error.localizedDescription)
                 }
+                print("acess Token = \(acessToken)")
+            case .cancelled:
+                print("Usuário cancelou o processo de Login")
+                break
+            case .failed(let error):
+                print("Login falhou! \(error.localizedDescription)")
             }
+            manager.logOut()
         }
     }
     
@@ -129,8 +120,6 @@ class LoginViewController: UIViewController {
         backButton.title = "Voltar"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-    
-    
 }
 
 extension LoginViewController: LoginViewEvents {
@@ -140,23 +129,6 @@ extension LoginViewController: LoginViewEvents {
     
     func present(viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
-    }
-}
-
-extension LoginViewController: LoginButtonDelegate {
-    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
-        let token = result?.token?.tokenString
-        let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
-                                                 parameters: ["fields": "email, name"],
-                                                 tokenString: token,
-                                                 version: nil,
-                                                 httpMethod: .get)
-        request.start(completionHandler: { connection, result, error in
-            print("\(String(describing: result))")
-        })
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
     }
 }
 
@@ -173,10 +145,9 @@ extension LoginViewController: GIDSignInDelegate {
                 print(error.localizedDescription)
             } else {
                 print("Login Successful.")
-                 guard  let homeViewControler = UIStoryboard(name: "HomeMain",
-                                                              bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-                  
-                  self.navigationController?.pushViewController(homeViewControler, animated: true)
+                guard  let homeViewControler = UIStoryboard(name: "HomeMain",
+                                                            bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
+                self.navigationController?.pushViewController(homeViewControler, animated: true)
             }
         }
     }
