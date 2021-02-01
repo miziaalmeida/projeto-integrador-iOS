@@ -1,6 +1,8 @@
 import UIKit
 import Firebase
-import FBSDKLoginKit
+import FirebaseAuth
+import FacebookCore
+import FacebookLogin
 
 class ProfileViewController: UIViewController{
 
@@ -47,6 +49,12 @@ class ProfileViewController: UIViewController{
     
     @IBAction func tapExitAccount(_ sender: Any) {
         viewModel?.didTapExitAccount(controller: self)
+        let loginManager = LoginManager()
+        if let _ = AccessToken.current {
+            loginManager.logOut()
+            print("~ Deu Logout no facebook!! ~")
+        }
+        
         do {
             try Auth.auth().signOut()
             print("Deu Logout no Email")
@@ -61,16 +69,7 @@ class ProfileViewController: UIViewController{
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
-        
-        
-        
-        let loginManager = LoginManager()
-        
-        if let _ = AccessToken.current {
-            loginManager.logOut()
-            print("~ Deu Logout no facebook!! ~")
-        }
-            }
+    }
       
 
     

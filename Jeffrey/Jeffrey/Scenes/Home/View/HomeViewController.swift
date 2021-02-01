@@ -29,7 +29,6 @@ class HomeViewController:  UIViewController, UITableViewDelegate, UITableViewDat
     // MARK: - LifeCircle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.popViewController(animated: true)
         viewModel = HomeViewModel()
         
         activity.showActivityIndicator(view: view, targetVC: self)
