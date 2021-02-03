@@ -43,10 +43,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="171"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ZZ-oa-EpM">
-                                                    <rect key="frame" x="0.0" y="166" width="375" height="0.0"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5aP-zM-G18">
                                                     <rect key="frame" x="159" y="112" width="20" height="20"/>
                                                     <color key="tintColor" systemColor="systemYellowColor"/>
@@ -96,7 +92,6 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="xtY-Ig-OR8" firstAttribute="leading" secondItem="KwC-Qw-lU3" secondAttribute="trailing" constant="8" id="9jh-qa-1Qf"/>
-                                                <constraint firstItem="9ZZ-oa-EpM" firstAttribute="top" secondItem="P88-Io-VHd" secondAttribute="bottom" constant="33.5" id="9q4-BM-5y4"/>
                                                 <constraint firstItem="P88-Io-VHd" firstAttribute="top" secondItem="xtY-Ig-OR8" secondAttribute="bottom" constant="20" id="BtZ-37-mTv"/>
                                                 <constraint firstItem="xtY-Ig-OR8" firstAttribute="top" secondItem="gRJ-gd-FQJ" secondAttribute="bottom" constant="20" id="FSR-g0-qXK"/>
                                                 <constraint firstItem="KwC-Qw-lU3" firstAttribute="leading" secondItem="7z4-O3-GPg" secondAttribute="leadingMargin" id="JCq-8O-3DJ"/>
@@ -112,9 +107,10 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="ImageMovie" destination="KwC-Qw-lU3" id="347-WW-UdB"/>
+                                            <outlet property="imageMovie" destination="KwC-Qw-lU3" id="H5A-iO-CBn"/>
                                             <outlet property="labelDateRelease" destination="xtY-Ig-OR8" id="HAh-iT-Hfl"/>
                                             <outlet property="labelMovieName" destination="gRJ-gd-FQJ" id="e8y-Ji-BCR"/>
+                                            <outlet property="labelVoteAverage" destination="P88-Io-VHd" id="8mH-6r-esK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

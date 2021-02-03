@@ -78,8 +78,8 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
     func getVoteAverage() -> String
     func getImageStreaming() -> String
     func getGenre() -> String
-    func getArrayFavorites() -> [Movie]
-    func getArraySee() -> [Movie]
+//    func getArrayFavorites() -> [Movie]
+//    func getArraySee() -> [Movie]
     func addMovieArrayFavorites()
     func addMovieArraySeen()
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void)
@@ -101,8 +101,6 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     
     
-    
-    
     //MARK: VARIÁVEIS
     private var arrayMovies = [Movie]() // Onde será carregado a request da API
     private var genreId = idGenres.animation.rawValue// ID do gênero para a requisicão na
@@ -118,6 +116,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     var movieSearchBar:Movie?
     var apiManager = APIManager()
     //    private var customSegmentedControll = CustomSegmentControl()
+    var storageFirebase = FirebaseRealtime()
     
     //MARK: FUNCS
     
@@ -327,19 +326,19 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         }
     }
     
-    func getArrayFavorites() -> [Movie]{
-        
-        return SelectedMovieViewModel.arrayMovieFavorites
-    }
-    
-    func getArraySee() -> [Movie]{
-        
-        return SelectedMovieViewModel.arrayMovieSeen
-    }
+//    func getArrayFavorites() -> [Movie]{
+//
+//        return SelectedMovieViewModel.arrayMovieFavorites
+//    }
+//
+//    func getArraySee() -> [Movie]{
+//
+//        return SelectedMovieViewModel.arrayMovieSeen
+//    }
     
     func addMovieArrayFavorites() {
         if arrayMovies.isEmpty{
-            SelectedMovieViewModel.arrayMovieFavorites.append(movieSearchBar!)
+            storageFirebase.saveMovie(movieData: movieSearchBar!, typeList: .favoritos)
         }else{
             SelectedMovieViewModel.arrayMovieFavorites.append(arrayMovies[idMovieInArray])
         }
@@ -349,7 +348,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func addMovieArraySeen() {
         if arrayMovies.isEmpty{
-            SelectedMovieViewModel.arrayMovieSeen.append(movieSearchBar!)
+            storageFirebase.saveMovie(movieData: movieSearchBar!, typeList: .jaVistos)
         }else{
             SelectedMovieViewModel.arrayMovieSeen.append(arrayMovies[idMovieInArray])
         }
