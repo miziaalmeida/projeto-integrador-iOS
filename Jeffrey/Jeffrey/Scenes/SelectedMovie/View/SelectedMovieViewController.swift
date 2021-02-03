@@ -37,6 +37,7 @@ class SelectedMovieViewController: UIViewController {
     var tipViewModel: TipViewModel?
     var idGenre: Int = idGenres.animation.rawValue
     var idProvider: Int = idProviders.netflix.rawValue
+    var storageRealtime = FirebaseRealtime()
     
     
     
@@ -72,7 +73,9 @@ class SelectedMovieViewController: UIViewController {
         imageButtonSeen.image = setButtonImageSeen(imageButton: imageButtonSeen)
         
         // adiciona o filme setado a lista de Já vistos
-        viewModel.addMovieArraySeen()
+        //viewModel.addMovieArraySeen()
+        storageRealtime.saveMovie(movieData: movieScreenHome!, typeList: .
+                                    jaVistos)
     }
     
     // altera a imagem do button quando clicado  e adiciona no array
@@ -81,7 +84,8 @@ class SelectedMovieViewController: UIViewController {
         imageButtonFavorite.image = setButtonImageFavorite(imageButton: imageButtonFavorite)
         
         // adiciona o filme setado a lista de favoritos
-        viewModel.addMovieArrayFavorites()
+        //viewModel.addMovieArrayFavorites()
+        storageRealtime.saveMovie(movieData: movieScreenHome!, typeList: .favoritos)
     }
     
     // Sortar novo filme.

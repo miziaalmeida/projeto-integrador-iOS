@@ -10,10 +10,9 @@ import UIKit
 class ListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelMovieName: UILabel!
-    
     @IBOutlet weak var imageMovie: UIImageView!
-    
     @IBOutlet weak var labelDateRelease: UILabel!
+    @IBOutlet weak var labelVoteAverage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,20 +27,13 @@ class ListTableViewCell: UITableViewCell {
 
     func setup(movie: Movie){
         
-        if let idImage = movie.backdropPath{
-            
-            let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage)")
+        let url = URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath!)")
             let data = try? Data(contentsOf: url!)
             imageMovie.image = UIImage(data: data!)
             labelMovieName.text = movie.title
             labelDateRelease.text = movie.releaseDate
-      
             imageMovie.clipsToBounds = true
             imageMovie.layer.cornerRadius = 20.0
             
         }
-        
-        
     }
-    
-}

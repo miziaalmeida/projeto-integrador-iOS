@@ -87,6 +87,7 @@
 		FF5E742425A626C400368D2C /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E742325A626C400368D2C /* ListTableViewCell.swift */; };
 		FF5E742F25A62E5200368D2C /* HomeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5E742E25A62E5200368D2C /* HomeMain.storyboard */; };
 		FF63790325B07091006D1D47 /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63790225B07091006D1D47 /* ActivityIndicatorViewController.swift */; };
+		FFDBC99725CAC6B900F09462 /* FirebaseRealtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDBC99625CAC6B800F09462 /* FirebaseRealtime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +200,7 @@
 		FF5E742325A626C400368D2C /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		FF5E742E25A62E5200368D2C /* HomeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeMain.storyboard; sourceTree = "<group>"; };
 		FF63790225B07091006D1D47 /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
+		FFDBC99625CAC6B800F09462 /* FirebaseRealtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealtime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				D0BA3B7925A6BEC5007C8D8E /* SelectedMovieAPI.swift */,
+				FFDBC99625CAC6B800F09462 /* FirebaseRealtime.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1073,6 +1076,7 @@
 				FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */,
 				1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */,
 				FF4B77C925B948D7002804F6 /* DataManager.swift in Sources */,
+				FFDBC99725CAC6B900F09462 /* FirebaseRealtime.swift in Sources */,
 				D0BA3B7A25A6BEC5007C8D8E /* SelectedMovieAPI.swift in Sources */,
 				D0BA3B6F25A6BE96007C8D8E /* SearchViewModel.swift in Sources */,
 				FF4B773F25B7DAB1002804F6 /* Jeffrey.xcdatamodeld in Sources */,

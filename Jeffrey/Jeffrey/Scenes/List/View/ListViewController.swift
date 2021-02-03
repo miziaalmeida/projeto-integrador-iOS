@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class ListViewController: UIViewController {
 
@@ -13,14 +15,25 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableViewList: UITableView!
     
     var customSegmentedControl = CustomSegmentControl()
-    var arrayMovieFavorites : [Movie]?
-    var arrayMovieSee : [Movie]?
+    var arrayMovieFavorites = [Movie]()
+    var arrayMovieSeen = [Movie]()
+    var storageFirebase = FirebaseRealtime()
+    
+    //var arrayMovie = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(SelectedMovieViewModel.arrayMovieFavorites.count)
-        arrayMovieFavorites = SelectedMovieViewModel.arrayMovieFavorites
-        arrayMovieSee = SelectedMovieViewModel.arrayMovieSeen
+        storageFirebase.listMovie(typeList: .favoritos) { (result) in
+            self.arrayMovieFavorites.append(result)
+            self.tableViewList.reloadData()
+        }
+        storageFirebase.listMovie(typeList: .jaVistos) { (result) in
+            self.arrayMovieSeen.append(result)
+            self.tableViewList.reloadData()
+        }
+//        print(SelectedMovieViewModel.arrayMovieFavorites.count)
+//        arrayMovieFavorites = SelectedMovieViewModel.arrayMovieFavorites
+//        arrayMovieSee = SelectedMovieViewModel.arrayMovieSeen
         tableViewList.reloadData()
         tableViewList.delegate = self
         tableViewList.dataSource = self
@@ -52,11 +65,11 @@ extension ListViewController : UITableViewDelegate{
             let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController; // MySecondSecreen the storyboard ID
             //        print("chegou o filme \(movie.title)")
             vc.raffle = false
-            if segmentedControlList.selectedSegmentIndex == 0{
-                vc.movieScreenHome = SelectedMovieViewModel.arrayMovieFavorites[indexPath.row]
-            }else{
-                vc.movieScreenHome = SelectedMovieViewModel.arrayMovieSeen[indexPath.row]
-            }
+        if segmentedControlList.selectedSegmentIndex == 0{
+            vc.movieScreenHome = arrayMovieFavorites[indexPath.row]
+        }else{
+            vc.movieScreenHome = arrayMovieSeen[indexPath.row]
+        }
             
             self.present(vc, animated: true, completion: nil);
         }
@@ -65,15 +78,15 @@ extension ListViewController : UITableViewDelegate{
 extension  ListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segmentedControlList.selectedSegmentIndex == 0{
-            if arrayMovieFavorites?.count != nil{
-                return SelectedMovieViewModel.arrayMovieFavorites.count
+            if arrayMovieFavorites.count > 0{
+                return arrayMovieFavorites.count
             }else{
                 return 0
             }
             
         }else{
-            if arrayMovieSee?.count != nil{
-                return SelectedMovieViewModel.arrayMovieSeen.count
+            if arrayMovieSeen.count > 0{
+                return arrayMovieSeen.count
             }else{
                 return 0
             }
@@ -83,9 +96,9 @@ extension  ListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListTableViewCell", for: indexPath) as! ListTableViewCell
         if segmentedControlList.selectedSegmentIndex == 0{
-            cell.setup(movie: SelectedMovieViewModel.arrayMovieFavorites[indexPath.row])
+            cell.setup(movie: arrayMovieFavorites[indexPath.row])
         }else{
-            cell.setup(movie: SelectedMovieViewModel.arrayMovieSeen[indexPath.row])
+            cell.setup(movie: arrayMovieSeen[indexPath.row])
         }
         
         let imageIndicator = UIImageView(image: UIImage(named:"icon-right-arrow"))
