@@ -85,7 +85,10 @@ class LoginViewController: UIViewController {
                 let credential = FacebookAuthProvider.credential(withAccessToken: acessToken.tokenString)
                 Auth.auth().signIn(with: credential) { (result, error) in
                     guard  let homeViewControler = UIStoryboard(name: "HomeMain", bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-                    self.navigationController?.pushViewController(homeViewControler, animated: true)
+                    DispatchQueue.main.async {
+                        
+                        UIViewController.replaceRootViewController(viewController: homeViewControler)
+                    }
                 }
                 print("acess Token = \(acessToken)")
             case .cancelled:
@@ -147,7 +150,10 @@ extension LoginViewController: GIDSignInDelegate {
                 print("Login Successful.")
                 guard  let homeViewControler = UIStoryboard(name: "HomeMain",
                                                             bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-                self.navigationController?.pushViewController(homeViewControler, animated: true)
+                DispatchQueue.main.async {
+                    
+                    UIViewController.replaceRootViewController(viewController: homeViewControler)
+                }
             }
         }
     }
