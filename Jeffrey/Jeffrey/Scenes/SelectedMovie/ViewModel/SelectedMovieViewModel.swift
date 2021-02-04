@@ -295,32 +295,43 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         switch genreId {
         case idGenres.action.rawValue:
             return "\(nameGenres.action.rawValue)"
+            
         case idGenres.comedy.rawValue:
             return "\(nameGenres.comedy.rawValue)"
+            
         case idGenres.animation.rawValue:
             return "\(nameGenres.animation.rawValue)"
+            
         case idGenres.adventure.rawValue:
             return "\(nameGenres.adventure.rawValue)"
+            
         case idGenres.crime.rawValue:
             return "\(nameGenres.crime.rawValue)"
+            
         case idGenres.documentary.rawValue:
             return "\(nameGenres.documentary.rawValue)"
+            
         case idGenres.drama.rawValue:
             return "\(nameGenres.drama.rawValue)"
+            
         case idGenres.fantasy.rawValue:
             return "\(nameGenres.fantasy.rawValue)"
+            
         case idGenres.Western.rawValue:
             return "\(nameGenres.Western.rawValue)"
+            
         case idGenres.sciencefiction.rawValue:
             return "\(nameGenres.sciencefiction.rawValue)"
-        case idGenres.war.rawValue:
-            return "\(nameGenres.war)"
-        case idGenres.romance.rawValue:
-            return "\(nameGenres.romance.rawValue)"
-        case idGenres.war.rawValue:
-            return "\(nameGenres.war.rawValue)"
+            
         case idGenres.terror.rawValue:
             return "\(nameGenres.terror.rawValue)"
+    
+        case idGenres.romance.rawValue:
+            return "\(nameGenres.romance.rawValue)"
+            
+        case idGenres.war.rawValue:
+            return "\(nameGenres.war.rawValue)"
+        
         default:
             return "Indefinido"
         }

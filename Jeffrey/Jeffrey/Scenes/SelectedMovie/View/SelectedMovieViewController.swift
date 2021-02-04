@@ -33,7 +33,7 @@ class SelectedMovieViewController: UIViewController {
     var customSegmentedControl = CustomSegmentControl()
     var raffle = true
     var movieScreenHome: Movie?
-    var genteHomeListSearch:String?
+    var genreHomeListSearch:String?
     var tipViewModel: TipViewModel?
     var idGenre: Int = idGenres.animation.rawValue
     var idProvider: Int = idProviders.netflix.rawValue
@@ -189,7 +189,7 @@ class SelectedMovieViewController: UIViewController {
         imageFilmeBackGround.image = viewModel.getImageFilm()
         labelVoteAvarage.text = String((movieScreenHome?.voteAverage)!)
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
-        textViewGenre.text =  genteHomeListSearch
+        textViewGenre.text =  genreHomeListSearch
     }
     
     //Checa qual index da segment e configura o que será mostrado ou não.

@@ -32,6 +32,7 @@ class ListTableViewCell: UITableViewCell {
             imageMovie.image = UIImage(data: data!)
             labelMovieName.text = movie.title
             labelDateRelease.text = movie.releaseDate
+            labelVoteAverage.text = String(movie.voteAverage)
             imageMovie.clipsToBounds = true
             imageMovie.layer.cornerRadius = 20.0
             
