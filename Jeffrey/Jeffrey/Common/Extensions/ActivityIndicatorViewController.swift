@@ -13,7 +13,7 @@ class ActivityIndicatorViewController: UIViewController {
 
         activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
-        activityIndicator.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.3519025386)
+        activityIndicator.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
         activityIndicator.color = #colorLiteral(red: 1, green: 0.8284534456, blue: 0, alpha: 1)
         activityIndicator.layer.cornerRadius = 6
         activityIndicator.center = targetVC.view.center

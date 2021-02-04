@@ -31,13 +31,9 @@ class ListViewController: UIViewController {
             self.arrayMovieSeen.append(result)
             self.tableViewList.reloadData()
         }
-//        print(SelectedMovieViewModel.arrayMovieFavorites.count)
-//        arrayMovieFavorites = SelectedMovieViewModel.arrayMovieFavorites
-//        arrayMovieSee = SelectedMovieViewModel.arrayMovieSeen
-        tableViewList.reloadData()
+        
         tableViewList.delegate = self
         tableViewList.dataSource = self
-
         tableViewList.reloadData()
         customSegmentedControl.segmentControlCustom(custom: segmentedControlList, view: view)
       

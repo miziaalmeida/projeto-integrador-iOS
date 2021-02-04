@@ -29,11 +29,20 @@ class FirebaseRealtime{
             userIsLoggedIn.observeSingleEvent(of: DataEventType.value) { (snapshot) in
                 
                 let movie = [
+                    "idMovie" : movieData.id ?? "",
                     "nameMovie" : movieData.title ?? "",
                     "releaseData":movieData.releaseDate ?? "",
                     "voteAverage": movieData.voteAverage ?? "",
                     "urlImage": movieData.posterPath ?? "",
-                    "overview": movieData.overview ?? ""
+                    "overview": movieData.overview ?? "",
+                    "adult": movieData.adult ?? "",
+                    "backdrop_path": movieData.backdropPath ?? "",
+                    "genre_ids": movieData.genreIds ?? "",
+                    "originalLanguage" : movieData.originalLanguage ?? "",
+                    "originalTitle": movieData.originalTitle ?? "",
+                    "popularity" : movieData.originalTitle ?? "",
+                    "video": movieData.video ?? "",
+                    "vote_count": movieData.voteCount ?? ""
                 ] as [String : Any]
                 
                 movies.childByAutoId().setValue(movie)
@@ -53,11 +62,21 @@ class FirebaseRealtime{
                 let snap = snapshot.value as? NSDictionary
                 
                 var dictionary = [String:Any]()
+                dictionary["id"] = snap?["idMovie"] as! Int
                 dictionary["title"] = snap?["nameMovie"] as! String
                 dictionary["release_date"] = snap?["releaseData"] as! String
                 dictionary["poster_path"] = snap?["urlImage"] as! String
                 dictionary["vote_average"] = snap?["voteAverage"] as! Double
                 dictionary["overview"] = snap?["overview"] as! String
+                dictionary["adult"] = snap?["adult"] as? Bool
+                dictionary["backdrop_path"] = snap?["backdrop_path"] as? String
+                dictionary["genre_ids"] = snap?["genre_ids"] as? [Int]
+                dictionary["original_language"] = snap?["original_language"] as? String
+                dictionary["original_title"] = snap?["original_title"] as? String
+                dictionary["popularity"] = snap?["popularity"] as? Float
+                dictionary["video"] = snap?["video"] as? Bool
+                dictionary["vote_count"] = snap?["vote_count"]  as? Int
+                
                 
                 completion(Movie(fromDictionary: dictionary))
             }

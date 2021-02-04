@@ -21,6 +21,7 @@ class LoginEmailViewController: UIViewController{
     @IBOutlet weak var signInButton: UIButton!
     
     private var viewModel: LoginEmailViewModelProtocol?
+    var activityIndicator = ActivityIndicatorViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,11 +100,11 @@ class LoginEmailViewController: UIViewController{
     func signIn(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
         
         guard let mainView = self.viewModel?.signInTapped() else {return}
-        ProgressHUD.show()
+        activityIndicator.showActivityIndicator(view: view, targetVC: self)
         AuthUser.User.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, onSucess: {
             onSucess()
             DispatchQueue.main.async {
-                ProgressHUD.dismiss()
+                self.activityIndicator.hideActivityIndicator(view: self.view)
                 UIViewController.replaceRootViewController(viewController: mainView)
             }
             

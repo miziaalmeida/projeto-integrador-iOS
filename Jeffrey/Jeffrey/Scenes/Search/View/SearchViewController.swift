@@ -38,7 +38,8 @@ class SearchViewController: UIViewController {
         movie.textSearch = mySearchTextField.text
         movie = nil
         
-        if(!arraySearch.contains(textSearch)) {
+        let textReplace = textSearch.replacingOccurrences(of: "+", with: " ")
+        if(!arraySearch.contains(textReplace)) {
             do{
                 try context.save()
             } catch {

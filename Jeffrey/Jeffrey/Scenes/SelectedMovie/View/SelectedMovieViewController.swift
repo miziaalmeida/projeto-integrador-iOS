@@ -85,7 +85,13 @@ class SelectedMovieViewController: UIViewController {
         
         // adiciona o filme setado a lista de favoritos
         //viewModel.addMovieArrayFavorites()
-        storageRealtime.saveMovie(movieData: movieScreenHome!, typeList: .favoritos)
+        
+        if !raffle{
+            storageRealtime.saveMovie(movieData: movieScreenHome!, typeList: .favoritos)
+        } else {
+        let movie = viewModel.getMovieArrayIndex()
+        storageRealtime.saveMovie(movieData: movie, typeList: .favoritos)
+        }
     }
     
     // Sortar novo filme.

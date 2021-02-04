@@ -78,8 +78,6 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
     func getVoteAverage() -> String
     func getImageStreaming() -> String
     func getGenre() -> String
-//    func getArrayFavorites() -> [Movie]
-//    func getArraySee() -> [Movie]
     func addMovieArrayFavorites()
     func addMovieArraySeen()
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void)
@@ -90,6 +88,7 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
     func setIdProvider(id: Int)
     func setArrayMovies(arrayMovie: [Movie])
     func redirectTap()
+    func getMovieArrayIndex() -> Movie
     var viewController: SelectedViewEvents? {get set}
 }
 
@@ -102,7 +101,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     
     //MARK: VARIÁVEIS
-    private var arrayMovies = [Movie]() // Onde será carregado a request da API
+    var arrayMovies = [Movie]() // Onde será carregado a request da API
     private var genreId = idGenres.animation.rawValue// ID do gênero para a requisicão na
     private var providerName  = nameProviders.netflix.rawValue
     private var idProvider  = idProviders.netflix.rawValue
@@ -196,6 +195,10 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     //    }
     
     //MARK: GET/SET
+    func getMovieArrayIndex() -> Movie{
+        return arrayMovies[idMovieInArray]
+    }
+    
     func setNameProvider(providerName: String) {
         self.providerName = providerName
     }
@@ -351,7 +354,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         if arrayMovies.isEmpty{
             storageFirebase.saveMovie(movieData: movieSearchBar!, typeList: .favoritos)
         }else{
-            SelectedMovieViewModel.arrayMovieFavorites.append(arrayMovies[idMovieInArray])
+            storageFirebase.saveMovie(movieData: arrayMovies[idMovieInArray], typeList: .favoritos)
         }
         
         
@@ -361,7 +364,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         if arrayMovies.isEmpty{
             storageFirebase.saveMovie(movieData: movieSearchBar!, typeList: .jaVistos)
         }else{
-            SelectedMovieViewModel.arrayMovieSeen.append(arrayMovies[idMovieInArray])
+            storageFirebase.saveMovie(movieData: arrayMovies[idMovieInArray], typeList: .jaVistos)
         }
         
     }
