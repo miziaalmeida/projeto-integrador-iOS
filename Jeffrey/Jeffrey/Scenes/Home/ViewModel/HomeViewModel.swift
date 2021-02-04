@@ -18,13 +18,15 @@ protocol HomeViewModelProtocol: AnyObject{
     func getArrayTerror() -> [Movie]
     func getArrayRomance() -> [Movie]
     func getArrayFantasy() -> [Movie]
+    func getArrayDrama() -> [Movie]
+    func getArrayAdventure() -> [Movie]
+    func getArraySciencefiction() -> [Movie]
     
    
 
 }
 
 class HomeViewModel:HomeViewModelProtocol{
-    
     
     
     let apimanager = APIManager()
@@ -35,6 +37,10 @@ class HomeViewModel:HomeViewModelProtocol{
     var arrayMoviesTerror = [Movie]()
     var arrayMoviesRomance = [Movie]()
     var arrayMoviesFantasy = [Movie]()
+    var arrayMoviesDrama = [Movie]()
+    var arrayMoviesAdventure = [Movie]()
+    var arrayMoviesScienceFiction = [Movie]()
+    
     
     func raffleListOfAPIMovies(genre: Int ,completion: @escaping (Bool) -> Void) {
         
@@ -58,6 +64,15 @@ class HomeViewModel:HomeViewModelProtocol{
             if genre == idGenres.fantasy.rawValue {
                 self.arrayMoviesFantasy = arraymovie
             }
+            if genre == idGenres.drama.rawValue {
+                self.arrayMoviesDrama = arraymovie
+            }
+            if genre == idGenres.adventure.rawValue {
+                self.arrayMoviesAdventure = arraymovie
+            }
+            if genre == idGenres.sciencefiction.rawValue {
+                self.arrayMoviesScienceFiction = arraymovie
+            }
             
             completion(true)
             return
@@ -65,40 +80,42 @@ class HomeViewModel:HomeViewModelProtocol{
         
 }
     func getCountArray() -> Int{
-        
         return arrayMoviesComedy.count
     }
     
     func getArrayComedy() -> [Movie]{
-        
         return arrayMoviesComedy
     }
     
     func getArrayAction() -> [Movie]{
-        
         return arrayMoviesAction
     }
     
     func getArrayAnimation() -> [Movie]{
-        
         return arrayMoviesAnimation
     }
     
     func getArrayTerror() -> [Movie]{
-        
         return arrayMoviesTerror
     }
     
     func getArrayRomance() -> [Movie]{
-        
         return arrayMoviesRomance
     }
     
     func getArrayFantasy() -> [Movie]{
-        
         return arrayMoviesFantasy
     }
+    func getArrayDrama() -> [Movie]{
+        return arrayMoviesDrama
+    }
+    func getArrayAdventure() -> [Movie] {
+        return arrayMoviesAdventure
+    }
     
+    func getArraySciencefiction() -> [Movie] {
+        return arrayMoviesScienceFiction
+    }
  
     
     
@@ -110,6 +127,4 @@ class HomeViewModel:HomeViewModelProtocol{
         
 
 }
-
-
 

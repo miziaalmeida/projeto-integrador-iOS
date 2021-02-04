@@ -36,6 +36,7 @@ class SearchViewController: UIViewController {
         }
         
         movie.textSearch = mySearchTextField.text
+        movie = nil
         
         if(!arraySearch.contains(textSearch)) {
             do{
@@ -60,8 +61,9 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSearchTexfield()
         viewModel = SearchViewModel()
+        setupSearchTexfield()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

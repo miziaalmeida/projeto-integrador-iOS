@@ -51,7 +51,7 @@ class APIManager {
                     arrayMovie.append(resultValue)
                 }
                 onComplete(arrayMovie)
-                return
+               return
             }
             onComplete([])
         }
