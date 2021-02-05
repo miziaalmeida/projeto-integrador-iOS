@@ -18,18 +18,23 @@ class ListViewController: UIViewController {
     var arrayMovieFavorites = [Movie]()
     var arrayMovieSeen = [Movie]()
     var storageFirebase = FirebaseRealtime()
+    var activityIndicator = ActivityIndicatorViewController()
     
     //var arrayMovie = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.showActivityIndicator(view: view, targetVC: self)
         storageFirebase.listMovie(typeList: .favoritos) { (result) in
             self.arrayMovieFavorites.append(result)
             self.tableViewList.reloadData()
+            self.activityIndicator.hideActivityIndicator(view: self.view)
         }
+        activityIndicator.showActivityIndicator(view: view, targetVC: self)
         storageFirebase.listMovie(typeList: .jaVistos) { (result) in
             self.arrayMovieSeen.append(result)
             self.tableViewList.reloadData()
+            self.activityIndicator.hideActivityIndicator(view: self.view)
         }
         
         tableViewList.delegate = self

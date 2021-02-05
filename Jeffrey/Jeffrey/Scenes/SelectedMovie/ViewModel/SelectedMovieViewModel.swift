@@ -250,7 +250,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func getVoteAverage() -> String {
         let nota = String(arrayMovies[idMovieInArray].voteAverage)
-        return "\(nota) ⭐"
+        return "⭐ \(nota)"
     }
     
     func getImageStreaming() -> String{
