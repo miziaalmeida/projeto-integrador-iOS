@@ -40,16 +40,49 @@ class SelectedMovieViewController: UIViewController {
     var storageRealtime = FirebaseRealtime()
     
     
-    
+    //MARK: Action
     @IBAction func buttonProvider(_ sender: UIButton) {
         
         viewModel.redirectTap()
     }
     
+   
+
+    @IBAction func buttonSeen(_ sender: UIButton){
+        
+        imageButtonSeen.image = setButtonImageSeen(imageButton: imageButtonSeen) // altera o icone do olho aberto/fechdo
+        viewModel.addMovieArraySeen() // adiciona o filme setado a lista de Já vistos
+    }
+    
+    
+    @IBAction func buttonFavorite(_ sender: UIButton){
+        
+        imageButtonFavorite.image = setButtonImageFavorite(imageButton: imageButtonFavorite) // altera o icone coração
+        viewModel.addMovieArrayFavorites() // adiciona o filme setado a lista de favoritos
+    }
+    
+    @IBAction func buttonRaffle (_ sender: UIButton){   // Sortar novo filme.
+        
+        viewModel.raffleListOfAPIMovies { sucess in
+            if sucess{
+                self.setFields()
+            }
+        }
+        resetColorButtonSeenAndFavorite()
+    }
+    
+    
+    @IBAction func segmentControllDetails(_ sender: UISegmentedControl) {
+        
+        checkSegmentIndex() // Verifica qual o indice que esta selecionado e seta o que for preciso mostrar pro usuario.
+        // Chama a animação para a animacão to traço da segmentedControl
+        customSegmentedControl.indexChangedSegmentControll (segmentedControll: segmentedControlDetails, view: view)
+    }
+    
     @IBAction func buttonShare(_ sender: UIButton) {
         
         let titleMovie = viewModel.getTitle()
-        let text = "O filme certo; na hora certa. Conheça o Jeffrey; o app que mostra o que há de melhor nos streamings! Olha só o que ele me indicou: \(titleMovie)"
+        let text = "O filme certo; na hora certa. Conheça o Jeffrey \n O app que mostra o que há de melhor nos streamings!\n Olha só o que ele me indicou: \(titleMovie)"
         
         // set up activity view controller
         let textToShare = [ text ]
@@ -61,70 +94,6 @@ class SelectedMovieViewController: UIViewController {
         
         // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
-        
-        
-        
-    }
-    
-    
-    // altera a imagem do button quando clicado  e adiciona no array
-    @IBAction func buttonSeen(_ sender: UIButton){
-        // altera o icone do olho aberto/fechdo
-        imageButtonSeen.image = setButtonImageSeen(imageButton: imageButtonSeen)
-        
-        // adiciona o filme setado a lista de Já vistos
-        //viewModel.addMovieArraySeen()
-        storageRealtime.saveMovie(movieData: movieScreenHome!, typeList: .
-                                    jaVistos)
-    }
-    
-    // altera a imagem do button quando clicado  e adiciona no array
-    @IBAction func buttonFavorite(_ sender: UIButton){
-        // altera o icone coração
-        imageButtonFavorite.image = setButtonImageFavorite(imageButton: imageButtonFavorite)
-        
-        // adiciona o filme setado a lista de favoritos
-        //viewModel.addMovieArrayFavorites()
-        
-        if !raffle{
-            storageRealtime.saveMovie(movieData: movieScreenHome!, typeList: .favoritos)
-        } else {
-        let movie = viewModel.getMovieArrayIndex()
-        storageRealtime.saveMovie(movieData: movie, typeList: .favoritos)
-        }
-    }
-    
-    // Sortar novo filme.
-    @IBAction func buttonRaffle (_ sender: UIButton){
-        
-        viewModel.raffleListOfAPIMovies { sucess in
-            if sucess{
-                self.setFields()
-            }
-        }
-        
-        resetColorButtonSeenAndFavorite()
-    }
-    
-    // Mostrar respectivo ao que esta selecionado no segmentedcontrol
-    @IBAction func segmentControllDetails(_ sender: UISegmentedControl) {
-        
-        // Verifica qual o indice que esta selecionado e seta o que for preciso mostrar pro usuario.
-        checkSegmentIndex()
-        
-        // Chama a animação para a animacão to traço da segmentedControl
-        customSegmentedControl.indexChangedSegmentControll (segmentedControll: segmentedControlDetails, view: view)
-    }
-    
-    // Mostrar ou não a NavigationBar
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewDidLoad() {
@@ -140,15 +109,8 @@ class SelectedMovieViewController: UIViewController {
         viewModel.setIdProvider(id: idProvider)
         viewModel.setNameProvider()
         roundViewBorder() // Arredodondar a borda da view
-        
-        // arredondar botão sortear
-        roundImageButtonRaffle(image: imageButtonRaffle)
-        
-        
-        //        viewWillDisappear(false) // esconde a navigationBar
-        
-        // Chama a função que customiza o segmentControll
-        customSegmentedControl.segmentControlCustom(custom: segmentedControlDetails, view: view)
+        roundImageButtonRaffle(image: imageButtonRaffle)// arredondar botão sortear
+        customSegmentedControl.segmentControlCustom(custom: segmentedControlDetails, view: view)// fun  customiza o segmentControll
         
         if raffle{
             viewModel.raffleListOfAPIMovies { sucess in
@@ -161,16 +123,13 @@ class SelectedMovieViewController: UIViewController {
             imageButtonRaffle.isHidden = true
             setFieldsMovieHome()
         }
-        
-        
-        // Checar qual é seçao que está seleciona no segmentControll
-        checkSegmentIndex()
+        checkSegmentIndex()// Checar qual é seçao que está seleciona no segmentControll
         resetColorButtonSeenAndFavorite()
     }
     
     
-    // setar o que vair ser mostrado na tela.
-    func setFields(){
+   
+    func setFields(){  // setar o que vair ser mostrado na tela.
         
         labelTitle.text = viewModel.getTitle()
         labelRelease.text = viewModel.getRelease()
@@ -179,13 +138,7 @@ class SelectedMovieViewController: UIViewController {
         labelVoteAvarage.text = viewModel.getVoteAverage()
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
         textViewGenre.text =  viewModel.getGenre()
-        
     }
-    
-    func setTip(gener: String, stream: String){
-        self.tipViewModel = TipViewModel(gener: gener, stream: stream)
-    }
-    
     
     func setFieldsMovieHome(){
         
@@ -199,8 +152,11 @@ class SelectedMovieViewController: UIViewController {
         textViewGenre.text =  genreHomeListSearch
     }
     
-    //Checa qual index da segment e configura o que será mostrado ou não.
-    func checkSegmentIndex(){
+    func setTip(gener: String, stream: String){
+        self.tipViewModel = TipViewModel(gener: gener, stream: stream)
+    }
+
+    func checkSegmentIndex(){ //Checa qual index da segment e configura o que será mostrado ou não.
         
         if segmentedControlDetails.selectedSegmentIndex == 0{
             adjustLabelsLayout(toHideTextViewSinopse: false, toHideLabels: false, toHideStreaming: true)
@@ -220,26 +176,21 @@ class SelectedMovieViewController: UIViewController {
         buttonProviders.isHidden = toHideStreaming
     }
     
-    //
-    func resetColorButtonSeenAndFavorite(){
-        // Reseta  as imagens dos icones para Não visto e Não favorito
+    
+    func resetColorButtonSeenAndFavorite(){ // Reseta  as imagens dos icones para Não visto e Não favorito
+        
         imageButtonSeen.image = UIImage(systemName: "eye.slash")
         imageButtonSeen.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         imageButtonFavorite.image = UIImage(systemName: "star")
         imageButtonFavorite.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     }
     
-    
-    // Arredonda a imagem do botão Sortear
-    func roundImageButtonRaffle(image:UIButton){
+    func roundImageButtonRaffle(image:UIButton){ // Arredonda a imagem do botão Sortear
         imageButtonRaffle.layer.cornerRadius = image.frame.size.width/2
         imageButtonRaffle.clipsToBounds = true
-        
-        
     }
     
-    // Seta a imagem do botão Vistos
-    func setButtonImageSeen(imageButton: UIImageView) -> UIImage {
+    func setButtonImageSeen(imageButton: UIImageView) -> UIImage { // Seta a imagem do botão Vistos
         
         if imageButtonSeen.image == UIImage(systemName: "eye"){
             imageButtonSeen.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -250,8 +201,8 @@ class SelectedMovieViewController: UIViewController {
             return UIImage(systemName: "eye")!
         }
     }
-    // Seta a imagem do botão Favoritos
-    func setButtonImageFavorite(imageButton: UIImageView) -> UIImage{
+    
+    func setButtonImageFavorite(imageButton: UIImageView) -> UIImage{ // Seta a imagem do botão Favoritos
         
         if imageButtonFavorite.image == UIImage(systemName: "star"){
             imageButtonFavorite.tintColor = #colorLiteral(red: 1, green: 0.7568627451, blue: 0.02745098039, alpha: 1)
@@ -262,13 +213,10 @@ class SelectedMovieViewController: UIViewController {
         }
     }
     
-    // faz a borda  arredonda da view  na parte superior.
-    func roundViewBorder(){
+    func roundViewBorder(){ // arredonda da view  na parte superior.
         viewBackgorund.layer.cornerRadius = 60
         viewBackgorund.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
-    
-    
 }
 
 extension SelectedMovieViewController: SelectedViewEvents {

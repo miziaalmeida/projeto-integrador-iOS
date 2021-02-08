@@ -7,69 +7,6 @@
 
 import UIKit
 
-enum nameGenres: String{
-    case action = "Ação"
-    case animation = "Animação"
-    case adventure = "Aventura"
-    case comedy = "Comédia"
-    case crime = "Crime"
-    case documentary = "Documentário"
-    case drama = "Drama"
-    case fantasy = "Fantasia"
-    case terror = "Terror"
-    case romance = "Romance"
-    case sciencefiction = "Ficção"
-    case war = "Guerra"
-    case Western = "Faroeste"
-}
-
-enum idGenres: Int{
-    case action = 28
-    case animation = 16
-    case adventure = 12
-    case comedy = 35
-    case crime = 80
-    case documentary = 99
-    case drama = 18
-    case fantasy = 14
-    case terror = 27
-    case romance = 10749
-    case sciencefiction = 878
-    case war = 10752
-    case Western = 37
-}
-
-enum nameProviders: String{
-    case netflix = "logo-netflix"//
-    case HBOGo = "logo-hboGo"//
-    case telecine = "logo-telecine"//
-    case now = "logo-now"//
-    case claro = "logo-claroVideo" //
-    case looke = "logo-Looke"
-    case netMovies = "logo-netMovies"
-    case disney = "logo-disney+"//
-    case globo = "logo-globoplay"
-    case tnt = "logo-tntGo" //
-    case amazon = "logo-prime"//
-    case apple = "logo-appleTV"
-    
-}
-
-enum idProviders: Int{
-    case netflix = 8
-    case now = 484
-    case apple = 2
-    case amazon = 119
-    case hbo = 31
-    case telecine = 227
-    case claro = 167
-    case tnt = 512
-    case disney = 337
-    case looke = 47
-    case globo = 307
-    case netMovie  = 19
-}
-
 protocol SelectedMovieViewModelProtocol: AnyObject{
     func getImageFilm() -> UIImage
     func getOverView( ) -> String
@@ -94,12 +31,6 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
 
 class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
-    
-    
-    weak var viewController: SelectedViewEvents?
-    
-    
-    
     //MARK: VARIÁVEIS
     var arrayMovies = [Movie]() // Onde será carregado a request da API
     private var genreId = idGenres.animation.rawValue// ID do gênero para a requisicão na
@@ -108,14 +39,13 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     private var idPageApi = 1 // Alterar a pagina na requisição da API
     var idPage: Int = 1 // obs: page da app por padrão começa na primeira
     var idMovieInArray = 0 // Indice do Filme no array de Filmes, é alterado cada vez que é sorteado um novo filme.
-    
     static var arrayMovieFavorites = [Movie]() // Lista Filmes Favorios
     static var arrayMovieSeen = [Movie]() // Lista Filmes Já Vistos
     static var arrayMovieFilterProvider = [Movie]()
     var movieSearchBar:Movie?
     var apiManager = APIManager()
-    //    private var customSegmentedControll = CustomSegmentControl()
     var storageFirebase = FirebaseRealtime()
+    weak var viewController: SelectedViewEvents?
     
     //MARK: FUNCS
     
@@ -123,7 +53,6 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     func raffleListOfAPIMovies(completion: @escaping (Bool) -> Void) {
         if arrayMovies .isEmpty {
             apiManager.listOfFilms(idPage: idPage, genre: genreId, provider: idProvider) { arrayMovies in
-                print("nova requi e o id da pag é \(self.idPage)")
                 self.setArrayMovies(arrayMovie: arrayMovies)
                 completion(true)
                 return
@@ -131,68 +60,27 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         }else{
             if idMovieInArray < arrayMovies.count - 1 && arrayMovies.count > 1  {
                 newMovieInArray()
-                
                 completion(true)
                 return
             }else{
-                print("aquii")
                 arrayMovies = [Movie]()
                 SelectedMovieViewModel.arrayMovieFilterProvider = [Movie]()
                 idMovieInArray = 0
                 idPage += 1
-                
-                
                 raffleListOfAPIMovies { sucess in
-                    
                     if sucess{
-                        
                         completion(true)
                         return
                     }
-                    
                 }
-                
             }
-            
         }
-        
     }
     
     func newMovieInArray(){
         idMovieInArray += 1
         
     }
-    
-    
-    //    func checkProvidersOfMovies( completion: @escaping (Bool) -> Void) {
-    //
-    //        for movie in arrayMovies{
-    //
-    //            if let idMovie = movie.id{
-    //                APIManager.getProviders(idMovie: idMovie) { arrayFlatrate in
-    //
-    //                    if self.providerSelected(provider: self.providerName, flatrates: arrayFlatrate){
-    //                        SelectedMovieViewModel.arrayMovieFilterProvider.append(movie)
-    //                        completion(true)
-    //                        return
-    //                    }
-    //                }
-    //            }
-    //
-    //        }
-    //    }
-    //
-    //
-    //    func providerSelected(provider: String, flatrates: [Flatrate]) -> Bool{
-    //        setNameProvider(providerName: provider)
-    //        for flatrate in flatrates{
-    //
-    //            if flatrate.providerName == provider{
-    //                return true
-    //            }
-    //        }
-    //        return false
-    //    }
     
     //MARK: GET/SET
     func getMovieArrayIndex() -> Movie{
@@ -224,7 +112,6 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         if arrayMovies.isEmpty{
             return (movieSearchBar?.overview)!
         }
-        
         return arrayMovies[idMovieInArray].overview
     }
     
@@ -235,15 +122,13 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             if let tittle = arrayMovies[idMovieInArray].title{
                 return tittle
             }
-            
         }
-        
         return ""
     }
     
     func getRelease() -> String {
         if arrayMovies.isEmpty{
-             return formatDate(date: (movieSearchBar?.releaseDate)!)
+            return formatDate(date: (movieSearchBar?.releaseDate)!)
         }
         return formatDate(date: arrayMovies[idMovieInArray].releaseDate)
     }
@@ -259,10 +144,7 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     func setMovieSearchBar(movie:Movie){
         movieSearchBar = movie
-        
-        
     }
-    
     
     func setNameProvider() {
         switch idProvider {
@@ -328,27 +210,17 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
             
         case idGenres.terror.rawValue:
             return "\(nameGenres.terror.rawValue)"
-    
+            
         case idGenres.romance.rawValue:
             return "\(nameGenres.romance.rawValue)"
             
         case idGenres.war.rawValue:
             return "\(nameGenres.war.rawValue)"
-        
+            
         default:
             return "Indefinido"
         }
     }
-    
-//    func getArrayFavorites() -> [Movie]{
-//
-//        return SelectedMovieViewModel.arrayMovieFavorites
-//    }
-//
-//    func getArraySee() -> [Movie]{
-//
-//        return SelectedMovieViewModel.arrayMovieSeen
-//    }
     
     func addMovieArrayFavorites() {
         if arrayMovies.isEmpty{
@@ -356,8 +228,6 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         }else{
             storageFirebase.saveMovie(movieData: arrayMovies[idMovieInArray], typeList: .favoritos)
         }
-        
-        
     }
     
     func addMovieArraySeen() {
@@ -366,7 +236,6 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         }else{
             storageFirebase.saveMovie(movieData: arrayMovies[idMovieInArray], typeList: .jaVistos)
         }
-        
     }
     
     func setIdGenre(id: Int){
@@ -376,8 +245,6 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     func setIdProvider(id: Int){
         idProvider = id
     }
-    
-    
     
     func redirectTap() {
         guard  let homeViewControler = UIStoryboard(name: " Redirect",
@@ -393,17 +260,13 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd"
-
+        
         let dateFormatterPrint = DateFormatter()
         dateFormatterPrint.dateFormat = "dd/MM/yyyy"
-
+        
         let date: NSDate? = dateFormatterGet.date(from: String(date)) as NSDate?
         print(dateFormatterPrint.string(from: date! as Date))
         
         return dateFormatterPrint.string(from: date! as Date)
     }
-    
-    
-    
 }
-
