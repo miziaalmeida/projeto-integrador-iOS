@@ -85,7 +85,13 @@ class SelectedMovieViewController: UIViewController {
         
         // adiciona o filme setado a lista de favoritos
         //viewModel.addMovieArrayFavorites()
-        storageRealtime.saveMovie(movieData: movieScreenHome!, typeList: .favoritos)
+        
+        if !raffle{
+            storageRealtime.saveMovie(movieData: movieScreenHome!, typeList: .favoritos)
+        } else {
+        let movie = viewModel.getMovieArrayIndex()
+        storageRealtime.saveMovie(movieData: movie, typeList: .favoritos)
+        }
     }
     
     // Sortar novo filme.
@@ -187,7 +193,8 @@ class SelectedMovieViewController: UIViewController {
         labelRelease.text = viewModel.getRelease()
         textViewSinopse.text = viewModel.getOverView()
         imageFilmeBackGround.image = viewModel.getImageFilm()
-        labelVoteAvarage.text = String((movieScreenHome?.voteAverage)!)
+        let nota = String((movieScreenHome?.voteAverage)!)
+        labelVoteAvarage.text = "⭐ \(nota)"
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
         textViewGenre.text =  genreHomeListSearch
     }

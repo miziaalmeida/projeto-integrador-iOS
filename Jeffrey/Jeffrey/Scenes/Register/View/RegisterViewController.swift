@@ -22,6 +22,7 @@ class RegisterViewController: UIViewController {
     private var viewModel: RegisterViewModelProtocol?
     
     var image: UIImage? = nil
+    var activityIndicator = ActivityIndicatorViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,10 +126,10 @@ class RegisterViewController: UIViewController {
     }
     
     func signUp(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
-        ProgressHUD.show()
+        activityIndicator.showActivityIndicator(view: view, targetVC: self)
         AuthUser.User.signUp(withUsername: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, image: self.image,
                              onSucess: {
-                                ProgressHUD.dismiss()
+                                self.activityIndicator.hideActivityIndicator(view: self.view)
                                 self.viewModel?.registerTapped()
                                 onSucess()
                              }) { (errorMessage) in

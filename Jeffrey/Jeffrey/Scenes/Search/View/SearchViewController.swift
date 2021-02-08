@@ -25,7 +25,6 @@ class SearchViewController: UIViewController {
     @IBAction func buttonSearchTitle(_ sender: UIButton) {
         mySearchTextField.endEditing(true)
         let textSearch = mySearchTextField.text!.replacingOccurrences(of: " ", with: "+")
-        activity.showActivityIndicator(view: view, targetVC: self)
         saveMovie(textSearch: textSearch)
         getFilms(textSearch: textSearch)
     }
@@ -38,7 +37,8 @@ class SearchViewController: UIViewController {
         movie.textSearch = mySearchTextField.text
         movie = nil
         
-        if(!arraySearch.contains(textSearch)) {
+        let textReplace = textSearch.replacingOccurrences(of: "+", with: " ")
+        if(!arraySearch.contains(textReplace)) {
             do{
                 try context.save()
             } catch {
@@ -48,12 +48,13 @@ class SearchViewController: UIViewController {
     }
     
     func getFilms(textSearch: String) {
+        activity.showActivityIndicator(view: view, targetVC: self)
         viewModel.raffleListOfAPIMovies(textSearch: textSearch) { (sucess) in
             if sucess{
-                self.activity.hideActivityIndicator(view: self.view)
                 self.table.delegate = self
                 self.table.dataSource = self
                 self.table.reloadData()
+                self.activity.hideActivityIndicator(view: self.view)
             }
         }
     }
