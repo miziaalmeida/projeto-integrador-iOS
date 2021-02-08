@@ -30,7 +30,7 @@ class SelectedMovieViewController: UIViewController {
     
     //MARK: Variables
     var viewModel: SelectedMovieViewModelProtocol!
-    var customSegmentedControl = CustomSegmentControl()
+    var customSegmentedControl = CustomSegmentedControl()
     var raffle = true
     var movieScreenHome: Movie?
     var genreHomeListSearch:String?
@@ -113,7 +113,7 @@ class SelectedMovieViewController: UIViewController {
         checkSegmentIndex()
         
         // Chama a animação para a animacão to traço da segmentedControl
-        customSegmentedControl.indexChangedSegmentControll (segmentedControll: segmentedControlDetails, view: view)
+        customSegmentedControl.indexChangedSegmentedControl (segmentedControl: segmentedControlDetails, view: view)
     }
     
     // Mostrar ou não a NavigationBar
@@ -148,7 +148,7 @@ class SelectedMovieViewController: UIViewController {
         //        viewWillDisappear(false) // esconde a navigationBar
         
         // Chama a função que customiza o segmentControll
-        customSegmentedControl.segmentControlCustom(custom: segmentedControlDetails, view: view)
+        customSegmentedControl.segmentedControlCustom(custom: segmentedControlDetails, view: view)
         
         if raffle{
             viewModel.raffleListOfAPIMovies { sucess in
@@ -183,7 +183,8 @@ class SelectedMovieViewController: UIViewController {
     }
     
     func setTip(gener: String, stream: String){
-        self.tipViewModel = TipViewModel(gener: gener, stream: stream)
+        self.tipViewModel?.setTip(gener: gener, stream: stream)
+        //self.tipViewModel = TipViewModel(gener: gener, stream: stream)
     }
     
     

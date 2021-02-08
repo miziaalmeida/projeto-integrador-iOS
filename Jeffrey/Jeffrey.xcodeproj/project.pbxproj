@@ -57,7 +57,7 @@
 		D00A9480259358A0009FB2D3 /*  Redirect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D00A947B259358A0009FB2D3 /*  Redirect.storyboard */; };
 		D00A9481259358A0009FB2D3 /* RedirectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A947C259358A0009FB2D3 /* RedirectViewController.swift */; };
 		D00A94A1259359C3009FB2D3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A949E259359C2009FB2D3 /* Movie.swift */; };
-		D00A94A2259359C3009FB2D3 /* CustomSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A949F259359C3009FB2D3 /* CustomSegmentControl.swift */; };
+		D00A94A2259359C3009FB2D3 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A949F259359C3009FB2D3 /* CustomSegmentedControl.swift */; };
 		D00A94A3259359C3009FB2D3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00A94A0259359C3009FB2D3 /* Genre.swift */; };
 		D029FB1925C848B2006CD656 /* ViewController+ReplaceRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D029FB1825C848B2006CD656 /* ViewController+ReplaceRootViewController.swift */; };
 		D0BA3B5A25A6BE3B007C8D8E /* SelectedMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA3B5925A6BE3B007C8D8E /* SelectedMovieViewModel.swift */; };
@@ -167,7 +167,7 @@
 		D00A947B259358A0009FB2D3 /*  Redirect.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = " Redirect.storyboard"; sourceTree = "<group>"; };
 		D00A947C259358A0009FB2D3 /* RedirectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectViewController.swift; sourceTree = "<group>"; };
 		D00A949E259359C2009FB2D3 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		D00A949F259359C3009FB2D3 /* CustomSegmentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentControl.swift; sourceTree = "<group>"; };
+		D00A949F259359C3009FB2D3 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		D00A94A0259359C3009FB2D3 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		D029FB1825C848B2006CD656 /* ViewController+ReplaceRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ReplaceRootViewController.swift"; sourceTree = "<group>"; };
 		D0BA3B5925A6BE3B007C8D8E /* SelectedMovieViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedMovieViewModel.swift; sourceTree = "<group>"; };
@@ -474,7 +474,6 @@
 				19226B0D25C2526A00E9A0C8 /* Authentication */,
 				1909E4C0258E7D7400435D07 /* Extensions */,
 				195E94C425799F8600ACEC8D /* Service */,
-				195E94C325799F7D00ACEC8D /* Environment */,
 				195E94C225799F7800ACEC8D /* Models */,
 			);
 			path = Common;
@@ -483,7 +482,7 @@
 		195E94C225799F7800ACEC8D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D00A949F259359C3009FB2D3 /* CustomSegmentControl.swift */,
+				D00A949F259359C3009FB2D3 /* CustomSegmentedControl.swift */,
 				D00A94A0259359C3009FB2D3 /* Genre.swift */,
 				D00A949E259359C2009FB2D3 /* Movie.swift */,
 				1911938625A5052D00AD8928 /* ImagePicker.swift */,
@@ -492,13 +491,6 @@
 				FF4B77C825B948D7002804F6 /* DataManager.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		195E94C325799F7D00ACEC8D /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Environment;
 			sourceTree = "<group>";
 		};
 		195E94C425799F8600ACEC8D /* Service */ = {
@@ -1083,7 +1075,7 @@
 				D00A947D259358A0009FB2D3 /*  RedirectViewModel.swift in Sources */,
 				FF594B33258EBB3F002E75D0 /* HomeTableViewCell.swift in Sources */,
 				FF4B774425B7E0C9002804F6 /* ViewController+CoreData.swift in Sources */,
-				D00A94A2259359C3009FB2D3 /* CustomSegmentControl.swift in Sources */,
+				D00A94A2259359C3009FB2D3 /* CustomSegmentedControl.swift in Sources */,
 				D00A94A1259359C3009FB2D3 /* Movie.swift in Sources */,
 				191193A225A513FE00AD8928 /* ProfileDetailsTableViewCell.swift in Sources */,
 				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
