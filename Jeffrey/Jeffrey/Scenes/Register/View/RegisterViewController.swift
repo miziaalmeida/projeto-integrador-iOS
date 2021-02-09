@@ -36,6 +36,20 @@ class RegisterViewController: UIViewController {
         self.viewModel?.viewController = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController!.navigationBar.barStyle = .black
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -74,14 +88,12 @@ class RegisterViewController: UIViewController {
     }
     
     func configAvatar(){
-        avatar.frame = CGRect(x: 10, y: 10, width: 100, height: 100);
-        avatar.layer.cornerRadius = 50.0;
-        avatar.layer.masksToBounds = true;
-        // avatar.layer.cornerRadius = avatar.frame.size.width/2.0
-        avatar.layer.borderColor = UIColor.lightGray.cgColor
-        avatar.layer.borderWidth = 0.2
-        avatar.clipsToBounds = true
         avatar.isUserInteractionEnabled = true
+        avatar.layer.borderWidth = 1
+        avatar.layer.masksToBounds = false
+        avatar.layer.borderColor = UIColor.black.cgColor
+        avatar.layer.cornerRadius = avatar.frame.height/2
+        avatar.clipsToBounds = true
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPickerImageView))
         avatar.addGestureRecognizer(tapGesture)
@@ -105,9 +117,9 @@ class RegisterViewController: UIViewController {
     }
     
     func setupButton(button: UIButton){
-        button.backgroundColor = .red
-        button.tintColor = .white
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        button.backgroundColor = UIColor.white.withAlphaComponent(1.0)
+        button.tintColor = UIColor.black
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
     }
@@ -129,8 +141,7 @@ class RegisterViewController: UIViewController {
         activityIndicator.showActivityIndicator(view: view, targetVC: self)
         AuthUser.User.signUp(withUsername: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, image: self.image,
                              onSucess: {
-                                self.activityIndicator.hideActivityIndicator(view: self.view)
-                                self.viewModel?.registerTapped()
+                                self.viewModel?.registerTapped(view: self.view)
                                 onSucess()
                              }) { (errorMessage) in
             onError(errorMessage)

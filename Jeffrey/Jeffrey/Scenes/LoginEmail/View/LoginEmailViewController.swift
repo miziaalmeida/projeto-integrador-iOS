@@ -53,6 +53,8 @@ class LoginEmailViewController: UIViewController{
         self.view.endEditing(true)
     }
     
+    
+    
     @IBAction func signInTapped(_ sender: Any) {
         self.view.endEditing(true)
         self.validateFields()
@@ -77,7 +79,7 @@ class LoginEmailViewController: UIViewController{
             ProgressHUD.showError(ERROR_EMPTY_PASSWORD)
             return
         }
-    }
+     }
     
     func clearTextFields(){
         emailTextField.text = ""
@@ -85,8 +87,8 @@ class LoginEmailViewController: UIViewController{
     }
     
     func configButton(button: UIButton){
-        button.backgroundColor = UIColor.red.withAlphaComponent(1.0)
-        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.white.withAlphaComponent(1.0)
+        button.tintColor = UIColor.black
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
     }

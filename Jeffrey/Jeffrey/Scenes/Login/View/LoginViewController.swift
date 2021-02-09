@@ -17,7 +17,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerAcess: UIButton!
     @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var googleBtn: UIButton!
-    @IBOutlet weak var appleBtn: UIButton!
     
     private var viewModel: LoginViewModelProtocol?
     
@@ -33,7 +32,6 @@ class LoginViewController: UIViewController {
         
         configButtonsMedia(button: facebookBtn)
         configButtonsMedia(button: googleBtn)
-        configButtonsMedia(button: appleBtn)
         
         self.viewModel = LoginViewModel()
         self.viewModel?.viewController = self
@@ -80,7 +78,6 @@ class LoginViewController: UIViewController {
         socialMediaView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-    
     @IBAction func didTapLoginFacebook(_ sender: Any) {
         viewModel?.facebookLogin(viewController: self)
     }
@@ -89,7 +86,6 @@ class LoginViewController: UIViewController {
         viewModel?.googleLogin()
     }
     
-    
     @IBAction func loginEmail(_ sender: Any) {
         viewModel?.loginEmail()
     }
@@ -97,11 +93,7 @@ class LoginViewController: UIViewController {
     @IBAction func registerAccount(_ sender: Any) {
         viewModel?.registerAccount()
     }
-    
-    
-    @IBAction func appleLogin(_ sender: Any) {
-    }
-    
+
     func configNavigationItem(){
         let backButton = UIBarButtonItem()
         backButton.title = "Voltar"

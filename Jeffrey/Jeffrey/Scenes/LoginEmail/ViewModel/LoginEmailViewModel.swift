@@ -36,23 +36,27 @@ class LoginEmailViewModel: LoginEmailViewModelProtocol {
         viewController?.push(viewController: registerView)
     }
     
-    func validateSignIn(email: String, password: String, view: UIView, viewController: UIViewController, onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+    func messageUser(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let actionCancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
         
-        if signInTapped() != nil{
-               AuthUser.User.signIn(withEmail: email, password: password,
-                             onSucess: {
-                                self.activityIndicator.showActivityIndicator(view: view, targetVC: viewController)
-                                onSucess()
-                                DispatchQueue.main.async {
-                                    self.activityIndicator.hideActivityIndicator(view: view)
-                                }
-                             } ) { (errorMessage) in
-                                    onError(errorMessage)
-           }
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Dados Inválidos.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
-            viewController.present(alert, animated: true, completion: nil)
-        }
-      }
+        alert.addAction(actionCancel)
+        viewController!.present(viewController: alert)
+        
     }
+    
+    func validateSignIn(email: String, password: String, view: UIView, viewController: UIViewController, onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error == nil{
+                
+                if user == nil{
+                    self.messageUser(title: "Erro ao autenticar", message: "Senha ou E-mail inválidos, tente novamente.")
+                }else{
+                    self.signInTapped()
+                  }
+            }else{
+                self.messageUser(title: "Dados Inválidos", message: "Senha ou E-mail inválidos, tente novamente.")
+            }
+          }
+    }
+}
