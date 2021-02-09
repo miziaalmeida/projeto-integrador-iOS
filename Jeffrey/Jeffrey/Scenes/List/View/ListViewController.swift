@@ -55,6 +55,7 @@ class ListViewController: UIViewController {
             self.arrayMovieFavorites.append(result)
             self.tableViewList.reloadData()
             self.activityIndicator.hideActivityIndicator(view: self.view)
+           
         }
         activityIndicator.showActivityIndicator(view: view, targetVC: self)
         storageFirebase.listMovie(typeList: .jaVistos) { (result) in

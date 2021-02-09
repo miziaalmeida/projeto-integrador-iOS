@@ -49,7 +49,7 @@ class SearchViewController: UIViewController {
     
     func getFilms(textSearch: String) {
         activity.showActivityIndicator(view: view, targetVC: self)
-        viewModel.raffleListOfAPIMovies(textSearch: textSearch) { (sucess) in
+        viewModel!.raffleListOfAPIMovies(textSearch: textSearch) { (sucess) in
             if sucess{
                 self.table.delegate = self
                 self.table.dataSource = self

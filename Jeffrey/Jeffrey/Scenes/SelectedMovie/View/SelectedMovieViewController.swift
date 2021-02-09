@@ -22,7 +22,7 @@ class SelectedMovieViewController: UIViewController {
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelRelease: UILabel!
     @IBOutlet var labelVoteAvarage: UILabel!
-    @IBOutlet var textViewGenre: UITextField!
+    @IBOutlet var labelGenre: UILabel!
     @IBOutlet var textViewSinopse: UITextView!
     @IBOutlet var segmentedControlDetails: UISegmentedControl!
     @IBOutlet var viewBackgorund: UIView!
@@ -178,7 +178,7 @@ class SelectedMovieViewController: UIViewController {
         imageFilmeBackGround.image = viewModel.getImageFilm()
         labelVoteAvarage.text = viewModel.getVoteAverage()
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
-        textViewGenre.text =  viewModel.getGenre()
+        labelGenre.text = viewModel.getGenre()
         
     }
     
@@ -197,7 +197,7 @@ class SelectedMovieViewController: UIViewController {
         let nota = String((movieScreenHome?.voteAverage)!)
         labelVoteAvarage.text = "⭐ \(nota)"
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
-        textViewGenre.text =  genreHomeListSearch
+        labelGenre.text = genreHomeListSearch
     }
     
     //Checa qual index da segment e configura o que será mostrado ou não.
@@ -215,6 +215,7 @@ class SelectedMovieViewController: UIViewController {
     func adjustLabelsLayout(toHideTextViewSinopse: Bool , toHideLabels: Bool, toHideStreaming: Bool){
         
         textViewSinopse.isHidden = toHideTextViewSinopse
+        labelGenre.isHidden = toHideLabels
         labelTitle.isHidden = toHideLabels
         labelRelease.isHidden = toHideLabels
         labelVoteAvarage.isHidden = toHideLabels
@@ -265,7 +266,7 @@ class SelectedMovieViewController: UIViewController {
     
     // faz a borda  arredonda da view  na parte superior.
     func roundViewBorder(){
-        viewBackgorund.layer.cornerRadius = 60
+        viewBackgorund.layer.cornerRadius = 30
         viewBackgorund.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     

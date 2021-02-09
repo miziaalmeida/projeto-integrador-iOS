@@ -144,9 +144,11 @@
                         <color key="backgroundColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.1764705882" green="0.023529411760000001" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="cYJ-rC-QRY" firstAttribute="leading" secondItem="tRg-xv-ht4" secondAttribute="trailing" id="72I-TX-LQW"/>
                             <constraint firstItem="XiM-Ck-HQe" firstAttribute="trailing" secondItem="cYJ-rC-QRY" secondAttribute="trailing" constant="20" id="FVp-ls-OeW"/>
                             <constraint firstItem="cYJ-rC-QRY" firstAttribute="top" secondItem="XiM-Ck-HQe" secondAttribute="top" constant="20" id="Klm-28-XN7"/>
                             <constraint firstItem="vzw-ew-Jzo" firstAttribute="leading" secondItem="XiM-Ck-HQe" secondAttribute="leading" id="LVl-yK-ali"/>
+                            <constraint firstItem="cYJ-rC-QRY" firstAttribute="leading" secondItem="tRg-xv-ht4" secondAttribute="trailing" id="NEP-PN-Gmf"/>
                             <constraint firstItem="vzw-ew-Jzo" firstAttribute="top" secondItem="cYJ-rC-QRY" secondAttribute="bottom" constant="20" id="SJp-mv-cq4"/>
                             <constraint firstAttribute="bottom" secondItem="vzw-ew-Jzo" secondAttribute="bottom" id="ape-jv-dvI"/>
                             <constraint firstItem="XiM-Ck-HQe" firstAttribute="trailing" secondItem="vzw-ew-Jzo" secondAttribute="trailing" id="bdf-bO-PQU"/>

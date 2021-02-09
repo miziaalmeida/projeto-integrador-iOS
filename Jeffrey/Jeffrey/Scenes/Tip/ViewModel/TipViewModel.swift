@@ -91,10 +91,10 @@ class TipViewModel: TipViewModelProtocol{
     func didTapButtonGenre(button: [UIButton],_ sender: UIButton){
         button.forEach{
             $0.isSelected = false
-            $0.backgroundColor = #colorLiteral(red: 0.1137254902, green: 0.07450980392, blue: 0.2196078431, alpha: 1)
+            $0.backgroundColor = #colorLiteral(red: 0.2137669921, green: 0.05644740909, blue: 0.2667113841, alpha: 1)
         }
         sender.isSelected = true
-        sender.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        sender.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.996046761)
         if let unwarappedGenre = sender.currentTitle{
             self.gener = unwarappedGenre
             print(gener)
