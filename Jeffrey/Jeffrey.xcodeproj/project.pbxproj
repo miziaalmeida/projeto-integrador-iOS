@@ -68,6 +68,7 @@
 		D0BA3B7125A6BE96007C8D8E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0BA3B6D25A6BE96007C8D8E /* Search.storyboard */; };
 		D0BA3B7225A6BE96007C8D8E /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA3B6E25A6BE96007C8D8E /* SearchTableViewCell.swift */; };
 		D0BA3B7A25A6BEC5007C8D8E /* SelectedMovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA3B7925A6BEC5007C8D8E /* SelectedMovieAPI.swift */; };
+		D0BDFE8825D1B9BA001C117C /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDFE8725D1B9BA001C117C /* Enum.swift */; };
 		FF430B4D25A3BA7300D776B1 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF430B4C25A3BA7300D776B1 /* ListViewController.swift */; };
 		FF48DF1825978F8000A20E0A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48DF1725978F8000A20E0A /* HomeViewModel.swift */; };
 		FF4B773F25B7DAB1002804F6 /* Jeffrey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF4B773D25B7DAB1002804F6 /* Jeffrey.xcdatamodeld */; };
@@ -178,6 +179,7 @@
 		D0BA3B6D25A6BE96007C8D8E /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D0BA3B6E25A6BE96007C8D8E /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		D0BA3B7925A6BEC5007C8D8E /* SelectedMovieAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedMovieAPI.swift; sourceTree = "<group>"; };
+		D0BDFE8725D1B9BA001C117C /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		E136EFFC1323C746AFBA30E5 /* Pods-Jeffrey-JeffreyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECBCE0AFBE32146CFCC3D7A0 /* Pods-Jeffrey-JeffreyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jeffrey-JeffreyUITests.release.xcconfig"; path = "Target Support Files/Pods-Jeffrey-JeffreyUITests/Pods-Jeffrey-JeffreyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE03319350852EC7A80CDC64 /* Pods-JeffreyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JeffreyTests.debug.xcconfig"; path = "Target Support Files/Pods-JeffreyTests/Pods-JeffreyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 		195E94C225799F7800ACEC8D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D0BDFE8725D1B9BA001C117C /* Enum.swift */,
 				D00A949F259359C3009FB2D3 /* CustomSegmentedControl.swift */,
 				D00A94A0259359C3009FB2D3 /* Genre.swift */,
 				D00A949E259359C2009FB2D3 /* Movie.swift */,
@@ -1080,6 +1083,7 @@
 				191193A225A513FE00AD8928 /* ProfileDetailsTableViewCell.swift in Sources */,
 				FF594B22258E9A47002E75D0 /* HomeViewController.swift in Sources */,
 				1909E4AB258E494E00435D07 /* RegisterViewController.swift in Sources */,
+				D0BDFE8825D1B9BA001C117C /* Enum.swift in Sources */,
 				1909E4B5258E496200435D07 /* RegisterViewModel.swift in Sources */,
 				FF5E73B925A3FA3D00368D2C /* TipViewModel.swift in Sources */,
 				19EDDBF925BF5DAD002F8473 /* LoginEmailViewModel.swift in Sources */,
