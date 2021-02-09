@@ -27,6 +27,7 @@ protocol SelectedMovieViewModelProtocol: AnyObject{
     func redirectTap()
     func getMovieArrayIndex() -> Movie
     var viewController: SelectedViewEvents? {get set}
+    func showActivityIndicator(view: UIView)
 }
 
 class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
@@ -249,15 +250,12 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     func redirectTap() {
         guard  let homeViewControler = UIStoryboard(name: " Redirect",
                                                     bundle: nil).instantiateInitialViewController() as? RedirectViewController else { return }
-        
         homeViewControler.movieName = getTitle()
         homeViewControler.providerName = getImageStreaming()
-        
         viewController?.present(viewController: homeViewControler)
     }
     
     func formatDate(date:String) -> String{
-        
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd"
         
@@ -265,8 +263,15 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
         dateFormatterPrint.dateFormat = "dd/MM/yyyy"
         
         let date: NSDate? = dateFormatterGet.date(from: String(date)) as NSDate?
-        print(dateFormatterPrint.string(from: date! as Date))
-        
         return dateFormatterPrint.string(from: date! as Date)
+    }
+    
+    func showActivityIndicator(view: UIView){
+        let text = "O filme certo; na hora certa. Conheça o Jeffrey \n O app que mostra o que há de melhor nos streamings!\n Olha só o que ele me indicou: \(getTitle())"
+        let textToShare = [ text ]
+        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = view
+        activityViewController.excludedActivityTypes = [ UIActivity.ActivityType.airDrop, UIActivity.ActivityType.postToFacebook ]
+        viewController?.present(viewController: activityViewController)
     }
 }
