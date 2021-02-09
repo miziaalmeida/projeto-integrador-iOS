@@ -206,6 +206,7 @@
                         <outlet property="imageButtonRaffle" destination="MX2-as-UjY" id="DQ4-kx-M4K"/>
                         <outlet property="imageButtonSeen" destination="ehD-gb-9ad" id="uMs-We-S5G"/>
                         <outlet property="imageFilmeBackground" destination="pht-8f-eox" id="Rlq-4H-gfj"/>
+                        <outlet property="labelGenre" destination="mdz-nK-1fC" id="Kfn-2k-k9e"/>
                         <outlet property="labelRelease" destination="noc-Fz-mBM" id="y47-q7-1mz"/>
                         <outlet property="labelTitle" destination="uJ5-G6-bqa" id="ffC-u5-Vm7"/>
                         <outlet property="labelVoteAvarage" destination="kEX-eM-yCP" id="tJC-JC-u8L"/>

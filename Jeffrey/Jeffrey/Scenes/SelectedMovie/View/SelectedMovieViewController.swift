@@ -114,11 +114,6 @@ class SelectedMovieViewController: UIViewController {
         labelGenre.text = viewModel.getGenre()
     }
 
-    func setTip(gener: String, stream: String){
-        self.tipViewModel?.setTip(gener: gener, stream: stream)
-        //self.tipViewModel = TipViewModel(gener: gener, stream: stream)
-    }
-
     func setFieldsMovieHome(){
         labelTitle.text = viewModel.getTitle()
         labelRelease.text = viewModel.getRelease()
@@ -186,8 +181,8 @@ class SelectedMovieViewController: UIViewController {
 
     // faz a borda  arredonda da view  na parte superior.
     func roundViewBorder(){
-        viewBackgorund.layer.cornerRadius = 30
-        viewBackgorund.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        viewBackground.layer.cornerRadius = 30
+        viewBackground.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 }
 
