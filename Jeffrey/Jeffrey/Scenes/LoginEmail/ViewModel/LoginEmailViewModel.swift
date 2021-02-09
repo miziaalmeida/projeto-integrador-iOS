@@ -1,8 +1,12 @@
 import Foundation
 import UIKit
+import Firebase
+import UIKit
+import Firebase
+import ProgressHUD
 
 protocol LoginEmailViewModelProtocol: AnyObject{
-    func signInTapped() -> UIViewController
+    func validateSignIn(email: String, password: String, view: UIView, viewController: UIViewController, onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void)
     func forgotPasswordTap()
     func registerTap()
     var viewController: LoginEmailViewEvents? {get set}
@@ -10,13 +14,14 @@ protocol LoginEmailViewModelProtocol: AnyObject{
 
 class LoginEmailViewModel: LoginEmailViewModelProtocol {
     weak var viewController: LoginEmailViewEvents?
+    var activityIndicator = ActivityIndicatorViewController()
     
     
-    func signInTapped() -> UIViewController{
-        let homeViewControler = UIStoryboard(name: "HomeMain",
-                                                    bundle: nil).instantiateInitialViewController() as? UITabBarController 
-        return homeViewControler!
-        
+    func signInTapped() {
+        guard let homeViewControler = UIStoryboard(name: "HomeMain",
+                                                   bundle: nil).instantiateInitialViewController() as? UITabBarController else {return}
+          
+        UIViewController.replaceRootViewController(viewController: homeViewControler)
     }
     
     func forgotPasswordTap() {
@@ -31,17 +36,23 @@ class LoginEmailViewModel: LoginEmailViewModelProtocol {
         viewController?.push(viewController: registerView)
     }
     
-//    class func replaceRootViewController(viewController: UIViewController) {
-//        guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first
-//        else {
-//            return
-//        }
-//        let rootViewController = window.rootViewController!
-//        viewController.view.frame = rootViewController.view.frame
-//        viewController.view.layoutIfNeeded()
-//        UIView.transition(with: window, duration: 0.3, options: .transitionFlipFromLeft, animations: {
-//            window.rootViewController = viewController
-//        }, completion: nil)
-//    }
-    
-}
+    func validateSignIn(email: String, password: String, view: UIView, viewController: UIViewController, onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+        
+        if signInTapped() != nil{
+               AuthUser.User.signIn(withEmail: email, password: password,
+                             onSucess: {
+                                self.activityIndicator.showActivityIndicator(view: view, targetVC: viewController)
+                                onSucess()
+                                DispatchQueue.main.async {
+                                    self.activityIndicator.hideActivityIndicator(view: view)
+                                }
+                             } ) { (errorMessage) in
+                                    onError(errorMessage)
+           }
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Dados Inválidos.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
+            viewController.present(alert, animated: true, completion: nil)
+        }
+      }
+    }

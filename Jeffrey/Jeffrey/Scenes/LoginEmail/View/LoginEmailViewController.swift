@@ -98,21 +98,11 @@ class LoginEmailViewController: UIViewController{
     }
     
     func signIn(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
-        
-        guard let mainView = self.viewModel?.signInTapped() else {return}
-        activityIndicator.showActivityIndicator(view: view, targetVC: self)
-        AuthUser.User.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, onSucess: {
+        viewModel?.validateSignIn(email: emailTextField.text!, password: passwordTextField.text!, view: view, viewController: self, onSucess: {
             onSucess()
-            DispatchQueue.main.async {
-                self.activityIndicator.hideActivityIndicator(view: self.view)
-                UIViewController.replaceRootViewController(viewController: mainView)
-            }
-            
-            
-            
-        }) { (errorMessage) in
-            onError(errorMessage)
-        }
+        }, onError: { (error) in
+            onError(error)
+        })
         self.clearTextFields()
     }
 }
