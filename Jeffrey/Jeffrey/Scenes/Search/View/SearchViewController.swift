@@ -131,8 +131,7 @@ extension SearchViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let storyboard = UIStoryboard(name: "SelectedMovie", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController; // MySecondSecreen the storyboard ID
-        //        print("chegou o filme \(movie.title)")
+        let vc = storyboard.instantiateViewController(withIdentifier: "SelectedMovie") as! SelectedMovieViewController; // 
         vc.raffle = false
         vc.movieScreenHome = viewModel.getMovieInArray(index: indexPath.row)
         self.present(vc, animated: true, completion: nil);

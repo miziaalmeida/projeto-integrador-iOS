@@ -36,4 +36,6 @@ class SearchViewModel: SearchViewModelProtocol {
     func getMovieInArray(index: Int) -> Movie{
         return arrayMovies[index]
     }
+    
+    
 }
