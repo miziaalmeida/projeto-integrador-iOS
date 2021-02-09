@@ -21,7 +21,7 @@ class SelectedMovieViewController: UIViewController {
     @IBOutlet var labelTitle: UILabel!
     @IBOutlet var labelRelease: UILabel!
     @IBOutlet var labelVoteAvarage: UILabel!
-    @IBOutlet var textViewGenre: UITextField!
+    @IBOutlet var labelGenre: UILabel!
     @IBOutlet var textViewSinopse: UITextView!
     @IBOutlet var segmentedControlDetails: UISegmentedControl!
     @IBOutlet var viewBackground: UIView!
@@ -42,7 +42,7 @@ class SelectedMovieViewController: UIViewController {
     @IBAction func buttonProvider(_ sender: UIButton) {
         viewModel.redirectTap()
     }
-    
+
     @IBAction func buttonSeen(_ sender: UIButton){
         imageButtonSeen.image = setButtonImageSeen(imageButton: imageButtonSeen) // altera o icone do olho aberto/fechdo
         viewModel.addMovieArraySeen() // adiciona o filme setado a lista de Já vistos
@@ -111,7 +111,7 @@ class SelectedMovieViewController: UIViewController {
         imageFilmeBackground.image = viewModel.getImageFilm()
         labelVoteAvarage.text = viewModel.getVoteAverage()
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
-        textViewGenre.text =  viewModel.getGenre()
+        labelGenre.text = viewModel.getGenre()
     }
 
     func setFieldsMovieHome(){
@@ -122,7 +122,7 @@ class SelectedMovieViewController: UIViewController {
         let nota = String((movieScreenHome?.voteAverage)!)
         labelVoteAvarage.text = "⭐ \(nota)"
         buttonProviders.setImage(UIImage(named: viewModel.getImageStreaming()), for: UIControl.State.normal)
-        textViewGenre.text =  genreHomeListSearch
+        labelGenre.text = genreHomeListSearch
     }
 
     func setTip(gener: String, stream: String){
@@ -140,6 +140,7 @@ class SelectedMovieViewController: UIViewController {
     // ajusta quais Outlets são para mostrar na tela.
     func adjustLabelsLayout(toHideTextViewSinopse: Bool , toHideLabels: Bool, toHideStreaming: Bool){
         textViewSinopse.isHidden = toHideTextViewSinopse
+        labelGenre.isHidden = toHideLabels
         labelTitle.isHidden = toHideLabels
         labelRelease.isHidden = toHideLabels
         labelVoteAvarage.isHidden = toHideLabels
@@ -178,8 +179,9 @@ class SelectedMovieViewController: UIViewController {
         }
     }
 
-    func roundViewBorder(){ // arredonda da view  na parte superior.
-        viewBackground.layer.cornerRadius = 60
+    // faz a borda  arredonda da view  na parte superior.
+    func roundViewBorder(){
+        viewBackground.layer.cornerRadius = 30
         viewBackground.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
 }
