@@ -36,32 +36,30 @@ Para este projeto está sendo consumida a API do [The Movie DataBase][tmdb-api-u
 
 O projeto integrador deve estar em conformida com os seguintes tópicos;
 
-- [ ] Deve possuir um design em todas as telas utilizando auto layout;
--  [ ] Aplicação do POO.
-- [ ] Deve possuir navegação entre telas (Navigation e Modal);
-- [ ] Tratativas de erros;
-- [ ] Deve consumir uma API;
-- [ ] Deve funcionar em modo offline;
-- [ ] A arquitetura deve ser MVVM;
+- [x] Deve possuir um design em todas as telas utilizando auto layout;
+-  [x] Aplicação do POO.
+- [x] Deve possuir navegação entre telas (Navigation e Modal);
+- [x] Tratativas de erros;
+- [x] Deve consumir uma API;
+- [x] Deve funcionar em modo offline;
+- [x] A arquitetura deve ser MVVM;
 - [ ] O código precisa estar comentado;
-- [ ] Testes Unitários;
--  [ ] O app deve conter, pelo menos, os seguintes componentes do UIKit: (UITextField, 
+- [x] Testes Unitários;
+-  [x] O app deve conter, pelo menos, os seguintes componentes do UIKit: (UITextField, 
 UIButton, UILabel, UICollectionView e UITableView).
--  [ ] O app deve possuir as seguintes features:
-    - [ ] Tela de carregamento;
-    - [ ] Tela de login (Facebook e Google são obrigatórios);
-    - [ ] Tela inicial que deve conter um resumo das funcionalidades do app;
-    - [ ] Tela de descrição do item;
-    - [ ] Tela de listagem de características;
+-  [x] O app deve possuir as seguintes features:
+    - [x] Tela de carregamento;
+    - [x] Tela de login (Facebook e Google são obrigatórios);
+    - [x] Tela inicial que deve conter um resumo das funcionalidades do app;
+    - [x] Tela de descrição do item;
+    - [x] Tela de listagem de características;
     - [ ] Opções para compartilhamento em redes sociais;
--  [ ] Todo o trabalho deve ser feito utilizando o GitFlow;
-- [ ] Ao final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
+-  [x] Todo o trabalho deve ser feito utilizando o GitFlow;
+- [x] Ao final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
 
 # Screenshoots do Projeto
 <div align="center">
-USER
-Inscrição | Login | Home 
----|---|---
+
 <img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107271162-9bcce800-6a2a-11eb-9091-5302a46f5e1d.gif"> |<img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107270388-a5a21b80-6a29-11eb-9299-09faa7dba074.gif"> | <img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107271600-3c230c80-6a2b-11eb-9a5d-7820915cdf98.gif"> |
 
 </div>
