@@ -10,13 +10,10 @@ import XCTest
 
 class JeffreyTests: XCTestCase {
 
-  
-
     func testDataFormater() throws {
         let viewmodel = SelectedMovieViewModel()
         let date = viewmodel.formatDate(date: "2020-05-21")
         XCTAssertEqual(date, "21/05/2020")
-        
     }
    
     func testeIdGenre(){
@@ -24,7 +21,4 @@ class JeffreyTests: XCTestCase {
         viewmodel.setIdGenre(id: 6)
         XCTAssertEqual(6, viewmodel.genreId)
     }
-
-  
-
 }
