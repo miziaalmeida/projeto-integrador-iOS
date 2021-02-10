@@ -95,8 +95,8 @@ Inscrição | Login | Home
 - Bitrise
 
 # Arquitetura
-<img src="https://user-images.githubusercontent.com/42849855/107506239-941d5880-6b7c-11eb-9ae7-b54c71c3cd27.png" width="15%"></img> 
+<img src="https://user-images.githubusercontent.com/42849855/107506239-941d5880-6b7c-11eb-9ae7-b54c71c3cd27.png" width="50%"></img> 
 
 # Metodologia ágil
-
+<img width="721" alt="metodologias" src="https://user-images.githubusercontent.com/42849855/107510093-41df3600-6b82-11eb-967f-a0839083257b.png">
 
