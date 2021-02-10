@@ -58,9 +58,44 @@ UIButton, UILabel, UICollectionView e UITableView).
 - [ ] Ao final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
 
 # Screenshoots do Projeto
+<div align="center">
+USER
+Inscrição | Login | Home 
+---|---|---
+<img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107271162-9bcce800-6a2a-11eb-9091-5302a46f5e1d.gif"> |<img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107270388-a5a21b80-6a29-11eb-9299-09faa7dba074.gif"> | <img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107271600-3c230c80-6a2b-11eb-9a5d-7820915cdf98.gif"> |
+
+</div>
 
 # Ferramentas utilizadas
 
+**Organização das tarefas**
+- Miro
+- Trello
+
+**Construção do Código**
+- Xcode 12.4
+- Atom
+- Postman
+- JSon Export
+- Git - GitFlow
+- Cocoapods
+
+**UI**
+- Figma
+- Canva Pro
+- Ninja Mock
+
+**Banco de dados**
+- Firebase - Realtime e Storage
+- CoreData
+- Valentina
+
+**CI**
+- Fastlane
+- Bitrise
+
 # Arquitetura
 
+
 # Metodologia ágil
+
