@@ -42,9 +42,8 @@ class StartOptionsViewController: UIViewController {
     }
     
     func setupButton(button: UIButton){
-        button.backgroundColor = .red
-        button.tintColor = .white
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        button.backgroundColor = UIColor.white.withAlphaComponent(1.0)
+        button.tintColor = UIColor.black
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
     }

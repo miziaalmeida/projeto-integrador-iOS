@@ -41,7 +41,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="CTt-xS-aJu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Entrar"/>
                                         <connections>
                                             <action selector="signInTapped:" destination="TFR-Wa-2A4" eventType="touchUpInside" id="4cm-hR-Vzc"/>
