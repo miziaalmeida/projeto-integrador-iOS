@@ -41,12 +41,12 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     func setupButton(button: UIButton){
-        button.backgroundColor = .red
-        button.tintColor = .white
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.layer.cornerRadius = 10
-        button.clipsToBounds = true
-    }
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            button.backgroundColor = UIColor.white.withAlphaComponent(1.0)
+            button.tintColor = UIColor.black
+            button.layer.cornerRadius = 10
+            button.clipsToBounds = true
+        }
     
     func resetPassword(){
         guard let email = emailTextField.text, email != " " else {
