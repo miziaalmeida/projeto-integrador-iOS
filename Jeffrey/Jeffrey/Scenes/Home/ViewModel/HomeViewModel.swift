@@ -11,7 +11,6 @@ protocol HomeViewModelProtocol: AnyObject{
     
     func raffleListOfAPIMovies(genre: Int ,completion: @escaping (Bool) -> Void)
     func getCountArray() -> Int
- 
     func getArrayComedy() -> [Movie]
     func getArrayAction() -> [Movie]
     func getArrayAnimation() -> [Movie]
@@ -21,16 +20,15 @@ protocol HomeViewModelProtocol: AnyObject{
     func getArrayDrama() -> [Movie]
     func getArrayAdventure() -> [Movie]
     func getArraySciencefiction() -> [Movie]
-    
+    var  viewController: HomeViewControllerEvents? { get set }
    
 
 }
 
-class HomeViewModel:HomeViewModelProtocol{
+class HomeViewModel: HomeViewModelProtocol{
     
-    
+    weak var viewController: HomeViewControllerEvents?
     let apimanager = APIManager()
-    
     var arrayMoviesComedy = [Movie]()
     var arrayMoviesAction = [Movie]()
     var arrayMoviesAnimation = [Movie]()
@@ -116,15 +114,6 @@ class HomeViewModel:HomeViewModelProtocol{
     func getArraySciencefiction() -> [Movie] {
         return arrayMoviesScienceFiction
     }
- 
-    
-    
-  
-    
-    //sem utilizar no momento
-  
-            
-        
 
 }
 

@@ -53,6 +53,8 @@ class LoginEmailViewController: UIViewController{
         self.view.endEditing(true)
     }
     
+    
+    
     @IBAction func signInTapped(_ sender: Any) {
         self.view.endEditing(true)
         self.validateFields()
@@ -77,7 +79,7 @@ class LoginEmailViewController: UIViewController{
             ProgressHUD.showError(ERROR_EMPTY_PASSWORD)
             return
         }
-    }
+     }
     
     func clearTextFields(){
         emailTextField.text = ""
@@ -85,8 +87,8 @@ class LoginEmailViewController: UIViewController{
     }
     
     func configButton(button: UIButton){
-        button.backgroundColor = UIColor.red.withAlphaComponent(1.0)
-        button.tintColor = UIColor.white
+        button.backgroundColor = UIColor.white.withAlphaComponent(1.0)
+        button.tintColor = UIColor.black
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
     }
@@ -98,21 +100,11 @@ class LoginEmailViewController: UIViewController{
     }
     
     func signIn(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
-        
-        guard let mainView = self.viewModel?.signInTapped() else {return}
-        activityIndicator.showActivityIndicator(view: view, targetVC: self)
-        AuthUser.User.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, onSucess: {
+        viewModel?.validateSignIn(email: emailTextField.text!, password: passwordTextField.text!, view: view, viewController: self, onSucess: {
             onSucess()
-            DispatchQueue.main.async {
-                self.activityIndicator.hideActivityIndicator(view: self.view)
-                UIViewController.replaceRootViewController(viewController: mainView)
-            }
-            
-            
-            
-        }) { (errorMessage) in
-            onError(errorMessage)
-        }
+        }, onError: { (error) in
+            onError(error)
+        })
         self.clearTextFields()
     }
 }

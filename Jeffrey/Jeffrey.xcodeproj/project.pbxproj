@@ -88,6 +88,8 @@
 		FF5E742425A626C400368D2C /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5E742325A626C400368D2C /* ListTableViewCell.swift */; };
 		FF5E742F25A62E5200368D2C /* HomeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF5E742E25A62E5200368D2C /* HomeMain.storyboard */; };
 		FF63790325B07091006D1D47 /* ActivityIndicatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF63790225B07091006D1D47 /* ActivityIndicatorViewController.swift */; };
+		FFC7FFD225D29B1F00EA40D7 /* GoogleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7FFD125D29B1F00EA40D7 /* GoogleService.swift */; };
+		FFC7FFD725D2C00800EA40D7 /* UIViewAddBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC7FFD625D2C00800EA40D7 /* UIViewAddBorder.swift */; };
 		FFDBC99725CAC6B900F09462 /* FirebaseRealtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDBC99625CAC6B800F09462 /* FirebaseRealtime.swift */; };
 /* End PBXBuildFile section */
 
@@ -202,6 +204,8 @@
 		FF5E742325A626C400368D2C /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		FF5E742E25A62E5200368D2C /* HomeMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeMain.storyboard; sourceTree = "<group>"; };
 		FF63790225B07091006D1D47 /* ActivityIndicatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorViewController.swift; sourceTree = "<group>"; };
+		FFC7FFD125D29B1F00EA40D7 /* GoogleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleService.swift; sourceTree = "<group>"; };
+		FFC7FFD625D2C00800EA40D7 /* UIViewAddBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewAddBorder.swift; sourceTree = "<group>"; };
 		FFDBC99625CAC6B800F09462 /* FirebaseRealtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRealtime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +358,8 @@
 				1909E4C1258E7D8C00435D07 /* UIImage+Extensions.swift */,
 				FF4B774325B7E0C9002804F6 /* ViewController+CoreData.swift */,
 				D029FB1825C848B2006CD656 /* ViewController+ReplaceRootViewController.swift */,
+				FFC7FFD125D29B1F00EA40D7 /* GoogleService.swift */,
+				FFC7FFD625D2C00800EA40D7 /* UIViewAddBorder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1069,7 +1075,9 @@
 				D00A94A3259359C3009FB2D3 /* Genre.swift in Sources */,
 				D0BA3B6325A6BE68007C8D8E /* SelectedMovieViewController.swift in Sources */,
 				FF594B38258ECCBF002E75D0 /* HomeCollectionViewCell.swift in Sources */,
+				FFC7FFD725D2C00800EA40D7 /* UIViewAddBorder.swift in Sources */,
 				1986CDBB259B8E54009112BA /* ProfileViewModel.swift in Sources */,
+				FFC7FFD225D29B1F00EA40D7 /* GoogleService.swift in Sources */,
 				FF4B77C925B948D7002804F6 /* DataManager.swift in Sources */,
 				FFDBC99725CAC6B900F09462 /* FirebaseRealtime.swift in Sources */,
 				D0BA3B7A25A6BEC5007C8D8E /* SelectedMovieAPI.swift in Sources */,

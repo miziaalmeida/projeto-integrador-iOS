@@ -15,20 +15,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bye!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBU-wd-9lk">
-                                <rect key="frame" x="120" y="392" width="174" height="60"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-app-large" translatesAutoresizingMaskIntoConstraints="NO" id="zhU-Yr-zG0">
+                                <rect key="frame" x="20" y="44" width="374" height="413"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="413" id="qb8-Yf-3Zi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Até breve!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebd-1h-cuj">
+                                <rect key="frame" x="20" y="536" width="374" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="49u-Ch-haP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KTR-4F-aZ6"/>
                         <color key="backgroundColor" red="0.1764705882352941" green="0.023529411764705882" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="nBU-wd-9lk" firstAttribute="top" secondItem="KTR-4F-aZ6" secondAttribute="top" constant="348" id="TSt-Of-dPg"/>
-                            <constraint firstItem="nBU-wd-9lk" firstAttribute="leading" secondItem="KTR-4F-aZ6" secondAttribute="leading" constant="120" id="UXL-L5-MA1"/>
-                            <constraint firstItem="KTR-4F-aZ6" firstAttribute="trailing" secondItem="nBU-wd-9lk" secondAttribute="trailing" constant="120" id="jIz-AA-pKR"/>
-                            <constraint firstItem="KTR-4F-aZ6" firstAttribute="bottom" secondItem="nBU-wd-9lk" secondAttribute="bottom" constant="410" id="lph-rJ-OlF"/>
+                            <constraint firstItem="zhU-Yr-zG0" firstAttribute="top" secondItem="KTR-4F-aZ6" secondAttribute="top" id="5Gv-gL-gKQ"/>
+                            <constraint firstItem="Ebd-1h-cuj" firstAttribute="leading" secondItem="KTR-4F-aZ6" secondAttribute="leading" constant="20" id="5vg-Ci-gSh"/>
+                            <constraint firstItem="KTR-4F-aZ6" firstAttribute="trailing" secondItem="Ebd-1h-cuj" secondAttribute="trailing" constant="20" id="9c5-sf-a39"/>
+                            <constraint firstItem="Ebd-1h-cuj" firstAttribute="top" secondItem="zhU-Yr-zG0" secondAttribute="bottom" constant="79" id="GV7-CB-qE6"/>
+                            <constraint firstItem="KTR-4F-aZ6" firstAttribute="trailing" secondItem="zhU-Yr-zG0" secondAttribute="trailing" constant="20" id="Of8-wH-DCq"/>
+                            <constraint firstItem="zhU-Yr-zG0" firstAttribute="leading" secondItem="KTR-4F-aZ6" secondAttribute="leading" constant="20" id="wLp-df-Nfb"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,4 +48,7 @@
             <point key="canvasLocation" x="-23.188405797101453" y="54.910714285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo-app-large" width="166.5" height="166.5"/>
+    </resources>
 </document>

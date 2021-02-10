@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController{
     //@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var view1: UIView!
+    //@IBOutlet weak var view1: UIView!
     
     var imagePicker: ImagePicker!
     private var viewModel: ProfileViewModelProtocol?
@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController{
         
         self.viewModel = ProfileViewModel()
         
-        view1.backgroundColor = UIColor.clear
+        //view1.backgroundColor = UIColor.clear
         
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         

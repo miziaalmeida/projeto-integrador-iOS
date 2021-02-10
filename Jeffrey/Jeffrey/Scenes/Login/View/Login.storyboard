@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -63,49 +62,46 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqi-YL-mWk">
                                         <rect key="frame" x="20" y="569" width="374" height="197"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVq-lA-mSe">
-                                                <rect key="frame" x="8" y="80" width="80" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" backgroundImage="icons8-apple-logo-1024 1">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font">
-                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    </preferredSymbolConfiguration>
-                                                </state>
-                                                <connections>
-                                                    <action selector="appleLogin:" destination="kgZ-O9-TQl" eventType="touchUpInside" id="qnz-Nd-K7N"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azh-Xh-Kex">
-                                                <rect key="frame" x="147" y="80" width="80" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" backgroundImage="image 27"/>
-                                                <connections>
-                                                    <action selector="didTapGoogleLogin:" destination="kgZ-O9-TQl" eventType="touchUpInside" id="m9P-yi-sxW"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Conectar com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFI-H7-vSz">
-                                                <rect key="frame" x="8" y="8" width="358" height="41"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conectar com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFI-H7-vSz">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="4db-ia-yRa"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEd-KH-pak">
-                                                <rect key="frame" x="286" y="80" width="80" height="80"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azh-Xh-Kex">
+                                                <rect key="frame" x="78" y="80" width="80" height="80"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="9xR-Ks-HEW"/>
+                                                    <constraint firstAttribute="height" constant="80" id="YR7-Dn-zs3"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="image 27"/>
+                                                <connections>
+                                                    <action selector="didTapGoogleLogin:" destination="kgZ-O9-TQl" eventType="touchUpInside" id="m9P-yi-sxW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEd-KH-pak">
+                                                <rect key="frame" x="217" y="80" width="80" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                                 <state key="normal" backgroundImage="icons8-facebook-f-1024 1"/>
                                                 <connections>
                                                     <action selector="didTapLoginFacebook:" destination="kgZ-O9-TQl" eventType="touchUpInside" id="L8D-H8-D5N"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="tFI-H7-vSz" firstAttribute="leading" secondItem="Cqi-YL-mWk" secondAttribute="leading" constant="8" id="5t9-EW-YCK"/>
-                                            <constraint firstItem="tFI-H7-vSz" firstAttribute="top" secondItem="Cqi-YL-mWk" secondAttribute="top" constant="8" id="GCR-Dy-cXk"/>
-                                            <constraint firstAttribute="trailing" secondItem="tFI-H7-vSz" secondAttribute="trailing" constant="8" id="Yy5-lP-RFR"/>
+                                            <constraint firstItem="tFI-H7-vSz" firstAttribute="leading" secondItem="Cqi-YL-mWk" secondAttribute="leading" id="8oq-Hs-afm"/>
+                                            <constraint firstItem="Azh-Xh-Kex" firstAttribute="leading" secondItem="Cqi-YL-mWk" secondAttribute="leading" constant="78" id="D9c-qm-raP"/>
+                                            <constraint firstAttribute="trailing" secondItem="tFI-H7-vSz" secondAttribute="trailing" id="FfN-WV-LB6"/>
+                                            <constraint firstItem="Azh-Xh-Kex" firstAttribute="top" secondItem="tFI-H7-vSz" secondAttribute="bottom" constant="50" id="OgV-5F-Eiw"/>
+                                            <constraint firstItem="tFI-H7-vSz" firstAttribute="top" secondItem="Cqi-YL-mWk" secondAttribute="top" id="VdK-SN-y1u"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -128,7 +124,7 @@
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xOF-4Q-h4m"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="obU-ta-ycf" secondAttribute="bottom" id="4St-ty-IlA"/>
                             <constraint firstItem="obU-ta-ycf" firstAttribute="top" secondItem="AEx-95-2lp" secondAttribute="top" id="7n6-hI-VNo"/>
@@ -137,7 +133,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="appleBtn" destination="tVq-lA-mSe" id="ccp-Wh-mjM"/>
                         <outlet property="emailAcess" destination="M8V-q6-WoZ" id="scS-t2-Lff"/>
                         <outlet property="facebookBtn" destination="lEd-KH-pak" id="EkR-hC-0GL"/>
                         <outlet property="googleBtn" destination="Azh-Xh-Kex" id="SCH-rl-PSv"/>
@@ -152,13 +147,9 @@
     </scenes>
     <resources>
         <image name="envelope" catalog="system" width="128" height="93"/>
-        <image name="icons8-apple-logo-1024 1" width="550" height="550"/>
         <image name="icons8-facebook-f-1024 1" width="1024" height="1024"/>
         <image name="image 27" width="1024" height="1028"/>
         <image name="logo-app-large" width="166.5" height="166.5"/>
         <image name="person.crop.circle.badge.plus" catalog="system" width="128" height="113"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

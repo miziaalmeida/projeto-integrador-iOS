@@ -17,7 +17,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerAcess: UIButton!
     @IBOutlet weak var facebookBtn: UIButton!
     @IBOutlet weak var googleBtn: UIButton!
-    @IBOutlet weak var appleBtn: UIButton!
     
     private var viewModel: LoginViewModelProtocol?
     
@@ -33,13 +32,11 @@ class LoginViewController: UIViewController {
         
         configButtonsMedia(button: facebookBtn)
         configButtonsMedia(button: googleBtn)
-        configButtonsMedia(button: appleBtn)
         
         self.viewModel = LoginViewModel()
         self.viewModel?.viewController = self
         
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().delegate = self
+        configGoogle()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +51,11 @@ class LoginViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func configGoogle(){
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     func configButtons(button: UIButton?){
@@ -76,35 +78,13 @@ class LoginViewController: UIViewController {
         socialMediaView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-    
     @IBAction func didTapLoginFacebook(_ sender: Any) {
-        let manager = LoginManager()
-        manager.logIn(permissions: [.publicProfile, .email], viewController: self) { (result) in
-            switch result {
-            case .success(granted: let grantedPermissions, declined: let declinedPermission, token: let acessToken):
-                let credential = FacebookAuthProvider.credential(withAccessToken: acessToken.tokenString)
-                Auth.auth().signIn(with: credential) { (result, error) in
-                    guard  let homeViewControler = UIStoryboard(name: "HomeMain", bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-                    DispatchQueue.main.async {
-                        
-                        UIViewController.replaceRootViewController(viewController: homeViewControler)
-                    }
-                }
-                print("acess Token = \(acessToken)")
-            case .cancelled:
-                print("Usuário cancelou o processo de Login")
-                break
-            case .failed(let error):
-                print("Login falhou! \(error.localizedDescription)")
-            }
-            manager.logOut()
-        }
+        viewModel?.facebookLogin(viewController: self)
     }
     
     @IBAction func didTapGoogleLogin(_ sender: Any) {
-        GIDSignIn.sharedInstance()?.signIn()
+        viewModel?.googleLogin()
     }
-    
     
     @IBAction func loginEmail(_ sender: Any) {
         viewModel?.loginEmail()
@@ -113,11 +93,7 @@ class LoginViewController: UIViewController {
     @IBAction func registerAccount(_ sender: Any) {
         viewModel?.registerAccount()
     }
-    
-    
-    @IBAction func appleLogin(_ sender: Any) {
-    }
-    
+
     func configNavigationItem(){
         let backButton = UIBarButtonItem()
         backButton.title = "Voltar"
@@ -132,29 +108,5 @@ extension LoginViewController: LoginViewEvents {
     
     func present(viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
-    }
-}
-
-extension LoginViewController: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            print(error.localizedDescription)
-            return
-        }
-        guard let auth = user.authentication else { return }
-        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
-        Auth.auth().signIn(with: credentials) { (authResult, error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("Login Successful.")
-                guard  let homeViewControler = UIStoryboard(name: "HomeMain",
-                                                            bundle: nil).instantiateInitialViewController() as? UITabBarController else { return }
-                DispatchQueue.main.async {
-                    
-                    UIViewController.replaceRootViewController(viewController: homeViewControler)
-                }
-            }
-        }
     }
 }
