@@ -34,8 +34,8 @@ class SelectedMovieViewModel:SelectedMovieViewModelProtocol{
     
     //MARK: VARIÁVEIS
     var arrayMovies = [Movie]() // Onde será carregado a request da API
-    private var genreId = idGenres.animation.rawValue// ID do gênero para a requisicão na
-    private var providerName  = nameProviders.netflix.rawValue
+     var genreId = idGenres.animation.rawValue// ID do gênero para a requisicão na
+     var providerName  = nameProviders.netflix.rawValue
     private var idProvider  = idProviders.netflix.rawValue
     private var idPageApi = 1 // Alterar a pagina na requisição da API
     var idPage: Int = 1 // obs: page da app por padrão começa na primeira

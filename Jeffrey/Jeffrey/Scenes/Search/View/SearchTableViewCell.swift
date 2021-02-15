@@ -27,15 +27,28 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     func setup(movie:Movie){
+        
         if let idImage = movie.backdropPath{
             let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage)")
             let data = try? Data(contentsOf: url!)
             imageMovie.image = UIImage(data: data!)
             labelnameMovie.text = movie.title
-            labelRelease.text = movie.releaseDate
+            let dataRelease = formatDate(date: movie.releaseDate)
+            labelRelease.text = dataRelease
             labelVoteAverage.text = String(movie.voteAverage)
             imageMovie.clipsToBounds = true
             imageMovie.layer.cornerRadius = 20.0
         }
+    }
+    
+    func formatDate(date:String) -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
+        
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd/MM/yyyy"
+        
+        let date: NSDate? = dateFormatterGet.date(from: String(date)) as NSDate?
+        return dateFormatterPrint.string(from: date! as Date)
     }
 }

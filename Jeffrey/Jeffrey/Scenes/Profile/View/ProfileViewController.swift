@@ -31,11 +31,11 @@ class ProfileViewController: UIViewController{
         
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         
-        customButtons(button: editProfileBtn, title: "Editar Perfil")
+//        customButtons(button: editProfileBtn, title: "Editar Perfil")
         customButtons(button: exitBtn, title: "Sair da conta")
         
         customImage()
-        nameLabel.text = "Oi Ariana!"
+        nameLabel.text = "Oi Jessica"
     }
     
     @IBAction func showImagePicker(_ sender: Any) {

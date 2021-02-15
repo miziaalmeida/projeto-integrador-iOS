@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-Ariana" translatesAutoresizingMaskIntoConstraints="NO" id="Lpn-Nu-z2O">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-jessica" translatesAutoresizingMaskIntoConstraints="NO" id="Lpn-Nu-z2O">
                                 <rect key="frame" x="16" y="44" width="382" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="xJJ-v5-JyH"/>
@@ -47,20 +47,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="26a-4s-seN">
-                                <rect key="frame" x="16" y="567" width="382" height="104"/>
+                                <rect key="frame" x="16" y="567" width="382" height="42"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUY-a5-xcF">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="42"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <state key="normal" title="Editar Perfil">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tapEditProfile:" destination="AVc-gw-pes" eventType="touchUpInside" id="wDX-l3-drm"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1r-7l-lJH">
-                                        <rect key="frame" x="0.0" y="62" width="382" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Sair da conta">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,7 +92,6 @@
                     <navigationItem key="navigationItem" id="Jlk-6j-M05"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="editProfileBtn" destination="BUY-a5-xcF" id="Uoz-PG-Uma"/>
                         <outlet property="exitBtn" destination="J1r-7l-lJH" id="zQc-zQ-9FU"/>
                         <outlet property="nameLabel" destination="PU4-fg-qF2" id="O57-e7-98e"/>
                         <outlet property="profilePhoto" destination="Lpn-Nu-z2O" id="3fk-7Z-Dkz"/>
@@ -117,6 +106,6 @@
     <resources>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="profile-Ariana" width="253" height="209.5"/>
+        <image name="profile-jessica" width="275" height="183"/>
     </resources>
 </document>
