@@ -1,4 +1,8 @@
 import UIKit
+import Firebase
+import FirebaseAuth
+import FacebookCore
+import FacebookLogin
 
 class ProfileViewController: UIViewController{
 
@@ -9,7 +13,7 @@ class ProfileViewController: UIViewController{
     //@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
     
-    @IBOutlet weak var view1: UIView!
+    //@IBOutlet weak var view1: UIView!
     
     var imagePicker: ImagePicker!
     private var viewModel: ProfileViewModelProtocol?
@@ -23,15 +27,15 @@ class ProfileViewController: UIViewController{
         
         self.viewModel = ProfileViewModel()
         
-        view1.backgroundColor = UIColor.clear
+        //view1.backgroundColor = UIColor.clear
         
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         
-        customButtons(button: editProfileBtn, title: "Editar Perfil")
+//        customButtons(button: editProfileBtn, title: "Editar Perfil")
         customButtons(button: exitBtn, title: "Sair da conta")
         
         customImage()
-        nameLabel.text = "Oi Ariana!"
+        nameLabel.text = "Oi Jessica"
     }
     
     @IBAction func showImagePicker(_ sender: Any) {
@@ -45,8 +49,33 @@ class ProfileViewController: UIViewController{
     
     @IBAction func tapExitAccount(_ sender: Any) {
         viewModel?.didTapExitAccount(controller: self)
-        print("entrou")
+        let loginManager = LoginManager()
+        if let _ = AccessToken.current {
+            loginManager.logOut()
+            print("~ Deu Logout no facebook!! ~")
+        }
+        
+        do {
+            try Auth.auth().signOut()
+            
+            
+            
+            guard let viewController = UIStoryboard(name: "Main",
+                                                    bundle: nil).instantiateInitialViewController() as? PageStartViewController else { return }
+            UIViewController.replaceRootViewController(viewController: viewController)
+            
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+        
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
     }
+      
 
     
     func customButtons(button: UIButton, title: String){
@@ -74,24 +103,3 @@ extension ProfileViewController: ImagePickerDelegate {
         self.profilePhoto.image = image
     }
 }
-
-//extension ProfileViewController: UITableViewDelegate {
-//   
-//}
-
-//extension ProfileViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 2
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//       let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
-//
-//        cell.textLabel?.text = sections[indexPath.row]
-//        cell.contentView.backgroundColor = UIColor(red: 45.0, green: 6.0, blue: 58.0, alpha: 1.0)
-//        tableView.separatorColor = UIColor.lightGray
-//        return cell
-//
-//    }
-//}
-

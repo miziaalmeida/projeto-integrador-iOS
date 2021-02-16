@@ -2,21 +2,24 @@ import Foundation
 import UIKit
 
 protocol StartOptionsViewModelProtocol: AnyObject {
-    func openLoginFrom(controller: UIViewController)
-    func openRegisterFrom(controller: UIViewController)
+    func openLoginFrom()
+    func openRegisterFrom()
+    var viewController: StartOptionsViewEvents? { get set }
 }
 
 class StartOptionsViewModel: StartOptionsViewModelProtocol {
-        
-    func openLoginFrom(controller: UIViewController) {
-        if let loginView = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as? LoginViewController {
-            controller.navigationController?.pushViewController(loginView, animated: true)
-        }
+    weak var viewController: StartOptionsViewEvents?
+    
+    func openLoginFrom() {
+        guard let loginView = UIStoryboard(name: "Login",
+                                           bundle: nil).instantiateInitialViewController() as? LoginViewController else { return }
+        viewController?.push(viewController: loginView)
     }
     
-    func openRegisterFrom(controller: UIViewController) {
-        if let registerView = UIStoryboard(name: "Register", bundle: nil).instantiateInitialViewController() as? RegisterViewController {
-            controller.navigationController?.pushViewController(registerView, animated: true)
+    func openRegisterFrom() {
+        if let registerView = UIStoryboard(name: "Register",
+                                           bundle: nil).instantiateInitialViewController() as? RegisterViewController {
+            viewController?.push(viewController: registerView)
         }
     }
 }

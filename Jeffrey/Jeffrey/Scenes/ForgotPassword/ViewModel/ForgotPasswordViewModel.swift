@@ -1,20 +1,30 @@
 import Foundation
 import UIKit
+import FirebaseAuth
 
 protocol ForgotPasswordViewModelProtocol: AnyObject {
-    func sendTapped(controller: UIViewController)
-    func loginTapped(controller: UIViewController)
+    func resetPassDidTapped()
+    func loginTapped()
+    var viewController: ForgotPasswordViewEvents? { get set }
 }
 
-class ForgotPasswordViewModel: ForgotPasswordViewModelProtocol {
+class ForgotPasswordViewModel: ForgotPasswordViewModelProtocol {    
+    weak var viewController: ForgotPasswordViewEvents?
     
-    func sendTapped(controller: UIViewController){
-        print("Botao enviar tap")
+    func resetPassDidTapped() {
+        alertSend()
     }
     
-    func loginTapped(controller: UIViewController) {
-        if let loginView = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as? LoginViewController {
-            controller.navigationController?.pushViewController(loginView, animated: true)
-        }
+    func loginTapped() {
+        //essa parte precisa ser alterada!!
+        guard  let loginView = UIStoryboard(name: "Login",
+                                            bundle: nil).instantiateInitialViewController() as? LoginViewController else { return }
+        viewController?.push(viewController: loginView)
+    }
+    
+    func alertSend(){
+        let alert = UIAlertController(title: "Email enviado com sucesso!", message: "Nós enviamos um reset de senha para o seu email, verifique sua caixa de entrada.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK!", style: .default, handler: nil))
+        viewController?.present(viewController: alert)
     }
 }

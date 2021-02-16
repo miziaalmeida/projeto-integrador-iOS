@@ -8,16 +8,13 @@
 import UIKit
 
 class ActivityIndicatorViewController: UIViewController {
-    
-    
    func showActivityIndicator(view: UIView, targetVC: UIViewController) {
-
         var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
-        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
-        activityIndicator.backgroundColor = UIColor.clear
-        activityIndicator.color = UIColor.yellow
+        activityIndicator.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+        activityIndicator.color = #colorLiteral(red: 1, green: 0.8284534456, blue: 0, alpha: 1)
         activityIndicator.layer.cornerRadius = 6
         activityIndicator.center = targetVC.view.center
         activityIndicator.hidesWhenStopped = true
@@ -25,13 +22,13 @@ class ActivityIndicatorViewController: UIViewController {
         activityIndicator.tag = 1
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        //UIApplication.shared.beginIgnoringInteractionEvents() -> Taíze
     }
 
    func hideActivityIndicator(view: UIView) {
         let activityIndicator = view.viewWithTag(1) as? UIActivityIndicatorView
         activityIndicator?.stopAnimating()
         activityIndicator?.removeFromSuperview()
-        UIApplication.shared.endIgnoringInteractionEvents()
+       //UIApplication.shared.endIgnoringInteractionEvents() -> Taíze
     }
 }

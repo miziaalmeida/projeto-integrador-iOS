@@ -1,5 +1,9 @@
 import UIKit
-import TextFieldEffects
+import Firebase
+import FirebaseAuth
+import FacebookLogin
+import FacebookCore
+import GoogleSignIn
 
 protocol LoginViewEvents: AnyObject {
     func present(viewController: UIViewController)
@@ -7,113 +11,96 @@ protocol LoginViewEvents: AnyObject {
 }
 
 class LoginViewController: UIViewController {
-    
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var googleButton: UIButton!
-    @IBOutlet weak var facebookButton: UIButton!
-    @IBOutlet weak var appleButton: UIButton!
-    @IBOutlet weak var forgotPassword: UIButton!
-    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var socialMediaView: UIView!
+    //@IBOutlet weak var videoLayerView: UIView!
+    @IBOutlet weak var emailAcess: UIButton!
+    @IBOutlet weak var registerAcess: UIButton!
+    @IBOutlet weak var facebookBtn: UIButton!
+    @IBOutlet weak var googleBtn: UIButton!
     
     private var viewModel: LoginViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextFieldsDelegate()
-        configureTextField(textField: emailTextField)
-        configureTextField(textField: passwordTextField)
         
-        setupButton(button: signInButton)
+        configNavigationItem()
         
-        setupButtonSocialMedia(button: googleButton)
-        setupButtonSocialMedia(button: facebookButton)
-        setupButtonSocialMedia(button: appleButton)
+        configView()
         
-        label.text = "Olá \nPronto para logar?"
+        configButtons(button: emailAcess)
+        configButtons(button: registerAcess)
+        
+        configButtonsMedia(button: facebookBtn)
+        configButtonsMedia(button: googleBtn)
         
         self.viewModel = LoginViewModel()
         self.viewModel?.viewController = self
-}
-    
-    
-    @IBAction func signInTapped(_ sender: Any) {
-        view.endEditing(true)
-        clearTextFields()
-        viewModel?.signInTapped()
+        
+        configGoogle()
     }
     
-    @IBAction func googleTapped(_ sender: Any) {
-        viewModel?.googleTap(controller: self)
-        print("Entrou google")
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController!.navigationBar.barStyle = .black
+        self.navigationController!.navigationBar.isTranslucent = true
+        self.navigationController!.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
     }
     
-    @IBAction func facebookTapped(_ sender: Any) {
-        viewModel?.facebookTap(controller: self)
-        print("Entrou facebook")
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    @IBAction func appleTapped(_ sender: Any) {
-        viewModel?.appleTap(controller: self)
-        print("Entrou apple")
+    func configGoogle(){
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
     }
     
-    
-    @IBAction func forgotPasswordTapped(_ sender: Any) {
-        viewModel?.forgotPasswordTap(controller: self)
+    func configButtons(button: UIButton?){
+        button?.backgroundColor = UIColor.white.withAlphaComponent(1.0)
+        button?.tintColor = UIColor.black
+        button?.layer.cornerRadius = 10
+        button?.clipsToBounds = true
     }
     
-    
-    @IBAction func registerTapped(_ sender: Any) {
-        viewModel?.registerTap(controller: self)
+    func configButtonsMedia(button: UIButton?){
+        button?.layer.cornerRadius = (button?.layer.frame.size.height)!/2
+        button?.layer.borderColor = UIColor.clear.cgColor
+        button?.layer.borderWidth = 0.5
+        button?.clipsToBounds = true
     }
     
-    private func configureTextFieldsDelegate() {
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+    func configView(){
+        socialMediaView.backgroundColor = UIColor(white: 0.2, alpha: 0.2)
+        socialMediaView.layer.borderWidth = 0.5
+        socialMediaView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-    private func configureTapGesture(){
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(LoginViewController.handleTap))
-        view.addGestureRecognizer(tapGesture)
+    @IBAction func didTapLoginFacebook(_ sender: Any) {
+        viewModel?.facebookLogin(viewController: self)
     }
     
-    @objc func handleTap(){
-        view.endEditing(true)
+    @IBAction func didTapGoogleLogin(_ sender: Any) {
+        viewModel?.googleLogin()
     }
     
-    func configureTextField(textField: UITextField){
-        textField.backgroundColor = UIColor.clear
+    @IBAction func loginEmail(_ sender: Any) {
+        viewModel?.loginEmail()
     }
     
-    func clearTextFields(){
-        emailTextField.text = ""
-        passwordTextField.text = ""
+    @IBAction func registerAccount(_ sender: Any) {
+        viewModel?.registerAccount()
     }
-    
-//    func alertProvisorioLogin(){
-//        viewModel?.signInTapped()
-//    }
-    
-    func setupButton(button: UIButton){
-        button.backgroundColor = .red
-        button.tintColor = .white
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
-        button.layer.cornerRadius = 10
-        button.clipsToBounds = true
-    }
-    
-    func setupButtonSocialMedia(button: UIButton){
-        button.layer.cornerRadius = button.frame.width / 2
-        let image = button.currentImage?.withRenderingMode(.alwaysTemplate)
-        button.setImage(image, for: .normal)
-        button.tintColor = .white
-        button.clipsToBounds = true
-        button.imageView?.contentMode = .scaleAspectFit
+
+    func configNavigationItem(){
+        let backButton = UIBarButtonItem()
+        backButton.title = "Voltar"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 }
+
 extension LoginViewController: LoginViewEvents {
     func push(viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
@@ -121,12 +108,5 @@ extension LoginViewController: LoginViewEvents {
     
     func present(viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

@@ -10,10 +10,9 @@ import UIKit
 class ListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelMovieName: UILabel!
-    
     @IBOutlet weak var imageMovie: UIImageView!
-    
     @IBOutlet weak var labelDateRelease: UILabel!
+    @IBOutlet weak var labelVoteAverage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,21 +26,29 @@ class ListTableViewCell: UITableViewCell {
     }
 
     func setup(movie: Movie){
-        
-        if let idImage = movie.backdropPath{
-            
-            let url = URL(string: "https://image.tmdb.org/t/p/w500/\(idImage)")
+        let dataRelease = formatDate(date: movie.releaseDate)
+        let url = URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath!)")
             let data = try? Data(contentsOf: url!)
             imageMovie.image = UIImage(data: data!)
             labelMovieName.text = movie.title
-            labelDateRelease.text = movie.releaseDate
-      
+            labelDateRelease.text = dataRelease
+            labelVoteAverage.text = String(movie.voteAverage)
             imageMovie.clipsToBounds = true
             imageMovie.layer.cornerRadius = 20.0
             
         }
+    
+    func formatDate(date:String) -> String{
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
         
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd/MM/yyyy"
         
+        let date: NSDate? = dateFormatterGet.date(from: String(date)) as NSDate?
+        return dateFormatterPrint.string(from: date! as Date)
     }
     
-}
+    }
+
+

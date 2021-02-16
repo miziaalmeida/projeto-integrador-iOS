@@ -5,15 +5,14 @@
 //  Created by Taize Carminatti on 04/01/21.
 //
 
-import Foundation
+import UIKit
 
-class ListViewModel{
+protocol ListViewModelProtocol: AnyObject {
+    var viewController: ListViewControllerEvents? {get set}
+}
+
+class ListViewModel: ListViewModelProtocol{
     
-    var arrayMovieFavorites = [Movie]()
-    var arrayMovieSeen = [Movie]()
-    
-    var selectedMovieAPI = SelectedMovieAPI()
-    private var customSegmentedControll = CustomSegmentControl()
-    
-    
+    weak var viewController: ListViewControllerEvents?
+    var customSegmentedControl = CustomSegmentedControl()
 }

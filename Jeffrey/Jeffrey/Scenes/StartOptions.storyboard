@@ -16,43 +16,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-app-small" translatesAutoresizingMaskIntoConstraints="NO" id="2p1-HA-N4u">
-                                <rect key="frame" x="50" y="128" width="314" height="369"/>
+                                <rect key="frame" x="50" y="128" width="314" height="359"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bo-MV-SzS">
-                                <rect key="frame" x="50" y="557" width="314" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bo-MV-SzS">
+                                <rect key="frame" x="50" y="557" width="314" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="1ph-bn-kcl"/>
+                                    <constraint firstAttribute="height" constant="70" id="1ph-bn-kcl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="Logar"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="-35" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Entrar">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="login" destination="jcD-Fq-HxF" eventType="touchUpInside" id="XD8-uU-cVX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCb-Py-eGP">
-                                <rect key="frame" x="50" y="647" width="314" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCb-Py-eGP">
+                                <rect key="frame" x="50" y="647" width="314" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="GkL-T8-gjC"/>
+                                    <constraint firstAttribute="height" constant="70" id="GkL-T8-gjC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <state key="normal" title="Cadastrar"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="-35" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Cadastrar">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="register" destination="jcD-Fq-HxF" eventType="touchUpInside" id="gTy-bM-cm3"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6tC-Gq-d7s"/>
-                        <color key="backgroundColor" red="0.1764705882352941" green="0.023529411764705882" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1764705882352941" green="0.011764705882352941" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6tC-Gq-d7s" firstAttribute="trailing" secondItem="2p1-HA-N4u" secondAttribute="trailing" constant="50" id="6Of-f8-uso"/>
                             <constraint firstItem="6tC-Gq-d7s" firstAttribute="trailing" secondItem="4bo-MV-SzS" secondAttribute="trailing" constant="50" id="8bJ-xQ-Wsn"/>
-                            <constraint firstItem="4bo-MV-SzS" firstAttribute="top" secondItem="2p1-HA-N4u" secondAttribute="bottom" constant="60" id="CNM-tB-Pj2"/>
+                            <constraint firstItem="4bo-MV-SzS" firstAttribute="top" secondItem="2p1-HA-N4u" secondAttribute="bottom" constant="70" id="CNM-tB-Pj2"/>
                             <constraint firstItem="GCb-Py-eGP" firstAttribute="leading" secondItem="6tC-Gq-d7s" secondAttribute="leading" constant="50" id="DHg-6I-5D7"/>
                             <constraint firstItem="4bo-MV-SzS" firstAttribute="leading" secondItem="6tC-Gq-d7s" secondAttribute="leading" constant="50" id="FfL-59-Gjr"/>
                             <constraint firstItem="2p1-HA-N4u" firstAttribute="top" secondItem="6tC-Gq-d7s" secondAttribute="top" constant="40" id="Udu-K7-MiO"/>
-                            <constraint firstItem="GCb-Py-eGP" firstAttribute="top" secondItem="4bo-MV-SzS" secondAttribute="bottom" constant="30" id="f12-4T-1qx"/>
+                            <constraint firstItem="GCb-Py-eGP" firstAttribute="top" secondItem="4bo-MV-SzS" secondAttribute="bottom" constant="20" id="f12-4T-1qx"/>
                             <constraint firstItem="6tC-Gq-d7s" firstAttribute="trailing" secondItem="GCb-Py-eGP" secondAttribute="trailing" constant="50" id="fCT-ts-BRP"/>
-                            <constraint firstItem="6tC-Gq-d7s" firstAttribute="bottom" secondItem="GCb-Py-eGP" secondAttribute="bottom" constant="155" id="h32-Uc-12R"/>
+                            <constraint firstItem="6tC-Gq-d7s" firstAttribute="bottom" secondItem="GCb-Py-eGP" secondAttribute="bottom" constant="145" id="h32-Uc-12R"/>
                             <constraint firstItem="2p1-HA-N4u" firstAttribute="leading" secondItem="6tC-Gq-d7s" secondAttribute="leading" constant="50" id="k6N-x9-00i"/>
                         </constraints>
                     </view>
