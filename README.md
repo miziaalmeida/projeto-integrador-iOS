@@ -15,7 +15,7 @@
 <p>
 
 
-•  [Sobre](#computer-sobre)  •  [Requisitos do Projeto](#wrench-requisitos-do-projeto) •  [Screenshoots do Projeto](#clapper-screenshoots-do-projeto)  •  [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas)  •  [Arquitetura](#triangular_ruler-padrao)  •  [Metodologia de trabalho](#calendar-metodologia-de-trabalho)  •  [Executar o Projeto](#dvd-execução-do-projeto)  •  [Autores](#open_hands-autores)  •  [Licença](#page_facing_up-licença)  •  
+•  [Sobre](#computer-sobre)  •  [Requisitos do Projeto](#wrench-requisitos-do-projeto) •  [Screenshoots do Projeto](#clapper-screenshoots-do-projeto)  •  [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas)  •  [Arquitetura](triangular_ruler-padrão-de-projeto)  •  [Metodologia de trabalho](#calendar-metodologia-de-trabalho)  •  [Executar o Projeto](#dvd-execução-do-projeto)  •  [Autores](#open_hands-autores)  •  [Licença](#page_facing_up-licença)  •  
 
 ---
 ## :computer: **Sobre**
