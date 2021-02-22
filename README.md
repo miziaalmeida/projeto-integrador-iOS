@@ -14,15 +14,7 @@
   <img alt="Jeffrey" src="https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/jeffrey.jpg" width="350px"/>
 <p>
 
-- [Sobre](#computer) •
-- [Requisitos do Projeto](#wrench)•
-- [Screenshoots do Projeto](#clapper) •
-- [Tecnologias utilizadas](#white_check_mark) •
-- [Arquitetura](#triangular_ruler) •
-- [Metodologia de trabalho](#calendar) •
-- [Executar o Projeto](#dvd) •
-- [Autores](#open_hands) •
-- [Licença](#page_facing_up)
+[Sobre](#computer-sobre) • [Requisitos do Projeto](#wrench-requisitos-do-projeto)• [Screenshoots do Projeto](#clapper-screenshoots-do-projeto) • [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas) • [Arquitetura](#triangular_ruler-arquitetura) • [Metodologia de trabalho](#calendar-metodologia-de-trabalho) • [Executar o Projeto](#dvd-execução-do-projeto) • [Autores](#open_hands-autores) • [Licença](#page_facing_up-licença)
 
 ---
 ## :computer: **Sobre**
