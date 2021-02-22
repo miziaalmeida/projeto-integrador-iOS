@@ -14,6 +14,16 @@
   <img alt="Jeffrey" src="" width="200px"/>
 <p>
 
+<p align="center">
+ <a href="#movie_camera-demonstração">Demonstração</a> •
+ <a href="#computer-sobre">Sobre</a> •
+ <a href="#%EF%B8%8F-funcionalidades">Funcionalidades</a> •
+ <a href="#dvd-executar-o-projeto">Executar</a> •
+ <a href="#hammer-tecnologias">Tecnologias</a> •
+ <a href="#girl-boy-autores">Autores</a> •
+ <a href="#page_facing_up-licença">Licença</a>
+</p>
+
 # Projeto Integrador iOS mobile | Jeffrey
 ---
 ## :computer: **Sobre**
