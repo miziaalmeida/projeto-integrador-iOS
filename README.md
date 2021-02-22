@@ -11,10 +11,11 @@
 
 
 <p align="center">
-  <img alt="Jeffrey" src="https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/jeffrey.jpg" width="350px"/>
+  <img alt="Jeffrey" src="https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/jeffrey.jpg" width="300px"/>
 <p>
 
-[Sobre](#computer-sobre) • [Requisitos do Projeto](#wrench-requisitos-do-projeto)• [Screenshoots do Projeto](#clapper-screenshoots-do-projeto) • [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas) • [Arquitetura](#triangular_ruler-arquitetura) • [Metodologia de trabalho](#calendar-metodologia-de-trabalho) • [Executar o Projeto](#dvd-execução-do-projeto) • [Autores](#open_hands-autores) • [Licença](#page_facing_up-licença)
+
+[Sobre](#computer-sobre)  •  [Requisitos do Projeto](#wrench-requisitos-do-projeto) •  [Screenshoots do Projeto](#clapper-screenshoots-do-projeto)  •  [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas)  •  [Arquitetura](#triangular_ruler-padrao)  •  [Metodologia de trabalho](#calendar-metodologia-de-trabalho)  •  [Executar o Projeto](#dvd-execução-do-projeto)  •  [Autores](#open_hands-autores)  •  [Licença](#page_facing_up-licença)
 
 ---
 ## :computer: **Sobre**
@@ -63,6 +64,7 @@ UIButton, UILabel, UICollectionView e UITableView).
 </div>
 
 ---
+
 ## :white_check_mark: **Tecnologias utilizadas**
 
 - Miro
@@ -83,12 +85,17 @@ UIButton, UILabel, UICollectionView e UITableView).
 - Bitrise
 
 ---
-## :triangular_ruler: **Arquitetura**
-<img src="https://user-images.githubusercontent.com/42849855/107506239-941d5880-6b7c-11eb-9ae7-b54c71c3cd27.png" width="50%"></img> 
+## :triangular_ruler: **Padrão de projeto**
+
+Este projeto foi desenvolvido dentro do padrão de projeto **Model-View-ViewModel (MVVM)**, composto pelos seguintes elementos:
+* **Model**: Camada de logística de negócios que impulsiona a aplicação e quaisquer regras de negócios, é responsável pelos dados;
+* **View**: Camada de interface de usuário, responsável pela aparência da aplicação
+* **ViewModel**: Responsável por ser a ligação principal dentro do MVVM, a ViewModel coordena as operações entre a *view* e as camadas *model*, ela será responsável por expor métodos, comandos e propriedades que mantém o estado da View, bem como manipular a Model com resultados de ações da View.
 
 ---
 ## :calendar: **Metodologia de trabalho**
-<img width="721" alt="metodologias" src="https://user-images.githubusercontent.com/42849855/107510093-41df3600-6b82-11eb-967f-a0839083257b.png">
+
+Este projeto utilizou como metodologia principal de trabalho, o padrão ágil implementado com o **Scrum**. Este é uma estrutura voltada para o trabalho em equipe, estimulando as equipes a aprenderem com suas experiências, se organizarem enquanto resolvem um problema e refletirem sobre os êxitos e fracassos para melhorarem continuamente, tudo isso realizado em cerimônias de acompanhamento com o time (Planning, Dailys, Retrospective) que juntas culmimam na entrega do resultado e fechamento da Sprint - período curto de trabalho pré-fixado onde uma equipe se dedica a entrega das tarefas definidas.
 
 ---
 
