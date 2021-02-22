@@ -97,6 +97,8 @@ Este projeto foi desenvolvido dentro do padrão de projeto **Model-View-ViewMode
 
 Este projeto utilizou como metodologia principal de trabalho, o padrão ágil implementado com o **Scrum**. Este é uma estrutura voltada para o trabalho em equipe, estimulando as equipes a aprenderem com suas experiências, se organizarem enquanto resolvem um problema e refletirem sobre os êxitos e fracassos para melhorarem continuamente, tudo isso realizado em cerimônias de acompanhamento com o time (Planning, Dailys, Retrospective) que juntas culmimam na entrega do resultado e fechamento da Sprint - período curto de trabalho pré-fixado onde uma equipe se dedica a entrega das tarefas definidas.
 
+![Alt Text](https://media.giphy.com/media/r8gRIddoujD7Z9FE8F/giphy.gif)
+
 ---
 
 ## :dvd: **Execução do Projeto**
