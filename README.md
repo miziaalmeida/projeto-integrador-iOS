@@ -92,7 +92,7 @@ Este projeto foi desenvolvido dentro do padrão de projeto **Model-View-ViewMode
 * **View**: Camada de interface de usuário, responsável pela aparência da aplicação
 * **ViewModel**: Responsável por ser a ligação principal dentro do MVVM, a ViewModel coordena as operações entre a *view* e as camadas *model*, ela será responsável por expor métodos, comandos e propriedades que mantém o estado da View, bem como manipular a Model com resultados de ações da View.
 
-https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/metodos.png
+![MVVM-Pattern](https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/mvvm.png)
 
 ---
 ## :calendar: **Metodologia de trabalho**
