@@ -14,17 +14,15 @@
   <img alt="Jeffrey" src="https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/jeffrey.jpg" width="350px"/>
 <p>
 
-<p align="center">
- <a href="#computer-sobre">Sobre</a> •
- <a href="#wrench-requisitos">Requisitos do Projeto</a> •
- <a href="#clapper-screenshoots">Screenshoots do Projeto</a> •
- <a href="#white_check_mark-tecnologias">Tecnologias utilizadas</a> •
- <a href="#triangular_ruler-arquitetura">Arquitetura</a> •
- <a href="#calendar-metodologia">Metodologia de trabalho</a> •
- <a href="#dvd-executar-o-projeto">Executar o Projeto</a> •
- <a href="#open_hands-autores">Autores</a> •
- <a href="#page_facing_up-licença">Licença</a>
-</p>
+- [Sobre](#computer) •
+- [Requisitos do Projeto](#wrench)•
+- [Screenshoots do Projeto](#clapper) •
+- [Tecnologias utilizadas](#white_check_mark) •
+- [Arquitetura](#triangular_ruler) •
+- [Metodologia de trabalho](#calendar) •
+- [Executar o Projeto](#dvd) •
+- [Autores](#open_hands) •
+- [Licença](#page_facing_up)
 
 ---
 ## :computer: **Sobre**
@@ -38,7 +36,7 @@ Para este projeto está sendo consumida a API do [The Movie DataBase][tmdb-api-u
 O Santander Coders Mobile é uma experiência de 6 meses de imersão para aprender a desenvolver aplicativos na plataforma iOS, tem como objetivo dar oportunidades reais para pessoas que querem transformar suas vidas por meio da educação de qualidade.
 
 ---
-## :wrench:  **Requisitos do Projeto**
+## :wrench: **Requisitos do Projeto**
 
 O projeto integrador deve estar em conformida com os seguintes tópicos;
 
@@ -115,13 +113,15 @@ Este projeto deverá ser executado:
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [CocoaPods](https://cocoapods.org/)
 
-
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/Jeffrey-iOS/Jeffrey.git>
+$ git clone <https://github.com/miziaalmeida/projeto-integrador-iOS.git>
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd Jeffrey
+
+# Execute o comando *pod install* para iniciar o projeto com as libs necessárias
+$ pod install
 
 # Abra o projeto no XCode
 $ open Jeffrey.xcworkspace
