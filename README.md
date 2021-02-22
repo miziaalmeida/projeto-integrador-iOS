@@ -11,20 +11,21 @@
 
 
 <p align="center">
-  <img alt="Jeffrey" src="" width="200px"/>
+  <img alt="Jeffrey" src="https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/jeffrey.jpg" width="350px"/>
 <p>
 
 <p align="center">
- <a href="#movie_camera-demonstração">Demonstração</a> •
  <a href="#computer-sobre">Sobre</a> •
- <a href="#%EF%B8%8F-funcionalidades">Funcionalidades</a> •
- <a href="#dvd-executar-o-projeto">Executar</a> •
- <a href="#hammer-tecnologias">Tecnologias</a> •
- <a href="#girl-boy-autores">Autores</a> •
+ <a href="#wrench-requisitos">Requisitos do Projeto</a> •
+ <a href="#clapper-screenshoots">Screenshoots do Projeto</a> •
+ <a href="#white_check_mark-tecnologias">Tecnologias utilizadas</a> •
+ <a href="#triangular_ruler-arquitetura">Arquitetura</a> •
+ <a href="#calendar-metodologia">Metodologia de trabalho</a> •
+ <a href="#dvd-executar-o-projeto">Executar o Projeto</a> •
+ <a href="#open_hands-autores">Autores</a> •
  <a href="#page_facing_up-licença">Licença</a>
 </p>
 
-# Projeto Integrador iOS mobile | Jeffrey
 ---
 ## :computer: **Sobre**
 
@@ -63,7 +64,7 @@ UIButton, UILabel, UICollectionView e UITableView).
 - [x] Ao final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
 
 ---
-## :camera: **Screenshoots do Projeto**
+## :clapper: **Screenshoots do Projeto**
 
 <div align="center">
 
@@ -92,15 +93,42 @@ UIButton, UILabel, UICollectionView e UITableView).
 - Bitrise
 
 ---
-## Arquitetura
+## :triangular_ruler: **Arquitetura**
 <img src="https://user-images.githubusercontent.com/42849855/107506239-941d5880-6b7c-11eb-9ae7-b54c71c3cd27.png" width="50%"></img> 
 
 ---
-## Metodologia ágil
+## :calendar: **Metodologia de trabalho**
 <img width="721" alt="metodologias" src="https://user-images.githubusercontent.com/42849855/107510093-41df3600-6b82-11eb-967f-a0839083257b.png">
 
 ---
-## **Autores**
+
+## :dvd: **Execução do Projeto**
+
+Este projeto deverá ser executado:
+1. No sistema operacional MacOS
+2. No simulador do Xcode ou IPhone
+
+💡É preciso efetuar a simulação no ambiente de desenvolvimento Xcode ou integra-ló com Iphone para funcionar.
+
+### Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [CocoaPods](https://cocoapods.org/)
+
+
+```bash
+# Clone este repositório
+$ git clone <https://github.com/Jeffrey-iOS/Jeffrey.git>
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd Jeffrey
+
+# Abra o projeto no XCode
+$ open Jeffrey.xcworkspace
+```
+
+---
+## :open_hands: **Autores**
 
 <div align="center">
 
