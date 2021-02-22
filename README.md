@@ -11,11 +11,11 @@
 
 
 <p align="center">
-  <img alt="Jeffrey" src="https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/jeffrey.jpg" width="300px"/>
+  <img alt="Jeffrey" src="https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/jeffrey.jpg" width="200px"/>
 <p>
 
 
-[Sobre](#computer-sobre)  •  [Requisitos do Projeto](#wrench-requisitos-do-projeto) •  [Screenshoots do Projeto](#clapper-screenshoots-do-projeto)  •  [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas)  •  [Arquitetura](#triangular_ruler-padrao)  •  [Metodologia de trabalho](#calendar-metodologia-de-trabalho)  •  [Executar o Projeto](#dvd-execução-do-projeto)  •  [Autores](#open_hands-autores)  •  [Licença](#page_facing_up-licença)
+•  [Sobre](#computer-sobre)  •  [Requisitos do Projeto](#wrench-requisitos-do-projeto) •  [Screenshoots do Projeto](#clapper-screenshoots-do-projeto)  •  [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas)  •  [Arquitetura](#triangular_ruler-padrao)  •  [Metodologia de trabalho](#calendar-metodologia-de-trabalho)  •  [Executar o Projeto](#dvd-execução-do-projeto)  •  [Autores](#open_hands-autores)  •  [Licença](#page_facing_up-licença)  •  
 
 ---
 ## :computer: **Sobre**
@@ -34,7 +34,7 @@ O Santander Coders Mobile é uma experiência de 6 meses de imersão para aprend
 O projeto integrador deve estar em conformida com os seguintes tópicos;
 
 - [x] Deve possuir um design em todas as telas utilizando auto layout;
--  [x] Aplicação do POO.
+- [x] Aplicação do POO.
 - [x] Deve possuir navegação entre telas (Navigation e Modal);
 - [x] Tratativas de erros;
 - [x] Deve consumir uma API;
@@ -42,16 +42,16 @@ O projeto integrador deve estar em conformida com os seguintes tópicos;
 - [x] A arquitetura deve ser MVVM;
 - [ ] O código precisa estar comentado;
 - [x] Testes Unitários;
--  [x] O app deve conter, pelo menos, os seguintes componentes do UIKit: (UITextField, 
+- [x] O app deve conter, pelo menos, os seguintes componentes do UIKit: (UITextField, 
 UIButton, UILabel, UICollectionView e UITableView).
--  [x] O app deve possuir as seguintes features:
+- [x] O app deve possuir as seguintes features:
     - [x] Tela de carregamento;
     - [x] Tela de login (Facebook e Google são obrigatórios);
     - [x] Tela inicial que deve conter um resumo das funcionalidades do app;
     - [x] Tela de descrição do item;
     - [x] Tela de listagem de características;
     - [ ] Opções para compartilhamento em redes sociais;
--  [x] Todo o trabalho deve ser feito utilizando o GitFlow;
+- [x] Todo o trabalho deve ser feito utilizando o GitFlow;
 - [x] Ao final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
 
 ---
@@ -92,12 +92,17 @@ Este projeto foi desenvolvido dentro do padrão de projeto **Model-View-ViewMode
 * **View**: Camada de interface de usuário, responsável pela aparência da aplicação
 * **ViewModel**: Responsável por ser a ligação principal dentro do MVVM, a ViewModel coordena as operações entre a *view* e as camadas *model*, ela será responsável por expor métodos, comandos e propriedades que mantém o estado da View, bem como manipular a Model com resultados de ações da View.
 
+https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/metodos.png
+
 ---
 ## :calendar: **Metodologia de trabalho**
 
 Este projeto utilizou como metodologia principal de trabalho, o padrão ágil implementado com o **Scrum**. Este é uma estrutura voltada para o trabalho em equipe, estimulando as equipes a aprenderem com suas experiências, se organizarem enquanto resolvem um problema e refletirem sobre os êxitos e fracassos para melhorarem continuamente, tudo isso realizado em cerimônias de acompanhamento com o time (Planning, Dailys, Retrospective) que juntas culmimam na entrega do resultado e fechamento da Sprint - período curto de trabalho pré-fixado onde uma equipe se dedica a entrega das tarefas definidas.
+Para de controle de versão, abordamos o fluxo de trabalho utilizando branches - **GitFlow**, implementando dois ambientes de código em teste e testado (develop e main), sempre que necessário novas implementações são realizadas nas branches através de features, e quando surgem problemas/bugs são solucionados através de hotfix. Também foi implementado método de integração contínua, utilizando a ferramenta [**Bitrise**](https://www.bitrise.io/), através da lib [**Fastlane**](https://fastlane.tools/), que nos permite ter um controle maior sobre os possíveis problemas ocorridos no código.
 
-![Alt Text](https://media.giphy.com/media/r8gRIddoujD7Z9FE8F/giphy.gif)
+![Scrum](https://media.giphy.com/media/r8gRIddoujD7Z9FE8F/giphy.gif)
+
+![Métodos - Git Flow](https://github.com/miziaalmeida/projeto-integrador-iOS/blob/main/Images/metodos.png)
 
 ---
 
@@ -107,7 +112,7 @@ Este projeto deverá ser executado:
 1. No sistema operacional MacOS
 2. No simulador do Xcode ou IPhone
 
-💡É preciso efetuar a simulação no ambiente de desenvolvimento Xcode ou integra-ló com Iphone para funcionar.
+💡É preciso efetuar a simulação no ambiente de desenvolvimento Xcode ou integrá-lo com Iphone para funcionar.
 
 ### Pré-requisitos
 
