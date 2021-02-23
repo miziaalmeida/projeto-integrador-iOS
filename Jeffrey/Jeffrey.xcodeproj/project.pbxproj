@@ -34,9 +34,9 @@
 		1911938725A5052D00AD8928 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1911938625A5052D00AD8928 /* ImagePicker.swift */; };
 		191193A225A513FE00AD8928 /* ProfileDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */; };
 		19226A9425C20F6D00E9A0C8 /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19226A9325C20F6D00E9A0C8 /* AuthUser.swift */; };
-		19226B0925C24ADC00E9A0C8 /* UserRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19226B0825C24ADC00E9A0C8 /* UserRef.swift */; };
+		19226B0925C24ADC00E9A0C8 /* UserReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19226B0825C24ADC00E9A0C8 /* UserReference.swift */; };
 		19226B0F25C2529E00E9A0C8 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19226B0E25C2529E00E9A0C8 /* StorageService.swift */; };
-		19226B1425C256F500E9A0C8 /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19226B1325C256F500E9A0C8 /* Ref.swift */; };
+		19226B1425C256F500E9A0C8 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19226B1325C256F500E9A0C8 /* Reference.swift */; };
 		194A302925A8D724002D9E0F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194A302825A8D724002D9E0F /* EditProfileViewController.swift */; };
 		194A303125A8D72E002D9E0F /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194A303025A8D72E002D9E0F /* EditProfile.storyboard */; };
 		194A303B25A8D745002D9E0F /* ExitAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194A303A25A8D745002D9E0F /* ExitAccount.storyboard */; };
@@ -143,9 +143,9 @@
 		1911938625A5052D00AD8928 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		191193A125A513FE00AD8928 /* ProfileDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		19226A9325C20F6D00E9A0C8 /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
-		19226B0825C24ADC00E9A0C8 /* UserRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRef.swift; sourceTree = "<group>"; };
+		19226B0825C24ADC00E9A0C8 /* UserReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReference.swift; sourceTree = "<group>"; };
 		19226B0E25C2529E00E9A0C8 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
-		19226B1325C256F500E9A0C8 /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
+		19226B1325C256F500E9A0C8 /* Reference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
 		194A302825A8D724002D9E0F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		194A303025A8D72E002D9E0F /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
 		194A303A25A8D745002D9E0F /* ExitAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExitAccount.storyboard; sourceTree = "<group>"; };
@@ -460,8 +460,8 @@
 			isa = PBXGroup;
 			children = (
 				19226A9325C20F6D00E9A0C8 /* AuthUser.swift */,
-				19226B0825C24ADC00E9A0C8 /* UserRef.swift */,
-				19226B1325C256F500E9A0C8 /* Ref.swift */,
+				19226B0825C24ADC00E9A0C8 /* UserReference.swift */,
+				19226B1325C256F500E9A0C8 /* Reference.swift */,
 				19226B0E25C2529E00E9A0C8 /* StorageService.swift */,
 			);
 			path = Authentication;
@@ -1113,7 +1113,7 @@
 				194A304D25A8DDFC002D9E0F /* ExitAccountViewController.swift in Sources */,
 				FF5E73B125A3FA2C00368D2C /* TipViewController.swift in Sources */,
 				1909E4A3258E493000435D07 /* LoginViewModel.swift in Sources */,
-				19226B1425C256F500E9A0C8 /* Ref.swift in Sources */,
+				19226B1425C256F500E9A0C8 /* Reference.swift in Sources */,
 				1986CDAE259B8E3F009112BA /* ProfileViewController.swift in Sources */,
 				D00A947E259358A0009FB2D3 /* Flatrate.swift in Sources */,
 				1909E4DF258E8BF900435D07 /* ForgotPasswordViewController.swift in Sources */,
@@ -1126,7 +1126,7 @@
 				FF430B4D25A3BA7300D776B1 /* ListViewController.swift in Sources */,
 				1909E4D7258E8BE100435D07 /* ForgotPasswordViewModel.swift in Sources */,
 				1911938725A5052D00AD8928 /* ImagePicker.swift in Sources */,
-				19226B0925C24ADC00E9A0C8 /* UserRef.swift in Sources */,
+				19226B0925C24ADC00E9A0C8 /* UserReference.swift in Sources */,
 				D00A947F259358A0009FB2D3 /* ResultAPIProvider.swift in Sources */,
 				1909E47E258E3E6100435D07 /* PageStartViewController.swift in Sources */,
 			);

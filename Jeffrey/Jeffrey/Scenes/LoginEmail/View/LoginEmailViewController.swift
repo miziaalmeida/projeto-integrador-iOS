@@ -1,21 +1,16 @@
-//
-//  LoginEmailViewController.swift
-//  Jeffrey
-//
-//  Created by Mizia Lima on 1/25/21.
-//
-import Firebase
 import UIKit
-import Firebase
 import ProgressHUD
 
+//MARK: PROTOCOL EVENTS
 protocol LoginEmailViewEvents: AnyObject {
     func present(viewController: UIViewController)
     func push(viewController: UIViewController)
 }
 
+//MARK: VIEW CONTROLLER
 class LoginEmailViewController: UIViewController{
-    
+   
+    //MARK: OUTLETS
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
@@ -23,6 +18,7 @@ class LoginEmailViewController: UIViewController{
     private var viewModel: LoginEmailViewModelProtocol?
     var activityIndicator = ActivityIndicatorViewController()
     
+    //MARK: VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +28,7 @@ class LoginEmailViewController: UIViewController{
         configButton(button: signInButton)
     }
     
+    //MARK: VIEW WILL APPEAR
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -44,6 +41,7 @@ class LoginEmailViewController: UIViewController{
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
     }
     
+    //MARK: VIEW WILL DISAPPEAR
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -53,8 +51,7 @@ class LoginEmailViewController: UIViewController{
         self.view.endEditing(true)
     }
     
-    
-    
+    //MARK: ACTIONS
     @IBAction func signInTapped(_ sender: Any) {
         self.view.endEditing(true)
         self.validateFields()
@@ -65,9 +62,17 @@ class LoginEmailViewController: UIViewController{
         }
     }
     
-    
     @IBAction func forgotPasswordTapped(_ sender: Any) {
-        viewModel?.forgotPasswordTap()
+        viewModel?.didTapForgotPassword()
+    }
+    
+    func signIn(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+        viewModel?.validateSignInForLogin(email: emailTextField.text!, password: passwordTextField.text!, view: view, viewController: self, onSucess: {
+            self.viewModel?.showHome()
+        }, onError: { (error) in
+            onError(error)
+        })
+        self.clearTextFields()
     }
     
     func validateFields() {
@@ -79,7 +84,7 @@ class LoginEmailViewController: UIViewController{
             ProgressHUD.showError(ERROR_EMPTY_PASSWORD)
             return
         }
-     }
+    }
     
     func clearTextFields(){
         emailTextField.text = ""
@@ -97,18 +102,10 @@ class LoginEmailViewController: UIViewController{
         let backButton = UIBarButtonItem()
         backButton.title = "Voltar"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-    }
-    
-    func signIn(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
-        viewModel?.validateSignIn(email: emailTextField.text!, password: passwordTextField.text!, view: view, viewController: self, onSucess: {
-            onSucess()
-        }, onError: { (error) in
-            onError(error)
-        })
-        self.clearTextFields()
-    }
+    }    
 }
 
+//MARK: EXTENSIONS
 extension LoginEmailViewController: LoginEmailViewEvents {
     func push(viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)

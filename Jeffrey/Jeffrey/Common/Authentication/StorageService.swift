@@ -1,10 +1,3 @@
-//
-//  StorageService.swift
-//  Jeffrey
-//
-//  Created by Mizia Lima on 1/27/21.
-//
-
 import Foundation
 import FirebaseStorage
 import FirebaseAuth
@@ -45,6 +38,5 @@ class StorageService {
                 }
             })
         })
-        
     }
 }

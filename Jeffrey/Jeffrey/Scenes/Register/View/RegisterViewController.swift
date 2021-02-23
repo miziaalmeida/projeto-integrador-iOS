@@ -1,16 +1,16 @@
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
-import FirebaseStorage
 import ProgressHUD
 
+//MARK: PROTOCOL EVENTS
 protocol RegisterViewEvents: AnyObject {
     func present(viewController: UIViewController)
     func push(viewController: UIViewController)
 }
 
+//MARK: VIEW CONTROLLER
 class RegisterViewController: UIViewController {
     
+    //MARK: OUTLETS
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -23,19 +23,21 @@ class RegisterViewController: UIViewController {
     
     var image: UIImage? = nil
     var activityIndicator = ActivityIndicatorViewController()
-    
+  
+    //MARK: VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupButton(button: registerButton)
         configNavigationItem()
         configureTextFieldDelegate()
         configAvatar()
+        configureButton(button: registerButton)
         
         self.viewModel = RegisterViewModel()
         self.viewModel?.viewController = self
     }
     
+    //MARK: VIEW WILL APPEAR
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -45,6 +47,7 @@ class RegisterViewController: UIViewController {
         self.navigationController!.navigationBar.tintColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)
     }
     
+    //MARK: VIEW WILL DISAPPEAR
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -52,6 +55,33 @@ class RegisterViewController: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    //MARK: ACTIONS
+    @IBAction func register(_ sender: Any) {
+        self.view.endEditing(true)
+        self.validateFields()
+        self.signUp(onSucess: {
+            print("Foi")
+        }) { (errorMessage) in
+            ProgressHUD.showError(errorMessage)
+        }
+    }
+    
+    @IBAction func login(_ sender: Any) {
+        viewModel?.didTapLogin()
+    }
+    
+    func signUp(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
+        activityIndicator.showActivityIndicator(view: view, targetVC: self)
+        AuthUser.User.signUp(withUsername: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, image: self.image,
+                             onSucess: {
+                                self.viewModel?.didTapRegister(view: self.view)
+                                onSucess()
+                             }) { (errorMessage) in
+            onError(errorMessage)
+        }
+        clearTextFields()
     }
     
     func validateFields() {
@@ -71,20 +101,6 @@ class RegisterViewController: UIViewController {
             ProgressHUD.showError("Por favor confirme sua senha")
             return
         }
-    }
-    
-    @IBAction func register(_ sender: Any) {
-        self.view.endEditing(true)
-        self.validateFields()
-        self.signUp(onSucess: {
-            print("Foi")
-        }) { (errorMessage) in
-            ProgressHUD.showError(errorMessage)
-        }
-    }
-    
-    @IBAction func login(_ sender: Any) {
-        viewModel?.loginTapped()
     }
     
     func configAvatar(){
@@ -107,8 +123,7 @@ class RegisterViewController: UIViewController {
         picker.delegate = self
         self.present(picker, animated: true, completion: nil)
     }
-    
-    
+        
     func configureTextFieldDelegate(){
         nameTextField.delegate = self
         passwordTextField.delegate = self
@@ -116,7 +131,7 @@ class RegisterViewController: UIViewController {
         confirmPasswordTextField.delegate = self
     }
     
-    func setupButton(button: UIButton){
+    func configureButton(button: UIButton){
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.backgroundColor = UIColor.white.withAlphaComponent(1.0)
         button.tintColor = UIColor.black
@@ -136,17 +151,13 @@ class RegisterViewController: UIViewController {
         backButton.title = "Voltar"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-    
-    func signUp(onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
-        activityIndicator.showActivityIndicator(view: view, targetVC: self)
-        AuthUser.User.signUp(withUsername: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, image: self.image,
-                             onSucess: {
-                                self.viewModel?.registerTapped(view: self.view)
-                                onSucess()
-                             }) { (errorMessage) in
-            onError(errorMessage)
-        }
-        clearTextFields()
+}
+
+//MARK: EXTENSIONS
+extension RegisterViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
@@ -157,13 +168,6 @@ extension RegisterViewController: RegisterViewEvents {
     
     func present(viewController: UIViewController) {
         present(viewController, animated: true, completion: nil)
-    }
-}
-
-extension RegisterViewController: UITextFieldDelegate{
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }
 

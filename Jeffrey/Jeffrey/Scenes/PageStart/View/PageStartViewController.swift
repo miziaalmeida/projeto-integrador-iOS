@@ -1,38 +1,44 @@
 import UIKit
 
+//MARK: PROTOCOL EVENTS
 protocol PageStartViewEvents: AnyObject {
     func present(viewController: UIViewController)
     func push(viewController: UIViewController)
 }
 
+//MARK: VIEW CONTROLLER
 class PageStartViewController: UIViewController {
     
+    //MARK: OUTLETS
     @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var startLabel: UILabel!
     
     private var viewModel: PageStartOptionsViewModelProtocol?
     
+    //MARK: VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLabel()
+        
+        self.viewModel = PageStartViewModel()
+        self.viewModel?.viewController = self
     }
     
+    //MARK: VIEW WILL APPEAR
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    //MARK: VIEW WILL DISAPPEAR
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    
+    //MARK: ACTIONS
     @IBAction func next() {
-        if let startOptionsView = UIStoryboard(name: "StartOptions", bundle: nil).instantiateInitialViewController() as? UINavigationController {
-            startOptionsView.modalPresentationStyle = .fullScreen
-            self.present(startOptionsView, animated: true, completion: nil)
-        }
+        viewModel?.didTapNext()
     }
     
     func configureLabel(){
@@ -41,6 +47,7 @@ class PageStartViewController: UIViewController {
     }
 }
 
+//MARK: EXTENSIONS
 extension PageStartViewController: PageStartViewEvents{
     func push(viewController: UIViewController) {
         navigationController?.pushViewController(viewController, animated: true)
