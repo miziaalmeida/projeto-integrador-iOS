@@ -25,7 +25,7 @@ class LoginEmailViewModel: LoginEmailViewModelProtocol {
     func didTapForgotPassword() {
         guard let forgotPassView = UIStoryboard(name: "ForgotPassword",
                                                 bundle: nil).instantiateInitialViewController() as? ForgotPasswordViewController else { return }
-        viewController?.push(viewController: forgotPassView)
+        viewController?.present(viewController: forgotPassView)
     }
     
     func didTapRegisterAccount() {
