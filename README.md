@@ -59,7 +59,7 @@ UIButton, UILabel, UICollectionView e UITableView).
 
 <div align="center">
 
-![:clapper: Preview](https://user-images.githubusercontent.com/42849855/109223712-b4aefa80-7799-11eb-918f-b8cf57482f82.mov)
+[Demo](https://user-images.githubusercontent.com/42849855/109223712-b4aefa80-7799-11eb-918f-b8cf57482f82.mov)
 
 ![LoginFlow](https://media.giphy.com/media/nLbBzBGFxQ4LMBq7Es/giphy.gif)
 ![HomeFlow](https://media.giphy.com/media/RgGAWcLeXNzzidaeGg/giphy.gif)
