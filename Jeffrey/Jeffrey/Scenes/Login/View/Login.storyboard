@@ -79,7 +79,7 @@
                                                     <constraint firstAttribute="width" constant="80" id="9xR-Ks-HEW"/>
                                                     <constraint firstAttribute="height" constant="80" id="YR7-Dn-zs3"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="image 27"/>
+                                                <state key="normal" backgroundImage="icon-google-logo"/>
                                                 <connections>
                                                     <action selector="didTapGoogleLogin:" destination="kgZ-O9-TQl" eventType="touchUpInside" id="m9P-yi-sxW"/>
                                                 </connections>
@@ -89,7 +89,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                                <state key="normal" backgroundImage="icons8-facebook-f-1024 1"/>
+                                                <state key="normal" backgroundImage="icon-facebook-logo"/>
                                                 <connections>
                                                     <action selector="didTapLoginFacebook:" destination="kgZ-O9-TQl" eventType="touchUpInside" id="L8D-H8-D5N"/>
                                                 </connections>
@@ -147,8 +147,8 @@
     </scenes>
     <resources>
         <image name="envelope" catalog="system" width="128" height="93"/>
-        <image name="icons8-facebook-f-1024 1" width="1024" height="1024"/>
-        <image name="image 27" width="1024" height="1028"/>
+        <image name="icon-facebook-logo" width="1024" height="1024"/>
+        <image name="icon-google-logo" width="1024" height="1028"/>
         <image name="logo-app-large" width="166.5" height="166.5"/>
         <image name="person.crop.circle.badge.plus" catalog="system" width="128" height="113"/>
     </resources>

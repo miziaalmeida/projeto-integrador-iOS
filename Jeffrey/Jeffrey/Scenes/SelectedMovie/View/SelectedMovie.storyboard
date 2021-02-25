@@ -89,7 +89,7 @@
                                             <constraint firstAttribute="height" constant="100" id="4Sx-nQ-U6S"/>
                                             <constraint firstAttribute="width" constant="100" id="s9Y-HP-FnM"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="raffleIcon"/>
+                                        <state key="normal" backgroundImage="icon-raffle-popcorn"/>
                                         <connections>
                                             <action selector="buttonRaffle:" destination="0jm-pb-NkG" eventType="touchUpInside" id="g2X-Vm-ZID"/>
                                         </connections>
@@ -222,8 +222,8 @@
     </scenes>
     <resources>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
+        <image name="icon-raffle-popcorn" width="166.5" height="166.5"/>
         <image name="logo-netflix" width="1024" height="1024"/>
-        <image name="raffleIcon" width="166.5" height="166.5"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
     </resources>

@@ -1,4 +1,5 @@
 import UIKit
+import GoogleSignIn
 
 //MARK: PROTOCOL EVENTS
 protocol LoginViewEvents: AnyObject {
@@ -18,20 +19,24 @@ class LoginViewController: UIViewController {
     
     private var viewModel: LoginViewModelProtocol?
     
+    var nameUser = ""
+    var emailUser = ""
+    
     //MARK: VIEW DID LOAD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configButtons(button: emailAcess)
-        configButtons(button: registerAcess)
-        configButtonsMedia(button: facebookBtn)
-        configButtonsMedia(button: googleBtn)
-        configNavigationItem()
+        configureButtons(button: emailAcess)
+        configureButtons(button: registerAcess)
+        configureButtonsMedia(button: facebookBtn)
+        configureButtonsMedia(button: googleBtn)
+        configureNavigationItem()
         configureView()
         
         self.viewModel = LoginViewModel()
         self.viewModel?.viewController = self
         
+        configureGoogleInstances()        
     }
     
     //MARK: VIEW WILL APPEAR
@@ -65,21 +70,26 @@ class LoginViewController: UIViewController {
     @IBAction func registerAccount(_ sender: Any) {
         viewModel?.didTapRegisterAccount()
     }
-
-    func configNavigationItem(){
+    
+    func configureGoogleInstances(){
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
+    }
+    
+    func configureNavigationItem(){
         let backButton = UIBarButtonItem()
         backButton.title = "Voltar"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
-    func configButtons(button: UIButton?){
+    func configureButtons(button: UIButton?){
         button?.backgroundColor = UIColor.white.withAlphaComponent(1.0)
         button?.tintColor = UIColor.black
         button?.layer.cornerRadius = 10
         button?.clipsToBounds = true
     }
     
-    func configButtonsMedia(button: UIButton?){
+    func configureButtonsMedia(button: UIButton?){
         button?.layer.cornerRadius = (button?.layer.frame.size.height)!/2
         button?.layer.borderColor = UIColor.clear.cgColor
         button?.layer.borderWidth = 0.5

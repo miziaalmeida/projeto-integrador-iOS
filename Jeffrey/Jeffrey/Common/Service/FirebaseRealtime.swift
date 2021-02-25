@@ -51,7 +51,6 @@ class FirebaseRealtime{
   }
        
     func listMovie(typeList: TypeList, completion: @escaping (Movie) -> Void) {
-       
         let database = Database.database().reference()
         let user = database.child("users")
         let idUsers = Auth.auth().currentUser?.uid

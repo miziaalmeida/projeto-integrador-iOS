@@ -10,7 +10,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? ) -> Bool{
         FirebaseApp.configure()
+        
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
+        
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions )
@@ -37,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
         // annotation: [:])
     }
+    
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

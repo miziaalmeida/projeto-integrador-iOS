@@ -559,7 +559,7 @@
                             <constraint firstItem="elS-9E-aNg" firstAttribute="top" secondItem="Jtz-pK-B1n" secondAttribute="bottom" constant="40" id="zIr-6Y-HFl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="raffleIcon" id="gjx-6a-wJE">
+                    <tabBarItem key="tabBarItem" title="" image="icon-raffle-popcorn" id="gjx-6a-wJE">
                         <inset key="imageInsets" minX="-100" minY="29" maxX="-100" maxY="50"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -594,6 +594,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon-raffle-popcorn" width="166.5" height="166.5"/>
         <image name="icon-right-arrow" width="48" height="48"/>
         <image name="logo-Looke" width="1024" height="1024"/>
         <image name="logo-appleTV" width="1024" height="1024"/>
@@ -607,6 +608,5 @@
         <image name="logo-prime" width="1024" height="1024"/>
         <image name="logo-telecine" width="1024" height="1024"/>
         <image name="logo-tntGo" width="1024" height="1024"/>
-        <image name="raffleIcon" width="166.5" height="166.5"/>
     </resources>
 </document>

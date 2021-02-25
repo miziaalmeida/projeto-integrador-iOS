@@ -9,10 +9,12 @@ import ProgressHUD
 
 class UserReference {
     
+    //MARK: CHECK USER IS LOGGED
     static func isLogged() -> Bool {
         return Auth.auth().currentUser != nil
     }
     
+    //MARK: SIGN IN - FIREBASE
     func signIn(withEmail email: String, password: String,
                 onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
         Auth.auth().signIn(withEmail: email, password: password) { (authData, error) in
@@ -25,6 +27,7 @@ class UserReference {
         }
     }
     
+    //MARK: VALIDATE SIGN IN - FIREBASE
     func validateSignIn(email: String, password: String, view: UIView, viewController: UIViewController, onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if error == nil{
@@ -41,6 +44,7 @@ class UserReference {
         }
     }
     
+    //MARK: SIGN UP - FIREBASE
     func signUp(withUsername name: String, email: String, password: String, image: UIImage?,
                 onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void){
         Auth.auth().createUser(withEmail: email, password: password) { (authDataResult, error) in
@@ -79,6 +83,33 @@ class UserReference {
         }
     }
     
+    //MARK: SIGN OUT - FIREBASE
+    func signOut(){
+        let loginManager = LoginManager()
+        if let _ = AccessToken.current {
+            loginManager.logOut()
+            print("~ Deu Logout no facebook!! ~")
+        }
+        
+        do {
+            try Auth.auth().signOut()
+            guard let viewController = UIStoryboard(name: "Main",
+                                                    bundle: nil).instantiateInitialViewController() as? PageStartViewController else { return }
+            UIViewController.replaceRootViewController(viewController: viewController)
+            
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    //MARK: RESET PASSWORD - FIREBASE
     func resetPassword(withEmail email: String, onSucess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
         Auth.auth().sendPasswordReset(withEmail: email) { (error) in
             if error == nil {
@@ -89,9 +120,10 @@ class UserReference {
         }
     }
     
+    //MARK: SIGN IN - FACEBOOK
     func signInWithFacebook(viewController: UIViewController) {
         let manager = LoginManager()
-        manager.logIn(permissions: [.publicProfile, .email], viewController: viewController) { (result) in
+        manager.logIn(permissions: [.publicProfile, .email, .userPhotos], viewController: viewController) { (result) in
             switch result {
             case .success(granted: let grantedPermissions, declined: let declinedPermission, token: let acessToken):
                 let credential = FacebookAuthProvider.credential(withAccessToken: acessToken.tokenString)
@@ -112,12 +144,25 @@ class UserReference {
         }
     }
     
-    func signInWithGoogle(viewController: UIViewController){
-        GIDSignIn.sharedInstance()?.presentingViewController = viewController
-        GIDSignIn.sharedInstance().delegate = viewController as? GIDSignInDelegate
+    //MARK: SIGN IN - GOOGLE
+    func signInWithGoogle(viewController: UIViewController) {
         GIDSignIn.sharedInstance()?.signIn()
     }
     
+    
+    //MARK: DELETE USER - FIREBASE
+    func deleteUser(){
+        let user = Auth.auth().currentUser
+        user?.delete { error in
+            if let error = error {
+                // An error happened.
+            } else {
+                // Account deleted.
+            }
+        }
+    }
+    
+    //MARK: SHOW HOME
     func showHome() {
         guard let homeViewControler = UIStoryboard(name: "HomeMain",
                                                    bundle: nil).instantiateInitialViewController() as? UITabBarController else {return}
@@ -125,6 +170,7 @@ class UserReference {
         UIViewController.replaceRootViewController(viewController: homeViewControler)
     }
     
+    //MARK: MESSAGE FROM USER
     func messageUser(title: String, message: String, viewController: UIViewController){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let actionCancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)

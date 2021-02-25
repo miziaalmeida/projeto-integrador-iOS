@@ -1,14 +1,21 @@
 import UIKit
+import Firebase
+import GoogleSignIn
 
 protocol ProfileViewModelProtocol: AnyObject {
-    func didTapExitAccount(controller: UIViewController)
+    func didTapExitAccount()
+    func showDataFromGoogle(name: String, email: String)
+    var viewController: ProfileViewEvents? { get set }
 }
 
 class ProfileViewModel: ProfileViewModelProtocol{
+    weak var viewController: ProfileViewEvents?
     
-    func didTapExitAccount(controller: UIViewController) {
-        if let exitAccountPassView = UIStoryboard(name: "ExitAccount", bundle: nil).instantiateInitialViewController() as? ExitAccountViewController {
-            controller.navigationController?.pushViewController(exitAccountPassView, animated: true)
-        }
+    func didTapExitAccount(){
+        AuthUser.User.signOut()
+    }
+    
+    func showDataFromGoogle(name: String, email: String){
+        
     }
 }
