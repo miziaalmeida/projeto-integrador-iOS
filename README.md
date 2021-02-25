@@ -15,7 +15,7 @@
 <p>
 
 
-•  [Sobre](#computer-sobre)  •  [Requisitos do Projeto](#wrench-requisitos-do-projeto) •  [Screenshoots do Projeto](#clapper-screenshoots-do-projeto)  •  [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas)  •  [Arquitetura](triangular_ruler-padrão-de-projeto)  •  [Metodologia de trabalho](#calendar-metodologia-de-trabalho)  •  [Executar o Projeto](#dvd-execução-do-projeto)  •  [Autores](#open_hands-autores)  •  [Licença](#page_facing_up-licença)  •  
+•  [Sobre](#computer-sobre)  •  [Requisitos do Projeto](#wrench-requisitos-do-projeto) •  [Preview do Projeto](#clapper-preview-do-projeto)  •  [Tecnologias utilizadas](#white_check_mark-tecnologias-utilizadas)  •  [Arquitetura](triangular_ruler-padrão-de-projeto)  •  [Metodologia de trabalho](#calendar-metodologia-de-trabalho)  •  [Executar o Projeto](#dvd-execução-do-projeto)  •  [Autores](#open_hands-autores)  •  [Licença](#page_facing_up-licença)  •  
 
 ---
 ## :computer: **Sobre**
@@ -55,11 +55,11 @@ UIButton, UILabel, UICollectionView e UITableView).
 - [x] Ao final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
 
 ---
-## :clapper: **Screenshoots do Projeto**
+## :clapper: **Preview do Projeto**
 
 <div align="center">
 
-<img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107271162-9bcce800-6a2a-11eb-9091-5302a46f5e1d.gif"> |<img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107270388-a5a21b80-6a29-11eb-9299-09faa7dba074.gif"> | <img width="264" style="border-radius: 5px" height="568" alt="Demonstração do Aplicativo Jeffrey" src="https://user-images.githubusercontent.com/60993267/107271600-3c230c80-6a2b-11eb-9a5d-7820915cdf98.gif"> |
+![Preview](https://user-images.githubusercontent.com/42849855/109223712-b4aefa80-7799-11eb-918f-b8cf57482f82.mov)
 
 </div>
 
