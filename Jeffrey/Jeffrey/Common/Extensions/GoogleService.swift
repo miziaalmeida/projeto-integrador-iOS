@@ -17,17 +17,16 @@ extension LoginViewController: GIDSignInDelegate {
             if let error = error {
                 print(error.localizedDescription)
             }
-            
-            let userId = user.userID ?? ""
-            print(userId)
-            
-            var name = user.profile.name ?? ""
-            print("\(name)")
-            self.nameUser = name
-            
-            let email = user.profile.email ?? ""
-            print("\(email)")
-            self.emailUser = email
+//            let userId = user.userID ?? ""
+//            print(userId)
+//
+//            var name = user.profile.name ?? ""
+//            print("\(name)")
+//            self.nameUser = name
+//
+//            let email = user.profile.email ?? ""
+//            print("\(email)")
+//            self.emailUser = email
             
             print("Login Successful.")
             
