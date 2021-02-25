@@ -59,7 +59,16 @@ UIButton, UILabel, UICollectionView e UITableView).
 
 <div align="center">
 
-![Preview](https://user-images.githubusercontent.com/42849855/109223712-b4aefa80-7799-11eb-918f-b8cf57482f82.mov)
+![:clapper: Preview](https://user-images.githubusercontent.com/42849855/109223712-b4aefa80-7799-11eb-918f-b8cf57482f82.mov)
+
+![LoginFlow](https://media.giphy.com/media/nLbBzBGFxQ4LMBq7Es/giphy.gif)
+![HomeFlow](https://media.giphy.com/media/RgGAWcLeXNzzidaeGg/giphy.gif)
+![RaffleFlow](https://media.giphy.com/media/OzEqgOZ8jHMzmvwGkH/giphy.gif)
+![RedirectFlow](https://media.giphy.com/media/cX9pOFMFEDWdYaY4Fo/giphy.gif)
+![ListsFlow](https://media.giphy.com/media/JbakyuHrWnEiYHUpeC/giphy.gif)
+![SearchFlow](https://media.giphy.com/media/Of1n85WAR1pYHHMeKD/giphy.gif)
+
+![jeffreyLogado](https://media.giphy.com/media/8okKuavebXEUIQlCdK/giphy.gif)
 
 </div>
 
